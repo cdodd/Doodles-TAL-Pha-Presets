@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Field guide: Doodles TAL-Pha Presets</title>
+<link rel="stylesheet" href="style.css">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="index.html"><span>Doodles</span> TAL-Pha Presets</a>
+  <button type="button" id="theme" class="ghost" aria-label="Switch between light and dark theme">Theme</button>
+</header>
+<div class="layout">
+<nav class="sidebar" aria-label="Documentation">
+<a href="index.html">Overview</a>
+<p class="nav-label">Patches</p>
+<a href="bass.html">Bass</a>
+<a href="lead.html">Lead</a>
+<a href="pad.html">Pad</a>
+<a href="strings.html">Strings</a>
+<a href="brass.html">Brass</a>
+<a href="arp.html">Arp</a>
+<a href="pluck.html">Pluck</a>
+<a href="keys.html">Keys and Bells</a>
+<a href="chord.html">Chord and Stab</a>
+<a href="fx.html">FX and Atmosphere</a>
+<p class="nav-label">Guides</p>
+<a href="field-guide.html" aria-current=page>Field guide</a>
+<a href="control-reference.html">Control reference</a>
+<a href="gallery.html">Sound gallery</a>
+<a href="sound-map.html">Sound map</a>
+<a href="kits.html">Starter kits</a>
+<a href="reaper-cheat-sheet.html">Reaper cheat sheet</a>
+</nav>
+<main>
+<div class="prose"><h1>Field guide</h1>
+<p class="lede">How TAL-Pha is put together, what it can't do and how to get around that, and what values to start from for each type of sound. For measured numbers, see the <a href="control-reference.html">control reference</a>.</p>
+<h2>Signal flow</h2>
+<pre><code>DCO  -&gt;  HPF  -&gt;  VCF  -&gt;  VCA  -&gt;  effects
+saw       |      24 dB      |       chorus, EQ, delay, reverb
+pulse     |
+sub       |      One envelope drives pitch, filter and amp.
+noise     |      One LFO drives pitch and filter.   
+</code></pre>
+<p>Each voice runs through the same path. PWM has its own rate control, separate from the main LFO.</p>
+<h2>What it can't do, and how to get around it</h2>
+<p>Most of the decisions in this bank come from these limits. If a patch's settings seem odd, it's probably working around one of them.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Workaround</th>
+<th>See it in</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>One envelope for pitch, filter and amp</td>
+<td>VCA <strong>Gate</strong>: the amp follows the key, leaving the envelope to the filter and pitch</td>
+<td><a href="bass-recipe.html">Bass recipe</a></td>
+</tr>
+<tr>
+<td>Envelope can't fall and then rise in plain ADSR terms</td>
+<td>Use the extra stage: T1/L1, T2/L2, T3/L3 can go in either direction</td>
+<td><a href="brass.html#sforzando">Sforzando</a></td>
+</tr>
+<tr>
+<td>LFO can't reach the amp, so no tremolo</td>
+<td>Move the filter instead, with a deep LFO; a square wave chops the sound</td>
+<td><a href="chord.html#gated-chord">Gated Chord</a></td>
+</tr>
+<tr>
+<td>No sidechain inside the synth</td>
+<td>A synced saw LFO on the filter gives a similar pump</td>
+<td><a href="pad.html#pulse-bloom">Pulse Bloom</a></td>
+</tr>
+<tr>
+<td>One filter</td>
+<td>Use the HPF for the low end and the VCF for the top; the bell EQ can add a formant</td>
+<td><a href="pad.html#retro-choir">Retro Choir</a></td>
+</tr>
+<tr>
+<td>Not an FM synth</td>
+<td>Sync adds metallic overtones; open the filter only at the attack, to reveal them briefly</td>
+<td><a href="keys-recipe.html">Keys recipe</a></td>
+</tr>
+<tr>
+<td>One oscillator per voice</td>
+<td>Pulse Tune and Fine make the pulse a second source; chorus and unison add more</td>
+<td><a href="bass.html#chrome-octave">Chrome Octave</a></td>
+</tr>
+<tr>
+<td>Pitch envelope leaves held notes off pitch with sustain above 0</td>
+<td>Set sustain to 0 with VCA Gate, so the note holds and the pitch returns</td>
+<td><a href="lead.html#razor-fifth">Razor Fifth</a></td>
+</tr>
+<tr>
+<td>Chorus has no low-frequency limit</td>
+<td>Keep it off low patches, or narrow the lows in your mix</td>
+<td><a href="bass.html#velvet-bass">Velvet Bass</a></td>
+</tr>
+</tbody>
+</table></div>
+<h2>The controls, in the order you'd reach for them</h2>
+<ol>
+<li><strong>Range, wave and voices.</strong> Which register and how many notes? Mono for bass and most leads; 6-10 voices for pads and keys, as releases overlap.</li>
+<li><strong>VCA mode.</strong> Should the level follow the envelope (pluck, pad) or the key (bass, organ)?</li>
+<li><strong>Envelope times and sustain.</strong> This is usually what defines the instrument type: see the table below.</li>
+<li><strong>Filter cutoff and envelope amount.</strong> Start darker than you'd expect. Envelope amount is strong, and does nothing useful if sustain is at full.</li>
+<li><strong>Velocity mode.</strong> Normal-Dynamic is one of the strongest tone controls on the synth.</li>
+<li><strong>Motion.</strong> PWM, a slow LFO on the filter, or delayed vibrato.</li>
+<li><strong>Width.</strong> Chorus or unison, keeping low notes in mind.</li>
+<li><strong>Space.</strong> Delay and reverb. The delay is centred until you move its spread away from 0.00.</li>
+<li><strong>Wheel.</strong> Init sends the wheel to vibrato, which is usually too wide. Set it to what the patch actually needs.</li>
+</ol>
+<h2>Typical values by instrument type</h2>
+<p>The median settings across this bank's 10 patches in each category: a sensible starting point rather than a rule. Values are as shown on the panel.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Voices</th>
+<th>T1 attack</th>
+<th>T3 decay</th>
+<th>L3 sustain</th>
+<th>T4 release</th>
+<th>Cutoff</th>
+<th>Res</th>
+<th>Filter env</th>
+<th>Key follow</th>
+<th>VCA Gate</th>
+<th>Chorus</th>
+<th>Unison</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bass</td>
+<td>1</td>
+<td>0.0</td>
+<td>3.9</td>
+<td>4.2</td>
+<td>1.0</td>
+<td>3.2</td>
+<td>1.8</td>
+<td>3.1</td>
+<td>3.2</td>
+<td>7 of 10</td>
+<td>1 of 10</td>
+<td>1 of 10</td>
+</tr>
+<tr>
+<td>Lead</td>
+<td>1</td>
+<td>0.2</td>
+<td>5.0</td>
+<td>7.3</td>
+<td>2.5</td>
+<td>6.0</td>
+<td>0.9</td>
+<td>1.1</td>
+<td>4.5</td>
+<td>4 of 10</td>
+<td>1 of 10</td>
+<td>1 of 10</td>
+</tr>
+<tr>
+<td>Pad</td>
+<td>8</td>
+<td>5.4</td>
+<td>6.0</td>
+<td>10.0</td>
+<td>5.8</td>
+<td>5.4</td>
+<td>1.2</td>
+<td>0.0</td>
+<td>3.0</td>
+<td>0 of 10</td>
+<td>7 of 10</td>
+<td>3 of 10</td>
+</tr>
+<tr>
+<td>Strings</td>
+<td>8</td>
+<td>4.2</td>
+<td>5.0</td>
+<td>10.0</td>
+<td>5.0</td>
+<td>6.1</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>3.0</td>
+<td>0 of 10</td>
+<td>10 of 10</td>
+<td>1 of 10</td>
+</tr>
+<tr>
+<td>Brass</td>
+<td>8</td>
+<td>2.0</td>
+<td>4.5</td>
+<td>6.2</td>
+<td>3.0</td>
+<td>5.0</td>
+<td>0.7</td>
+<td>3.0</td>
+<td>4.0</td>
+<td>1 of 10</td>
+<td>7 of 10</td>
+<td>2 of 10</td>
+</tr>
+<tr>
+<td>Arp</td>
+<td>6</td>
+<td>0.0</td>
+<td>2.9</td>
+<td>0.0</td>
+<td>2.0</td>
+<td>5.4</td>
+<td>0.0</td>
+<td>2.3</td>
+<td>3.0</td>
+<td>2 of 10</td>
+<td>2 of 10</td>
+<td>0 of 10</td>
+</tr>
+<tr>
+<td>Pluck</td>
+<td>6</td>
+<td>0.0</td>
+<td>3.9</td>
+<td>0.0</td>
+<td>3.2</td>
+<td>4.8</td>
+<td>0.0</td>
+<td>2.7</td>
+<td>5.0</td>
+<td>0 of 10</td>
+<td>2 of 10</td>
+<td>0 of 10</td>
+</tr>
+<tr>
+<td>Keys and Bells</td>
+<td>8</td>
+<td>0.0</td>
+<td>6.2</td>
+<td>0.5</td>
+<td>4.2</td>
+<td>4.6</td>
+<td>0.0</td>
+<td>2.5</td>
+<td>5.5</td>
+<td>1 of 10</td>
+<td>5 of 10</td>
+<td>0 of 10</td>
+</tr>
+<tr>
+<td>Chord and Stab</td>
+<td>6</td>
+<td>0.0</td>
+<td>4.8</td>
+<td>5.8</td>
+<td>2.8</td>
+<td>5.0</td>
+<td>1.0</td>
+<td>2.2</td>
+<td>4.0</td>
+<td>1 of 10</td>
+<td>6 of 10</td>
+<td>2 of 10</td>
+</tr>
+<tr>
+<td>FX and Atmosphere</td>
+<td>1</td>
+<td>1.5</td>
+<td>4.3</td>
+<td>10.0</td>
+<td>4.5</td>
+<td>6.1</td>
+<td>1.1</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0 of 10</td>
+<td>0 of 10</td>
+<td>0 of 10</td>
+</tr>
+</tbody>
+</table></div>
+<p>Reading down the table shows what separates the categories. Bass leans on VCA Gate. Arps, plucks and keys have little or no sustain. Pads and strings sustain fully, with long attacks and releases, and pads have a darker filter than strings.</p>
+<h2>Learning path</h2>
+<ol>
+<li>Follow the "Build from init" pages in the plugin. Each category has one, and each builds a patch from the init sound a step at a time, so you can hear what every change does. Different categories teach different parameters, so use them to learn the controls you're curious about. Start with <a href="bass-recipe.html">Bass</a>, which shows how VCA Gate lets the single envelope sweep the filter while the amp holds the note.</li>
+<li>Listen to the <a href="gallery.html">sound gallery</a>, so that you know what each wave and control sounds like.</li>
+<li>Follow the <a href="pluck-recipe.html">Pluck recipe</a>, the mirror image of the bass, then <a href="pad-recipe.html">Pad</a> for motion and width.</li>
+<li>Pick a <a href="kits.html">starter kit</a> and write a short track, then use the <a href="reaper-cheat-sheet.html">Reaper cheat sheet</a> to mix it.</li>
+<li>Choose a preset you like and change one thing at a time using its "Tweak it" notes.</li>
+</ol></div>
+</main>
+</div>
+<script src="site.js"></script>
+</body>
+</html>

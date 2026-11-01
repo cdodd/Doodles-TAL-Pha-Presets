@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Strings: Doodles TAL-Pha Presets</title>
+<link rel="stylesheet" href="style.css">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="index.html"><span>Doodles</span> TAL-Pha Presets</a>
+  <button type="button" id="theme" class="ghost" aria-label="Switch between light and dark theme">Theme</button>
+</header>
+<div class="layout">
+<nav class="sidebar" aria-label="Documentation">
+<a href="index.html">Overview</a>
+<p class="nav-label">Patches</p>
+<a href="bass.html">Bass</a>
+<a href="lead.html">Lead</a>
+<a href="pad.html">Pad</a>
+<a href="strings.html" aria-current=page>Strings</a>
+<div class="subnav"><a class="recipe-link" href="strings-recipe.html">Build from init</a><a href="#ensemble-sunset">Ensemble Sunset</a><a href="#silver-screen">Silver Screen</a><a href="#neon-cello">Neon Cello</a><a href="#slow-bow">Slow Bow</a><a href="#staccato-run">Staccato Run</a><a href="#octave-ensemble">Octave Ensemble</a><a href="#high-rise">High Rise</a><a href="#worn-tape-strings">Worn Tape Strings</a><a href="#rising-tide">Rising Tide</a><a href="#rain-city">Rain City</a></div>
+<a href="brass.html">Brass</a>
+<a href="arp.html">Arp</a>
+<a href="pluck.html">Pluck</a>
+<a href="keys.html">Keys and Bells</a>
+<a href="chord.html">Chord and Stab</a>
+<a href="fx.html">FX and Atmosphere</a>
+<p class="nav-label">Guides</p>
+<a href="field-guide.html">Field guide</a>
+<a href="control-reference.html">Control reference</a>
+<a href="gallery.html">Sound gallery</a>
+<a href="sound-map.html">Sound map</a>
+<a href="kits.html">Starter kits</a>
+<a href="reaper-cheat-sheet.html">Reaper cheat sheet</a>
+</nav>
+<main>
+<h1>Strings</h1>
+<p class="lede">10 patches. Control values are as shown on the plugin panel. Times and frequencies
+come from <a href="control-reference.html">measurements of the plugin</a>.</p>
+<a class="callout" href="strings-recipe.html"><strong>New to this category?</strong> Build a patch from init, step by step, hearing each decision.</a>
+<section class="install">
+<h2>Mixing this category</h2>
+<p>Starting points for every patch here. Each patch's own notes cover what's different about it.</p>
+<ul><li>High-pass at 150-200 Hz; low sections less, around 80-100 Hz.</li><li>Dip 300-500 Hz if they thicken up, and shelve the top down if they get wiry.</li><li>Use little compression, as they&#x27;re already even. Sidechain gently in a dense track.</li><li>Wide chorus suits high sections; keep low sections nearer the centre.</li><li>Share a hall-style reverb send with the pad so they sit in the same space.</li></ul>
+</section>
+<div class="chips" role="group" aria-label="Filter by subgenre"><button type="button" class="chip" aria-pressed="true" data-tag="">All</button><button type="button" class="chip" aria-pressed="false" data-tag="chillwave">chillwave</button><button type="button" class="chip" aria-pressed="false" data-tag="darksynth">darksynth</button><button type="button" class="chip" aria-pressed="false" data-tag="dreamwave">dreamwave</button><button type="button" class="chip" aria-pressed="false" data-tag="outrun">outrun</button></div>
+<article class="patch" id="ensemble-sunset" data-tags="outrun dreamwave">
+<header>
+  <h2>Ensemble Sunset</h2>
+  <div class="tags"><span class="tag">outrun</span><span class="tag">dreamwave</span></div>
+</header>
+<p class="profile">The string machine of 70s and 80s records: a plain saw given life by a fast, wide chorus.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/strings/ensemble-sunset.mp3" aria-label="Preview of Ensemble Sunset"></audio>
+  <a class="ghost" href="../../presets/Doodles/Strings/Ensemble%20Sunset.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>C3 to C5</dd></div><div><dt>Brightness</dt><dd>1401 Hz centroid</dd></div><div><dt>Low energy</dt><dd>1% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 120 ms</dd></div><div><dt>Decay</dt><dd>Holds while the key is down</dd></div><div><dt>Filter closes</dt><dd>0.0 octaves</dd></div><div><dt>Held level</dt><dd>-2 dB from peak</dd></div><div><dt>Width</dt><dd>Stereo, side/mid 0.60</dd></div><div><dt>Mono sum</dt><dd>-1.3 dB</dd></div><div><dt>Loudness</dt><dd>-17.7 LUFS, peak -5.2 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">DCO Saw</th><td class="value">Saw</td><td>A bowed string produces a roughly saw-shaped wave, so a saw is the natural start.</td></tr><tr><th scope="row">Chorus Rate</th><td class="value">7.8</td><td>Fast: the rapid modulation imitates many detuned string players. This is the main ingredient.</td></tr><tr><th scope="row">HPF</th><td class="value">HP 1</td><td>HP 1 removes the low-end weight, leaving a lighter, machine-like string tone.</td></tr><tr><th scope="row">Env T1 (attack)</th><td class="value">4.2 (about 165 ms)</td><td>About 170 ms: strings can&#x27;t start instantly, since a bow takes time to catch.</td></tr><tr><th scope="row">VCF Cutoff</th><td class="value">7.4 (about 3295 Hz at C4)</td><td>About 3.3 kHz: bright and airy, with some top end trimmed.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Range 8&#x27;; Sub level 0.0 / 3; Chorus On; VCF Key follow 3.0; Env T3 (decay) 5.0 (about 678 ms to -20 dB); Env L3 (sustain) 10.0; Env T4 (release) 5.0 (about 778 ms to -20 dB); MW to VCF 1.5; Voices 8; Reverb mix -0.70; Reverb size 5.0.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Play sustained chords. It&#x27;s a machine rather than an orchestra, so don&#x27;t try to phrase it like one.</p></section>
+  <section><h3>How to use it</h3><p>Chord beds in retro tracks, doubled with a pad, or as a countermelody in the chorus.</p></section>
+  <section><h3>Mixing</h3><ul><li>HP 1 is already thinning the lows, but a high-pass at 200 Hz won&#x27;t hurt.</li><li>Add a small plate, not a big hall: it should sound like a record, not a concert.</li><li>A lift around 5 kHz adds classic sheen.</li><li>Built-in chorus: part of this sound, so keep it. Built-in reverb: turn it off if you&#x27;re using your own.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="bass.html#rubber-coupe">Rubber Coupe</a><span class="why">Disco-style bass and strings are a natural pair.</span></li><li><a href="lead.html#sunset-solo">Sunset Solo</a><span class="why">Soft shimmer behind a singing lead.</span></li><li><strong>Funk guitar</strong><span class="why">The classic disco string and guitar arrangement.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>Chorus Rate to 5.0</strong><span>A slower, calmer ensemble.</span></li><li><strong>ENV T1 (attack) to 2.5</strong><span>A faster attack, for rhythmic string parts.</span></li><li><strong>HPF to Off</strong><span>A fuller, warmer tone.</span></li></ul>
+</article>
+<article class="patch" id="silver-screen" data-tags="dreamwave outrun">
+<header>
+  <h2>Silver Screen</h2>
+  <div class="tags"><span class="tag">dreamwave</span><span class="tag">outrun</span></div>
+</header>
+<p class="profile">A big, cinematic string section with a hall around it, for a sweeping 80s movie moment.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/strings/silver-screen.mp3" aria-label="Preview of Silver Screen"></audio>
+  <a class="ghost" href="../../presets/Doodles/Strings/Silver%20Screen.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>C2 to C5</dd></div><div><dt>Brightness</dt><dd>990 Hz centroid</dd></div><div><dt>Low energy</dt><dd>3% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 284 ms</dd></div><div><dt>Decay</dt><dd>Holds while the key is down</dd></div><div><dt>Filter closes</dt><dd>0.0 octaves</dd></div><div><dt>Held level</dt><dd>-5 dB from peak</dd></div><div><dt>Width</dt><dd>Stereo, side/mid 0.85</dd></div><div><dt>Mono sum</dt><dd>-2.3 dB</dd></div><div><dt>Loudness</dt><dd>-18.1 LUFS, peak -7.0 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">Unison voices</th><td class="value">3</td><td>Three detuned voices per note make each note sound like several players.</td></tr><tr><th scope="row">Unison detune</th><td class="value">0.12</td><td>A small amount, so that it reads as a section rather than a wobble.</td></tr><tr><th scope="row">Reverb mix</th><td class="value">-0.16</td><td>A wet hall: it&#x27;s the size of the room that makes it cinematic.</td></tr><tr><th scope="row">Reverb pre-delay</th><td class="value">40 ms</td><td>About 40 ms of pre-delay keeps the notes clear before the room arrives.</td></tr><tr><th scope="row">Env T1 (attack)</th><td class="value">4.8 (about 302 ms)</td><td>About 300 ms, so that a whole section swells in.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Saw Saw; DCO Range 8&#x27;; Sub level 0.3 / 3; Chorus On; VCF Cutoff 6.8 (about 2083 Hz at C4); VCF Key follow 4.0; Env T3 (decay) 5.0 (about 678 ms to -20 dB); Env L3 (sustain) 10.0; Env T4 (release) 5.8 (about 1.3 s to -20 dB); Chorus Rate 5.0; MW to VCF 1.5; Voices 8; Unison spread 0.90; Reverb size 8.5.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Wide voicings across both hands, with octaves in the low end. Let chords ring.</p></section>
+  <section><h3>How to use it</h3><p>Climaxes, end credits, big chorus lifts. It&#x27;s dramatic, so save it for when you want drama.</p></section>
+  <section><h3>Mixing</h3><ul><li>Use automation on the volume for crescendos.</li><li>Reduce the built-in reverb if using your own hall.</li><li>Dip 300-500 Hz by 2 dB in a dense mix.</li><li>Built-in reverb: part of this sound, so keep it. Built-in chorus: turn it off if you&#x27;re using your own.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="pad.html#retro-choir">Retro Choir</a><span class="why">Together they&#x27;re the classic film score combination.</span></li><li><a href="brass.html#sunrise-fanfare">Sunrise Fanfare</a><span class="why">Strings plus brass for a triumphant climax.</span></li><li><strong>Timpani and gated toms</strong><span class="why">The rest of the 80s orchestra.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>Reverb mix to -0.60</strong><span>Closer and clearer, for use in a busy mix.</span></li><li><strong>UNISON voices to 5</strong><span>An even bigger, more diffused section.</span></li><li><strong>VCF Cutoff to 5.5</strong><span>A warm, muted section, for quieter moments.</span></li></ul>
+</article>
+<article class="patch" id="neon-cello" data-tags="dreamwave darksynth">
+<header>
+  <h2>Neon Cello</h2>
+  <div class="tags"><span class="tag">dreamwave</span><span class="tag">darksynth</span></div>
+</header>
+<p class="profile">A warm, low string section with delayed vibrato, for slow-moving lines beneath everything else.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/strings/neon-cello.mp3" aria-label="Preview of Neon Cello"></audio>
+  <a class="ghost" href="../../presets/Doodles/Strings/Neon%20Cello.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>C2 to C4</dd></div><div><dt>Brightness</dt><dd>304 Hz centroid</dd></div><div><dt>Low energy</dt><dd>52% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 130 ms</dd></div><div><dt>Decay</dt><dd>Holds while the key is down</dd></div><div><dt>Filter closes</dt><dd>0.2 octaves</dd></div><div><dt>Held level</dt><dd>-2 dB from peak</dd></div><div><dt>Width</dt><dd>Stereo, side/mid 0.51</dd></div><div><dt>Mono sum</dt><dd>-1.0 dB</dd></div><div><dt>Loudness</dt><dd>-17.6 LUFS, peak -5.3 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">VCF Cutoff</th><td class="value">5.5 (about 723 Hz at C4)</td><td>About 700 Hz at C4: warm, and with key follow low notes are darker still.</td></tr><tr><th scope="row">VCF Key follow</th><td class="value">6.0</td><td>Keeps the tone balanced as you move, so that low notes don&#x27;t get harsh.</td></tr><tr><th scope="row">DCO LFO</th><td class="value">0.8</td><td>A cellist&#x27;s vibrato: a slight pitch change, under ±10 cents.</td></tr><tr><th scope="row">LFO Delay</th><td class="value">0.48 s</td><td>Vibrato arrives about 500 ms in, as a real player&#x27;s does.</td></tr><tr><th scope="row">Env T1 (attack)</th><td class="value">4.0 (about 145 ms)</td><td>About 145 ms: enough for a bow&#x27;s soft entry, while still keeping time.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Saw Saw; DCO Range 8&#x27;; Sub level 0.0 / 3; Chorus On; VCF Res 0.8; LFO Rate 4.63 Hz; Env T3 (decay) 5.0 (about 678 ms to -20 dB); Env L3 (sustain) 10.0; Env T4 (release) 4.8 (about 608 ms to -20 dB); Chorus Rate 5.5; MW to DCO LFO 0.5; Voices 6; Reverb mix -0.50; Reverb size 6.5.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Slow, single-note lines or simple fifths. Held notes bloom with vibrato; mod wheel adds more.</p></section>
+  <section><h3>How to use it</h3><p>Countermelodies under a verse, or the bass in a section with no synth bass.</p></section>
+  <section><h3>Mixing</h3><ul><li>Can replace a bass in sparse sections; otherwise high-pass at 100 Hz.</li><li>Don&#x27;t let it fight the kick: light sidechain helps.</li><li>A little compression helps long notes sit steadily.</li><li>Built-in chorus and reverb: turn them off if you&#x27;re using your own.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="#high-rise">High Rise</a><span class="why">High and low sections, with room in between for a melody.</span></li><li><a href="#rain-city">Rain City</a><span class="why">Dark and low together, for noir sections.</span></li><li><strong>Solo piano</strong><span class="why">A classic, intimate pairing.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>ENV T1 (attack) to 5.5</strong><span>A much slower, bowed entry.</span></li><li><strong>LFO Delay to 0</strong><span>Immediate vibrato, for a more emotional, tense sound.</span></li><li><strong>VCF Cutoff to 6.5</strong><span>A brighter, more biting tone: closer to a viola.</span></li></ul>
+</article>
+<article class="patch" id="slow-bow" data-tags="dreamwave chillwave">
+<header>
+  <h2>Slow Bow</h2>
+  <div class="tags"><span class="tag">dreamwave</span><span class="tag">chillwave</span></div>
+</header>
+<p class="profile">Strings that swell in very slowly and get brighter as they rise, as a player leans into the bow.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/strings/slow-bow.mp3" aria-label="Preview of Slow Bow"></audio>
+  <a class="ghost" href="../../presets/Doodles/Strings/Slow%20Bow.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>C3 to C5</dd></div><div><dt>Brightness</dt><dd>1124 Hz centroid</dd></div><div><dt>Low energy</dt><dd>1% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 953 ms</dd></div><div><dt>Decay</dt><dd>Holds while the key is down</dd></div><div><dt>Filter closes</dt><dd>0.0 octaves</dd></div><div><dt>Held level</dt><dd>-5 dB from peak</dd></div><div><dt>Width</dt><dd>Stereo, side/mid 0.61</dd></div><div><dt>Mono sum</dt><dd>-1.4 dB</dd></div><div><dt>Loudness</dt><dd>-18.2 LUFS, peak -6.5 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">Env T1 (attack)</th><td class="value">6.2 (about 912 ms)</td><td>About 1 second to reach full level: the defining feature.</td></tr><tr><th scope="row">VCF Env</th><td class="value">2.0</td><td>The envelope also opens the filter, so the sound gets brighter as it gets louder, which is how bowed strings behave.</td></tr><tr><th scope="row">VCF Cutoff</th><td class="value">5.0 (about 478 Hz at C4)</td><td>Starts at about 470 Hz, leaving room for the envelope to open it.</td></tr><tr><th scope="row">Env T4 (release)</th><td class="value">6.0 (about 1.5 s to -20 dB)</td><td>A long fade, so chords don&#x27;t stop abruptly after such a slow start.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Saw Saw; DCO Range 8&#x27;; Sub level 0.0 / 3; Chorus On; VCF Key follow 3.0; Env T3 (decay) 5.0 (about 678 ms to -20 dB); Env L3 (sustain) 10.0; Chorus Rate 5.0; MW to VCF 1.5; Voices 8; Reverb mix -0.30; Reverb size 8.0.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Start chords early: they take about a second to arrive. Best with long, held harmonies.</p></section>
+  <section><h3>How to use it</h3><p>Slow fade-ins behind a vocal or lead, and intros and outros. Too slow for most chord changes.</p></section>
+  <section><h3>Mixing</h3><ul><li>Very little processing needed; it&#x27;s already soft.</li><li>Leave plenty of reverb on.</li><li>High-pass at 180 Hz.</li><li>Built-in chorus and reverb: turn them off if you&#x27;re using your own.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="lead.html#glass-whistle">Glass Whistle</a><span class="why">A single pure line over a slowly rising bed.</span></li><li><a href="bass.html#midnight-sub">Midnight Sub</a><span class="why">A simple foundation for a long swell.</span></li><li><strong>Sparse vocal</strong><span class="why">It fills the gaps between phrases without intruding.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>ENV T1 (attack) to 7.0</strong><span>An even slower 2-second swell.</span></li><li><strong>VCF Env to 4.0</strong><span>A much bigger change from dark to bright.</span></li><li><strong>Reverb mix to -0.70</strong><span>Closer and more personal.</span></li></ul>
+</article>
+<article class="patch" id="staccato-run" data-tags="outrun darksynth">
+<header>
+  <h2>Staccato Run</h2>
+  <div class="tags"><span class="tag">outrun</span><span class="tag">darksynth</span></div>
+</header>
+<p class="profile">Short, tight, rhythmic string hits for driving ostinatos.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/strings/staccato-run.mp3" aria-label="Preview of Staccato Run"></audio>
+  <a class="ghost" href="../../presets/Doodles/Strings/Staccato%20Run.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>C3 to C5</dd></div><div><dt>Brightness</dt><dd>1268 Hz centroid</dd></div><div><dt>Low energy</dt><dd>2% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 5 ms</dd></div><div><dt>Decay</dt><dd>Falls 20 dB in 244 ms</dd></div><div><dt>Held note</dt><dd>Dies away</dd></div><div><dt>Width</dt><dd>Stereo, side/mid 0.61</dd></div><div><dt>Mono sum</dt><dd>-1.4 dB</dd></div><div><dt>Loudness</dt><dd>-19.5 LUFS, peak -3.7 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">Env T1 (attack)</th><td class="value">1.0 (about 15 ms)</td><td>About 15 ms: fast but not instant. A bow still needs a moment to bite.</td></tr><tr><th scope="row">Env T3 (decay)</th><td class="value">3.4 (about 173 ms to -20 dB)</td><td>About 170 ms, with no sustain: each note is a short stroke.</td></tr><tr><th scope="row">Env T4 (release)</th><td class="value">2.8 (about 98 ms to -20 dB)</td><td>A brief tail, so a note doesn&#x27;t stop dead if the key lifts early.</td></tr><tr><th scope="row">VCF Env</th><td class="value">1.4</td><td>A little brightness at the start of each stroke adds bite.</td></tr><tr><th scope="row">Reverb size</th><td class="value">4.0</td><td>Small: a larger room would blur the rhythm.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Saw Saw; DCO Range 8&#x27;; Sub level 0.0 / 3; Chorus On; VCF Cutoff 6.2 (about 1284 Hz at C4); VCF Key follow 3.0; Env L3 (sustain) 0.0; Chorus Rate 6.0; MW to VCF 1.5; Voices 8; Reverb mix -0.64.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Fast repeated chords and ostinatos, usually in 8ths or 16ths.</p></section>
+  <section><h3>How to use it</h3><p>Adding urgency under a chorus, with tension and film-trailer rhythm. Sequence it tightly to the grid.</p></section>
+  <section><h3>Mixing</h3><ul><li>A short room reverb makes it sound like a real space without blurring the rhythm.</li><li>High-pass at 200 Hz.</li><li>Try a tempo-synced delay for a more complex pattern.</li><li>Built-in reverb: part of this sound, so keep it. Built-in chorus: turn it off if you&#x27;re using your own.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="bass.html#grid-runner">Grid Runner</a><span class="why">Two tight rhythm parts lock to the same grid.</span></li><li><a href="brass.html#night-patrol">Night Patrol</a><span class="why">Low sustained brass over short strings is a classic tension device.</span></li><li><strong>Tight snare rolls</strong><span class="why">Adds to the urgent, marching feel.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>ENV T3 (decay) to 4.5</strong><span>Longer notes: less urgent, more melodic.</span></li><li><strong>VCF Env to 3.0</strong><span>A brighter bite on each hit.</span></li><li><strong>Reverb mix to -0.30</strong><span>Larger hall: more cinematic but less tight.</span></li></ul>
+</article>
+<article class="patch" id="octave-ensemble" data-tags="outrun dreamwave">
+<header>
+  <h2>Octave Ensemble</h2>
+  <div class="tags"><span class="tag">outrun</span><span class="tag">dreamwave</span></div>
+</header>
+<p class="profile">A bright, full string section with a built-in upper octave: one finger sounds like two sections.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/strings/octave-ensemble.mp3" aria-label="Preview of Octave Ensemble"></audio>
+  <a class="ghost" href="../../presets/Doodles/Strings/Octave%20Ensemble.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>C3 to C5</dd></div><div><dt>Brightness</dt><dd>1239 Hz centroid</dd></div><div><dt>Low energy</dt><dd>1% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 210 ms</dd></div><div><dt>Decay</dt><dd>Holds while the key is down</dd></div><div><dt>Filter closes</dt><dd>0.0 octaves</dd></div><div><dt>Held level</dt><dd>-5 dB from peak</dd></div><div><dt>Width</dt><dd>Stereo, side/mid 0.60</dd></div><div><dt>Mono sum</dt><dd>-1.3 dB</dd></div><div><dt>Loudness</dt><dd>-18.1 LUFS, peak -6.9 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">DCO Pulse</th><td class="value">Saw (TAL addition)</td><td>This position is a second saw, a TAL addition, so both layers share the same string-like series.</td></tr><tr><th scope="row">Pulse Tune</th><td class="value">+12 st</td><td>An octave up: one key sounds like the violas and violins playing together.</td></tr><tr><th scope="row">Pulse Fine</th><td class="value">+5 cents</td><td>A few cents sharp: slight beating adds ensemble feel.</td></tr><tr><th scope="row">Pulse Volume</th><td class="value">6.0</td><td>Below the main layer, so that the octave supports the note rather than replacing it.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Saw Saw; DCO Range 8&#x27;; Sub level 0.0 / 3; Chorus On; VCF Cutoff 7.2 (about 2840 Hz at C4); VCF Key follow 3.0; Env T1 (attack) 4.0 (about 145 ms); Env T3 (decay) 5.0 (about 678 ms to -20 dB); Env L3 (sustain) 10.0; Env T4 (release) 4.8 (about 608 ms to -20 dB); Chorus Rate 7.0; MW to VCF 1.5; Voices 8; Reverb mix -0.56; Reverb size 6.0.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Simple single-note lines and triads: the octave is already built in, so thick chords get dense.</p></section>
+  <section><h3>How to use it</h3><p>Bright melodic hooks and countermelodies, and big chorus string lines.</p></section>
+  <section><h3>Mixing</h3><ul><li>Bright, so it can be mixed lower than you&#x27;d expect.</li><li>If it clashes with a lead, dip 2-3 kHz a little.</li><li>High-pass at 200 Hz.</li><li>Built-in chorus and reverb: turn them off if you&#x27;re using your own.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="bass.html#chrome-octave">Chrome Octave</a><span class="why">Both have built-in octaves, so bass and strings share the same bright character.</span></li><li><a href="brass.html#power-brass">Power Brass</a><span class="why">A big chorus: strings carry the melody over brass.</span></li><li><strong>Disco drums</strong><span class="why">Bright octave strings are a staple of the style.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>Pulse Tune to +7</strong><span>A fifth above instead: an organ-like tone.</span></li><li><strong>Pulse Volume to 3.0</strong><span>A subtler octave, closer to a plain ensemble.</span></li><li><strong>Pulse Tune to -12</strong><span>An octave below instead: darker, with much more weight.</span></li></ul>
+</article>
+<article class="patch" id="high-rise" data-tags="dreamwave darksynth">
+<header>
+  <h2>High Rise</h2>
+  <div class="tags"><span class="tag">dreamwave</span><span class="tag">darksynth</span></div>
+</header>
+<p class="profile">Thin, high violins with delayed vibrato: delicate, and a little tense.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/strings/high-rise.mp3" aria-label="Preview of High Rise"></audio>
+  <a class="ghost" href="../../presets/Doodles/Strings/High%20Rise.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>C4 to C6</dd></div><div><dt>Brightness</dt><dd>2773 Hz centroid</dd></div><div><dt>Low energy</dt><dd>0% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 115 ms</dd></div><div><dt>Decay</dt><dd>Holds while the key is down</dd></div><div><dt>Filter closes</dt><dd>0.0 octaves</dd></div><div><dt>Held level</dt><dd>-5 dB from peak</dd></div><div><dt>Width</dt><dd>Stereo, side/mid 0.57</dd></div><div><dt>Mono sum</dt><dd>-1.2 dB</dd></div><div><dt>Loudness</dt><dd>-18.1 LUFS, peak -6.2 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">HPF</th><td class="value">HP 2</td><td>HP 2 removes the body of the sound. Only the top remains, which is what makes it thin.</td></tr><tr><th scope="row">VCF Cutoff</th><td class="value">8.0 (about 5146 Hz at C4)</td><td>About 5 kHz: open, because the high harmonics are the point.</td></tr><tr><th scope="row">DCO LFO</th><td class="value">0.6</td><td>A slight violin vibrato of a few cents each way.</td></tr><tr><th scope="row">LFO Rate</th><td class="value">5.94 Hz</td><td>About 6 Hz: a little faster than a cello&#x27;s, as a high instrument&#x27;s vibrato usually is.</td></tr><tr><th scope="row">LFO Delay</th><td class="value">0.40 s</td><td>About 400 ms of delay: only long notes bloom.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Saw Saw; DCO Range 8&#x27;; Sub level 0.0 / 3; Chorus On; Env T1 (attack) 3.8 (about 125 ms); Env T3 (decay) 5.0 (about 678 ms to -20 dB); Env L3 (sustain) 10.0; Env T4 (release) 5.0 (about 778 ms to -20 dB); Chorus Rate 7.2; MW to DCO LFO 0.5; Voices 8; Reverb mix -0.32; Reverb size 7.5.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Single notes or octaves, high up. Long-held notes bloom into vibrato.</p></section>
+  <section><h3>How to use it</h3><p>Tension, or a delicate top line above a chorus. Works very well as a slow-moving line above a static pad.</p></section>
+  <section><h3>Mixing</h3><ul><li>HP 2 has removed all low end, so it won&#x27;t cloud anything.</li><li>It can get piercing: dip around 4 kHz if needed.</li><li>Plenty of reverb suits it.</li><li>Built-in chorus and reverb: turn them off if you&#x27;re using your own.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="#neon-cello">Neon Cello</a><span class="why">High and low sections, with space for a melody in the middle.</span></li><li><a href="pad.html#black-horizon">Black Horizon</a><span class="why">Very high over very low: a tense, empty feeling.</span></li><li><strong>Reverse cymbal</strong><span class="why">Both build tension before a downbeat.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>HPF to HP 1</strong><span>More body and warmth.</span></li><li><strong>DCO LFO to 1.5</strong><span>A nervous, wide vibrato.</span></li><li><strong>LFO Delay to 0</strong><span>Vibrato from the start, for a more urgent sound.</span></li></ul>
+</article>
+<article class="patch" id="worn-tape-strings" data-tags="chillwave dreamwave">
+<header>
+  <h2>Worn Tape Strings</h2>
+  <div class="tags"><span class="tag">chillwave</span><span class="tag">dreamwave</span></div>
+</header>
+<p class="profile">Strings from a tape that&#x27;s been played too many times: dark, thin and wobbling.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/strings/worn-tape-strings.mp3" aria-label="Preview of Worn Tape Strings"></audio>
+  <a class="ghost" href="../../presets/Doodles/Strings/Worn%20Tape%20Strings.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>C3 to C5</dd></div><div><dt>Brightness</dt><dd>677 Hz centroid</dd></div><div><dt>Low energy</dt><dd>2% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 100 ms</dd></div><div><dt>Decay</dt><dd>Holds while the key is down</dd></div><div><dt>Filter closes</dt><dd>0.0 octaves</dd></div><div><dt>Held level</dt><dd>-6 dB from peak</dd></div><div><dt>Width</dt><dd>Stereo, side/mid 0.49</dd></div><div><dt>Mono sum</dt><dd>-0.9 dB</dd></div><div><dt>Loudness</dt><dd>-18.3 LUFS, peak -8.2 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">DCO LFO</th><td class="value">0.6</td><td>A slow, shallow pitch drift, the &#x27;wow&#x27; of a worn tape.</td></tr><tr><th scope="row">LFO Rate</th><td class="value">0.49 Hz</td><td>About 0.5 Hz: slower than any vibrato, so you hear it as instability.</td></tr><tr><th scope="row">Noise</th><td class="value">0.1 / 3</td><td>Barely there: about 40 dB under the tone and filtered with it.</td></tr><tr><th scope="row">VCF Cutoff</th><td class="value">6.0 (about 1092 Hz at C4)</td><td>About 1.1 kHz: dull, as old tape loses its top end.</td></tr><tr><th scope="row">HPF</th><td class="value">HP 1</td><td>HP 1 also thins the bottom: worn tape loses both ends of the spectrum.</td></tr><tr><th scope="row">DCO Pulse</th><td class="value">Pulse PW</td><td>A slow-moving pulse under the saw, so the tone itself seems to waver along with the pitch.</td></tr><tr><th scope="row">Chorus Rate</th><td class="value">3.2</td><td>A slow chorus adds to the unevenness.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Saw Saw; DCO Range 8&#x27;; Sub level 0.0 / 3; Chorus On; PWM 5.0; PWM Rate 3.0; VCF Key follow 3.0; Env T1 (attack) 4.2 (about 165 ms); Env T3 (decay) 5.0 (about 678 ms to -20 dB); Env L3 (sustain) 9.5; Env T4 (release) 4.8 (about 608 ms to -20 dB); MW to VCF 2.0; Voices 8; LFO wave Sine; Pulse Volume 6.0; Reverb mix -0.60; Reverb size 5.0; Reverb tone -3.00.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Slow, simple chords. The pitch wobble makes fast parts sound clumsy.</p></section>
+  <section><h3>How to use it</h3><p>Nostalgic interludes, intros, and chillwave beds. It works by sounding fragile.</p></section>
+  <section><h3>Mixing</h3><ul><li>A high cut around 6 kHz and a touch of saturation enhance the worn feel.</li><li>Keep it in tune with the track by using it as the reference for other parts.</li><li>High-pass at 200 Hz.</li><li>Built-in chorus: part of this sound, so keep it. Built-in reverb: turn it off if you&#x27;re using your own.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="lead.html#tape-flute">Tape Flute</a><span class="why">Same aged tape world.</span></li><li><a href="keys.html#worn-piano">Worn Piano</a><span class="why">A memory of an old record.</span></li><li><strong>Tape hiss bed</strong><span class="why">Reinforces the old recording character.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>DCO LFO to 1.2</strong><span>A much more obvious, seasick wobble.</span></li><li><strong>Noise to 1.0</strong><span>Adds an audible layer of filtered hiss.</span></li><li><strong>VCF Cutoff to 7.5</strong><span>A brighter tape that hasn&#x27;t worn out yet.</span></li></ul>
+</article>
+<article class="patch" id="rising-tide" data-tags="dreamwave outrun">
+<header>
+  <h2>Rising Tide</h2>
+  <div class="tags"><span class="tag">dreamwave</span><span class="tag">outrun</span></div>
+</header>
+<p class="profile">A long, dark swell that rises to a bright peak: a build you can play, then push further with the mod wheel.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/strings/rising-tide.mp3" aria-label="Preview of Rising Tide"></audio>
+  <a class="ghost" href="../../presets/Doodles/Strings/Rising%20Tide.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>C3 to C5</dd></div><div><dt>Brightness</dt><dd>1348 Hz centroid</dd></div><div><dt>Low energy</dt><dd>2% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 963 ms</dd></div><div><dt>Decay</dt><dd>Holds while the key is down</dd></div><div><dt>Filter closes</dt><dd>0.0 octaves</dd></div><div><dt>Held level</dt><dd>-3 dB from peak</dd></div><div><dt>Width</dt><dd>Stereo, side/mid 0.60</dd></div><div><dt>Mono sum</dt><dd>-1.3 dB</dd></div><div><dt>Loudness</dt><dd>-17.9 LUFS, peak -6.7 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">Env T1 (attack)</th><td class="value">7.0 (about 1.8 s)</td><td>About 2 seconds, roughly a bar at most tempos: a swell you can time to a section change.</td></tr><tr><th scope="row">VCF Env</th><td class="value">3.4</td><td>Opens the filter as it swells, so the sound rises in brightness as well as in level.</td></tr><tr><th scope="row">VCF Cutoff</th><td class="value">4.0 (about 214 Hz at C4)</td><td>Starts dark, about 220 Hz, for the longest possible journey.</td></tr><tr><th scope="row">MW to VCF</th><td class="value">5.0</td><td>Gives you extra control of the filter for pushing the peak by hand.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Saw Saw; DCO Range 8&#x27;; Sub level 0.3 / 3; Chorus On; VCF Key follow 3.0; Env T3 (decay) 5.0 (about 678 ms to -20 dB); Env L3 (sustain) 10.0; Env T4 (release) 5.0 (about 778 ms to -20 dB); Chorus Rate 5.5; Voices 8; Reverb mix -0.44; Reverb size 7.5.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Start about a bar before the downbeat. Ride the mod wheel through the swell for a bigger lift.</p></section>
+  <section><h3>How to use it</h3><p>Transitions into a chorus or drop, and big build-ups. Use on the last chord of a section.</p></section>
+  <section><h3>Mixing</h3><ul><li>Automate the level as well: louder with the swell adds to the impact.</li><li>Sidechain off during the build; it would interrupt the rise.</li><li>It can get quite bright at the peak, so check it next to the lead.</li><li>Built-in chorus and reverb: turn them off if you&#x27;re using your own.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="fx.html#riser">Riser</a><span class="why">Noise and strings rising together make a bigger transition.</span></li><li><a href="brass.html#stadium-stab">Stadium Stab</a><span class="why">The swell resolves into a brass hit on the downbeat.</span></li><li><strong>Snare roll</strong><span class="why">Together, the classic build.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>ENV T1 (attack) to 6.0</strong><span>A swell of about a second, for quicker builds.</span></li><li><strong>MW to VCF to 8.0</strong><span>The wheel takes it from dark to fully open.</span></li><li><strong>VCF Env to 6.0</strong><span>Much brighter at the peak, without the wheel.</span></li></ul>
+</article>
+<article class="patch" id="rain-city" data-tags="darksynth dreamwave">
+<header>
+  <h2>Rain City</h2>
+  <div class="tags"><span class="tag">darksynth</span><span class="tag">dreamwave</span></div>
+</header>
+<p class="profile">Dark, low, noir strings in a long reverb: distant, rainy and a little sad.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/strings/rain-city.mp3" aria-label="Preview of Rain City"></audio>
+  <a class="ghost" href="../../presets/Doodles/Strings/Rain%20City.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>C2 to C4</dd></div><div><dt>Brightness</dt><dd>240 Hz centroid</dd></div><div><dt>Low energy</dt><dd>39% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 140 ms</dd></div><div><dt>Decay</dt><dd>Holds while the key is down</dd></div><div><dt>Filter closes</dt><dd>0.1 octaves</dd></div><div><dt>Held level</dt><dd>-4 dB from peak</dd></div><div><dt>Width</dt><dd>Stereo, side/mid 0.70</dd></div><div><dt>Mono sum</dt><dd>-1.7 dB</dd></div><div><dt>Loudness</dt><dd>-18.8 LUFS, peak -8.6 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">VCF Cutoff</th><td class="value">4.8 (about 407 Hz at C4)</td><td>About 400 Hz: dark and restrained, with little to catch the ear.</td></tr><tr><th scope="row">Env T4 (release)</th><td class="value">6.5 (about 2.2 s to -20 dB)</td><td>About 2 seconds: chords fade into one another.</td></tr><tr><th scope="row">Delay tone</th><td class="value">-2.00</td><td>Dark echoes that seem to come from further away.</td></tr><tr><th scope="row">Reverb size</th><td class="value">8.8</td><td>A very large space, the sense of a whole city.</td></tr><tr><th scope="row">Reverb tone</th><td class="value">-3.00</td><td>A dark reverb tone, so distance doesn&#x27;t add brightness.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Saw Saw; DCO Range 8&#x27;; Sub level 0.3 / 3; Chorus On; VCF Res 1.0; VCF Key follow 3.0; Env T1 (attack) 4.5 (about 200 ms); Env T3 (decay) 5.0 (about 678 ms to -20 dB); Env L3 (sustain) 10.0; Chorus Rate 3.5; MW to VCF 2.0; Voices 8; Reverb mix -0.16; Delay mix -0.70; Delay Time 1/4; Delay feedback 3.5.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Slow minor chords, low on the keyboard, with lots of space between them.</p></section>
+  <section><h3>How to use it</h3><p>Noir and neo-noir moods, slow darkwave passages, and melancholy intros.</p></section>
+  <section><h3>Mixing</h3><ul><li>Sidechain lightly if there&#x27;s a bass playing.</li><li>The long reverb and delay are important to the feel; keep them.</li><li>Dip around 250 Hz if chords feel muddy.</li><li>Built-in delay and reverb: part of this sound, so keep them. Built-in chorus: turn it off if you&#x27;re using your own.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="#neon-cello">Neon Cello</a><span class="why">Both dark and low: a heavy, serious section.</span></li><li><a href="fx.html#night-rain">Night Rain</a><span class="why">Rain texture sets the scene for the name.</span></li><li><strong>Saxophone</strong><span class="why">The classic noir solo instrument.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>VCF Cutoff to 6.5</strong><span>Brighter, and less melancholy.</span></li><li><strong>Delay mix to Off</strong><span>Removes the echoes: cleaner, closer.</span></li><li><strong>Reverb size to 6.0</strong><span>A smaller space, less distant.</span></li></ul>
+</article>
+</main>
+</div>
+<script src="site.js"></script>
+</body>
+</html>

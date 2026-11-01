@@ -1,0 +1,552 @@
+# Bass patches. Parameters use the names and units stored in .talalpha files.
+# Anything not listed stays at the plugin's init value. Volume is set by the build
+# (loudness normalisation), so it is not listed here.
+
+category = "Bass"
+mix_defaults = [
+  "High-pass around 30 Hz; below that there's little but rumble.",
+  "Lift 800 Hz to 1.5 kHz a little for small speakers, and leave the lows alone.",
+  "Sidechain to the kick with a fast attack and about 100 ms release, for 3-6 dB of reduction.",
+  "Keep it centred. Narrow anything wide below about 120 Hz.",
+  "Keep reverb and delay off the low end: filter the send, or use none.",
+]
+
+[[patch]]
+name = "Nightdrive"
+tags = ["outrun", "darksynth"]
+browser = "Rolling filter bass | Vel: brightness | MW: open filter"
+profile = "Tight, rolling filter bass that drives a track without covering the kick."
+phrase = "rolling"
+range = "E2 to A3 (sounds an octave lower, 16')"
+expect = { centroid_hz = [120, 500], low_side_mid_max = 0.02, sweep_octaves = [0.5, 6] }
+performance = "Velocity sets the filter sweep: accent the on-beats for the classic pumping groove. Mod wheel opens the filter for a brighter chorus section."
+use = "Straight 8ths or 16ths under verse and chorus: the default engine of an outrun track. Program velocity accents rather than playing all notes equal."
+mix = [
+  "High-pass at 30 Hz; little useful energy sits below the 16' fundamental.",
+  "Sidechain to the kick with a fast release (around 80-120 ms) so the pump sits with the 8ths.",
+  "Keep it dead centre; it is already mono.",
+  "A small 800 Hz to 1.5 kHz lift brings it through on small speakers; don't touch the lows.",
+]
+pairings = [
+  { with = "Outrun Sixteenths", why = "Bass plays 8ths, arp plays 16ths an octave or two up, so the rhythm interlocks without masking." },
+  { with = "Endless Highway", why = "Slow PWM pad fills the mids above the short bass notes." },
+  { with = "Gated snare and LinnDrum-style kit", external = true, why = "The short decay leaves room for a big snare tail." },
+]
+tweaks = [
+  { control = "VCF Cutoff to 4.0", result = "Brighter, more aggressive; useful for a final chorus." },
+  { control = "VCF ENV mode to Normal", result = "Removes velocity response; every note is equally bright and mechanical." },
+  { control = "ENV T3 (decay) to 4.5", result = "Each note stays open longer, turning the rolling feel into a longer growl." },
+]
+[patch.params]
+DcoRange = 2
+DcoWaveSaw = 1
+DcoSubLevel = 0
+NumberOfVoices = 0
+VcfCutoff = 0.27
+VcfResonance = 0.2
+VcfEnvMode = 2
+VcfEnvMod = 0.52
+VcfKeyFollow = 0.3
+VcaEnvMode = 1
+EnvDecayTime = 0.36
+EnvSustainLevel = 0.15
+EnvReleaseTime = 0.08
+EnvKeyFollow = 0.2
+ModWheelVcfRange = 0.45
+ModWheelDcoLfo = 0
+[patch.why]
+DcoRange = "16' saw: strong fundamental around 55 Hz for typical bass notes, plus harmonics that survive small speakers."
+DcoWaveSaw = "The plain saw has the even harmonic series a filter sweep needs."
+VcfCutoff = "Starts dark, so the envelope does the talking and notes don't crowd the kick's click."
+VcfResonance = "Just enough to give the sweep an edge without thinning the low end."
+VcfEnvMode = "Normal-Dynamic: harder notes open the filter more. This is the source of the groove."
+VcfEnvMod = "Big enough that accents sweep well above the resting cutoff, while soft notes barely open."
+EnvDecayTime = "A fast close around 200 ms sets the rhythmic 'pluck' of each 8th."
+VcaEnvMode = "Gate holds the amp open while the shared envelope closes the filter, so the note keeps its weight after the pluck."
+NumberOfVoices = "Mono, so notes never smear the low end."
+
+[[patch]]
+name = "Neon Pulse"
+tags = ["outrun", "dreamwave"]
+browser = "Round square + sub | Vel: none | MW: open filter"
+profile = "Round, hollow square-and-sub bass that stays out of the way of busy arps."
+phrase = "rolling"
+range = "E2 to A3"
+expect = { centroid_hz = [80, 350], low_side_mid_max = 0.02 }
+performance = "Even and steady on purpose: no velocity response. Mod wheel opens the filter."
+use = "Under dense arrangements where a saw bass would fight the arp and pads. Good for simple root-note lines."
+mix = [
+  "Almost no compression needed; the level is very even.",
+  "The ALT boost already adds weight at 80 Hz, so don't stack another low boost on it.",
+  "Sidechain lightly: the sustained body makes a heavy duck obvious.",
+  "Add gentle saturation if it vanishes on phone speakers.",
+]
+pairings = [
+  { with = "Crystal Steps", why = "A high, busy arp has the whole spectrum above this simple bass to itself." },
+  { with = "Hero Theme", why = "A wide lead needs a steady, uncomplicated foundation." },
+  { with = "Clean chorus electric guitar", external = true, why = "Hollow square leaves the guitar's low mids free." },
+]
+tweaks = [
+  { control = "SUB OSC level to 2.5", result = "More weight at the sub-octave; check on a big system for boom." },
+  { control = "PULSE to 25%", result = "Nasal and more present; even harmonics return, so it's less hollow." },
+  { control = "VCF Cutoff to 5.0", result = "Reveals the square's odd harmonics for a gamey, 8-bit edge." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 0
+DcoWavePulse = 1
+DcoWaveSub = 0
+DcoSubLevel = 1.5
+NumberOfVoices = 0
+HpfCutoff = 0
+resonanceBoostFrequency = 1
+VcfCutoff = 0.36
+VcfResonance = 0.08
+VcfEnvMod = 0.22
+VcfKeyFollow = 0.25
+VcaEnvMode = 1
+EnvDecayTime = 0.42
+EnvSustainLevel = 0.45
+EnvReleaseTime = 0.1
+ModWheelVcfRange = 0.4
+ModWheelDcoLfo = 0
+[patch.why]
+DcoRange = "8' with the sub an octave down: the sub carries the fundamental and the square adds definition an octave up."
+DcoWavePulse = "A square has only odd harmonics, which gives the hollow character and leaves gaps for other parts."
+DcoWaveSub = "The panel labels this position OFF, but it is a square one octave down. Only level 0 silences the sub."
+DcoSubLevel = "About the same weight as the square, so the two fuse into one note."
+HpfCutoff = "Bass boost with ALT: a +6 dB peak at 80 Hz rather than the boomier shelf."
+VcfCutoff = "About 160 Hz: warm and rounded, with the third harmonic audible but soft."
+VcfEnvMod = "Only a small sweep, so the note has a soft front without a bright pluck."
+EnvSustainLevel = "Moderate sustain keeps a steady tone rather than a decaying one."
+
+[[patch]]
+name = "Chrome Octave"
+tags = ["outrun", "darksynth"]
+browser = "Saw plus pulse +1 oct | Vel: none | MW: open filter"
+profile = "Saw with a slightly detuned pulse an octave up: metallic presence for octave-jumping lines."
+phrase = "octaves"
+range = "E2 to E3"
+expect = { centroid_hz = [150, 700], low_side_mid_max = 0.02 }
+performance = "Designed for root-octave-root patterns: the detuned upper layer gives each high note extra shimmer."
+use = "The classic octave-jump disco and outrun bassline. Also solid on pumping 16ths in the highest-energy section."
+mix = [
+  "Plenty of mid content, so it can be mixed lower than you'd expect.",
+  "If it clashes with lead or guitar, dip 1-2 kHz by 2 dB rather than filtering the bass.",
+  "Slow beating from the detune is a feature; don't over-compress it.",
+  "Mono, so no low-end width problems.",
+]
+pairings = [
+  { with = "Hero Theme", why = "The octave motion gives a held lead rhythmic support." },
+  { with = "Sunrise Fanfare", why = "Brass stabs land between octave jumps in a classic disco arrangement." },
+  { with = "Four-on-the-floor kick", external = true, why = "Off-beat high notes fill the gaps between kicks." },
+]
+tweaks = [
+  { control = "Pulse TUNE to +7", result = "A fifth above instead of an octave: darker, power-chord feel, but careful with minor keys." },
+  { control = "Pulse fine tune to 0", result = "Stops the beating for a cleaner, more static tone." },
+  { control = "Pulse VOLUME to 3.0", result = "Pulls the metal back; closer to a plain saw bass." },
+]
+[patch.params]
+DcoRange = 2
+DcoWaveSaw = 1
+DcoWavePulse = 1
+specialPulseTune = 12
+specialPulseFineTune = 0.07
+specialPulseVolume = 0.6
+DcoSubLevel = 0
+NumberOfVoices = 0
+VcfCutoff = 0.32
+VcfResonance = 0.22
+VcfEnvMod = 0.42
+VcfKeyFollow = 0.35
+VcaEnvMode = 1
+EnvDecayTime = 0.34
+EnvSustainLevel = 0.2
+EnvReleaseTime = 0.08
+ModWheelVcfRange = 0.4
+ModWheelDcoLfo = 0
+[patch.why]
+DcoWavePulse = "The second sound source; it can be retuned separately from the saw, a TAL addition to the original hardware."
+specialPulseTune = "An octave up, so the pulse adds presence while the saw holds the fundamental."
+specialPulseFineTune = "About 7 cents sharp: slow beating that reads as metallic shine rather than out-of-tune."
+specialPulseVolume = "Below the saw so the bass stays the main identity."
+VcfCutoff = "About 120 Hz at rest, opening on each note."
+EnvDecayTime = "Short enough that fast octave jumps stay separate."
+VcaEnvMode = "Gate: the amp holds, so jumps stay connected even as the filter closes."
+
+[[patch]]
+name = "Midnight Sub"
+tags = ["dreamwave", "chillwave", "outrun"]
+browser = "Near-sine sub foundation | Vel: none | MW: none"
+profile = "A near-sine foundation with no bite: pure low end for layering or ballads."
+phrase = "sustained"
+range = "E2 to E3"
+expect = { centroid_hz = [40, 140], low_side_mid_max = 0.02, attack_s = [0.002, 0.08] }
+performance = "Play long notes. There's no filter sweep or velocity response, by design."
+use = "Under another bass as a dedicated sub layer, or alone on ballads. Doubling a bright bass with this lets you high-pass the bright part freely."
+mix = [
+  "Almost entirely below 150 Hz: check it on a system or headphones that reproduce that range.",
+  "Add saturation on a copy if it must translate to small speakers.",
+  "Sidechain to the kick, since both live in the same band.",
+  "When layering, high-pass the other bass around 120 Hz and keep this mono.",
+]
+pairings = [
+  { with = "Chrome Octave", why = "A classic layer: high-pass Chrome Octave around 120 Hz and let this carry the sub." },
+  { with = "Steel Engine", why = "Adds a solid mono centre under the wide unison." },
+  { with = "Velvet Bass", why = "A soft, deep pair for slow dreamwave passages." },
+  { with = "Felt piano and soft vocals", external = true, why = "A plain low end stays out of the way of a delicate ballad arrangement." },
+]
+tweaks = [
+  { control = "VCF Cutoff to 5.0", result = "Lets the square's third harmonic through, so it's audible on small speakers." },
+  { control = "ENV T1 (attack) to 0", result = "Harder start with a slight click; can help definition." },
+  { control = "PORTAMENTO to ON, time 2", result = "Smooth slides between overlapping notes, for 808-style movement." },
+]
+[patch.params]
+DcoRange = 2
+DcoWaveSaw = 0
+DcoWavePulse = 1
+DcoSubLevel = 0
+NumberOfVoices = 0
+VcfCutoff = 0.385
+VcfResonance = 0
+VcfKeyFollow = 1
+VcaEnvMode = 0
+EnvAttackTime = 0.15
+EnvDecayTime = 0
+EnvSustainLevel = 1
+EnvReleaseTime = 0.25
+ModWheelDcoLfo = 0
+[patch.why]
+DcoWavePulse = "A square has no 2nd harmonic and its 3rd is already 10 dB down, so it's the easiest wave to filter into a near-sine."
+VcfCutoff = "About 190 Hz at C4; with full key follow the filter stays about 1.5x above the note wherever you play."
+VcfKeyFollow = "Full tracking: a constant tone on every note. Without it the higher notes would sound dull and thin."
+EnvAttackTime = "About 15 ms of attack removes the click a sine-like wave would otherwise make."
+EnvReleaseTime = "A short tail prevents an abrupt stop that would read as a click."
+
+[[patch]]
+name = "Blacktop"
+tags = ["darksynth", "outrun"]
+browser = "Dark, throaty PWM bass | Vel: none | MW: open filter"
+profile = "Dark, throaty bass with a slowly shifting tone and heavy low-mid weight: menacing without being harsh."
+phrase = "rolling"
+range = "E2 to A3"
+expect = { centroid_hz = [100, 450], low_side_mid_max = 0.02 }
+performance = "Plays evenly at any velocity, so the tension comes from the notes and the slow tonal shift. Hold longer notes to hear the movement. Mod wheel opens the filter from dark to growling."
+use = "Brooding darksynth verses, slower outrun grooves and half-time sections. Works as a plain 8ths line or long, held root notes."
+mix = [
+  "The bass boost already adds about 6 dB up to 250 Hz, so don't add another low boost; cut around 200 Hz if it turns boomy.",
+  "Sidechain to the kick; there's a lot of sustained low-mid energy between hits.",
+  "Mono, so it's safe in the centre.",
+  "For more aggression, add saturation after the synth rather than opening the filter.",
+]
+pairings = [
+  { with = "Night Patrol", why = "Dark sustained brass over a brooding line is the core darksynth texture." },
+  { with = "Black Horizon", why = "Both are dark, so keep the pad high-passed above the bass and let the slow movements overlap." },
+  { with = "Deep analog toms", external = true, why = "Tom fills speak clearly over the steady low-mid weight." },
+]
+tweaks = [
+  { control = "HPF to Off", result = "Removes the low boost: tighter, and easier to fit under a big kick." },
+  { control = "PWM RATE to 6.0", result = "Faster movement that adds a nervous, agitated shimmer." },
+  { control = "VCF Cutoff to 5.0", result = "Brings the growl forward for a chorus or drop." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 3
+DcoPwmDepth = 0.55
+DcoPwmRate = 0.32
+DcoWaveSub = 0
+DcoSubLevel = 1.6
+HpfCutoff = 0
+NumberOfVoices = 0
+VcfCutoff = 0.33
+VcfResonance = 0.15
+VcfEnvMod = 0.28
+VcfKeyFollow = 0.3
+VcaEnvMode = 1
+EnvDecayTime = 0.42
+EnvSustainLevel = 0.4
+EnvReleaseTime = 0.1
+ModWheelVcfRange = 0.35
+ModWheelDcoLfo = 0
+[patch.why]
+DcoWaveSaw = "The Saw PW wave: unlike a plain saw, its harmonic balance shifts with the PWM, which gives the tone its throaty movement."
+DcoPwmDepth = "Enough movement to hear the tone change, without turning into an obvious wobble."
+DcoPwmRate = "Slow, so the shift unfolds across several notes: more unease than effect."
+DcoRange = "8' with the sub an octave down: the sub carries the fundamental and the moving saw sits above it."
+DcoSubLevel = "A solid square underneath that stays steady while the saw moves."
+HpfCutoff = "The shelving bass boost lifts everything up to about 250 Hz by about 6 dB. This is the source of the heavy low-mid weight."
+VcfCutoff = "Dark, keeping the upper harmonics tucked away."
+VcfEnvMod = "A small sweep: a slight bark at the start of each note, with no bright pluck."
+VcaEnvMode = "Gate: the amp holds while the filter settles, so notes keep their weight."
+
+[[patch]]
+name = "Turbo Glide"
+tags = ["outrun", "dreamwave"]
+browser = "Mono glide bass | Vel: none | MW: open filter | Bend 7 st"
+profile = "Mono saw with legato glide: slides between overlapping notes, retriggers cleanly on detached ones."
+phrase = "slides"
+range = "E2 to E3"
+expect = { centroid_hz = [100, 500], low_side_mid_max = 0.02 }
+performance = "Overlap notes to slide; lift between notes for no slide. Slides are therefore a playing choice in each MIDI part. Pitch bend reaches a fifth."
+use = "Expressive fills and turnarounds, or a melodic bass answering the lead. Slide into the downbeat of a new section."
+mix = [
+  "Listen to slides against the kick: pitch movement can make sidechain feel uneven.",
+  "Compress lightly; glides change perceived loudness.",
+  "Keep other parts out of the low mids during long slides.",
+  "Mono, so it's safe in the centre.",
+]
+pairings = [
+  { with = "Portamento Dream", why = "The bass and lead can slide together for a floating section." },
+  { with = "Analog Dusk", why = "A static pad makes the movement stand out." },
+  { with = "Fretless-style bass DI", external = true, why = "Double for a hybrid organic and synthetic line." },
+]
+tweaks = [
+  { control = "PORTAMENTO mode to ALL", result = "Every note glides, including detached ones: more drunken and dramatic." },
+  { control = "Portamento TIME to 4", result = "Slower slides, for half-time and intros." },
+  { control = "VCF RES to 4.5", result = "A vocal 'wah' on each slide." },
+]
+[patch.params]
+DcoRange = 2
+DcoWaveSaw = 1
+DcoSubLevel = 0
+NumberOfVoices = 0
+PortamentoMode = 1
+PortamentoTime = 0.26
+BenderRange = 7
+VcfCutoff = 0.3
+VcfResonance = 0.25
+VcfEnvMod = 0.32
+VcfKeyFollow = 0.6
+VcaEnvMode = 0
+EnvDecayTime = 0.5
+EnvSustainLevel = 0.45
+EnvReleaseTime = 0.15
+ModWheelVcfRange = 0.4
+ModWheelDcoLfo = 0
+[patch.why]
+PortamentoMode = "ON glides only between overlapping notes, so each part decides where slides happen. Measured: detached notes jump straight to pitch."
+PortamentoTime = "About 70 ms per octave: an audible slide that still lands within an 8th note at synthwave tempos."
+NumberOfVoices = "Mono is what makes legato gliding work properly."
+VcfKeyFollow = "Follows the pitch partially, so a note keeps its brightness as it slides."
+EnvDecayTime = "A slower close than the rolling patches: sustained notes stay expressive."
+BenderRange = "A fifth up or down for dramatic manual bends."
+
+[[patch]]
+name = "Steel Engine"
+tags = ["darksynth"]
+browser = "Unison saw wall | Vel: none | MW: open filter"
+profile = "Unison saw wall with a narrow stereo spread: thick and engine-like."
+phrase = "rolling"
+range = "E2 to E3"
+expect = { centroid_hz = [150, 800], low_side_mid_max = 0.35 }
+performance = "Best in low, simple patterns; fast movement blurs through the detune. Unison runs free, so each note starts differently: the first 300 ms measures about 2 dB louder or quieter from note to note. That is part of the life of the sound; compress if you need it even."
+use = "Heavy sections: breakdowns, drops and big final choruses. Too thick for a sparse verse."
+mix = [
+  "Essential: collapse below about 120 Hz to mono in the mix. This patch has some low-end width from unison.",
+  "Or high-pass at 120 Hz and put Midnight Sub underneath.",
+  "Sidechain hard; it's a constant wall of energy.",
+  "Check mono compatibility: unison can thin out when summed.",
+]
+pairings = [
+  { with = "Midnight Sub", why = "Solid mono sub under the wide wall." },
+  { with = "Power Brass", why = "Together they're the wall of a darksynth drop." },
+  { with = "Big gated snare", external = true, why = "Needs a large snare to punch through this much sustain." },
+]
+tweaks = [
+  { control = "UNISON spread to 0", result = "All voices centred: fully mono-safe, and more of a focused buzz." },
+  { control = "UNISON detune to 0.30", result = "Wider beating, more dissonant and aggressive." },
+  { control = "VCF Cutoff to 6.0", result = "Opens right up to a raw, abrasive roar." },
+]
+[patch.params]
+DcoRange = 2
+DcoWaveSaw = 1
+DcoSubLevel = 0
+NumberOfVoices = 0
+UnisonoVoices = 0.25
+UnisonoDetune = 0.12
+UnisonoSpread = 0.25
+VcfCutoff = 0.42
+VcfResonance = 0.1
+VcfEnvMod = 0.3
+VcfKeyFollow = 0.3
+VcaEnvMode = 1
+EnvDecayTime = 0.45
+EnvSustainLevel = 0.55
+EnvReleaseTime = 0.1
+eqBellFreq = 0.42
+eqBellQ = 0.4
+eqBellGain = 2.5
+ModWheelVcfRange = 0.3
+ModWheelDcoLfo = 0
+[patch.why]
+UnisonoVoices = "4 stacked voices give thickness a single DCO can't."
+UnisonoDetune = "Small: engine-like beating rather than a chorus of separate pitches. Too much loses the sense of a bass note."
+UnisonoSpread = "Deliberately narrow; full spread measured almost as much side as mid, even below 150 Hz."
+VcfCutoff = "Open enough to hear the beating in the harmonics."
+EnvSustainLevel = "High sustain keeps the engine running between attacks."
+eqBellGain = "A mid lift helps it read as aggression rather than mud."
+
+[[patch]]
+name = "Rubber Coupe"
+tags = ["outrun", "chillwave"]
+browser = "Funky resonant bounce | Vel: brightness + level | MW: open filter"
+profile = "Bouncy, elastic bass with a highly touch-sensitive, resonant filter."
+phrase = "funk"
+range = "E2 to A3"
+expect = { centroid_hz = [150, 1100], low_side_mid_max = 0.02, sweep_octaves = [0.5, 6] }
+performance = "Very responsive to velocity: both filter and level follow it. Ghost notes around 40-60, accents above 110."
+use = "Syncopated funk lines, retro-pop and chillwave. Vary the velocity programming or it will sound flat."
+mix = [
+  "Dynamics are part of the sound: use slow-attack compression only.",
+  "Boost around 900 Hz if you want more of the 'rubber' in the mix.",
+  "Less sidechain than a rolling bass; the groove is already in the notes.",
+  "Pairs well with tight, dry drums.",
+]
+pairings = [
+  { with = "Funk Clav", why = "The classic syncopated partners." },
+  { with = "Major 7 Haze", why = "Warm chord stabs over a bouncy line suit retro-pop." },
+  { with = "Slap bass or muted guitar", external = true, why = "Same rhythmic family: double the accents." },
+]
+tweaks = [
+  { control = "VCF RES to 7.0", result = "A much more vocal, squelchy response to velocity." },
+  { control = "VCA mode to Gate", result = "Removes the velocity-to-level response, leaving brightness only." },
+  { control = "ENV T3 (decay) to 4.0", result = "Longer, more relaxed bounce for slower tempos." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 0
+DcoWavePulse = 2
+DcoWaveSub = 1
+DcoSubLevel = 1.2
+NumberOfVoices = 0
+VcfCutoff = 0.25
+VcfResonance = 0.48
+VcfEnvMode = 2
+VcfEnvMod = 0.62
+VcfKeyFollow = 0.4
+VcaEnvMode = 3
+EnvDecayTime = 0.3
+EnvSustainLevel = 0.1
+EnvReleaseTime = 0.08
+EnvKeyFollow = 0.3
+ModWheelVcfRange = 0.35
+ModWheelDcoLfo = 0
+[patch.why]
+DcoWavePulse = "A 25% pulse is nasal and full of even harmonics, which the resonant filter turns into a 'rubber' tone."
+DcoWaveSub = "A 25% sub-pulse adds thump and a touch of the octave above."
+VcfResonance = "Strong enough to give a vocal, squelchy peak as the filter sweeps."
+VcfEnvMode = "Normal-Dynamic: velocity sets how far the filter opens. Measured from about 136 Hz at velocity 30 to about 1.6 kHz at velocity 100 on a similar setting."
+VcaEnvMode = "Gate-Dynamic: velocity also sets level, so ghost notes really are quiet."
+EnvDecayTime = "About 120 ms: elastic snap on each note."
+EnvKeyFollow = "Higher notes get a shorter envelope, keeping fast upper-range fills tight."
+
+[[patch]]
+name = "Grid Runner"
+tags = ["outrun", "darksynth"]
+browser = "Resonant sequenced bass | Vel: none | MW: open filter"
+profile = "Resonant, slightly acid-tinged sequencer bass with slow filter drift."
+phrase = "sixteenths"
+range = "E2 to E3"
+expect = { centroid_hz = [120, 700], low_side_mid_max = 0.02, sweep_octaves = [0.5, 6] }
+performance = "Made for fast repeating 16ths. Filter drift means repeats aren't identical over a few bars."
+use = "Sequenced 16th-note patterns with one or two note changes: Terminator-style tension and chase scenes. Automate cutoff for build-ups."
+mix = [
+  "The sub oscillator supports the low end that resonance takes away; keep both.",
+  "Use a tempo-synced delay on a send to thicken the 16ths.",
+  "Automate VCF Cutoff across a section for an easy build.",
+  "Resonant peaks can jump out: use a gentle dynamic EQ if a note pokes through.",
+]
+pairings = [
+  { with = "Sequencer Drive", why = "Two sequenced lines an octave or two apart create classic interlock." },
+  { with = "Black Horizon", why = "A dark, static pad sets off the moving filter." },
+  { with = "Tight LinnDrum-style toms", external = true, why = "Same rhythmic grid, different register." },
+]
+tweaks = [
+  { control = "VCF RES to 8.0", result = "Fully acid and squelchy; thins the low end further." },
+  { control = "VCF LFO to 0", result = "Removes drift for fully repeatable, mechanical sequences." },
+  { control = "VCF Cutoff to 1.5", result = "Darker, tenser and more subdued, for verses." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 1
+DcoWaveSub = 0
+DcoSubLevel = 1.3
+NumberOfVoices = 0
+VcfCutoff = 0.22
+VcfResonance = 0.62
+VcfEnvMod = 0.48
+VcfKeyFollow = 0.4
+VcfLfoMod = 0.08
+LfoWaveform = 0
+LfoRate = 0.33
+VcaEnvMode = 1
+EnvDecayTime = 0.28
+EnvSustainLevel = 0
+EnvReleaseTime = 0.05
+ModWheelVcfRange = 0.4
+ModWheelDcoLfo = 0
+[patch.why]
+VcfResonance = "High resonance is the acid character, but it also hollows out the fundamental."
+DcoSubLevel = "The fix for that: an octave below the resonant sweep, it restores the weight resonance takes away."
+DcoRange = "8' plus sub, so the bright sweep sits above and the weight stays below."
+VcfLfoMod = "A small, slow drift: repeated notes evolve instead of repeating exactly."
+LfoRate = "Around 0.2 Hz: slow enough to be felt over bars rather than heard as wobble."
+EnvDecayTime = "Very short, so 16ths stay separate even at high tempos."
+EnvSustainLevel = "Zero: the filter closes fully after each pluck, leaving rhythmic space."
+
+[[patch]]
+name = "Velvet Bass"
+tags = ["dreamwave", "chillwave"]
+browser = "Soft chorused ballad bass | Vel: none | MW: open filter"
+profile = "Soft, warm PWM bass with chorus: gentle movement for slow dreamy tracks."
+phrase = "sustained"
+range = "E2 to A3"
+expect = { centroid_hz = [80, 350], attack_s = [0.002, 0.1] }
+performance = "Long, connected notes. The motion comes from PWM and chorus, not from your playing."
+use = "Slow dreamwave and chillwave passages, and sparse intros and outros."
+mix = [
+  "The chorus adds some low-end width: narrow below 120 Hz in the mix, or turn the chorus off if it sounds unsteady.",
+  "Slow compression only; preserve the soft swell.",
+  "Light sidechain, or none, in a sparse arrangement.",
+  "Plate reverb on a very quiet send adds to the soft feel.",
+]
+pairings = [
+  { with = "Ghost Mall", why = "Same soft, slightly hazy world." },
+  { with = "Warm Tines", why = "Soft electric-piano chords sit gently over it." },
+  { with = "Dry, intimate vocal", external = true, why = "Stays out of the vocal's way." },
+]
+tweaks = [
+  { control = "CHORUS off", result = "Focused, mono-safe and more solid; loses the velvet shimmer." },
+  { control = "PWM RATE to 5.0", result = "Faster, more obvious movement: more 'analog string' than soft bass." },
+  { control = "VCF Cutoff to 5.0", result = "Reveals the movement of the pulse width; brighter and less polite." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 0
+DcoWavePulse = 3
+DcoPwmDepth = 0.38
+DcoPwmRate = 0.28
+DcoWaveSub = 0
+DcoSubLevel = 1.4
+NumberOfVoices = 0
+VcfCutoff = 0.37
+VcfResonance = 0.05
+VcfEnvMod = 0.15
+VcfKeyFollow = 0.3
+VcaEnvMode = 0
+EnvAttackTime = 0.12
+EnvDecayTime = 0.55
+EnvSustainLevel = 0.75
+EnvReleaseTime = 0.34
+DcoChorusSwitch = 1
+ChorusRate = 0.3
+ModWheelVcfRange = 0.35
+ModWheelDcoLfo = 0
+[patch.why]
+DcoWavePulse = "A PWM pulse: its harmonic balance shifts slowly over time, giving movement without any added effect."
+DcoPwmRate = "Slow, so the motion is felt rather than heard."
+DcoChorusSwitch = "The chorus provides much of the 'velvet'; it's also the cause of the low-end width."
+VcfCutoff = "Low enough that the top end stays soft, even with PWM moving."
+EnvAttackTime = "A tiny attack softens the front of each note."
+EnvReleaseTime = "A slight tail so notes overlap gently at slow tempos."
+VcaEnvMode = "Normal, unlike the rolling patches: the amp shares the soft envelope, so each note has a gentle swell and decay."

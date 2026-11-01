@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Building Outrun Sixteenths from init: Doodles TAL-Pha Presets</title>
+<link rel="stylesheet" href="style.css">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="index.html"><span>Doodles</span> TAL-Pha Presets</a>
+  <button type="button" id="theme" class="ghost" aria-label="Switch between light and dark theme">Theme</button>
+</header>
+<div class="layout">
+<nav class="sidebar" aria-label="Documentation">
+<a href="index.html">Overview</a>
+<p class="nav-label">Patches</p>
+<a href="bass.html">Bass</a>
+<a href="lead.html">Lead</a>
+<a href="pad.html">Pad</a>
+<a href="strings.html">Strings</a>
+<a href="brass.html">Brass</a>
+<a href="arp.html" aria-current=page>Arp</a>
+<div class="subnav"><a class="recipe-link" href="arp-recipe.html" aria-current=page>Build from init</a><a href="arp.html#outrun-sixteenths">Outrun Sixteenths</a><a href="arp.html#cascade">Cascade</a><a href="arp.html#digital-rain">Digital Rain</a><a href="arp.html#sequencer-drive">Sequencer Drive</a><a href="arp.html#ping-pong-neon">Ping Pong Neon</a><a href="arp.html#crystal-steps">Crystal Steps</a><a href="arp.html#low-machine">Low Machine</a><a href="arp.html#random-terminal">Random Terminal</a><a href="arp.html#dotted-eighth">Dotted Eighth</a><a href="arp.html#octave-climb">Octave Climb</a></div>
+<a href="pluck.html">Pluck</a>
+<a href="keys.html">Keys and Bells</a>
+<a href="chord.html">Chord and Stab</a>
+<a href="fx.html">FX and Atmosphere</a>
+<p class="nav-label">Guides</p>
+<a href="field-guide.html">Field guide</a>
+<a href="control-reference.html">Control reference</a>
+<a href="gallery.html">Sound gallery</a>
+<a href="sound-map.html">Sound map</a>
+<a href="kits.html">Starter kits</a>
+<a href="reaper-cheat-sheet.html">Reaper cheat sheet</a>
+</nav>
+<main>
+<div class="recipe">
+<h1>Building Outrun Sixteenths from init</h1>
+<p class="lede">A good arp is less about the pattern than about making each note short and distinct. This recipe builds the engine of an outrun track, and shows why envelope shape matters more than pitch.</p>
+<section class="install">
+<h2>Setup</h2>
+<p>Choose <strong>Reset Parameters</strong> and hold a four-note chord for a bar at a time. Run your project at any tempo; the arp will follow it.</p>
+<p>Each step's preview adds to the one before. Measurements compare it with the previous step.</p>
+</section>
+<ol class="steps">
+<li class="step">
+<h2>Start from init</h2>
+
+<p>A sustained saw through an open filter, with no arp yet. It&#x27;s a chord.</p>
+
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/arp/step-01.mp3" aria-label="Step 1: Start from init"></audio>
+  <p><strong>Listen for:</strong> A static, buzzy chord.</p>
+  
+</div>
+</li>
+<li class="step">
+<h2>Turn on the arp</h2>
+<ul class="changes"><li><span class="control">Arp mode</span><span class="from">Off</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">Up</span></li><li><span class="control">Arp sync</span><span class="from">No sync</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">Host sync</span></li><li><span class="control">Arp Rate</span><span class="from">1/16</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">1/16</span></li><li><span class="control">Arp range</span><span class="from">2 oct</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">2 oct</span></li><li><span class="control">Voices</span><span class="from">6</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">6</span></li></ul>
+<p>Up, 16th notes, two octaves, and host sync so it follows your project. But with init&#x27;s full-sustain envelope, every note runs straight into the next one. Listen for how little rhythm that gives you.</p>
+<p class="alt"><strong>The other choice:</strong> Down feels calmer, as in Cascade. Random feels nervous, as in Random Terminal. Up is the one that feels like forward motion.</p>
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/arp/step-02.mp3" aria-label="Step 2: Turn on the arp"></audio>
+  <p><strong>Listen for:</strong> Notes change, but it&#x27;s a stream rather than a rhythm: there are no gaps.</p>
+  
+</div>
+</li>
+<li class="step">
+<h2>Make each note short</h2>
+<ul class="changes"><li><span class="control">Env T3 (decay)</span><span class="from">0.0 (about 10 ms to -20 dB)</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">2.8 (about 107 ms to -20 dB)</span></li><li><span class="control">Env L3 (sustain)</span><span class="from">10.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">0.0</span></li></ul>
+<p>This is the key decision. With a decay of about 100 ms and no sustain, every note dies away before the next, which is where the pulse comes from. The VCA is left in Normal mode on purpose, so that the level falls as well.</p>
+<p class="alt"><strong>The other choice:</strong> Sequencer Drive uses Gate mode instead, so the amp stays open and only the filter pulses. That sounds more mechanical.</p>
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/arp/step-03.mp3" aria-label="Step 3: Make each note short"></audio>
+  <p><strong>Listen for:</strong> Now it&#x27;s an arp: separate notes with a clear pulse.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Held level: -1 dB from peak → <strong>-7 dB from peak</strong></li><li>Note rate: 4.2 per second → <strong>6.3 per second</strong></li></ul>
+</div>
+</li>
+<li class="step">
+<h2>Darken the filter</h2>
+<ul class="changes"><li><span class="control">VCF Cutoff</span><span class="from">10.0 (about 21726 Hz at C4)</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">4.2 (about 252 Hz at C4)</span></li><li><span class="control">VCF Key follow</span><span class="from">0.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">4.0</span></li></ul>
+<p>Closing the filter makes room for the envelope to open it on each note. Key follow keeps the high notes of the two-octave run from going dull.</p>
+
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/arp/step-04.mp3" aria-label="Step 4: Darken the filter"></audio>
+  <p><strong>Listen for:</strong> Duller and quieter: too dark, for now.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Brightness: 4,344 Hz → <strong>383 Hz</strong></li></ul>
+</div>
+</li>
+<li class="step">
+<h2>Open the filter on each note</h2>
+<ul class="changes"><li><span class="control">VCF Env</span><span class="from">0.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">3.6</span></li><li><span class="control">VCF Res</span><span class="from">0.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">1.5</span></li></ul>
+<p>The same envelope that&#x27;s shaping the level now sweeps the filter too, so every note gets a tiny &#x27;pew&#x27;. A little resonance gives that sweep some character.</p>
+
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/arp/step-05.mp3" aria-label="Step 5: Open the filter on each note"></audio>
+  <p><strong>Listen for:</strong> A snappy, plucked quality on every note. This is the sound.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Brightness: 383 Hz → <strong>1,682 Hz</strong></li></ul>
+</div>
+</li>
+<li class="step">
+<h2>Soften the note endings</h2>
+<ul class="changes"><li><span class="control">Env T4 (release)</span><span class="from">0.0 (about 10 ms to -20 dB)</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">2.0 (about 50 ms to -20 dB)</span></li></ul>
+<p>A short release means notes overlap very slightly, so the pattern doesn&#x27;t sound clipped. Keep it short, or you&#x27;ll lose the gaps you just made.</p>
+
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/arp/step-06.mp3" aria-label="Step 6: Soften the note endings"></audio>
+  <p><strong>Listen for:</strong> A little smoother, still clearly separated.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Tail after note-off: 5 ms → <strong>75 ms</strong></li></ul>
+</div>
+</li>
+<li class="step">
+<h2>Add an echo</h2>
+<ul class="changes"><li><span class="control">Delay mix</span><span class="from">OFF</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">-0.76</span></li><li><span class="control">Delay Time</span><span class="from">1/4</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">1/8</span></li><li><span class="control">Delay feedback</span><span class="from">2.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">2.0</span></li></ul>
+<p>A quiet 1/8 echo thickens the pattern. It&#x27;s synced to the tempo, so it stays on the same grid as the arp. Keep it low: too much will blur the 16ths. At its default spread the delay stays centred, so move Delay spread away from 0.00 if you want it wider.</p>
+
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/arp/step-07.mp3" aria-label="Step 7: Add an echo"></audio>
+  <p><strong>Listen for:</strong> Slightly thicker, with no change in width.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Stereo width (side/mid): 0.00 → <strong>0.00</strong></li></ul>
+</div>
+</li>
+<li class="step">
+<h2>Set up the wheel</h2>
+<ul class="changes"><li><span class="control">MW to VCF</span><span class="from">0.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">3.0</span></li><li><span class="control">MW to DCO LFO</span><span class="from">1.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">0.0</span></li></ul>
+<p>An arp is a great place for a build, and the wheel opens the filter for one. Turning off the default vibrato is important here, as it would make a fast pattern sound out of tune.</p>
+
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/arp/step-08.mp3" aria-label="Step 8: Set up the wheel"></audio>
+  <p><strong>Listen for:</strong> In this preview the wheel rises across the second half, for a simple build.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Wheel up vs wheel down brightness: 1.0x → <strong>2.9x</strong></li></ul>
+</div>
+</li>
+<li class="step">
+<h2>Set the level</h2>
+<ul class="changes"><li><span class="control">Volume</span><span class="from">5.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">8.5</span></li></ul>
+<p>Short notes measure quieter than sustained ones, so this needs more volume to reach the same loudness as other presets. That&#x27;s the finished Outrun Sixteenths.</p>
+
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/arp/step-09.mp3" aria-label="Step 9: Set the level"></audio>
+  <p><strong>Listen for:</strong> The finished patch.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Loudness: -27.1 LUFS → <strong>-18.0 LUFS</strong></li></ul>
+</div>
+</li>
+</ol>
+<section class="install">
+<h2>What to take away</h2>
+<ul><li>An arp needs gaps. Without a short envelope, the notes run together into a wash.</li><li>Use host sync, so that the arp, echoes and project all stay locked at any tempo.</li><li>A short sustain-free envelope drives both level and filter, which makes one control do the job of two.</li></ul>
+</section>
+<h2 class="next">Where to go next</h2>
+<p>Starting points for moving from <a href="arp.html#outrun-sixteenths">Outrun Sixteenths</a> to another patch in the bank:</p>
+<ul class="pairs"><li><a href="arp.html#digital-rain">Digital Rain</a><span class="why">Try adding VCF LFO 3.2 with an S&amp;H wave, synced to 1/16, for a random tone on every note.</span></li><li><a href="arp.html#dotted-eighth">Dotted Eighth</a><span class="why">Slow the arp to 1/8, change the delay to 1/8. and raise its mix to -0.16.</span></li><li><a href="arp.html#cascade">Cascade</a><span class="why">Switch the mode to Down, the range to 3 octaves and the wave to Pulse PW, then add the chorus.</span></li></ul>
+</div>
+</main>
+</div>
+<script src="site.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+category = "Brass"
+patch = "Sunrise Fanfare"
+phrase = "stabs"
+title = "Building Sunrise Fanfare from init"
+intro = "Synth brass is a saw with one very specific behaviour: the brightness rises just after the note starts. This recipe builds that bloom, and adds the velocity response that makes real brass sound alive."
+setup = "Choose **Reset Parameters**, then loop short, punchy four-note chords."
+takeaways = [
+  "Brass isn't about the oscillator. It's the delayed filter bloom that turns a saw into a horn.",
+  "Envelope attack time affects both level and filter, so it sets how the brass speaks.",
+  "Velocity to filter adds the human response: real brass gets brighter when you play harder.",
+]
+
+[[step]]
+title = "Set the level first"
+set_volume_from_preset = true
+why = "Stacked chords add up, so set a sensible level first. The saw stays: its full harmonic series is a good match for brass."
+listen = "An open, buzzy chord: not yet brass."
+
+[[step]]
+title = "Close the filter"
+set = { VcfCutoff = 0.5, VcfKeyFollow = 0.4, NumberOfVoices = 7 }
+expect = { centroid_hz = "down" }
+why = "Start from a closed-down tone so that the envelope has something to open. Key follow means higher notes in a chord stay bright, as higher brass does. More voices let stabs ring into one another."
+listen = "Dark and muffled, as a starting point."
+
+[[step]]
+title = "Open the filter with a delay"
+set = { VcfEnvMod = 0.32, EnvAttackTime = 0.25 }
+expect = { attack_s = "up" }
+why = "This is the key decision. Filter and level now rise together over about 55 ms. That slight delay before the tone opens is what your ear hears as 'a section taking a breath and playing'. Sustain is still full, though, so the filter stays open."
+alternative = "With T1 at 3.8 you get Silk Horn's softer, slower speech. At 1.2 you get Stadium Stab's harder hit."
+listen = "Each hit now blooms into brightness, and it's starting to sound like brass."
+
+[[step]]
+title = "Let it settle after the bloom"
+set = { EnvDecayTime = 0.45, EnvSustainLevel = 0.65 }
+expect = { sustain_db = "down" }
+why = "Brass is brightest as it speaks, then relaxes. With sustain below full, the filter and level both come back down after the bloom. On short stabs this gives extra punch."
+listen = "Longer hits have a clear shape: they open and relax."
+
+[[step]]
+title = "Let velocity set the brightness"
+set = { VcfEnvMode = 2 }
+expect = { vel_bright_ratio = "up" }
+why = "Real brass gets brighter when it's played harder. Normal-Dynamic does the same with the filter, so a programmed part stops sounding flat."
+listen = "Accented hits get noticeably brighter."
+
+[[step]]
+title = "Make one synth a section"
+set = { DcoChorusSwitch = 1, ChorusRate = 0.5, VcfResonance = 0.05 }
+expect = { side_mid = "up" }
+why = "Chorus makes it sound like several players, slightly out of time with one another. A very small amount of resonance helps the bloom stand out."
+alternative = "Power Brass uses unison instead, which is much thicker but sounds more like a wall than a section."
+listen = "Wider, like a whole section."
+
+[[step]]
+title = "Finish it"
+set = { EnvReleaseTime = 0.3, ModWheelVcfRange = 0.2, ModWheelDcoLfo = 0, reverbDryWet = 0.18, reverbSize = 0.5 }
+expect = { tail_ms = "up", mw_bright_ratio = "up" }
+wheel = true
+why = "A short release and a small plate put the section in a room, without blurring the stabs. The wheel can add some brightness for the last chorus. That's the finished Sunrise Fanfare."
+listen = "In this preview the wheel rises across the second half, and it brightens further."
+
+[[branch]]
+to = "Stadium Stab"
+how = "Shorten T1 to 1.2, drop sustain to 1.2, and add unison and more reverb."
+[[branch]]
+to = "Silk Horn"
+how = "Slow T1 to 3.8, close the filter to 4.2, and reduce VCF Env to 2.0."
+[[branch]]
+to = "Night Patrol"
+how = "Play an octave down, close the filter to 3.4 and slow T1 to 4.2."

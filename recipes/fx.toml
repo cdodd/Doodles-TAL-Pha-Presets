@@ -1,0 +1,78 @@
+category = "FX and Atmosphere"
+patch = "Riser"
+phrase = "long"
+hold = 10.0
+title = "Building Riser from init"
+intro = "Most FX patches use a single control pushed well past where you'd normally set it. This recipe builds a riser, and shows how one long envelope can move both level and filter, so you only need to hold down one key."
+setup = "Choose **Reset Parameters** and hold one long note. It doesn't matter much which: noise has no pitch."
+takeaways = [
+  "One long envelope moves level and filter at the same time, which is what a riser needs.",
+  "Noise suits FX because it has no pitch to clash with your key.",
+  "FX come from pushing a control to extremes. Try the same approach with pitch envelope or LFO depth.",
+]
+
+[[step]]
+title = "Start from init"
+why = "A saw, wide open, with a sharp start. Nothing changes over time."
+listen = "A constant buzz."
+
+[[step]]
+title = "Add noise"
+set = { Noise = 2 }
+expect = { centroid_hz = "up" }
+why = "Noise has no pitch, so a riser won't clash with your key. The saw is kept quietly underneath, so it's not just hiss."
+alternative = "Remove the saw entirely, as in Ocean Static, for pure air. Remove the noise for a purely tonal rise."
+listen = "Airy and bright, still constant."
+
+[[step]]
+title = "Close the filter almost entirely"
+set = { VcfCutoff = 0.22 }
+expect = { centroid_hz = "down" }
+why = "At about 60 Hz, only a dull rumble gets through. That's a far lower setting than you'd normally use, but it gives the sound a very long way to travel."
+listen = "A low, muffled rumble."
+
+[[step]]
+title = "Make the filter's journey long"
+set = { VcfEnvMod = 0.68, EnvAttackTime = 0.78, EnvDecayTime = 0.5, EnvSustainLevel = 1 }
+expect = { attack_s = "up" }
+why = "This is the key decision. An attack of about four seconds is well past normal, and a very large envelope amount takes the filter nearly all the way open. Since one envelope moves both level and filter, the sound gets both louder and brighter from a single held note."
+alternative = "Try lowering T1 to 6.5 for a rise of a little over a second. Rising Tide uses the same idea with strings instead of noise."
+listen = "It rises by itself, from nothing to a bright rush."
+
+[[step]]
+title = "Make the sweep audible"
+set = { VcfResonance = 0.35 }
+show = ["centroid_hz"]
+why = "A resonant peak lets you hear the filter moving through the noise. Without it, a noise sweep can sound like a simple fade. Don't overdo it, or it starts to whistle."
+listen = "A slight whistle rising through the noise."
+
+[[step]]
+title = "Let it ring out"
+set = { EnvReleaseTime = 0.35, NumberOfVoices = 3, reverbDryWet = 0.3, reverbSize = 0.8 }
+expect = { tail_ms = "up" }
+why = "A short release and a big reverb mean that when you let go on the downbeat, there's a tail that blends into the next section. A few voices are enough for occasional overlap."
+listen = "A little more space and size around the rise."
+
+[[step]]
+title = "Set up the wheel"
+set = { ModWheelVcfRange = 0.2, ModWheelDcoLfo = 0 }
+wheel = true
+why = "The wheel adds some brightness for a final push. The default vibrato is turned off, as it would only make the saw layer wobble."
+listen = "In this preview the wheel rises across the second half, as an extra push at the end."
+
+[[step]]
+title = "Set the level"
+set_volume_from_preset = true
+why = "The level is measured across the whole rise. That's the finished Riser."
+show = ["lufs"]
+listen = "The finished patch."
+
+[[branch]]
+to = "Downlifter"
+how = "Reverse the idea: use a long decay with no sustain, and add DCO Env 7.8 for a falling pitch."
+[[branch]]
+to = "Ocean Static"
+how = "Turn off the saw, set noise to full, and move the filter with a slow LFO rather than the envelope."
+[[branch]]
+to = "Night Rain"
+how = "Use noise only, with HP 2, and a fast S&H LFO on the filter."

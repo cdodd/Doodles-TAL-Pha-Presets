@@ -1,0 +1,106 @@
+# Starter kits: sets of patches that work together. Names are checked against the bank.
+
+[[kit]]
+name = "Outrun night drive"
+genre = "Outrun"
+tempo = "118 BPM"
+key = "A minor: Am, F, C, G"
+idea = "The standard recipe, and the best first track: driving and hopeful, with every part in its own register."
+parts = [
+  { patch = "Nightdrive", role = "Bass: straight 8ths, accents on the beat." },
+  { patch = "Outrun Sixteenths", role = "Arp: held chords, an octave or two above the bass." },
+  { patch = "Endless Highway", role = "Pad: one chord per bar, sidechained." },
+  { patch = "Sunset Solo", role = "Lead: the main melody." },
+  { patch = "Sunrise Fanfare", role = "Brass: stabs on chorus downbeats." },
+]
+arrangement = [
+  "**Intro:** pad and arp, filter closed; open it over eight bars.",
+  "**Verse:** add the bass and drums.",
+  "**Chorus:** add the lead and brass stabs. Pull the pad down by 2 dB.",
+  "**Breakdown:** arp and pad only, then a [Riser](fx.html#riser) into the last chorus.",
+]
+mix = "Sidechain the bass and pad to the kick. The arp stays above about 250 Hz, and the lead sits on top with its own delay."
+
+[[kit]]
+name = "Darksynth pursuit"
+genre = "Darksynth"
+tempo = "132 BPM"
+key = "E minor: Em, C, D, Em"
+idea = "Heavy and relentless. Fewer, darker parts leave room for one aggressive lead."
+parts = [
+  { patch = "Blacktop", role = "Bass: rolling 8ths." },
+  { patch = "Sequencer Drive", role = "Sequence: a tense pattern above the bass." },
+  { patch = "Night Patrol", role = "Brass: long, dark chords." },
+  { patch = "Cyber Scream", role = "Lead: short, aggressive phrases." },
+  { patch = "Power Fifth", role = "Riffs: the heavy chorus hook." },
+]
+arrangement = [
+  "**Intro:** [V8 Drone](fx.html#v8-drone) and the sequence, with the filter closed.",
+  "**Verse:** add bass and low brass.",
+  "**Chorus:** Power Fifth riff with the lead on top. Use [Sub Drop](fx.html#sub-drop) on the first downbeat.",
+  "**Breakdown:** sequence and [Alarm Siren](fx.html#alarm-siren) only, for two bars at most.",
+]
+mix = "High-pass the sequence at about 120 Hz and the riff at about 100 Hz, so that Blacktop keeps the low end. Saturate the bus rather than opening filters."
+
+[[kit]]
+name = "Dreamwave coastline"
+genre = "Dreamwave"
+tempo = "92 BPM"
+key = "D major: Dmaj7, Bm7, Gmaj7, A"
+idea = "Slow and wide, with plenty of space. The keys carry the song and everything else floats around them."
+parts = [
+  { patch = "Velvet Bass", role = "Bass: long, connected notes." },
+  { patch = "Eighty-Four Tines", role = "Keys: the main chord part." },
+  { patch = "Aurora Haze", role = "Pad: slow movement behind the keys." },
+  { patch = "Cascade", role = "Arp: a quiet falling pattern." },
+  { patch = "Glass Whistle", role = "Lead: a sparse, high melody." },
+]
+arrangement = [
+  "**Intro:** keys alone, then the pad fades in.",
+  "**Verse:** add bass and soft drums.",
+  "**Chorus:** add the arp and the whistle melody.",
+  "**Outro:** drop to whistle and pad, with long reverb tails.",
+]
+mix = "Velvet Bass has low-end stereo from its chorus, so narrow it below 120 Hz. Use light or no sidechain. Long reverbs are fine here, but keep the keys clear."
+
+[[kit]]
+name = "Chillwave cassette"
+genre = "Chillwave"
+tempo = "84 BPM"
+key = "F major: Fmaj7, Dm7, Bbmaj7, C"
+idea = "Warm, soft and slightly worn, like a tape you've played for years."
+parts = [
+  { patch = "Rubber Coupe", role = "Bass: syncopated, with ghost notes." },
+  { patch = "Warm Tines", role = "Keys: gentle jazzy chords." },
+  { patch = "Ghost Mall", role = "Pad: a hazy bed." },
+  { patch = "Soft Rain", role = "Pluck: a quiet broken-chord pattern." },
+  { patch = "Tape Flute", role = "Lead: a wistful melody." },
+]
+arrangement = [
+  "**Intro:** pad and pluck with vinyl noise.",
+  "**Verse:** add the bass, keys and a soft drum loop.",
+  "**Chorus:** add the flute melody.",
+  "**Outro:** remove the drums and let the tape wobble be heard.",
+]
+mix = "A shared high cut around 6-8 kHz and some tape saturation on the bus tie it all together. Ghost Mall drifts in pitch, so don't tune other parts against it."
+
+[[kit]]
+name = "Neon pop"
+genre = "Retro pop"
+tempo = "112 BPM"
+key = "C major: C, Am, F, G"
+idea = "Bright, funky and vocal-friendly. Every part plays a rhythm, so keep each one simple."
+parts = [
+  { patch = "Chrome Octave", role = "Bass: octave jumps." },
+  { patch = "Funk Clav", role = "Keys: tight rhythm part." },
+  { patch = "Ensemble Sunset", role = "Strings: long chords in the chorus." },
+  { patch = "Miami Section", role = "Brass: syncopated stabs." },
+  { patch = "Hero Theme", role = "Lead: the hook between vocal lines." },
+]
+arrangement = [
+  "**Intro:** Hero Theme hook over bass and drums.",
+  "**Verse:** bass and clav under the vocal.",
+  "**Chorus:** add strings and brass stabs.",
+  "**Bridge:** strings and vocal only, then back in with a brass hit.",
+]
+mix = "Keep the 1-3 kHz range clear for the vocal: dip the clav and brass there during vocal lines. Automate Hero Theme up only when the vocal isn't singing."

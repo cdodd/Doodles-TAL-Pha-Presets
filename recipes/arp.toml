@@ -1,0 +1,84 @@
+category = "Arp"
+patch = "Outrun Sixteenths"
+phrase = "arp"
+title = "Building Outrun Sixteenths from init"
+intro = "A good arp is less about the pattern than about making each note short and distinct. This recipe builds the engine of an outrun track, and shows why envelope shape matters more than pitch."
+setup = "Choose **Reset Parameters** and hold a four-note chord for a bar at a time. Run your project at any tempo; the arp will follow it."
+takeaways = [
+  "An arp needs gaps. Without a short envelope, the notes run together into a wash.",
+  "Use host sync, so that the arp, echoes and project all stay locked at any tempo.",
+  "A short sustain-free envelope drives both level and filter, which makes one control do the job of two.",
+]
+
+[[step]]
+title = "Start from init"
+why = "A sustained saw through an open filter, with no arp yet. It's a chord."
+listen = "A static, buzzy chord."
+
+[[step]]
+title = "Turn on the arp"
+set = { arpmode = 1, arpsyncmode = 2, arprate = 0.52, arprange = 1, NumberOfVoices = 5 }
+why = "Up, 16th notes, two octaves, and host sync so it follows your project. But with init's full-sustain envelope, every note runs straight into the next one. Listen for how little rhythm that gives you."
+alternative = "Down feels calmer, as in Cascade. Random feels nervous, as in Random Terminal. Up is the one that feels like forward motion."
+listen = "Notes change, but it's a stream rather than a rhythm: there are no gaps."
+
+[[step]]
+title = "Make each note short"
+set = { EnvDecayTime = 0.28, EnvSustainLevel = 0 }
+expect = { sustain_db = "down", arp_notes_per_s = "up" }
+why = "This is the key decision. With a decay of about 100 ms and no sustain, every note dies away before the next, which is where the pulse comes from. The VCA is left in Normal mode on purpose, so that the level falls as well."
+alternative = "Sequencer Drive uses Gate mode instead, so the amp stays open and only the filter pulses. That sounds more mechanical."
+listen = "Now it's an arp: separate notes with a clear pulse."
+
+[[step]]
+title = "Darken the filter"
+set = { VcfCutoff = 0.42, VcfKeyFollow = 0.4 }
+expect = { centroid_hz = "down" }
+why = "Closing the filter makes room for the envelope to open it on each note. Key follow keeps the high notes of the two-octave run from going dull."
+listen = "Duller and quieter: too dark, for now."
+
+[[step]]
+title = "Open the filter on each note"
+set = { VcfEnvMod = 0.36, VcfResonance = 0.15 }
+expect = { centroid_hz = "up" }
+why = "The same envelope that's shaping the level now sweeps the filter too, so every note gets a tiny 'pew'. A little resonance gives that sweep some character."
+listen = "A snappy, plucked quality on every note. This is the sound."
+
+[[step]]
+title = "Soften the note endings"
+set = { EnvReleaseTime = 0.2 }
+expect = { tail_ms = "up" }
+why = "A short release means notes overlap very slightly, so the pattern doesn't sound clipped. Keep it short, or you'll lose the gaps you just made."
+listen = "A little smoother, still clearly separated."
+
+[[step]]
+title = "Add an echo"
+set = { delayDryWet = 0.12, delayTime = 0.15, delayFeedback = 0.2 }
+show = ["side_mid"]
+why = "A quiet 1/8 echo thickens the pattern. It's synced to the tempo, so it stays on the same grid as the arp. Keep it low: too much will blur the 16ths. At its default spread the delay stays centred, so move Delay spread away from 0.00 if you want it wider."
+listen = "Slightly thicker, with no change in width."
+
+[[step]]
+title = "Set up the wheel"
+set = { ModWheelVcfRange = 0.3, ModWheelDcoLfo = 0 }
+expect = { mw_bright_ratio = "up" }
+wheel = true
+why = "An arp is a great place for a build, and the wheel opens the filter for one. Turning off the default vibrato is important here, as it would make a fast pattern sound out of tune."
+listen = "In this preview the wheel rises across the second half, for a simple build."
+
+[[step]]
+title = "Set the level"
+set_volume_from_preset = true
+why = "Short notes measure quieter than sustained ones, so this needs more volume to reach the same loudness as other presets. That's the finished Outrun Sixteenths."
+show = ["lufs"]
+listen = "The finished patch."
+
+[[branch]]
+to = "Digital Rain"
+how = "Try adding VCF LFO 3.2 with an S&H wave, synced to 1/16, for a random tone on every note."
+[[branch]]
+to = "Dotted Eighth"
+how = "Slow the arp to 1/8, change the delay to 1/8. and raise its mix to -0.16."
+[[branch]]
+to = "Cascade"
+how = "Switch the mode to Down, the range to 3 octaves and the wave to Pulse PW, then add the chorus."

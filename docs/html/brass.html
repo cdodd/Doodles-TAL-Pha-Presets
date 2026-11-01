@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brass: Doodles TAL-Pha Presets</title>
+<link rel="stylesheet" href="style.css">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="index.html"><span>Doodles</span> TAL-Pha Presets</a>
+  <button type="button" id="theme" class="ghost" aria-label="Switch between light and dark theme">Theme</button>
+</header>
+<div class="layout">
+<nav class="sidebar" aria-label="Documentation">
+<a href="index.html">Overview</a>
+<p class="nav-label">Patches</p>
+<a href="bass.html">Bass</a>
+<a href="lead.html">Lead</a>
+<a href="pad.html">Pad</a>
+<a href="strings.html">Strings</a>
+<a href="brass.html" aria-current=page>Brass</a>
+<div class="subnav"><a class="recipe-link" href="brass-recipe.html">Build from init</a><a href="#sunrise-fanfare">Sunrise Fanfare</a><a href="#stadium-stab">Stadium Stab</a><a href="#silk-horn">Silk Horn</a><a href="#power-brass">Power Brass</a><a href="#sforzando">Sforzando</a><a href="#chrome-trumpet">Chrome Trumpet</a><a href="#low-rider">Low Rider</a><a href="#miami-section">Miami Section</a><a href="#metal-brass">Metal Brass</a><a href="#night-patrol">Night Patrol</a></div>
+<a href="arp.html">Arp</a>
+<a href="pluck.html">Pluck</a>
+<a href="keys.html">Keys and Bells</a>
+<a href="chord.html">Chord and Stab</a>
+<a href="fx.html">FX and Atmosphere</a>
+<p class="nav-label">Guides</p>
+<a href="field-guide.html">Field guide</a>
+<a href="control-reference.html">Control reference</a>
+<a href="gallery.html">Sound gallery</a>
+<a href="sound-map.html">Sound map</a>
+<a href="kits.html">Starter kits</a>
+<a href="reaper-cheat-sheet.html">Reaper cheat sheet</a>
+</nav>
+<main>
+<h1>Brass</h1>
+<p class="lede">10 patches. Control values are as shown on the plugin panel. Times and frequencies
+come from <a href="control-reference.html">measurements of the plugin</a>.</p>
+<a class="callout" href="brass-recipe.html"><strong>New to this category?</strong> Build a patch from init, step by step, hearing each decision.</a>
+<section class="install">
+<h2>Mixing this category</h2>
+<p>Starting points for every patch here. Each patch's own notes cover what's different about it.</p>
+<ul><li>High-pass at about 150 Hz; low sections less.</li><li>Lift 1-2 kHz for bite, and dip it under vocals.</li><li>Compress to hold stabs level with each other, with a slow enough attack to keep the front edge.</li><li>Centre mono parts, and let unison and detuned sections sit wider.</li><li>A short room or plate send suits stabs. Keep long tails out of fast figures.</li></ul>
+</section>
+<div class="chips" role="group" aria-label="Filter by subgenre"><button type="button" class="chip" aria-pressed="true" data-tag="">All</button><button type="button" class="chip" aria-pressed="false" data-tag="chillwave">chillwave</button><button type="button" class="chip" aria-pressed="false" data-tag="darksynth">darksynth</button><button type="button" class="chip" aria-pressed="false" data-tag="dreamwave">dreamwave</button><button type="button" class="chip" aria-pressed="false" data-tag="outrun">outrun</button></div>
+<article class="patch" id="sunrise-fanfare" data-tags="outrun dreamwave">
+<header>
+  <h2>Sunrise Fanfare</h2>
+  <div class="tags"><span class="tag">outrun</span><span class="tag">dreamwave</span></div>
+</header>
+<p class="profile">Bright, confident 80s poly brass: the filter opens on each chord, like a section taking a breath and playing.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/brass/sunrise-fanfare.mp3" aria-label="Preview of Sunrise Fanfare"></audio>
+  <a class="ghost" href="../../presets/Doodles/Brass/Sunrise%20Fanfare.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>C3 to C5</dd></div><div><dt>Brightness</dt><dd>1220 Hz centroid</dd></div><div><dt>Low energy</dt><dd>2% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 25 ms</dd></div><div><dt>Decay</dt><dd>Holds while the key is down</dd></div><div><dt>Filter closes</dt><dd>0.3 octaves</dd></div><div><dt>Held level</dt><dd>-7 dB from peak</dd></div><div><dt>Width</dt><dd>Stereo, side/mid 0.58</dd></div><div><dt>Mono sum</dt><dd>-1.3 dB</dd></div><div><dt>Loudness</dt><dd>-18.3 LUFS, peak -3.4 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">Env T1 (attack)</th><td class="value">2.5 (about 55 ms)</td><td>About 55 ms: filter and level rise together. This delayed bloom, more than anything else, is what makes a saw sound like brass.</td></tr><tr><th scope="row">VCF Env</th><td class="value">3.2</td><td>The filter opens as the note begins, then settles. Real brass also gets brighter as it speaks.</td></tr><tr><th scope="row">VCF Env mode</th><td class="value">Normal-Dynamic</td><td>Normal-Dynamic: harder notes get brighter. Brass really does this, and it adds life to programmed parts.</td></tr><tr><th scope="row">Env L3 (sustain)</th><td class="value">6.5</td><td>Settles to a slightly darker tone, leaving room after the initial bloom.</td></tr><tr><th scope="row">Chorus</th><td class="value">On</td><td>Makes one synth sound like a section.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Saw Saw; DCO Range 8&#x27;; Sub level 0.0 / 3; VCF Cutoff 5.0 (about 478 Hz at C4); VCF Res 0.5; VCF Key follow 4.0; Env T3 (decay) 4.5 (about 349 ms to -20 dB); Env T4 (release) 3.0 (about 105 ms to -20 dB); Chorus Rate 5.0; MW to VCF 2.0; Voices 8; Reverb mix -0.64; Reverb size 5.0.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Short chords and punchy lines. Harder notes get brighter, as real brass does.</p></section>
+  <section><h3>How to use it</h3><p>Chorus hits, intro fanfares and uplifting lines. The default for &#x27;big and hopeful&#x27;.</p></section>
+  <section><h3>Mixing</h3><ul><li>A boost around 1-2 kHz gives it more bite.</li><li>A short plate helps it sound like a section in a room.</li><li>High-pass at 150 Hz.</li><li>Built-in chorus: part of this sound, so keep it. Built-in reverb: turn it off if you&#x27;re using your own.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="bass.html#chrome-octave">Chrome Octave</a><span class="why">Stabs land between the octave jumps, in a classic disco arrangement.</span></li><li><a href="lead.html#hero-theme">Hero Theme</a><span class="why">Fanfare punctuates the big lead.</span></li><li><strong>Gated snare</strong><span class="why">An 80s stadium chorus needs both.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>VCF Env to 5.0</strong><span>A bigger, more aggressive &#x27;blat&#x27; on each hit.</span></li><li><strong>ENV T1 (attack) to 4.0</strong><span>A slower, softer swell, like horns rather than trumpets.</span></li><li><strong>Chorus off</strong><span>Tighter and more direct.</span></li></ul>
+</article>
+<article class="patch" id="stadium-stab" data-tags="outrun darksynth">
+<header>
+  <h2>Stadium Stab</h2>
+  <div class="tags"><span class="tag">outrun</span><span class="tag">darksynth</span></div>
+</header>
+<p class="profile">A short, huge brass hit with a big room behind it, built for a single chord on the downbeat.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/brass/stadium-stab.mp3" aria-label="Preview of Stadium Stab"></audio>
+  <a class="ghost" href="../../presets/Doodles/Brass/Stadium%20Stab.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>C3 to C5</dd></div><div><dt>Brightness</dt><dd>1981 Hz centroid</dd></div><div><dt>Low energy</dt><dd>4% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 5 ms</dd></div><div><dt>Decay</dt><dd>Holds while the key is down</dd></div><div><dt>Filter closes</dt><dd>1.9 octaves</dd></div><div><dt>Held level</dt><dd>-15 dB from peak</dd></div><div><dt>Width</dt><dd>Stereo, side/mid 0.77</dd></div><div><dt>Mono sum</dt><dd>-2.0 dB</dd></div><div><dt>Loudness</dt><dd>-21.9 LUFS, peak -5.2 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">Env T1 (attack)</th><td class="value">1.2 (about 15 ms)</td><td>About 15 ms: still has the bloom of brass, but hits hard.</td></tr><tr><th scope="row">Env T3 (decay)</th><td class="value">4.2 (about 322 ms to -20 dB)</td><td>About 330 ms with low sustain: a hit, not a held note.</td></tr><tr><th scope="row">Unison voices</th><td class="value">3</td><td>Three voices per note for a big, slightly smeared section.</td></tr><tr><th scope="row">Reverb mix</th><td class="value">-0.40</td><td>A wet room: the stadium is half the sound.</td></tr><tr><th scope="row">VCF Env</th><td class="value">3.8</td><td>A strong, quick filter opening gives the bright &#x27;blat&#x27; of the hit.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Saw Saw; DCO Range 8&#x27;; Sub level 0.3 / 3; Chorus On; VCF Cutoff 5.0 (about 478 Hz at C4); VCF Key follow 3.0; Env L3 (sustain) 1.2; Env T4 (release) 4.0 (about 289 ms to -20 dB); Chorus Rate 5.5; MW to VCF 2.0; Voices 8; Unison detune 0.10; Unison spread 0.70; Reverb size 7.5.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>One hit at a time, with space around it. It relies on the release and reverb tail to fill the gap.</p></section>
+  <section><h3>How to use it</h3><p>Downbeats, drop hits, and rhythmic accents in a chorus.</p></section>
+  <section><h3>Mixing</h3><ul><li>Layer it with a kick or snare hit for a bigger impact.</li><li>Duck its reverb tail with the next hit, if needed.</li><li>High-pass at 150 Hz.</li><li>Built-in reverb: part of this sound, so keep it. Built-in chorus: turn it off if you&#x27;re using your own.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="strings.html#rising-tide">Rising Tide</a><span class="why">A swell resolves into this hit.</span></li><li><a href="bass.html#steel-engine">Steel Engine</a><span class="why">A thick bass and a short hit: a very big downbeat.</span></li><li><strong>Orchestral timpani hit</strong><span class="why">Layered, for a cinematic impact.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>ENV L3 (sustain) to 5.0</strong><span>Longer body on each hit.</span></li><li><strong>Reverb mix to -0.70</strong><span>Dry and tight: good for fast rhythms.</span></li><li><strong>VCF Env to 6.0</strong><span>A much harder, brighter blat.</span></li></ul>
+</article>
+<article class="patch" id="silk-horn" data-tags="dreamwave chillwave">
+<header>
+  <h2>Silk Horn</h2>
+  <div class="tags"><span class="tag">dreamwave</span><span class="tag">chillwave</span></div>
+</header>
+<p class="profile">Soft, rounded horn with a slow attack and no bite: more French horn than trumpet.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/brass/silk-horn.mp3" aria-label="Preview of Silk Horn"></audio>
+  <a class="ghost" href="../../presets/Doodles/Brass/Silk%20Horn.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>C3 to C5</dd></div><div><dt>Brightness</dt><dd>546 Hz centroid</dd></div><div><dt>Low energy</dt><dd>3% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 75 ms</dd></div><div><dt>Decay</dt><dd>Holds while the key is down</dd></div><div><dt>Filter closes</dt><dd>0.0 octaves</dd></div><div><dt>Held level</dt><dd>-5 dB from peak</dd></div><div><dt>Width</dt><dd>Stereo, side/mid 0.54</dd></div><div><dt>Mono sum</dt><dd>-1.1 dB</dd></div><div><dt>Loudness</dt><dd>-17.8 LUFS, peak -8.0 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">VCF Cutoff</th><td class="value">4.2 (about 252 Hz at C4)</td><td>About 250 Hz at C4, opened a little by the envelope: warm with no edge.</td></tr><tr><th scope="row">VCF Env</th><td class="value">2.0</td><td>A small filter rise: enough to say &#x27;brass&#x27;, without any bite.</td></tr><tr><th scope="row">Env T1 (attack)</th><td class="value">3.8 (about 125 ms)</td><td>About 120 ms: a soft entry, the main thing that separates a horn from a trumpet.</td></tr><tr><th scope="row">DCO Pulse</th><td class="value">Square</td><td>A square adds a slightly hollow, woody colour under the saw.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Saw Saw; DCO Range 8&#x27;; Sub level 0.0 / 3; Chorus On; VCF Key follow 5.0; LFO Rate 4.26 Hz; Env T3 (decay) 5.0 (about 678 ms to -20 dB); Env L3 (sustain) 8.0; Env T4 (release) 4.2 (about 336 ms to -20 dB); Chorus Rate 4.0; MW to DCO LFO 0.6; Voices 8; Pulse Volume 6.0; Reverb mix -0.50; Reverb size 6.0.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Long, smooth chords and slow lines. Mod wheel adds a gentle vibrato.</p></section>
+  <section><h3>How to use it</h3><p>Warm harmony behind a vocal, or soft melodic lines in a dreamy section.</p></section>
+  <section><h3>Mixing</h3><ul><li>Little processing needed: it&#x27;s already soft.</li><li>High-pass at 150 Hz.</li><li>Use it as a warm layer under a brighter pad.</li><li>Built-in chorus and reverb: turn them off if you&#x27;re using your own.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="keys.html#warm-tines">Warm Tines</a><span class="why">A soft electric piano and horn are a natural pairing.</span></li><li><a href="bass.html#velvet-bass">Velvet Bass</a><span class="why">Soft all round, for a gentle section.</span></li><li><strong>Lead vocal</strong><span class="why">It stays out of the way of the voice.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>VCF Cutoff to 5.5</strong><span>Brighter and more present.</span></li><li><strong>ENV T1 (attack) to 2.5</strong><span>Faster speech, more like a played phrase.</span></li><li><strong>Pulse Volume to 10</strong><span>A more hollow, woody tone.</span></li></ul>
+</article>
+<article class="patch" id="power-brass" data-tags="darksynth outrun">
+<header>
+  <h2>Power Brass</h2>
+  <div class="tags"><span class="tag">darksynth</span><span class="tag">outrun</span></div>
+</header>
+<p class="profile">Thick, aggressive unison brass that fills the whole mid-range.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/brass/power-brass.mp3" aria-label="Preview of Power Brass"></audio>
+  <a class="ghost" href="../../presets/Doodles/Brass/Power%20Brass.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>C3 to C5</dd></div><div><dt>Brightness</dt><dd>1844 Hz centroid</dd></div><div><dt>Low energy</dt><dd>4% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 15 ms</dd></div><div><dt>Decay</dt><dd>Holds while the key is down</dd></div><div><dt>Filter closes</dt><dd>0.6 octaves</dd></div><div><dt>Held level</dt><dd>-2 dB from peak</dd></div><div><dt>Width</dt><dd>Stereo, side/mid 0.48</dd></div><div><dt>Mono sum</dt><dd>-0.8 dB</dd></div><div><dt>Loudness</dt><dd>-18.4 LUFS, peak -4.2 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">Unison voices</th><td class="value">4</td><td>4 voices per note: a wall of sound rather than a section of players.</td></tr><tr><th scope="row">Unison detune</th><td class="value">0.16</td><td>Enough beating to thicken the sound and add aggression.</td></tr><tr><th scope="row">Env T1 (attack)</th><td class="value">2.0 (about 25 ms)</td><td>About 25 ms: it speaks quickly, with just enough brass-like bloom.</td></tr><tr><th scope="row">VCF Env</th><td class="value">3.0</td><td>Strong enough to make each chord bite through the thickness.</td></tr><tr><th scope="row">Reverb mix</th><td class="value">-0.76</td><td>Kept low: reverb would blur something this dense.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Saw Saw; DCO Range 8&#x27;; Sub level 0.5 / 3; VCF Cutoff 5.2 (about 564 Hz at C4); VCF Res 1.0; VCF Key follow 4.0; Env T3 (decay) 4.5 (about 349 ms to -20 dB); Env L3 (sustain) 7.0; Env T4 (release) 2.5 (about 90 ms to -20 dB); MW to VCF 2.0; Voices 8; Unison spread 0.60.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Strong, simple chords and fifths: it&#x27;s thick enough that big voicings blur.</p></section>
+  <section><h3>How to use it</h3><p>Big chorus hooks, drops, and any point where you need a wall of brass.</p></section>
+  <section><h3>Mixing</h3><ul><li>It takes a lot of space: lower pads or remove them when this comes in.</li><li>High-pass at 200 Hz.</li><li>Saturation helps it stand up in a dense mix.</li><li>Built-in reverb: part of this sound, so keep it.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="bass.html#steel-engine">Steel Engine</a><span class="why">Together they make the wall of a darksynth drop.</span></li><li><a href="strings.html#octave-ensemble">Octave Ensemble</a><span class="why">Strings carry a melody on top of a brass wall.</span></li><li><strong>Heavy guitar</strong><span class="why">The two thicken each other.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>UNISON voices to 6</strong><span>An even bigger wall.</span></li><li><strong>UNISON spread to 0.20</strong><span>Tighter and more centred, for a dense mix.</span></li><li><strong>VCF Cutoff to 7.0</strong><span>Raw, bright, and abrasive.</span></li></ul>
+</article>
+<article class="patch" id="sforzando" data-tags="outrun darksynth">
+<header>
+  <h2>Sforzando</h2>
+  <div class="tags"><span class="tag">outrun</span><span class="tag">darksynth</span></div>
+</header>
+<p class="profile">The classic brass effect: a sharp attack, a sudden drop, then a long swell back up.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/brass/sforzando.mp3" aria-label="Preview of Sforzando"></audio>
+  <a class="ghost" href="../../presets/Doodles/Brass/Sforzando.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>C3 to C5</dd></div><div><dt>Brightness</dt><dd>1414 Hz centroid</dd></div><div><dt>Low energy</dt><dd>2% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 10 ms</dd></div><div><dt>Decay</dt><dd>Holds while the key is down</dd></div><div><dt>Filter closes</dt><dd>0.0 octaves</dd></div><div><dt>Held level</dt><dd>-3 dB from peak</dd></div><div><dt>Width</dt><dd>Stereo, side/mid 0.60</dd></div><div><dt>Mono sum</dt><dd>-1.3 dB</dd></div><div><dt>Loudness</dt><dd>-18.2 LUFS, peak -6.0 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">Env L1</th><td class="value">10.0</td><td>L1 at full: the sharp initial hit.</td></tr><tr><th scope="row">Env T2</th><td class="value">3.0</td><td>T2 falls fast, in about 100 ms.</td></tr><tr><th scope="row">Env L2</th><td class="value">2.2</td><td>L2 at 2.2: the sudden drop. This needs the extra stage, as a plain ADSR can&#x27;t fall and then rise.</td></tr><tr><th scope="row">Env T3 (decay)</th><td class="value">6.6 (about 2.2 s to -20 dB)</td><td>T3 here rises rather than falls, because L3 is above L2: a slow two-second swell.</td></tr><tr><th scope="row">Env L3 (sustain)</th><td class="value">10.0</td><td>L3 at full: the destination of the swell. Filter and level both reach their peak.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Saw Saw; DCO Range 8&#x27;; Sub level 0.2 / 3; Chorus On; VCF Cutoff 4.6 (about 347 Hz at C4); VCF Env 3.2; VCF Key follow 4.0; Env T1 (attack) 1.2 (about 15 ms); Env T4 (release) 3.0 (about 105 ms to -20 dB); Chorus Rate 5.0; MW to VCF 1.5; Voices 8; Reverb mix -0.60.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Hold chords for two bars or more to hear the whole gesture.</p></section>
+  <section><h3>How to use it</h3><p>Dramatic transitions into a new section. Time it so that the swell peaks on the downbeat.</p></section>
+  <section><h3>Mixing</h3><ul><li>A compressor will flatten the shape, so use a light touch.</li><li>Automating it up further during the swell adds impact.</li><li>High-pass at 150 Hz.</li><li>Built-in chorus and reverb: turn them off if you&#x27;re using your own.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="strings.html#rising-tide">Rising Tide</a><span class="why">Both swell into a downbeat.</span></li><li><a href="#stadium-stab">Stadium Stab</a><span class="why">This builds up, that lands the hit.</span></li><li><strong>Rolling toms</strong><span class="why">They rise with the swell.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>Env T3 (decay) to 5.0</strong><span>A much quicker swell, for faster tempos.</span></li><li><strong>Env L2 to 5.0</strong><span>A shallower dip, less dramatic.</span></li><li><strong>VCF Env to 5.0</strong><span>A much brighter peak.</span></li></ul>
+</article>
+<article class="patch" id="chrome-trumpet" data-tags="outrun dreamwave">
+<header>
+  <h2>Chrome Trumpet</h2>
+  <div class="tags"><span class="tag">outrun</span><span class="tag">dreamwave</span></div>
+</header>
+<p class="profile">A bright mono trumpet with a quick pitch &#x27;blip&#x27; at the start of each note, as a lip slur would have.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/brass/chrome-trumpet.mp3" aria-label="Preview of Chrome Trumpet"></audio>
+  <a class="ghost" href="../../presets/Doodles/Brass/Chrome%20Trumpet.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>C3 to C5</dd></div><div><dt>Brightness</dt><dd>900 Hz centroid</dd></div><div><dt>Low energy</dt><dd>4% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 0 ms</dd></div><div><dt>Decay</dt><dd>Holds while the key is down</dd></div><div><dt>Filter closes</dt><dd>1.7 octaves</dd></div><div><dt>Held level</dt><dd>-2 dB from peak</dd></div><div><dt>Width</dt><dd>Stereo, side/mid 0.03</dd></div><div><dt>Mono sum</dt><dd>-0.0 dB</dd></div><div><dt>Loudness</dt><dd>-18.0 LUFS, peak -9.1 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">DCO Env</th><td class="value">0.6 (reads 8)</td><td>A small pitch blip of under a semitone that falls away, mimicking a lip settling on a note. Any deeper and short notes sound out of tune.</td></tr><tr><th scope="row">Env T3 (decay)</th><td class="value">3.0 (about 120 ms to -20 dB)</td><td>About 120 ms: the blip is over within 100 ms, so even short notes sit in tune. A slower decay leaves the whole note sharp.</td></tr><tr><th scope="row">Env L3 (sustain)</th><td class="value">0.0</td><td>Zero, so the pitch blip always returns to the note. Any sustain would leave held notes sharp.</td></tr><tr><th scope="row">VCA mode</th><td class="value">Gate</td><td>Gate holds the note while the shared envelope shapes pitch and filter.</td></tr><tr><th scope="row">Env T1 (attack)</th><td class="value">2.0 (about 25 ms)</td><td>About 25 ms, for filter and pitch only: in Gate mode the amp ignores attack and opens at once. So the note starts instantly, then the tone speaks.</td></tr><tr><th scope="row">VCF Env mode</th><td class="value">Normal-Dynamic</td><td>Normal-Dynamic: harder notes open the filter further, as blowing harder does.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Saw Saw; DCO Range 8&#x27;; Sub level 0.0 / 3; VCF Cutoff 5.2 (about 564 Hz at C4); VCF Res 0.8; VCF Env 3.0; VCF Key follow 6.0; LFO Rate 5.03 Hz; Env T4 (release) 2.0 (about 50 ms to -20 dB); MW to DCO LFO 0.7; Voices Mono (1); Reverb mix -0.64; Delay mix -0.70; Delay Time 1/8.; Delay feedback 2.0.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Play it monophonically like a real trumpet, with short breath-like phrases. Velocity sets brightness; mod wheel adds vibrato.</p></section>
+  <section><h3>How to use it</h3><p>Melodic hooks and short solos, or call-and-response with a lead.</p></section>
+  <section><h3>Mixing</h3><ul><li>Boost slightly at 1-3 kHz for more &#x27;brassy&#x27; bite.</li><li>A plate reverb and short delay put it on a stage.</li><li>High-pass at 200 Hz.</li><li>Built-in delay and reverb: turn them off if you&#x27;re using your own.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="bass.html#rubber-coupe">Rubber Coupe</a><span class="why">Funky bass with a stabby trumpet line.</span></li><li><a href="#miami-section">Miami Section</a><span class="why">A solo trumpet playing over the section.</span></li><li><strong>Sax solo</strong><span class="why">Traded phrases, in the classic style.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>DCO Env to 3.0</strong><span>A larger pitch fall: sounds almost like a falling lip slur.</span></li><li><strong>VCF Cutoff to 7.0</strong><span>Bright, almost a piccolo trumpet.</span></li><li><strong>Portamento to On</strong><span>Smooth slides on overlapping notes.</span></li></ul>
+</article>
+<article class="patch" id="low-rider" data-tags="outrun chillwave">
+<header>
+  <h2>Low Rider</h2>
+  <div class="tags"><span class="tag">outrun</span><span class="tag">chillwave</span></div>
+</header>
+<p class="profile">Warm, low trombone-like section with a slight growl, for sustained support under the arrangement.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/brass/low-rider.mp3" aria-label="Preview of Low Rider"></audio>
+  <a class="ghost" href="../../presets/Doodles/Brass/Low%20Rider.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>C2 to C4</dd></div><div><dt>Brightness</dt><dd>674 Hz centroid</dd></div><div><dt>Low energy</dt><dd>41% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 30 ms</dd></div><div><dt>Decay</dt><dd>Holds while the key is down</dd></div><div><dt>Filter closes</dt><dd>0.3 octaves</dd></div><div><dt>Held level</dt><dd>-6 dB from peak</dd></div><div><dt>Width</dt><dd>Stereo, side/mid 0.57</dd></div><div><dt>Mono sum</dt><dd>-1.3 dB</dd></div><div><dt>Loudness</dt><dd>-18.1 LUFS, peak -4.2 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">VCF Cutoff</th><td class="value">4.2 (about 252 Hz at C4)</td><td>Around 250 Hz, so the filter is only just above the notes, for a dark tone.</td></tr><tr><th scope="row">VCF Env</th><td class="value">3.0</td><td>Enough to give each note a soft &#x27;blat&#x27; as it begins.</td></tr><tr><th scope="row">Env T1 (attack)</th><td class="value">2.8 (about 63 ms)</td><td>About 60 ms: heavier instruments speak more slowly.</td></tr><tr><th scope="row">Sub level</th><td class="value">0.7 / 3</td><td>A quiet square an octave down adds weight.</td></tr><tr><th scope="row">VCF Res</th><td class="value">1.5</td><td>A little resonance adds a trombone-like growl around the filter&#x27;s sweep.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Saw Saw; Sub wave Square -1 oct (panel label: OFF); DCO Range 8&#x27;; Chorus On; VCF Key follow 3.0; Env T3 (decay) 5.0 (about 678 ms to -20 dB); Env L3 (sustain) 6.0; Env T4 (release) 3.0 (about 105 ms to -20 dB); Chorus Rate 4.0; MW to VCF 2.0; Voices 8; Reverb mix -0.68.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Fifths and simple chords, low on the keyboard. Busy voicings get muddy down here.</p></section>
+  <section><h3>How to use it</h3><p>Harmonic support under a higher brass line, or a bassline in sparse sections.</p></section>
+  <section><h3>Mixing</h3><ul><li>It shares space with the bass, so high-pass at 100 Hz or thin the voicing.</li><li>A small lift at around 800 Hz adds growl.</li><li>Light sidechain to the kick.</li><li>Built-in chorus and reverb: turn them off if you&#x27;re using your own.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="#sunrise-fanfare">Sunrise Fanfare</a><span class="why">Low and high sections together make a full brass arrangement.</span></li><li><a href="bass.html#neon-pulse">Neon Pulse</a><span class="why">A plain bass doesn&#x27;t crowd it.</span></li><li><strong>Baritone sax</strong><span class="why">They share a low, warm growl.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>VCF RES to 4.0</strong><span>More growl and character.</span></li><li><strong>Sub level to 0</strong><span>Less weight, leaving more room for the bass.</span></li><li><strong>VCF Env to 5.0</strong><span>A bigger &#x27;blat&#x27; on each note.</span></li></ul>
+</article>
+<article class="patch" id="miami-section" data-tags="outrun chillwave">
+<header>
+  <h2>Miami Section</h2>
+  <div class="tags"><span class="tag">outrun</span><span class="tag">chillwave</span></div>
+</header>
+<p class="profile">A slightly detuned, bright stab section with a sunny, 80s TV theme feel.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/brass/miami-section.mp3" aria-label="Preview of Miami Section"></audio>
+  <a class="ghost" href="../../presets/Doodles/Brass/Miami%20Section.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>C3 to C5</dd></div><div><dt>Brightness</dt><dd>1785 Hz centroid</dd></div><div><dt>Low energy</dt><dd>2% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 15 ms</dd></div><div><dt>Decay</dt><dd>Holds while the key is down</dd></div><div><dt>Filter closes</dt><dd>1.2 octaves</dd></div><div><dt>Held level</dt><dd>-12 dB from peak</dd></div><div><dt>Width</dt><dd>Stereo, side/mid 0.61</dd></div><div><dt>Mono sum</dt><dd>-1.4 dB</dd></div><div><dt>Loudness</dt><dd>-21.0 LUFS, peak -4.5 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">Pulse Fine</th><td class="value">+10 cents</td><td>A square 10 cents sharp of the saw: two &#x27;players&#x27; per note, a little out of tune, as real sections are.</td></tr><tr><th scope="row">DCO Pulse</th><td class="value">Square</td><td>A square adds a brighter, more hollow edge beside the saw.</td></tr><tr><th scope="row">Env L3 (sustain)</th><td class="value">3.5</td><td>Low, as the sound should be gone before the next stab.</td></tr><tr><th scope="row">Delay Time</th><td class="value">1/8</td><td>A short, wide 1/8 echo fills the gaps between syncopated hits.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Saw Saw; DCO Range 8&#x27;; Sub level 0.0 / 3; Chorus On; VCF Cutoff 5.4 (about 666 Hz at C4); VCF Env 3.0; VCF Key follow 4.0; Env T1 (attack) 2.0 (about 25 ms); Env T3 (decay) 4.0 (about 304 ms to -20 dB); Env T4 (release) 2.5 (about 90 ms to -20 dB); Chorus Rate 6.2; MW to VCF 2.0; Voices 8; Pulse Volume 7.0; Delay mix -0.76; Delay spread +4.00; Delay feedback 1.5.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Syncopated short chords. Sequence it tight to the grid or play it loosely by hand.</p></section>
+  <section><h3>How to use it</h3><p>Retro-pop hooks and TV-theme horn lines.</p></section>
+  <section><h3>Mixing</h3><ul><li>Bright, so it can sit lower than you&#x27;d expect.</li><li>A short delay adds a stereo slap to it.</li><li>High-pass at 200 Hz.</li><li>Built-in delay: part of this sound, so keep it. Built-in chorus: turn it off if you&#x27;re using your own.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="bass.html#rubber-coupe">Rubber Coupe</a><span class="why">Funky bass and syncopated stabs.</span></li><li><a href="#chrome-trumpet">Chrome Trumpet</a><span class="why">A solo line over the section.</span></li><li><strong>Congas and shakers</strong><span class="why">They add the Miami setting to it.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>Pulse Fine to +25 cents</strong><span>A stronger, sour detune, like an out-of-tune section.</span></li><li><strong>ENV T3 (decay) to 3.0</strong><span>Shorter, tighter stabs.</span></li><li><strong>Pulse Tune to +7</strong><span>A fifth in each note: a thick, hooky sound.</span></li></ul>
+</article>
+<article class="patch" id="metal-brass" data-tags="darksynth">
+<header>
+  <h2>Metal Brass</h2>
+  <div class="tags"><span class="tag">darksynth</span></div>
+</header>
+<p class="profile">Hard, metallic brass with an oscillator-sync edge: part horn, part machine.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/brass/metal-brass.mp3" aria-label="Preview of Metal Brass"></audio>
+  <a class="ghost" href="../../presets/Doodles/Brass/Metal%20Brass.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>C3 to C5</dd></div><div><dt>Brightness</dt><dd>1775 Hz centroid</dd></div><div><dt>Low energy</dt><dd>1% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 10 ms</dd></div><div><dt>Decay</dt><dd>Holds while the key is down</dd></div><div><dt>Filter closes</dt><dd>0.9 octaves</dd></div><div><dt>Held level</dt><dd>-7 dB from peak</dd></div><div><dt>Width</dt><dd>Mono</dd></div><div><dt>Mono sum</dt><dd>-0.0 dB</dd></div><div><dt>Loudness</dt><dd>-18.6 LUFS, peak -3.0 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">Pulse Sync</th><td class="value">On</td><td>Hard sync on the pulse adds a metallic layer of harmonics on top of the saw.</td></tr><tr><th scope="row">Pulse Tune</th><td class="value">+15 st</td><td>A non-octave tuning produces clangy, inharmonic-sounding overtones.</td></tr><tr><th scope="row">Pulse Env mod</th><td class="value">+0.25</td><td>A small sweep gives each note a metallic &#x27;zing&#x27;.</td></tr><tr><th scope="row">Pulse Volume</th><td class="value">5.5</td><td>Below the saw, so it still reads as brass.</td></tr><tr><th scope="row">Env T1 (attack)</th><td class="value">1.8 (about 20 ms)</td><td>About 20 ms: a brass-like speech, under the machine edge.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Pulse Square; DCO Saw Saw; DCO Range 8&#x27;; Sub level 0.0 / 3; VCF Cutoff 5.6 (about 785 Hz at C4); VCF Res 1.0; VCF Env 2.5; VCF Key follow 4.0; Env T3 (decay) 4.2 (about 322 ms to -20 dB); Env L3 (sustain) 5.0; Env T4 (release) 2.2 (about 63 ms to -20 dB); MW to VCF 2.0; Voices 8; Reverb mix -0.80.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Short, punchy riffs. Big chords can get harsh.</p></section>
+  <section><h3>How to use it</h3><p>Darksynth hooks and aggressive breaks.</p></section>
+  <section><h3>Mixing</h3><ul><li>Dip 2-4 kHz slightly if it&#x27;s fatiguing.</li><li>Saturation makes it even more metallic.</li><li>High-pass at 200 Hz.</li><li>Built-in reverb: turn it off if you&#x27;re using your own.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="lead.html#cyber-scream">Cyber Scream</a><span class="why">Harmonised lines, for a very aggressive hook.</span></li><li><a href="bass.html#blacktop">Blacktop</a><span class="why">Dark bass under a metallic top.</span></li><li><strong>Industrial hits</strong><span class="why">The same machine-like character.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>Pulse Volume to 3.0</strong><span>Less metal, more brass.</span></li><li><strong>Pulse Tune to +7</strong><span>A tighter, more nasal metallic ring.</span></li><li><strong>Pulse Env mod to +0.60</strong><span>A big sweeping &#x27;rip&#x27; on each note.</span></li></ul>
+</article>
+<article class="patch" id="night-patrol" data-tags="darksynth dreamwave">
+<header>
+  <h2>Night Patrol</h2>
+  <div class="tags"><span class="tag">darksynth</span><span class="tag">dreamwave</span></div>
+</header>
+<p class="profile">Dark, ominous sustained low brass, like the opening of a John Carpenter score.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/brass/night-patrol.mp3" aria-label="Preview of Night Patrol"></audio>
+  <a class="ghost" href="../../presets/Doodles/Brass/Night%20Patrol.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>C2 to C4</dd></div><div><dt>Brightness</dt><dd>316 Hz centroid</dd></div><div><dt>Low energy</dt><dd>40% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 95 ms</dd></div><div><dt>Decay</dt><dd>Holds while the key is down</dd></div><div><dt>Filter closes</dt><dd>0.0 octaves</dd></div><div><dt>Held level</dt><dd>-4 dB from peak</dd></div><div><dt>Width</dt><dd>Stereo, side/mid 0.65</dd></div><div><dt>Mono sum</dt><dd>-1.6 dB</dd></div><div><dt>Loudness</dt><dd>-18.2 LUFS, peak -7.2 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">VCF Cutoff</th><td class="value">3.4 (about 136 Hz at C4)</td><td>About 130 Hz at C4: only the lowest harmonics remain, which is where the menace comes from.</td></tr><tr><th scope="row">VCF Env</th><td class="value">2.2</td><td>A small opening at the start, so that it reads as brass rather than a pad.</td></tr><tr><th scope="row">Env T1 (attack)</th><td class="value">4.2 (about 165 ms)</td><td>About 170 ms: slow and heavy.</td></tr><tr><th scope="row">Reverb tone</th><td class="value">-3.00</td><td>A dark reverb, so that the space adds no brightness.</td></tr><tr><th scope="row">Chorus Rate</th><td class="value">3.0</td><td>A slow chorus adds width with little motion.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Saw Saw; DCO Range 8&#x27;; Sub level 0.4 / 3; Chorus On; VCF Res 1.2; VCF Key follow 2.0; Env T3 (decay) 5.5 (about 963 ms to -20 dB); Env L3 (sustain) 7.5; Env T4 (release) 5.0 (about 778 ms to -20 dB); MW to VCF 3.0; Voices 8; Reverb mix -0.40; Reverb size 7.5.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Slow, simple chords and held fifths. Mod wheel opens it for tension.</p></section>
+  <section><h3>How to use it</h3><p>Slow-burning verses, ominous intros, and tension before a drop.</p></section>
+  <section><h3>Mixing</h3><ul><li>Sidechain to the kick if it&#x27;s in the same space.</li><li>A long, dark reverb suits it.</li><li>Keep other parts out of 150-400 Hz.</li><li>Built-in chorus and reverb: part of this sound, so keep them.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="bass.html#blacktop">Blacktop</a><span class="why">A brooding bass under dark brass is the core of darksynth.</span></li><li><a href="pad.html#black-horizon">Black Horizon</a><span class="why">Heavy and dark, for a very ominous section.</span></li><li><strong>Slow, deep toms</strong><span class="why">They add to the sense of something approaching.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>VCF Cutoff to 5.0</strong><span>Brighter and more threatening.</span></li><li><strong>VCF RES to 4.0</strong><span>A growl in the low end.</span></li><li><strong>ENV T1 (attack) to 6.0</strong><span>A very slow swell, as if from a distance.</span></li></ul>
+</article>
+</main>
+</div>
+<script src="site.js"></script>
+</body>
+</html>

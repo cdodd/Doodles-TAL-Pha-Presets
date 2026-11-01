@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reaper cheat sheet: Doodles TAL-Pha Presets</title>
+<link rel="stylesheet" href="style.css">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="index.html"><span>Doodles</span> TAL-Pha Presets</a>
+  <button type="button" id="theme" class="ghost" aria-label="Switch between light and dark theme">Theme</button>
+</header>
+<div class="layout">
+<nav class="sidebar" aria-label="Documentation">
+<a href="index.html">Overview</a>
+<p class="nav-label">Patches</p>
+<a href="bass.html">Bass</a>
+<a href="lead.html">Lead</a>
+<a href="pad.html">Pad</a>
+<a href="strings.html">Strings</a>
+<a href="brass.html">Brass</a>
+<a href="arp.html">Arp</a>
+<a href="pluck.html">Pluck</a>
+<a href="keys.html">Keys and Bells</a>
+<a href="chord.html">Chord and Stab</a>
+<a href="fx.html">FX and Atmosphere</a>
+<p class="nav-label">Guides</p>
+<a href="field-guide.html">Field guide</a>
+<a href="control-reference.html">Control reference</a>
+<a href="gallery.html">Sound gallery</a>
+<a href="sound-map.html">Sound map</a>
+<a href="kits.html">Starter kits</a>
+<a href="reaper-cheat-sheet.html" aria-current=page>Reaper cheat sheet</a>
+</nav>
+<main>
+<div class="prose"><h1>Reaper cheat sheet</h1>
+<p class="lede">Common synthwave mix moves using only Reaper's stock plugins. Settings are starting points: use your ears from there.</p>
+<h2>Getting a preset</h2>
+<p>Add <strong>TAL-Pha</strong> to a track, click the file icon to open the preset browser, press <strong>Reload</strong>, and filter by the <strong>Doodles</strong> bank. Presets aim for about the same loudness, and most peak well below -3 dBFS. Free-running oscillators can move a peak by a few dB from one play to the next, so a few can go higher. Turn your track fader down rather than adding a limiter. Short, punchy patches such as stabs can't reach the target without clipping, so they sit a few dB quieter.</p>
+<p>To hear a chord memory patch, hold a single note. To hear an arp patch, hold a chord. The arp and synced delays and LFOs are set to follow the host's tempo, but they've only been rendered at 120 BPM, so check them at your project's tempo.</p>
+<h2>Sidechain the bass and pad to the kick</h2>
+<p>This is the pump that defines the style.</p>
+<ol>
+<li>Open the kick track's routing (<strong>Route</strong> button) and add a send to the bass track.</li>
+<li>Set the send's audio to <strong>1/2 -&gt; 3/4</strong>. Reaper adds the extra channels for you.</li>
+<li>Add <strong>ReaComp</strong> to the bass track and set <strong>Detector input</strong> to <strong>Auxiliary L+R</strong>.</li>
+<li>Start with ratio 4:1, attack 1 ms and release 100 ms, then lower the threshold until you see 3-6 dB of reduction.</li>
+</ol>
+<p>Repeat for the pad, with a longer release around 200-300 ms. Use the same send from the kick, or a ghost kick with its own output muted, if the real kick doesn't play on every beat.</p>
+<h2>Gated reverb snare</h2>
+<p>The big 80s snare, and easier than it looks.</p>
+<ol>
+<li>Create a new track called "Snare verb". Send the snare to it on <strong>1/2 -&gt; 1/2</strong>, and also on <strong>1/2 -&gt; 3/4</strong>.</li>
+<li>On that track, add <strong>ReaVerbate</strong> at 100% wet with a large room size.</li>
+<li>After it, add <strong>ReaGate</strong>, with <strong>Detector input</strong> set to <strong>Auxiliary L+R</strong>.</li>
+<li>Set the threshold so the gate opens on each hit, hold around 150-250 ms and release around 20 ms.</li>
+<li>Bring the track's fader up beneath the dry snare.</li>
+</ol>
+<h2>Keep the low end mono</h2>
+<p>Steel Engine and Velvet Bass have some low-end stereo, and it can also come from chorus on other parts.</p>
+<ul>
+<li>Simplest: put <strong>Midnight Sub</strong> on its own mono track, then high-pass the wide patch at about 120 Hz with <strong>ReaEQ</strong>.</li>
+<li>Or lower the width overall with <strong>JS: Stereo Width</strong>, or turn the patch's chorus or unison spread down.</li>
+</ul>
+<p>Check by pressing the mono button on your master track from time to time. These presets lose at most about 3 dB in mono.</p>
+<h2>Basic EQ moves</h2>
+<p>Using <strong>ReaEQ</strong>:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Part</th>
+<th>High-pass</th>
+<th>Other moves</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bass</td>
+<td>30 Hz</td>
+<td>Small lift at 800 Hz to 1.5 kHz, for small speakers</td>
+</tr>
+<tr>
+<td>Pad</td>
+<td>150-200 Hz</td>
+<td>Dip 300-500 Hz if chords cloud</td>
+</tr>
+<tr>
+<td>Lead</td>
+<td>200-300 Hz</td>
+<td>Small lift at 2-3 kHz</td>
+</tr>
+<tr>
+<td>Arp</td>
+<td>250 Hz</td>
+<td>Keep it low in level rather than EQing it</td>
+</tr>
+<tr>
+<td>Brass</td>
+<td>150 Hz</td>
+<td>Lift at 1-2 kHz for bite</td>
+</tr>
+</tbody>
+</table></div>
+<h2>Delay and reverb on sends</h2>
+<p>The built-in effects are fine for one part, but a shared send ties a mix together and lets you turn off a patch's own effects.</p>
+<ul>
+<li><strong>ReaDelay:</strong> set Length (musical) to <strong>0.75</strong> for a dotted 8th, or 0.5 for an 8th.</li>
+<li><strong>ReaVerbate</strong> or <strong>ReaVerb</strong> with an impulse response, for a shared room.</li>
+<li>Tick <strong>FX LOCK</strong> in TAL-Pha if you want to keep your effects settings while browsing presets.</li>
+</ul>
+<h2>Tape and saturation</h2>
+<p><strong>JS: Saturation</strong> adds warmth and grit. Use a little on the bass, or on a bus with a high cut around 8 kHz from ReaEQ, for a cassette feel.</p>
+<h2>Level check</h2>
+<p>Use <strong>ReaLimit</strong> on the master only for checking loudness at the end. If you're hitting it during the mix, turn the tracks down instead.</p></div>
+</main>
+</div>
+<script src="site.js"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+pedalboard
+mido
+numpy
+scipy
+markdown
+matplotlib

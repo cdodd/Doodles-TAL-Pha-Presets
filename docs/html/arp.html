@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arp: Doodles TAL-Pha Presets</title>
+<link rel="stylesheet" href="style.css">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="index.html"><span>Doodles</span> TAL-Pha Presets</a>
+  <button type="button" id="theme" class="ghost" aria-label="Switch between light and dark theme">Theme</button>
+</header>
+<div class="layout">
+<nav class="sidebar" aria-label="Documentation">
+<a href="index.html">Overview</a>
+<p class="nav-label">Patches</p>
+<a href="bass.html">Bass</a>
+<a href="lead.html">Lead</a>
+<a href="pad.html">Pad</a>
+<a href="strings.html">Strings</a>
+<a href="brass.html">Brass</a>
+<a href="arp.html" aria-current=page>Arp</a>
+<div class="subnav"><a class="recipe-link" href="arp-recipe.html">Build from init</a><a href="#outrun-sixteenths">Outrun Sixteenths</a><a href="#cascade">Cascade</a><a href="#digital-rain">Digital Rain</a><a href="#sequencer-drive">Sequencer Drive</a><a href="#ping-pong-neon">Ping Pong Neon</a><a href="#crystal-steps">Crystal Steps</a><a href="#low-machine">Low Machine</a><a href="#random-terminal">Random Terminal</a><a href="#dotted-eighth">Dotted Eighth</a><a href="#octave-climb">Octave Climb</a></div>
+<a href="pluck.html">Pluck</a>
+<a href="keys.html">Keys and Bells</a>
+<a href="chord.html">Chord and Stab</a>
+<a href="fx.html">FX and Atmosphere</a>
+<p class="nav-label">Guides</p>
+<a href="field-guide.html">Field guide</a>
+<a href="control-reference.html">Control reference</a>
+<a href="gallery.html">Sound gallery</a>
+<a href="sound-map.html">Sound map</a>
+<a href="kits.html">Starter kits</a>
+<a href="reaper-cheat-sheet.html">Reaper cheat sheet</a>
+</nav>
+<main>
+<h1>Arp</h1>
+<p class="lede">10 patches. Control values are as shown on the plugin panel. Times and frequencies
+come from <a href="control-reference.html">measurements of the plugin</a>.</p>
+<a class="callout" href="arp-recipe.html"><strong>New to this category?</strong> Build a patch from init, step by step, hearing each decision.</a>
+<section class="install">
+<h2>Mixing this category</h2>
+<p>Starting points for every patch here. Each patch's own notes cover what's different about it.</p>
+<ul><li>High-pass at about 250 Hz, or about 120 Hz for bass-register arps.</li><li>Keep it low in level rather than EQing it. Dip it where the lead sits if they compete.</li><li>It rarely needs compression. Sidechain lightly to lock it with the bass pump.</li><li>Keep the notes centred or use a stereo delay; hard-panned arps pull the ear away.</li><li>Delay sets the rhythm, so sync it to the project and keep feedback low.</li></ul>
+</section>
+<div class="chips" role="group" aria-label="Filter by subgenre"><button type="button" class="chip" aria-pressed="true" data-tag="">All</button><button type="button" class="chip" aria-pressed="false" data-tag="chillwave">chillwave</button><button type="button" class="chip" aria-pressed="false" data-tag="darksynth">darksynth</button><button type="button" class="chip" aria-pressed="false" data-tag="dreamwave">dreamwave</button><button type="button" class="chip" aria-pressed="false" data-tag="outrun">outrun</button></div>
+<article class="patch" id="outrun-sixteenths" data-tags="outrun">
+<header>
+  <h2>Outrun Sixteenths</h2>
+  <div class="tags"><span class="tag">outrun</span></div>
+</header>
+<p class="profile">The defining outrun arp: a tight saw running up in 16ths over two octaves, always moving forward.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/arp/outrun-sixteenths.mp3" aria-label="Preview of Outrun Sixteenths"></audio>
+  <a class="ghost" href="../../presets/Doodles/Arp/Outrun%20Sixteenths.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>C3 to C5</dd></div><div><dt>Brightness</dt><dd>1686 Hz centroid</dd></div><div><dt>Low energy</dt><dd>1% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 0 ms</dd></div><div><dt>Decay</dt><dd>Holds while the key is down</dd></div><div><dt>Filter closes</dt><dd>0.0 octaves</dd></div><div><dt>Held level</dt><dd>-7 dB from peak</dd></div><div><dt>Width</dt><dd>Mono</dd></div><div><dt>Mono sum</dt><dd>+0.0 dB</dd></div><div><dt>Loudness</dt><dd>-18.0 LUFS, peak -4.5 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">Arp mode</th><td class="value">Up</td><td>Up: always climbing, then resetting. This gives the sense of forward motion.</td></tr><tr><th scope="row">Arp sync</th><td class="value">Host sync</td><td>Host sync: stays locked to your project&#x27;s tempo, whatever it is.</td></tr><tr><th scope="row">Arp Rate</th><td class="value">1/16</td><td>16ths, the standard pace for outrun.</td></tr><tr><th scope="row">Arp range</th><td class="value">2 oct</td><td>Two octaves, long enough to feel like a phrase rather than a loop.</td></tr><tr><th scope="row">Env T3 (decay)</th><td class="value">2.8 (about 107 ms to -20 dB)</td><td>About 100 ms: notes are short enough that each one is distinct.</td></tr><tr><th scope="row">Env L3 (sustain)</th><td class="value">0.0</td><td>Zero: the amp fades between notes, which gives the arp its pulse.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> VCA mode Normal; DCO Saw Saw; DCO Range 8&#x27;; Sub level 0.0 / 3; VCF Cutoff 4.2 (about 252 Hz at C4); VCF Res 1.5; VCF Env 3.6; VCF Key follow 4.0; Env T4 (release) 2.0 (about 50 ms to -20 dB); MW to VCF 3.0; Voices 6; Delay mix -0.76; Delay Time 1/8; Delay feedback 2.0.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Hold a chord and it runs in time with your project. Mod wheel opens the filter for a build.</p></section>
+  <section><h3>How to use it</h3><p>The motor of an outrun track, usually from the first verse onward.</p></section>
+  <section><h3>Mixing</h3><ul><li>High-pass at 250 Hz; it should sit well above the bass.</li><li>Sidechain to the kick for the pump that defines the style.</li><li>Automate filter cutoff across a section for an easy build.</li><li>Built-in delay: turn it off if you&#x27;re using your own.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="bass.html#nightdrive">Nightdrive</a><span class="why">8ths in the bass, 16ths above: the classic interlock.</span></li><li><a href="pad.html#endless-highway">Endless Highway</a><span class="why">A slow pad fills the space between arp notes.</span></li><li><strong>Gated snare and LinnDrum-style kit</strong><span class="why">The whole outrun recipe.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>Arp range to 1 oct</strong><span>A tighter, more hypnotic pattern.</span></li><li><strong>Arp mode to Up &amp; down</strong><span>A gentler rise and fall.</span></li><li><strong>ENV T3 (decay) to 4.0</strong><span>Longer notes that begin to overlap: smoother and less tight.</span></li></ul>
+</article>
+<article class="patch" id="cascade" data-tags="dreamwave outrun">
+<header>
+  <h2>Cascade</h2>
+  <div class="tags"><span class="tag">dreamwave</span><span class="tag">outrun</span></div>
+</header>
+<p class="profile">A shimmering PWM arp that falls across three octaves, like water running downhill.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/arp/cascade.mp3" aria-label="Preview of Cascade"></audio>
+  <a class="ghost" href="../../presets/Doodles/Arp/Cascade.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>C3 to C5</dd></div><div><dt>Brightness</dt><dd>1924 Hz centroid</dd></div><div><dt>Low energy</dt><dd>1% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 5 ms</dd></div><div><dt>Decay</dt><dd>Holds while the key is down</dd></div><div><dt>Filter closes</dt><dd>0.2 octaves</dd></div><div><dt>Held level</dt><dd>-6 dB from peak</dd></div><div><dt>Width</dt><dd>Stereo, side/mid 0.60</dd></div><div><dt>Mono sum</dt><dd>-1.3 dB</dd></div><div><dt>Loudness</dt><dd>-18.0 LUFS, peak -7.3 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">Arp mode</th><td class="value">Down</td><td>Down: a falling pattern resolves rather than builds, which is calmer.</td></tr><tr><th scope="row">Arp range</th><td class="value">3 oct</td><td>Three octaves, for a long fall.</td></tr><tr><th scope="row">DCO Pulse</th><td class="value">Pulse PW</td><td>PWM keeps changing, so repeats of the pattern aren&#x27;t identical.</td></tr><tr><th scope="row">Chorus</th><td class="value">On</td><td>Adds shimmer and width.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Saw Off; DCO Range 8&#x27;; Sub level 0.0 / 3; PWM 5.5; PWM Rate 5.5; VCF Cutoff 5.8 (about 926 Hz at C4); VCF Env 2.0; VCF Key follow 4.0; Env T3 (decay) 3.4 (about 173 ms to -20 dB); Env L3 (sustain) 0.0; Env T4 (release) 3.0 (about 105 ms to -20 dB); Chorus Rate 5.0; MW to VCF 2.0; Voices 6; Arp Rate 1/16; Arp sync Host sync; Reverb mix -0.64.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Hold chords: the falling direction feels calmer than a rising arp.</p></section>
+  <section><h3>How to use it</h3><p>Dreamy sections, and verses that need movement without rising tension.</p></section>
+  <section><h3>Mixing</h3><ul><li>High-pass at 250 Hz.</li><li>It sits nicely behind other parts, so mix it low.</li><li>The chorus already gives it width, so it can stay centred.</li><li>Built-in chorus: part of this sound, so keep it. Built-in reverb: turn it off if you&#x27;re using your own.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="pad.html#aurora-haze">Aurora Haze</a><span class="why">A slowly moving pad under a steady cascade.</span></li><li><a href="bass.html#velvet-bass">Velvet Bass</a><span class="why">Soft bass under gentle motion.</span></li><li><strong>Ambient guitar</strong><span class="why">Two gentle, repeating textures.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>Arp mode to Up</strong><span>The same notes feel far more tense when rising.</span></li><li><strong>Arp Rate to 1/16T</strong><span>Triplets add a flowing feel.</span></li><li><strong>PWM Rate to 2.0</strong><span>A slower shimmer, less busy.</span></li></ul>
+</article>
+<article class="patch" id="digital-rain" data-tags="darksynth dreamwave">
+<header>
+  <h2>Digital Rain</h2>
+  <div class="tags"><span class="tag">darksynth</span><span class="tag">dreamwave</span></div>
+</header>
+<p class="profile">A steady arp with a filter that jumps randomly on every note, so each note gets a different tone.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/arp/digital-rain.mp3" aria-label="Preview of Digital Rain"></audio>
+  <a class="ghost" href="../../presets/Doodles/Arp/Digital%20Rain.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>C3 to C5</dd></div><div><dt>Brightness</dt><dd>1535 Hz centroid</dd></div><div><dt>Low energy</dt><dd>1% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 0 ms</dd></div><div><dt>Decay</dt><dd>Holds while the key is down</dd></div><div><dt>Filter closes</dt><dd>0.3 octaves</dd></div><div><dt>Held level</dt><dd>-7 dB from peak</dd></div><div><dt>Width</dt><dd>Stereo, side/mid 0.11</dd></div><div><dt>Mono sum</dt><dd>-0.0 dB</dd></div><div><dt>Loudness</dt><dd>-17.9 LUFS, peak -4.1 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">LFO wave</th><td class="value">S&amp;H</td><td>S&amp;H: a new random filter position on every LFO cycle.</td></tr><tr><th scope="row">LFO Sync</th><td class="value">On</td><td>Tempo-synced, so the random changes stay on the same grid as the notes.</td></tr><tr><th scope="row">LFO Rate</th><td class="value">1/16</td><td>1/16, the same as the arp: effectively a random tone per note.</td></tr><tr><th scope="row">VCF LFO</th><td class="value">3.2</td><td>A wide range, so that bright and dark notes are clearly different.</td></tr><tr><th scope="row">VCF Res</th><td class="value">3.8</td><td>Makes each tone change easy to hear.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Saw Saw; DCO Range 8&#x27;; Sub level 0.0 / 3; VCF Cutoff 5.5 (about 723 Hz at C4); VCF Env 1.2; Env T3 (decay) 3.0 (about 120 ms to -20 dB); Env L3 (sustain) 0.0; Env T4 (release) 2.0 (about 50 ms to -20 dB); MW to VCF 2.0; Voices 6; Arp Rate 1/16; Arp range 2 oct; Arp mode Up; Arp sync Host sync; Delay mix -0.70; Delay Time 1/8; Delay spread +4.00; Delay feedback 2.5.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>The notes follow your chord but the tones are random, so it never quite repeats.</p></section>
+  <section><h3>How to use it</h3><p>Cyberpunk tension, data-stream moods and long sections that need ongoing interest.</p></section>
+  <section><h3>Mixing</h3><ul><li>Bright notes jump out at random, so use a little compression.</li><li>A wide delay spreads the random notes around.</li><li>High-pass at 250 Hz.</li><li>Built-in delay: turn it off if you&#x27;re using your own.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="fx.html#mainframe">Mainframe</a><span class="why">Both sound like machines thinking.</span></li><li><a href="pad.html#black-horizon">Black Horizon</a><span class="why">Random bright drops over a dark bed.</span></li><li><strong>Glitchy percussion</strong><span class="why">The same unpredictable detail.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>VCF LFO to 6.0</strong><span>Much wider jumps from dark to bright.</span></li><li><strong>LFO Rate to 1/8</strong><span>Tone changes half as often, so notes pair up.</span></li><li><strong>VCF RES to 6.0</strong><span>Each note becomes a clear, resonant blip.</span></li></ul>
+</article>
+<article class="patch" id="sequencer-drive" data-tags="darksynth outrun">
+<header>
+  <h2>Sequencer Drive</h2>
+  <div class="tags"><span class="tag">darksynth</span><span class="tag">outrun</span></div>
+</header>
+<p class="profile">A tense, mechanical sequence in the low mids: a filter blip on every note, in the style of a modular sequencer.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/arp/sequencer-drive.mp3" aria-label="Preview of Sequencer Drive"></audio>
+  <a class="ghost" href="../../presets/Doodles/Arp/Sequencer%20Drive.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>C2 to C4</dd></div><div><dt>Brightness</dt><dd>532 Hz centroid</dd></div><div><dt>Low energy</dt><dd>56% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 5 ms</dd></div><div><dt>Decay</dt><dd>Holds while the key is down</dd></div><div><dt>Filter closes</dt><dd>0.0 octaves</dd></div><div><dt>Held level</dt><dd>-4 dB from peak</dd></div><div><dt>Width</dt><dd>Mono</dd></div><div><dt>Mono sum</dt><dd>+0.0 dB</dd></div><div><dt>Loudness</dt><dd>-18.0 LUFS, peak -8.1 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">Arp mode</th><td class="value">Up &amp; down</td><td>Up &amp; down: a pattern with no sudden reset, like a looping sequencer.</td></tr><tr><th scope="row">Arp range</th><td class="value">1 oct</td><td>A single octave, keeping it a tight, insistent figure.</td></tr><tr><th scope="row">VCA mode</th><td class="value">Gate</td><td>Gate: the amp stays open and the filter blip alone makes the rhythm, so the notes join up into a machine-like drive.</td></tr><tr><th scope="row">VCF Env</th><td class="value">4.2</td><td>A big, fast filter sweep on every note. This is the pattern&#x27;s rhythm.</td></tr><tr><th scope="row">Sub level</th><td class="value">1.0 / 3</td><td>A square below gives weight to a part that lives in the low mids.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Saw Saw; Sub wave Square -1 oct (panel label: OFF); DCO Range 8&#x27;; VCF Cutoff 3.0 (about 100 Hz at C4); VCF Res 3.2; VCF Key follow 3.0; Env T3 (decay) 2.8 (about 107 ms to -20 dB); Env L3 (sustain) 0.0; Env T4 (release) 0.5 (about 15 ms to -20 dB); MW to VCF 3.5; Voices 4; Arp Rate 1/16; Arp sync Host sync.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Hold one or two notes for a pattern. Changing the chord feels like changing gear.</p></section>
+  <section><h3>How to use it</h3><p>Chase scenes and tension. Automate the cutoff for a slow-burn build.</p></section>
+  <section><h3>Mixing</h3><ul><li>It overlaps a bass, so high-pass at 120 Hz or let it replace the bass.</li><li>Delay on a send thickens the rhythm.</li><li>Sidechain to the kick.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="bass.html#grid-runner">Grid Runner</a><span class="why">Two sequenced lines an octave or two apart interlock.</span></li><li><a href="brass.html#night-patrol">Night Patrol</a><span class="why">Sustained dark brass over a steady pulse.</span></li><li><strong>Tom pattern</strong><span class="why">Marks out a rhythm with the sequence.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>VCF RES to 7.0</strong><span>An acid squelch on every step.</span></li><li><strong>Arp mode to Random</strong><span>Less mechanical and more nervous.</span></li><li><strong>VCF Cutoff to 5.0</strong><span>A brighter, more exposed pattern.</span></li></ul>
+</article>
+<article class="patch" id="ping-pong-neon" data-tags="outrun chillwave">
+<header>
+  <h2>Ping Pong Neon</h2>
+  <div class="tags"><span class="tag">outrun</span><span class="tag">chillwave</span></div>
+</header>
+<p class="profile">A plucky 25% pulse arp whose echoes sit off-centre around a centred note.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/arp/ping-pong-neon.mp3" aria-label="Preview of Ping Pong Neon"></audio>
+  <a class="ghost" href="../../presets/Doodles/Arp/Ping%20Pong%20Neon.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>C3 to C5</dd></div><div><dt>Brightness</dt><dd>1640 Hz centroid</dd></div><div><dt>Low energy</dt><dd>1% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 0 ms</dd></div><div><dt>Decay</dt><dd>Falls 20 dB in 165 ms</dd></div><div><dt>Filter closes</dt><dd>0.0 octaves</dd></div><div><dt>Held level</dt><dd>-9 dB from peak</dd></div><div><dt>Width</dt><dd>Stereo, side/mid 0.19</dd></div><div><dt>Mono sum</dt><dd>-0.2 dB</dd></div><div><dt>Loudness</dt><dd>-18.0 LUFS, peak -3.4 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">Delay spread</th><td class="value">+5.00</td><td>Top of the range: the echoes lean off-centre while the note stays in the middle, which creates the width. It isn&#x27;t a hard left-right bounce, which this delay can&#x27;t do.</td></tr><tr><th scope="row">Delay Time</th><td class="value">1/8</td><td>1/8, the same as the arp, so each echo lands on the next note: it adds no extra rhythm, and the stereo tail is what fills the gaps.</td></tr><tr><th scope="row">Arp Rate</th><td class="value">1/8</td><td>1/8: a slower arp leaves space for the echoes.</td></tr><tr><th scope="row">DCO Pulse</th><td class="value">Pulse 25%</td><td>A narrow 25% pulse has a plucky, nasal tone that stays clear through the echoes.</td></tr><tr><th scope="row">Delay feedback</th><td class="value">4.5</td><td>Several repeats, so the stereo movement is clearly heard.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Saw Off; DCO Range 8&#x27;; Sub level 0.0 / 3; VCF Cutoff 5.8 (about 926 Hz at C4); VCF Env 2.2; VCF Key follow 3.0; Env T3 (decay) 3.0 (about 120 ms to -20 dB); Env L3 (sustain) 0.0; Env T4 (release) 2.0 (about 50 ms to -20 dB); MW to VCF 2.0; Voices 6; Arp range 2 oct; Arp mode Up; Arp sync Host sync; Delay mix -0.32.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Hold chords. The width comes from the delay, so it&#x27;s strongest between notes.</p></section>
+  <section><h3>How to use it</h3><p>Stereo interest in a verse. A good way to fill space without adding low-mid energy.</p></section>
+  <section><h3>Mixing</h3><ul><li>The dry signal is centred and the echoes are wide, so it leaves the centre clear for a vocal or lead.</li><li>Delay is locked to your tempo, so no need to adjust it.</li><li>High-pass at 300 Hz.</li><li>Built-in delay: part of this sound, so keep it.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="#crystal-steps">Crystal Steps</a><span class="why">Two arps, one wide and one high, for a dense, sparkling texture.</span></li><li><a href="bass.html#neon-pulse">Neon Pulse</a><span class="why">A simple, centred bass anchors all the movement.</span></li><li><strong>Vocal hook</strong><span class="why">The centre stays clear for the voice.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>Delay Time to 1/8.</strong><span>Dotted echoes that interlock with the notes.</span></li><li><strong>Delay feedback to 6.5</strong><span>A long, building trail of echoes.</span></li><li><strong>PULSE to Square</strong><span>A rounder, more hollow tone.</span></li></ul>
+</article>
+<article class="patch" id="crystal-steps" data-tags="dreamwave chillwave">
+<header>
+  <h2>Crystal Steps</h2>
+  <div class="tags"><span class="tag">dreamwave</span><span class="tag">chillwave</span></div>
+</header>
+<p class="profile">A delicate, sparkling arp running high above the rest of the track.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/arp/crystal-steps.mp3" aria-label="Preview of Crystal Steps"></audio>
+  <a class="ghost" href="../../presets/Doodles/Arp/Crystal%20Steps.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>C4 to C6</dd></div><div><dt>Brightness</dt><dd>2674 Hz centroid</dd></div><div><dt>Low energy</dt><dd>0% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 0 ms</dd></div><div><dt>Decay</dt><dd>Holds while the key is down</dd></div><div><dt>Filter closes</dt><dd>0.0 octaves</dd></div><div><dt>Held level</dt><dd>-5 dB from peak</dd></div><div><dt>Width</dt><dd>Stereo, side/mid 0.04</dd></div><div><dt>Mono sum</dt><dd>-0.0 dB</dd></div><div><dt>Loudness</dt><dd>-18.0 LUFS, peak -11.0 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">DCO Range</th><td class="value">4&#x27;</td><td>4&#x27; places it an octave higher, clear of everything else.</td></tr><tr><th scope="row">DCO Pulse</th><td class="value">Square</td><td>A square has a clean, simple, glass-like tone up here.</td></tr><tr><th scope="row">HPF</th><td class="value">HP 1</td><td>HP 1 removes any stray low-end weight.</td></tr><tr><th scope="row">Env T3 (decay)</th><td class="value">3.0 (about 120 ms to -20 dB)</td><td>About 120 ms: short and bell-like.</td></tr><tr><th scope="row">Reverb mix</th><td class="value">-0.48</td><td>The reverb gives the notes a halo.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Saw Off; Sub level 0.0 / 3; VCF Cutoff 8.2 (about 6021 Hz at C4); Env L3 (sustain) 0.0; Env T4 (release) 2.5 (about 90 ms to -20 dB); MW to VCF 1.0; Voices 6; Arp Rate 1/16; Arp range 2 oct; Arp mode Up; Arp sync Host sync; Reverb size 6.5.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Simple chords, high on the keyboard. It needs very little to work.</p></section>
+  <section><h3>How to use it</h3><p>The top layer in a chorus, or a light texture in a breakdown.</p></section>
+  <section><h3>Mixing</h3><ul><li>It can poke out, so mix it low.</li><li>No need for extra high-pass: there&#x27;s almost no low content.</li><li>Reverb adds to the sparkle.</li><li>Built-in reverb: part of this sound, so keep it.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="bass.html#neon-pulse">Neon Pulse</a><span class="why">A plain bass and a high arp, with the middle free.</span></li><li><a href="#ping-pong-neon">Ping Pong Neon</a><span class="why">High and wide: a very sparkling combination.</span></li><li><strong>Glockenspiel</strong><span class="why">They share a bell-like register.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>Arp Rate to 1/32</strong><span>A fast, glittering shimmer.</span></li><li><strong>DCO Range to 8&#x27;</strong><span>An octave down: warmer and more present.</span></li><li><strong>Reverb mix to -0.20</strong><span>Far away and soft.</span></li></ul>
+</article>
+<article class="patch" id="low-machine" data-tags="darksynth">
+<header>
+  <h2>Low Machine</h2>
+  <div class="tags"><span class="tag">darksynth</span></div>
+</header>
+<p class="profile">A dark, chugging low arp that doubles as a bass: heavy and relentless.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/arp/low-machine.mp3" aria-label="Preview of Low Machine"></audio>
+  <a class="ghost" href="../../presets/Doodles/Arp/Low%20Machine.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>C1 to C3</dd></div><div><dt>Brightness</dt><dd>238 Hz centroid</dd></div><div><dt>Low energy</dt><dd>86% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 5 ms</dd></div><div><dt>Decay</dt><dd>Holds while the key is down</dd></div><div><dt>Filter closes</dt><dd>0.0 octaves</dd></div><div><dt>Held level</dt><dd>-3 dB from peak</dd></div><div><dt>Width</dt><dd>Mono</dd></div><div><dt>Mono sum</dt><dd>+0.0 dB</dd></div><div><dt>Loudness</dt><dd>-18.0 LUFS, peak -7.5 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">Arp range</th><td class="value">1 oct</td><td>One octave only, so that it stays in the bass register.</td></tr><tr><th scope="row">Sub level</th><td class="value">1.5 / 3</td><td>A strong sub carries the fundamental at low pitch.</td></tr><tr><th scope="row">VCA mode</th><td class="value">Gate</td><td>Gate: the amp holds, while the filter envelope does the chugging.</td></tr><tr><th scope="row">VCF Cutoff</th><td class="value">3.0 (about 100 Hz at C4)</td><td>About 100 Hz at C4, and darker still on low notes: it only opens on each step.</td></tr><tr><th scope="row">Voices</th><td class="value">4</td><td>4 voices are enough for simple chords; there&#x27;s no call for more at this pitch.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Saw Saw; Sub wave Square -1 oct (panel label: OFF); DCO Range 8&#x27;; VCF Res 1.8; VCF Env 3.2; VCF Key follow 2.0; Env T3 (decay) 2.6 (about 95 ms to -20 dB); Env L3 (sustain) 1.0; Env T4 (release) 0.5 (about 15 ms to -20 dB); MW to VCF 3.0; Arp Rate 1/16; Arp mode Up; Arp sync Host sync.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>One or two low notes: it&#x27;s chugging, so large chords turn to mud.</p></section>
+  <section><h3>How to use it</h3><p>Replaces a bass in darksynth, or adds a mechanical chug beneath one.</p></section>
+  <section><h3>Mixing</h3><ul><li>Mono safe. Treat it just like a bass.</li><li>Sidechain hard to the kick.</li><li>Saturation adds menace.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="lead.html#cyber-scream">Cyber Scream</a><span class="why">Pure aggression at both ends of the spectrum.</span></li><li><a href="pad.html#black-horizon">Black Horizon</a><span class="why">A static, dark bed over a low chug.</span></li><li><strong>Distorted drums</strong><span class="why">Relentless low-end energy.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>VCF Cutoff to 4.5</strong><span>A growlier, more exposed chug.</span></li><li><strong>Arp Rate to 1/8</strong><span>Half-time: heavier, less urgent.</span></li><li><strong>Sub level to 0</strong><span>Removes the weight, for layering over another bass.</span></li></ul>
+</article>
+<article class="patch" id="random-terminal" data-tags="darksynth outrun">
+<header>
+  <h2>Random Terminal</h2>
+  <div class="tags"><span class="tag">darksynth</span><span class="tag">outrun</span></div>
+</header>
+<p class="profile">A square arp that plays your chord in random order: nervous, like a computer searching a terminal.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/arp/random-terminal.mp3" aria-label="Preview of Random Terminal"></audio>
+  <a class="ghost" href="../../presets/Doodles/Arp/Random%20Terminal.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>C3 to C5</dd></div><div><dt>Brightness</dt><dd>1484 Hz centroid</dd></div><div><dt>Low energy</dt><dd>1% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 0 ms</dd></div><div><dt>Decay</dt><dd>Falls 20 dB in 195 ms</dd></div><div><dt>Filter closes</dt><dd>0.0 octaves</dd></div><div><dt>Held level</dt><dd>-8 dB from peak</dd></div><div><dt>Width</dt><dd>Mono</dd></div><div><dt>Mono sum</dt><dd>+0.0 dB</dd></div><div><dt>Loudness</dt><dd>-18.0 LUFS, peak -7.8 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">Arp mode</th><td class="value">Random</td><td>Random: no pattern to follow, which is the source of the nervous feel.</td></tr><tr><th scope="row">DCO Pulse</th><td class="value">Square</td><td>A plain square sounds like old computer bleeps.</td></tr><tr><th scope="row">Env T3 (decay)</th><td class="value">2.2 (about 70 ms to -20 dB)</td><td>About 70 ms: tiny, separate blips, as if from a machine.</td></tr><tr><th scope="row">Arp range</th><td class="value">2 oct</td><td>Two octaves give it enough variety to sound unpredictable.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Saw Off; DCO Range 8&#x27;; Sub level 0.0 / 3; VCF Cutoff 6.5 (about 1635 Hz at C4); VCF Env 1.5; Env L3 (sustain) 0.0; Env T4 (release) 1.0 (about 35 ms to -20 dB); MW to VCF 2.0; Voices 6; Arp Rate 1/16; Arp sync Host sync; Delay mix -0.80; Delay Time 1/8; Delay feedback 2.0.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>The chord you hold sets the notes; the order is up to the synth. More notes make more variety.</p></section>
+  <section><h3>How to use it</h3><p>Tense sections, cyberpunk moods. Works best quietly behind other parts, as a texture.</p></section>
+  <section><h3>Mixing</h3><ul><li>Low in the mix: random patterns draw attention.</li><li>High-pass at 300 Hz.</li><li>A short delay adds further confusion.</li><li>Built-in delay: turn it off if you&#x27;re using your own.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="#digital-rain">Digital Rain</a><span class="why">Random pitch plus random tone: very busy.</span></li><li><a href="bass.html#grid-runner">Grid Runner</a><span class="why">A random top against a very regular bass.</span></li><li><strong>Radio samples</strong><span class="why">Adds to the feel of a transmission.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>Arp Rate to 1/8</strong><span>Calmer, more readable as a melody.</span></li><li><strong>Arp range to 3 oct</strong><span>Wide, jumpy leaps.</span></li><li><strong>PULSE to Pulse 25%</strong><span>A thinner, older computer sound.</span></li></ul>
+</article>
+<article class="patch" id="dotted-eighth" data-tags="outrun dreamwave">
+<header>
+  <h2>Dotted Eighth</h2>
+  <div class="tags"><span class="tag">outrun</span><span class="tag">dreamwave</span></div>
+</header>
+<p class="profile">A simple 8th-note arp, where the dotted-8th delay creates a rhythm that&#x27;s more complex than the notes.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/arp/dotted-eighth.mp3" aria-label="Preview of Dotted Eighth"></audio>
+  <a class="ghost" href="../../presets/Doodles/Arp/Dotted%20Eighth.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>C3 to C5</dd></div><div><dt>Brightness</dt><dd>1551 Hz centroid</dd></div><div><dt>Low energy</dt><dd>1% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 0 ms</dd></div><div><dt>Decay</dt><dd>Falls 20 dB in 135 ms</dd></div><div><dt>Filter closes</dt><dd>0.0 octaves</dd></div><div><dt>Held level</dt><dd>-11 dB from peak</dd></div><div><dt>Width</dt><dd>Stereo, side/mid 0.65</dd></div><div><dt>Mono sum</dt><dd>-1.5 dB</dd></div><div><dt>Loudness</dt><dd>-20.1 LUFS, peak -3.0 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">Arp Rate</th><td class="value">1/8</td><td>Plain 8ths: simple on purpose, because the rhythm comes from the echoes.</td></tr><tr><th scope="row">Delay Time</th><td class="value">1/8.</td><td>A dotted 8th: echoes fall between the notes, creating a pattern neither part has alone.</td></tr><tr><th scope="row">Delay mix</th><td class="value">-0.16</td><td>Loud enough to be a part of the rhythm, not just an effect.</td></tr><tr><th scope="row">Delay feedback</th><td class="value">4.2</td><td>A few audible repeats, without building up into a wash.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Saw Saw; DCO Range 8&#x27;; Sub level 0.0 / 3; Chorus On; VCF Cutoff 5.2 (about 564 Hz at C4); VCF Env 2.5; VCF Key follow 4.0; Env T3 (decay) 3.0 (about 120 ms to -20 dB); Env L3 (sustain) 0.0; Env T4 (release) 2.5 (about 90 ms to -20 dB); Chorus Rate 5.0; MW to VCF 2.0; Voices 6; Arp range 2 oct; Arp mode Up; Arp sync Host sync; Delay spread +2.00.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Hold chords: the off-grid echoes do the work. Keep the chords simple.</p></section>
+  <section><h3>How to use it</h3><p>Guitar-style echo patterns without a guitar. Great for verses and intros.</p></section>
+  <section><h3>Mixing</h3><ul><li>The delay is part of the rhythm, so don&#x27;t turn it off or replace it without matching the time.</li><li>High-pass at 250 Hz.</li><li>Sidechain lightly so the kick stays clean.</li><li>Built-in delay: part of this sound, so keep it. Built-in chorus: turn it off if you&#x27;re using your own.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="pad.html#pulse-bloom">Pulse Bloom</a><span class="why">A straight pump under a syncopated pattern.</span></li><li><a href="bass.html#nightdrive">Nightdrive</a><span class="why">Plain 8ths in the bass let the dotted pattern be heard.</span></li><li><strong>Chorus guitar</strong><span class="why">Echoes like these are a classic guitar sound.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>Delay mix to +0.60</strong><span>The echoes become louder than the notes.</span></li><li><strong>Delay Time to 1/4T</strong><span>A triplet feel.</span></li><li><strong>Arp Rate to 1/16</strong><span>A much denser pattern.</span></li></ul>
+</article>
+<article class="patch" id="octave-climb" data-tags="outrun dreamwave">
+<header>
+  <h2>Octave Climb</h2>
+  <div class="tags"><span class="tag">outrun</span><span class="tag">dreamwave</span></div>
+</header>
+<p class="profile">A bright arp that climbs four whole octaves in triplets: a build you can hold down with one hand.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/arp/octave-climb.mp3" aria-label="Preview of Octave Climb"></audio>
+  <a class="ghost" href="../../presets/Doodles/Arp/Octave%20Climb.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>C2 to C4</dd></div><div><dt>Brightness</dt><dd>2356 Hz centroid</dd></div><div><dt>Low energy</dt><dd>14% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 5 ms</dd></div><div><dt>Decay</dt><dd>Holds while the key is down</dd></div><div><dt>Filter closes</dt><dd>0.0 octaves</dd></div><div><dt>Held level</dt><dd>-6 dB from peak</dd></div><div><dt>Width</dt><dd>Mono</dd></div><div><dt>Mono sum</dt><dd>-0.0 dB</dd></div><div><dt>Loudness</dt><dd>-18.0 LUFS, peak -7.3 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">Arp range</th><td class="value">4 oct</td><td>Four octaves: the widest available, so that it&#x27;s a big gesture.</td></tr><tr><th scope="row">Arp Rate</th><td class="value">1/16T</td><td>16th-note triplets: a rolling feel, and a pattern that doesn&#x27;t line up with the bar.</td></tr><tr><th scope="row">VCF Key follow</th><td class="value">8.0</td><td>High: the filter opens with pitch, so high notes actually get brighter as it climbs.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Saw Saw; DCO Range 8&#x27;; Sub level 0.0 / 3; VCF Cutoff 5.0 (about 478 Hz at C4); VCF Env 2.8; Env T3 (decay) 2.8 (about 107 ms to -20 dB); Env L3 (sustain) 0.0; Env T4 (release) 2.0 (about 50 ms to -20 dB); MW to VCF 2.0; Voices 6; Arp mode Up; Arp sync Host sync; Reverb mix -0.76.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Hold a single note or a simple chord. It covers a huge range quickly, so start low.</p></section>
+  <section><h3>How to use it</h3><p>Transitions and lifts into a chorus, or a bright top layer for one section.</p></section>
+  <section><h3>Mixing</h3><ul><li>It covers a lot of the spectrum, so high-pass at 200 Hz.</li><li>The high notes can get piercing: use a gentle high shelf cut if needed.</li><li>Automate it in for the last bars of a build.</li><li>Built-in reverb: turn it off if you&#x27;re using your own.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="strings.html#rising-tide">Rising Tide</a><span class="why">Both are obvious builds.</span></li><li><a href="brass.html#sunrise-fanfare">Sunrise Fanfare</a><span class="why">A climb that lands on the fanfare.</span></li><li><strong>Snare roll</strong><span class="why">Accelerates the sense of a build.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>Arp Rate to 1/16</strong><span>Straight, rather than a triplet feel.</span></li><li><strong>Arp range to 2 oct</strong><span>A shorter, more practical pattern.</span></li><li><strong>Arp mode to Up &amp; down</strong><span>Rises and falls, losing some of its sense of climbing.</span></li></ul>
+</article>
+</main>
+</div>
+<script src="site.js"></script>
+</body>
+</html>

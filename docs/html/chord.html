@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chord and Stab: Doodles TAL-Pha Presets</title>
+<link rel="stylesheet" href="style.css">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="index.html"><span>Doodles</span> TAL-Pha Presets</a>
+  <button type="button" id="theme" class="ghost" aria-label="Switch between light and dark theme">Theme</button>
+</header>
+<div class="layout">
+<nav class="sidebar" aria-label="Documentation">
+<a href="index.html">Overview</a>
+<p class="nav-label">Patches</p>
+<a href="bass.html">Bass</a>
+<a href="lead.html">Lead</a>
+<a href="pad.html">Pad</a>
+<a href="strings.html">Strings</a>
+<a href="brass.html">Brass</a>
+<a href="arp.html">Arp</a>
+<a href="pluck.html">Pluck</a>
+<a href="keys.html">Keys and Bells</a>
+<a href="chord.html" aria-current=page>Chord and Stab</a>
+<div class="subnav"><a class="recipe-link" href="chord-recipe.html">Build from init</a><a href="#minor-stab">Minor Stab</a><a href="#major-7-haze">Major 7 Haze</a><a href="#power-fifth">Power Fifth</a><a href="#minor-9-dream">Minor 9 Dream</a><a href="#sus-hit">Sus Hit</a><a href="#club-neon">Club Neon</a><a href="#backward-chord">Backward Chord</a><a href="#gated-chord">Gated Chord</a><a href="#memphis-cluster">Memphis Cluster</a><a href="#broken-triad">Broken Triad</a></div>
+<a href="fx.html">FX and Atmosphere</a>
+<p class="nav-label">Guides</p>
+<a href="field-guide.html">Field guide</a>
+<a href="control-reference.html">Control reference</a>
+<a href="gallery.html">Sound gallery</a>
+<a href="sound-map.html">Sound map</a>
+<a href="kits.html">Starter kits</a>
+<a href="reaper-cheat-sheet.html">Reaper cheat sheet</a>
+</nav>
+<main>
+<h1>Chord and Stab</h1>
+<p class="lede">10 patches. Control values are as shown on the plugin panel. Times and frequencies
+come from <a href="control-reference.html">measurements of the plugin</a>.</p>
+<a class="callout" href="chord-recipe.html"><strong>New to this category?</strong> Build a patch from init, step by step, hearing each decision.</a>
+<section class="install">
+<h2>Mixing this category</h2>
+<p>Starting points for every patch here. Each patch's own notes cover what's different about it.</p>
+<ul><li>High-pass at 100-200 Hz, or about 100 Hz for heavy riffs.</li><li>Lift 1-3 kHz for bite, or dip it to make room for the lead.</li><li>Compress stabs so they hit evenly. Sidechain sustained chords to the kick.</li><li>One key plays a parallel chord, so width comes from chorus and delay. Check it in mono.</li><li>Delay throws on the last stab of a phrase suit these well.</li></ul>
+</section>
+<div class="chips" role="group" aria-label="Filter by subgenre"><button type="button" class="chip" aria-pressed="true" data-tag="">All</button><button type="button" class="chip" aria-pressed="false" data-tag="chillwave">chillwave</button><button type="button" class="chip" aria-pressed="false" data-tag="darksynth">darksynth</button><button type="button" class="chip" aria-pressed="false" data-tag="dreamwave">dreamwave</button><button type="button" class="chip" aria-pressed="false" data-tag="outrun">outrun</button></div>
+<article class="patch" id="minor-stab" data-tags="outrun darksynth">
+<header>
+  <h2>Minor Stab</h2>
+  <div class="tags"><span class="tag">outrun</span><span class="tag">darksynth</span></div>
+</header>
+<p class="profile">A punchy minor triad on a single key: the classic filtered chord stab.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/chord/minor-stab.mp3" aria-label="Preview of Minor Stab"></audio>
+  <a class="ghost" href="../../presets/Doodles/Chord%20and%20Stab/Minor%20Stab.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>C3 to C5</dd></div><div><dt>Brightness</dt><dd>1283 Hz centroid</dd></div><div><dt>Low energy</dt><dd>3% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 0 ms</dd></div><div><dt>Decay</dt><dd>Falls 20 dB in 324 ms</dd></div><div><dt>Held note</dt><dd>Dies away</dd></div><div><dt>Width</dt><dd>Stereo, side/mid 0.57</dd></div><div><dt>Mono sum</dt><dd>-1.2 dB</dd></div><div><dt>Loudness</dt><dd>-22.8 LUFS, peak -3.2 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">Chord memory</th><td class="value">C4 Eb4 G4</td><td>A minor triad. One key plays the whole chord, and moving your finger moves it in parallel: a classic house and synth-pop trick.</td></tr><tr><th scope="row">VCF Env</th><td class="value">3.6</td><td>A big, quick filter opening gives each stab its bark.</td></tr><tr><th scope="row">Env T3 (decay)</th><td class="value">4.0 (about 304 ms to -20 dB)</td><td>About 300 ms: short, and with no sustain, a true stab.</td></tr><tr><th scope="row">Voices</th><td class="value">6</td><td>6 voices: chord memory needs enough voices for every note, and retriggers need a few spare.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Saw Saw; DCO Range 8&#x27;; Sub level 0.0 / 3; Chorus On; VCF Cutoff 4.2 (about 252 Hz at C4); VCF Res 1.2; VCF Key follow 4.0; Env L3 (sustain) 0.0; Env T4 (release) 3.0 (about 105 ms to -20 dB); Chorus Rate 5.0; MW to VCF 2.0; Reverb mix -0.72.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Play single notes; each plays a minor chord. Riffs in parallel chords come very quickly.</p></section>
+  <section><h3>How to use it</h3><p>Rhythmic hooks and riffs, particularly in minor keys.</p></section>
+  <section><h3>Mixing</h3><ul><li>High-pass at 200 Hz.</li><li>Sidechain to the kick for bounce.</li><li>Parallel chords can clash with the key, so choose your root notes carefully.</li><li>Built-in chorus and reverb: turn them off if you&#x27;re using your own.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="bass.html#nightdrive">Nightdrive</a><span class="why">A rolling bass under syncopated stabs.</span></li><li><a href="#gated-chord">Gated Chord</a><span class="why">Same chord, different rhythm.</span></li><li><strong>Gated snare</strong><span class="why">They land together on the backbeat.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>ENV T3 (decay) to 5.0</strong><span>Longer, more sustained hits.</span></li><li><strong>VCF RES to 5.0</strong><span>A more resonant, squelchy stab.</span></li><li><strong>Chord memory to major</strong><span>Hit the REC button and play a major triad for a sunnier hook.</span></li></ul>
+</article>
+<article class="patch" id="major-7-haze" data-tags="dreamwave chillwave">
+<header>
+  <h2>Major 7 Haze</h2>
+  <div class="tags"><span class="tag">dreamwave</span><span class="tag">chillwave</span></div>
+</header>
+<p class="profile">A warm, hazy major 7th chord on one key: instant nostalgia.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/chord/major-7-haze.mp3" aria-label="Preview of Major 7 Haze"></audio>
+  <a class="ghost" href="../../presets/Doodles/Chord%20and%20Stab/Major%207%20Haze.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>C3 to C5</dd></div><div><dt>Brightness</dt><dd>607 Hz centroid</dd></div><div><dt>Low energy</dt><dd>3% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 40 ms</dd></div><div><dt>Decay</dt><dd>Holds while the key is down</dd></div><div><dt>Filter closes</dt><dd>0.0 octaves</dd></div><div><dt>Held level</dt><dd>-5 dB from peak</dd></div><div><dt>Width</dt><dd>Stereo, side/mid 0.55</dd></div><div><dt>Mono sum</dt><dd>-1.2 dB</dd></div><div><dt>Loudness</dt><dd>-17.9 LUFS, peak -5.8 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">Chord memory</th><td class="value">C4 E4 G4 B4</td><td>A major 7th: dreamy and unresolved, and a much-loved chord of retro pop.</td></tr><tr><th scope="row">DCO Pulse</th><td class="value">Pulse PW</td><td>A moving pulse keeps the chord alive while it&#x27;s held.</td></tr><tr><th scope="row">Env T1 (attack)</th><td class="value">3.0 (about 70 ms)</td><td>About 70 ms: soft enough to avoid a hard stab.</td></tr><tr><th scope="row">Chorus</th><td class="value">On</td><td>The chorus provides much of the haze.</td></tr><tr><th scope="row">VCF Cutoff</th><td class="value">5.2 (about 564 Hz at C4)</td><td>Around 560 Hz: warm and a little muffled.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Saw Off; DCO Range 8&#x27;; Sub level 0.4 / 3; PWM 5.0; PWM Rate 4.5; VCF Env 1.0; VCF Key follow 4.0; Env T3 (decay) 6.0 (about 1.4 s to -20 dB); Env L3 (sustain) 7.5; Env T4 (release) 5.2 (about 887 ms to -20 dB); Chorus Rate 4.5; MW to VCF 2.0; Voices 8; Reverb mix -0.48; Reverb size 6.5.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Play slowly, one chord per bar or so. Moving by whole steps sounds lovely.</p></section>
+  <section><h3>How to use it</h3><p>Chord beds for slow, dreamy tracks. It&#x27;s possible to play a whole song with one finger.</p></section>
+  <section><h3>Mixing</h3><ul><li>High-pass at 150 Hz.</li><li>A slow sidechain adds bounce.</li><li>Tape saturation adds more haze.</li><li>Built-in chorus: part of this sound, so keep it. Built-in reverb: turn it off if you&#x27;re using your own.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="bass.html#velvet-bass">Velvet Bass</a><span class="why">Soft and warm.</span></li><li><a href="lead.html#vox-machine">Vox Machine</a><span class="why">Warm jazzy chords suit the vocal phrasing.</span></li><li><strong>Mellow drum machine</strong><span class="why">A chillwave classic.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>Chord memory to minor 7</strong><span>Moodier and darker.</span></li><li><strong>ENV T1 (attack) to 5.0</strong><span>A much slower fade-in, like a pad.</span></li><li><strong>CHORUS off</strong><span>Clearer, less hazy.</span></li></ul>
+</article>
+<article class="patch" id="power-fifth" data-tags="darksynth outrun">
+<header>
+  <h2>Power Fifth</h2>
+  <div class="tags"><span class="tag">darksynth</span><span class="tag">outrun</span></div>
+</header>
+<p class="profile">A thick unison power chord, root, fifth and octave: the synth version of a distorted guitar.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/chord/power-fifth.mp3" aria-label="Preview of Power Fifth"></audio>
+  <a class="ghost" href="../../presets/Doodles/Chord%20and%20Stab/Power%20Fifth.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>C2 to C4</dd></div><div><dt>Brightness</dt><dd>869 Hz centroid</dd></div><div><dt>Low energy</dt><dd>65% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 0 ms</dd></div><div><dt>Decay</dt><dd>Holds while the key is down</dd></div><div><dt>Filter closes</dt><dd>0.6 octaves</dd></div><div><dt>Held level</dt><dd>-5 dB from peak</dd></div><div><dt>Width</dt><dd>Stereo, side/mid 0.30</dd></div><div><dt>Mono sum</dt><dd>-0.4 dB</dd></div><div><dt>Loudness</dt><dd>-18.0 LUFS, peak -3.3 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">Chord memory</th><td class="value">C3 G3 C4</td><td>Root, fifth and octave, with no third: it&#x27;s neither major nor minor, so it fits over anything, just as a guitar power chord does.</td></tr><tr><th scope="row">Unison voices</th><td class="value">4</td><td>4 voices per note: a thick wall, as a distorted guitar&#x27;s upper harmonics would make.</td></tr><tr><th scope="row">VCA mode</th><td class="value">Gate</td><td>Gate holds the level, so the chord feels heavy between attacks.</td></tr><tr><th scope="row">Unison spread</th><td class="value">0.45</td><td>Moderate: low notes shouldn&#x27;t spread too widely.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Saw Saw; DCO Range 8&#x27;; Sub level 0.0 / 3; VCF Cutoff 5.2 (about 564 Hz at C4); VCF Res 1.0; VCF Env 2.5; Env T3 (decay) 4.5 (about 349 ms to -20 dB); Env L3 (sustain) 4.0; Env T4 (release) 1.0 (about 35 ms to -20 dB); MW to VCF 2.0; Voices 6; Unison detune 0.14.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Heavy riffs in low single notes. It&#x27;s a riff tool, not a chord tool.</p></section>
+  <section><h3>How to use it</h3><p>Riffs in place of a distorted guitar. Darksynth breakdowns and heavy choruses.</p></section>
+  <section><h3>Mixing</h3><ul><li>High-pass at 80-100 Hz, so that it doesn&#x27;t fight the bass.</li><li>Distortion after it makes it heavier still.</li><li>Sidechain to the kick.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="bass.html#steel-engine">Steel Engine</a><span class="why">Very heavy together; high-pass this one further.</span></li><li><a href="lead.html#cyber-scream">Cyber Scream</a><span class="why">A heavy riff with a screaming lead.</span></li><li><strong>Distorted guitar</strong><span class="why">Doubles the riff.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>UNISON voices to 5</strong><span>Even thicker.</span></li><li><strong>ENV L3 (sustain) to 8.0</strong><span>Sustained, like a held power chord.</span></li><li><strong>VCF Cutoff to 7.0</strong><span>Raw and abrasive.</span></li></ul>
+</article>
+<article class="patch" id="minor-9-dream" data-tags="dreamwave chillwave">
+<header>
+  <h2>Minor 9 Dream</h2>
+  <div class="tags"><span class="tag">dreamwave</span><span class="tag">chillwave</span></div>
+</header>
+<p class="profile">A lush, wide minor 9th: five notes on one key, with a long reverb.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/chord/minor-9-dream.mp3" aria-label="Preview of Minor 9 Dream"></audio>
+  <a class="ghost" href="../../presets/Doodles/Chord%20and%20Stab/Minor%209%20Dream.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>C3 to C5</dd></div><div><dt>Brightness</dt><dd>835 Hz centroid</dd></div><div><dt>Low energy</dt><dd>1% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 125 ms</dd></div><div><dt>Decay</dt><dd>Holds while the key is down</dd></div><div><dt>Filter closes</dt><dd>0.0 octaves</dd></div><div><dt>Held level</dt><dd>-5 dB from peak</dd></div><div><dt>Width</dt><dd>Stereo, side/mid 0.59</dd></div><div><dt>Mono sum</dt><dd>-1.3 dB</dd></div><div><dt>Loudness</dt><dd>-18.0 LUFS, peak -6.7 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">Chord memory</th><td class="value">C4 Eb4 G4 Bb4 D5</td><td>A minor 9th: rich and melancholy, more complex than most people would play by hand in a riff.</td></tr><tr><th scope="row">Voices</th><td class="value">10</td><td>10 voices: five notes per key, with enough left for chords to overlap in the release.</td></tr><tr><th scope="row">Env T1 (attack)</th><td class="value">4.5 (about 200 ms)</td><td>About 200 ms: gentle enough to be lush.</td></tr><tr><th scope="row">Env T4 (release)</th><td class="value">6.0 (about 1.5 s to -20 dB)</td><td>About 1.5 seconds: chords melt into one another.</td></tr><tr><th scope="row">Reverb mix</th><td class="value">-0.20</td><td>A lush, wide space around the chord.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Saw Saw; DCO Range 8&#x27;; Sub level 0.0 / 3; Chorus On; VCF Cutoff 5.5 (about 723 Hz at C4); VCF Env 1.0; VCF Key follow 4.0; Env T3 (decay) 6.0 (about 1.4 s to -20 dB); Env L3 (sustain) 8.5; Chorus Rate 4.5; MW to VCF 2.0; Reverb size 8.0.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Play one note at a time, with plenty of space. It&#x27;s thick, so low notes get muddy.</p></section>
+  <section><h3>How to use it</h3><p>Lush chord beds, intros, and big emotional moments.</p></section>
+  <section><h3>Mixing</h3><ul><li>Dip 300-500 Hz, where five notes can cloud things.</li><li>High-pass at 200 Hz.</li><li>Keep the reverb.</li><li>Built-in reverb: part of this sound, so keep it. Built-in chorus: turn it off if you&#x27;re using your own.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="lead.html#glass-whistle">Glass Whistle</a><span class="why">A pure line over a rich chord.</span></li><li><a href="bass.html#midnight-sub">Midnight Sub</a><span class="why">A plain sub under a rich chord.</span></li><li><strong>Saxophone</strong><span class="why">Jazzy harmony suits the instrument.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>Reverb mix to -0.70</strong><span>Clearer and closer.</span></li><li><strong>ENV T1 (attack) to 2.0</strong><span>A faster stab-like start.</span></li><li><strong>VCF Cutoff to 7.0</strong><span>Open and bright.</span></li></ul>
+</article>
+<article class="patch" id="sus-hit" data-tags="outrun dreamwave">
+<header>
+  <h2>Sus Hit</h2>
+  <div class="tags"><span class="tag">outrun</span><span class="tag">dreamwave</span></div>
+</header>
+<p class="profile">A bright, open suspended chord stab: hopeful and unresolved.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/chord/sus-hit.mp3" aria-label="Preview of Sus Hit"></audio>
+  <a class="ghost" href="../../presets/Doodles/Chord%20and%20Stab/Sus%20Hit.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>C3 to C5</dd></div><div><dt>Brightness</dt><dd>1091 Hz centroid</dd></div><div><dt>Low energy</dt><dd>3% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 0 ms</dd></div><div><dt>Decay</dt><dd>Falls 20 dB in 394 ms</dd></div><div><dt>Held note</dt><dd>Dies away</dd></div><div><dt>Width</dt><dd>Stereo, side/mid 0.61</dd></div><div><dt>Mono sum</dt><dd>-1.4 dB</dd></div><div><dt>Loudness</dt><dd>-22.6 LUFS, peak -3.6 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">Chord memory</th><td class="value">C4 F4 G4</td><td>A suspended 4th has no third, so it&#x27;s neither major nor minor. It has an open, hopeful sound that works in most keys.</td></tr><tr><th scope="row">DCO Pulse</th><td class="value">Square</td><td>A square beside the saw adds a brighter, ringing edge.</td></tr><tr><th scope="row">VCF Env mode</th><td class="value">Normal-Dynamic</td><td>Normal-Dynamic: harder hits are brighter, so programmed riffs don&#x27;t sound flat.</td></tr><tr><th scope="row">Delay Time</th><td class="value">1/8.</td><td>A dotted 8th: echoes add a second rhythm between hits.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Saw Saw; DCO Range 8&#x27;; Sub level 0.0 / 3; Chorus On; VCF Cutoff 5.0 (about 478 Hz at C4); VCF Env 3.2; VCF Key follow 4.0; Env T3 (decay) 3.8 (about 252 ms to -20 dB); Env L3 (sustain) 0.0; Env T4 (release) 3.0 (about 105 ms to -20 dB); Chorus Rate 5.5; MW to VCF 2.0; Voices 6; Pulse Volume 5.0; Reverb mix -0.76; Delay mix -0.70; Delay spread +3.00; Delay feedback 2.5.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Short rhythmic hits. Because it has no third, you can move it around freely without clashing.</p></section>
+  <section><h3>How to use it</h3><p>Uplifting hooks in choruses. An easy, safe chord for riffing.</p></section>
+  <section><h3>Mixing</h3><ul><li>High-pass at 200 Hz.</li><li>A wide delay works very well.</li><li>Sidechain to the kick.</li><li>Built-in delay: part of this sound, so keep it. Built-in chorus and reverb: turn them off if you&#x27;re using your own.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="bass.html#chrome-octave">Chrome Octave</a><span class="why">A bouncy bass with bright stabs.</span></li><li><a href="lead.html#hero-theme">Hero Theme</a><span class="why">Open chords leave room for the lead&#x27;s melody.</span></li><li><strong>Chorus guitar</strong><span class="why">They share an open, ringing tone.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>Chord memory to Sus 2</strong><span>A different openness, with a slightly more modern sound.</span></li><li><strong>Delay mix to -0.40</strong><span>A big, bouncing hook.</span></li><li><strong>VCF Env to 5.5</strong><span>A brighter strike on every hit.</span></li></ul>
+</article>
+<article class="patch" id="club-neon" data-tags="outrun chillwave">
+<header>
+  <h2>Club Neon</h2>
+  <div class="tags"><span class="tag">outrun</span><span class="tag">chillwave</span></div>
+</header>
+<p class="profile">A short, resonant minor 7th stab with a big filter sweep, straight out of a warehouse party.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/chord/club-neon.mp3" aria-label="Preview of Club Neon"></audio>
+  <a class="ghost" href="../../presets/Doodles/Chord%20and%20Stab/Club%20Neon.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>C3 to C5</dd></div><div><dt>Brightness</dt><dd>1439 Hz centroid</dd></div><div><dt>Low energy</dt><dd>3% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 0 ms</dd></div><div><dt>Decay</dt><dd>Falls 20 dB in 279 ms</dd></div><div><dt>Held note</dt><dd>Dies away</dd></div><div><dt>Width</dt><dd>Mono</dd></div><div><dt>Mono sum</dt><dd>-0.0 dB</dd></div><div><dt>Loudness</dt><dd>-23.8 LUFS, peak -2.8 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">Chord memory</th><td class="value">C4 Eb4 G4 Bb4</td><td>A minor 7th is the classic stab chord of early house music.</td></tr><tr><th scope="row">VCF Res</th><td class="value">4.2</td><td>A resonant peak makes every stab sound like it has a filter sweep on it.</td></tr><tr><th scope="row">VCF Cutoff</th><td class="value">3.8 (about 184 Hz at C4)</td><td>About 180 Hz at C4: starts very dark, so that the envelope has further to go.</td></tr><tr><th scope="row">Env T3 (decay)</th><td class="value">3.6 (about 208 ms to -20 dB)</td><td>About 200 ms: a short, sharp stab.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Saw Saw; DCO Range 8&#x27;; Sub level 0.0 / 3; VCF Env 3.8; VCF Key follow 4.0; Env L3 (sustain) 0.0; Env T4 (release) 2.5 (about 90 ms to -20 dB); MW to VCF 3.0; Voices 8; Reverb mix -0.60; Reverb size 5.5.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Off-beat hits and riffs. Automate the cutoff for a build.</p></section>
+  <section><h3>How to use it</h3><p>Dance-leaning sections and off-beat chord riffs.</p></section>
+  <section><h3>Mixing</h3><ul><li>Automate cutoff across a whole section.</li><li>Long reverb on a send for breakdowns.</li><li>High-pass at 200 Hz.</li><li>Built-in reverb: turn it off if you&#x27;re using your own.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="bass.html#rubber-coupe">Rubber Coupe</a><span class="why">A bouncy bass with off-beat stabs.</span></li><li><a href="pluck.html#pulse-tick">Pulse Tick</a><span class="why">Two tight rhythm parts.</span></li><li><strong>Four-on-the-floor kick</strong><span class="why">Off-beat stabs between kicks are the house formula.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>VCF RES to 7.0</strong><span>More squelch on the sweep.</span></li><li><strong>ENV T3 (decay) to 3.0</strong><span>Shorter and tighter.</span></li><li><strong>VCF Cutoff to 2.5</strong><span>Darker, as at the start of a build.</span></li></ul>
+</article>
+<article class="patch" id="backward-chord" data-tags="dreamwave chillwave">
+<header>
+  <h2>Backward Chord</h2>
+  <div class="tags"><span class="tag">dreamwave</span><span class="tag">chillwave</span></div>
+</header>
+<p class="profile">A chord that swells up and stops dead, as if a tape had been played backwards.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/chord/backward-chord.mp3" aria-label="Preview of Backward Chord"></audio>
+  <a class="ghost" href="../../presets/Doodles/Chord%20and%20Stab/Backward%20Chord.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>C3 to C5</dd></div><div><dt>Brightness</dt><dd>1009 Hz centroid</dd></div><div><dt>Low energy</dt><dd>2% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 579 ms</dd></div><div><dt>Decay</dt><dd>Holds while the key is down</dd></div><div><dt>Filter closes</dt><dd>0.0 octaves</dd></div><div><dt>Held level</dt><dd>-4 dB from peak</dd></div><div><dt>Width</dt><dd>Stereo, side/mid 0.58</dd></div><div><dt>Mono sum</dt><dd>-1.3 dB</dd></div><div><dt>Loudness</dt><dd>-18.1 LUFS, peak -6.9 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">Chord memory</th><td class="value">C4 E4 G4</td><td>A simple major triad: the effect is unusual enough, without complicating the harmony.</td></tr><tr><th scope="row">Env T1 (attack)</th><td class="value">6.2 (about 912 ms)</td><td>About a second: a sound with a slow rise and no attack, which is what reversed audio is like.</td></tr><tr><th scope="row">Env T4 (release)</th><td class="value">0.0 (about 10 ms to -20 dB)</td><td>Zero: stops dead when the key lifts, which is how a reversed sound ends.</td></tr><tr><th scope="row">VCF Env</th><td class="value">2.0</td><td>Opens the filter as it rises, reinforcing the reversed feel.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Saw Saw; DCO Range 8&#x27;; Sub level 0.0 / 3; Chorus On; VCF Cutoff 5.0 (about 478 Hz at C4); VCF Key follow 4.0; Env T3 (decay) 5.0 (about 678 ms to -20 dB); Env L3 (sustain) 10.0; Chorus Rate 5.0; MW to VCF 2.0; Voices 6.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Start the note well before the beat, and release exactly on the beat. It&#x27;s more like placing a sample than playing a chord.</p></section>
+  <section><h3>How to use it</h3><p>Transitions into a downbeat, and psychedelic moments.</p></section>
+  <section><h3>Mixing</h3><ul><li>Automate the level for a bigger rise.</li><li>A reverb before it (on a printed audio track) makes it even more convincing.</li><li>High-pass at 200 Hz.</li><li>Built-in chorus: turn it off if you&#x27;re using your own.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="fx.html#riser">Riser</a><span class="why">Both approach a downbeat.</span></li><li><a href="brass.html#stadium-stab">Stadium Stab</a><span class="why">A swell that cuts into a hit.</span></li><li><strong>Reverse cymbal</strong><span class="why">The real thing, layered with the imitation.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>ENV T1 (attack) to 5.0</strong><span>A shorter swell, for faster tempos.</span></li><li><strong>ENV T4 (release) to 4.0</strong><span>A softer ending, less like a tape.</span></li><li><strong>VCF Env to 4.0</strong><span>Much brighter by the end of the swell.</span></li></ul>
+</article>
+<article class="patch" id="gated-chord" data-tags="outrun darksynth">
+<header>
+  <h2>Gated Chord</h2>
+  <div class="tags"><span class="tag">outrun</span><span class="tag">darksynth</span></div>
+</header>
+<p class="profile">A held chord chopped into 8ths by a tempo-synced square LFO on the filter.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/chord/gated-chord.mp3" aria-label="Preview of Gated Chord"></audio>
+  <a class="ghost" href="../../presets/Doodles/Chord%20and%20Stab/Gated%20Chord.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>C3 to C5</dd></div><div><dt>Brightness</dt><dd>407 Hz centroid</dd></div><div><dt>Low energy</dt><dd>5% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 5 ms</dd></div><div><dt>Decay</dt><dd>Falls 20 dB in 120 ms</dd></div><div><dt>Filter closes</dt><dd>0.0 octaves</dd></div><div><dt>Held level</dt><dd>-6 dB from peak</dd></div><div><dt>Width</dt><dd>Mono</dd></div><div><dt>Mono sum</dt><dd>-0.0 dB</dd></div><div><dt>Loudness</dt><dd>-17.5 LUFS, peak -5.2 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">Chord memory</th><td class="value">C4 Eb4 G4 C5</td><td>A minor triad with the octave doubled, solid enough to take the chopping.</td></tr><tr><th scope="row">LFO wave</th><td class="value">REC</td><td>A square LFO: the filter switches between open and closed. There&#x27;s no amp LFO on this synth, so this is the way to chop a sound.</td></tr><tr><th scope="row">LFO Sync</th><td class="value">On</td><td>Locked to your tempo, so the chops always land on the grid.</td></tr><tr><th scope="row">LFO Rate</th><td class="value">1/8</td><td>1/8 notes.</td></tr><tr><th scope="row">LFO Trig</th><td class="value">On</td><td>Restarts the LFO on each note, so the pattern starts the same way every time.</td></tr><tr><th scope="row">VCF LFO</th><td class="value">5.5</td><td>Deep, so the closed position is nearly silent.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Saw Saw; DCO Range 8&#x27;; Sub level 0.0 / 3; VCF Cutoff 4.0 (about 214 Hz at C4); VCF Res 1.5; Env T3 (decay) 5.0 (about 678 ms to -20 dB); Env L3 (sustain) 10.0; Env T4 (release) 2.0 (about 50 ms to -20 dB); MW to VCF 2.0; Voices 8; Reverb mix -0.76.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Hold one note: the rhythm happens by itself, locked to your tempo.</p></section>
+  <section><h3>How to use it</h3><p>Instant rhythm without programming a pattern. Verses, builds, and transitions.</p></section>
+  <section><h3>Mixing</h3><ul><li>High-pass at 200 Hz.</li><li>It&#x27;s rhythmic, so don&#x27;t add much delay.</li><li>Change the LFO rate between sections for interest.</li><li>Built-in reverb: turn it off if you&#x27;re using your own.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="#minor-stab">Minor Stab</a><span class="why">Same chord, with a programmed rhythm vs an automatic one.</span></li><li><a href="bass.html#grid-runner">Grid Runner</a><span class="why">Both lock to the same grid.</span></li><li><strong>Tight electronic drums</strong><span class="why">Clean, machine-like rhythm.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>LFO Rate to 1/16</strong><span>Faster, more urgent.</span></li><li><strong>LFO Rate to 1/4</strong><span>Slower, heavier.</span></li><li><strong>LFO wave to S&amp;H</strong><span>A random level each step, more like a modular patch.</span></li></ul>
+</article>
+<article class="patch" id="memphis-cluster" data-tags="chillwave darksynth">
+<header>
+  <h2>Memphis Cluster</h2>
+  <div class="tags"><span class="tag">chillwave</span><span class="tag">darksynth</span></div>
+</header>
+<p class="profile">A tense, slightly sour chord cluster, wide and detuned, with an uneasy edge.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/chord/memphis-cluster.mp3" aria-label="Preview of Memphis Cluster"></audio>
+  <a class="ghost" href="../../presets/Doodles/Chord%20and%20Stab/Memphis%20Cluster.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>C3 to C5</dd></div><div><dt>Brightness</dt><dd>616 Hz centroid</dd></div><div><dt>Low energy</dt><dd>3% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 35 ms</dd></div><div><dt>Decay</dt><dd>Holds while the key is down</dd></div><div><dt>Filter closes</dt><dd>0.0 octaves</dd></div><div><dt>Held level</dt><dd>-3 dB from peak</dd></div><div><dt>Width</dt><dd>Stereo, side/mid 0.91</dd></div><div><dt>Mono sum</dt><dd>-2.6 dB</dd></div><div><dt>Loudness</dt><dd>-18.0 LUFS, peak -5.4 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">Chord memory</th><td class="value">C4 D4 G4</td><td>A suspended 2nd: the whole-step clash between root and second gives it a tense, modern colour.</td></tr><tr><th scope="row">Unison detune</th><td class="value">0.18</td><td>More than is polite, so that the sound never quite settles.</td></tr><tr><th scope="row">Unison spread</th><td class="value">0.90</td><td>Wide: the chord surrounds you.</td></tr><tr><th scope="row">Env T1 (attack)</th><td class="value">2.8 (about 63 ms)</td><td>About 60 ms, enough to soften the stab of the clash.</td></tr><tr><th scope="row">Chorus Rate</th><td class="value">3.2</td><td>A slow chorus adds to the unease.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Saw Saw; DCO Range 8&#x27;; Sub level 0.0 / 3; Chorus On; VCF Cutoff 5.0 (about 478 Hz at C4); VCF Res 1.0; VCF Env 1.2; Env T3 (decay) 5.5 (about 963 ms to -20 dB); Env L3 (sustain) 7.5; Env T4 (release) 5.0 (about 778 ms to -20 dB); MW to VCF 2.0; Voices 6; Unison voices 3; Reverb mix -0.52; Reverb size 6.5.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Slow changes. It&#x27;s dissonant enough that fast changes sound like mistakes.</p></section>
+  <section><h3>How to use it</h3><p>Uneasy intros, tension and dark chillwave.</p></section>
+  <section><h3>Mixing</h3><ul><li>Detune can make it wander: use it as the tuning reference.</li><li>High-pass at 200 Hz.</li><li>Keep it low, as dissonance draws attention.</li><li>Built-in chorus: part of this sound, so keep it. Built-in reverb: turn it off if you&#x27;re using your own.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="pad.html#deep-space-drift">Deep Space Drift</a><span class="why">Unsettled harmony over an unsettled filter.</span></li><li><a href="bass.html#blacktop">Blacktop</a><span class="why">Dark and uneasy.</span></li><li><strong>Slowed vocal sample</strong><span class="why">They share a queasy, off-kilter quality.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>Chord memory to Sus 4</strong><span>Less tense, more open.</span></li><li><strong>UNISON detune to 0.30</strong><span>Far more sour.</span></li><li><strong>ENV T1 (attack) to 5.5</strong><span>A slow, sinister swell.</span></li></ul>
+</article>
+<article class="patch" id="broken-triad" data-tags="outrun dreamwave">
+<header>
+  <h2>Broken Triad</h2>
+  <div class="tags"><span class="tag">outrun</span><span class="tag">dreamwave</span></div>
+</header>
+<p class="profile">Chord memory meets arpeggiator: one key plays a whole arpeggiated minor triad across two octaves.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/chord/broken-triad.mp3" aria-label="Preview of Broken Triad"></audio>
+  <a class="ghost" href="../../presets/Doodles/Chord%20and%20Stab/Broken%20Triad.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>C3 to C5</dd></div><div><dt>Brightness</dt><dd>1506 Hz centroid</dd></div><div><dt>Low energy</dt><dd>2% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 0 ms</dd></div><div><dt>Decay</dt><dd>Holds while the key is down</dd></div><div><dt>Filter closes</dt><dd>0.0 octaves</dd></div><div><dt>Held level</dt><dd>-8 dB from peak</dd></div><div><dt>Width</dt><dd>Mono</dd></div><div><dt>Mono sum</dt><dd>+0.0 dB</dd></div><div><dt>Loudness</dt><dd>-18.7 LUFS, peak -4.3 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">Chord memory</th><td class="value">C4 Eb4 G4</td><td>A minor triad: the arp cycles through these notes, so one finger plays a complete pattern.</td></tr><tr><th scope="row">Arp mode</th><td class="value">Up</td><td>Up, over the notes that chord memory provides.</td></tr><tr><th scope="row">Arp range</th><td class="value">2 oct</td><td>Two octaves, for a full pattern from one key.</td></tr><tr><th scope="row">Arp Rate</th><td class="value">1/16</td><td>16ths, the standard outrun pace.</td></tr><tr><th scope="row">Env T3 (decay)</th><td class="value">3.0 (about 120 ms to -20 dB)</td><td>About 120 ms: short enough to keep notes separate at this speed.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Saw Saw; DCO Range 8&#x27;; Sub level 0.0 / 3; VCF Cutoff 4.6 (about 347 Hz at C4); VCF Res 1.0; VCF Env 3.0; VCF Key follow 4.0; Env L3 (sustain) 0.0; Env T4 (release) 2.0 (about 50 ms to -20 dB); MW to VCF 2.0; Voices 6; Arp sync Host sync; Delay mix -0.76; Delay Time 1/8; Delay feedback 2.0.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Hold one note and move it to change chord. An entire arp part can be played with one finger.</p></section>
+  <section><h3>How to use it</h3><p>Fast sketching, and live performance. An arp part that follows your bassline.</p></section>
+  <section><h3>Mixing</h3><ul><li>High-pass at 250 Hz.</li><li>Sidechain to the kick.</li><li>Parallel chords can clash with your key, so choose root notes carefully.</li><li>Built-in delay: turn it off if you&#x27;re using your own.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="bass.html#neon-pulse">Neon Pulse</a><span class="why">A plain bass under a busy pattern.</span></li><li><a href="pad.html#endless-highway">Endless Highway</a><span class="why">A slow bed under the moving pattern.</span></li><li><strong>Live keyboard player</strong><span class="why">It frees up a hand for other parts.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>Arp mode to Random</strong><span>An unpredictable pattern from the same notes.</span></li><li><strong>Arp range to 1 oct</strong><span>A tighter, simpler pattern.</span></li><li><strong>Chord memory to major</strong><span>Sunnier, more uplifting.</span></li></ul>
+</article>
+</main>
+</div>
+<script src="site.js"></script>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Building Nightdrive from init: Doodles TAL-Pha Presets</title>
+<link rel="stylesheet" href="style.css">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="index.html"><span>Doodles</span> TAL-Pha Presets</a>
+  <button type="button" id="theme" class="ghost" aria-label="Switch between light and dark theme">Theme</button>
+</header>
+<div class="layout">
+<nav class="sidebar" aria-label="Documentation">
+<a href="index.html">Overview</a>
+<p class="nav-label">Patches</p>
+<a href="bass.html" aria-current=page>Bass</a>
+<div class="subnav"><a class="recipe-link" href="bass-recipe.html" aria-current=page>Build from init</a><a href="bass.html#nightdrive">Nightdrive</a><a href="bass.html#neon-pulse">Neon Pulse</a><a href="bass.html#chrome-octave">Chrome Octave</a><a href="bass.html#midnight-sub">Midnight Sub</a><a href="bass.html#blacktop">Blacktop</a><a href="bass.html#turbo-glide">Turbo Glide</a><a href="bass.html#steel-engine">Steel Engine</a><a href="bass.html#rubber-coupe">Rubber Coupe</a><a href="bass.html#grid-runner">Grid Runner</a><a href="bass.html#velvet-bass">Velvet Bass</a></div>
+<a href="lead.html">Lead</a>
+<a href="pad.html">Pad</a>
+<a href="strings.html">Strings</a>
+<a href="brass.html">Brass</a>
+<a href="arp.html">Arp</a>
+<a href="pluck.html">Pluck</a>
+<a href="keys.html">Keys and Bells</a>
+<a href="chord.html">Chord and Stab</a>
+<a href="fx.html">FX and Atmosphere</a>
+<p class="nav-label">Guides</p>
+<a href="field-guide.html">Field guide</a>
+<a href="control-reference.html">Control reference</a>
+<a href="gallery.html">Sound gallery</a>
+<a href="sound-map.html">Sound map</a>
+<a href="kits.html">Starter kits</a>
+<a href="reaper-cheat-sheet.html">Reaper cheat sheet</a>
+</nav>
+<main>
+<div class="recipe">
+<h1>Building Nightdrive from init</h1>
+<p class="lede">Nightdrive looks simple, but it teaches the most important thing about this synth: one envelope has to do the job of two. You&#x27;ll start from a plain buzzy saw and make a rolling outrun bass, hearing each decision as you go.</p>
+<section class="install">
+<h2>Setup</h2>
+<p>Open TAL-Pha, click the preset name and choose <strong>Reset Parameters</strong>. Loop a bass line of 8ths around A2 with some velocity variation, as in the previews. Soft notes matter later on.</p>
+<p>Each step's preview adds to the one before. Measurements compare it with the previous step.</p>
+</section>
+<ol class="steps">
+<li class="step">
+<h2>Start from init</h2>
+
+<p>Init is a single saw through a fully open filter, with the amp following a full-sustain envelope. Nothing is shaping the sound yet, so anything you add from here is a decision you can hear.</p>
+
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/bass/step-01.mp3" aria-label="Step 1: Start from init"></audio>
+  <p><strong>Listen for:</strong> A bright, static buzz. Every note is the same and it has no rhythm of its own.</p>
+  
+</div>
+</li>
+<li class="step">
+<h2>Move it into the bass register and make it mono</h2>
+<ul class="changes"><li><span class="control">DCO Range</span><span class="from">8&#x27;</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">16&#x27;</span></li><li><span class="control">Voices</span><span class="from">6</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">Mono (1)</span></li></ul>
+<p>16&#x27; moves the saw down an octave, so A2 now has its fundamental at 55 Hz. The saw&#x27;s harmonics extend far above that, which is why this will still be audible on small speakers. Mono means only one note ever sounds, so low notes can&#x27;t overlap and turn to mud. You won&#x27;t hear that yet because these notes don&#x27;t overlap, but it matters as soon as you add release or play legato.</p>
+<p class="alt"><strong>The other choice:</strong> You could use 8&#x27; with the sub oscillator instead. That&#x27;s how Neon Pulse gets its weight, but the steady sub sits below the filter&#x27;s sweep and makes the pluck you&#x27;ll add later less pronounced. Don&#x27;t use 16&#x27; with the sub at this pitch: the sub would sit at 27.5 Hz, too low to be useful.</p>
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/bass/step-02.mp3" aria-label="Step 2: Move it into the bass register and make it mono"></audio>
+  <p><strong>Listen for:</strong> Deeper, but still a constant buzz.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Brightness: 3,965 Hz → <strong>3,562 Hz</strong></li></ul>
+</div>
+</li>
+<li class="step">
+<h2>Close the filter</h2>
+<ul class="changes"><li><span class="control">VCF Cutoff</span><span class="from">10.0 (about 21726 Hz at C4)</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">2.7 (about 78 Hz at C4)</span></li></ul>
+<p>With cutoff at 2.7 the filter sits around 80 Hz, close to the fundamental. This is deliberately too far. On this synth the envelope is very strong, so it&#x27;s easier to start dark and let the envelope open the sound than to start bright and work out what to remove.</p>
+
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/bass/step-03.mp3" aria-label="Step 3: Close the filter"></audio>
+  <p><strong>Listen for:</strong> Dull and muffled, with no front to the note. That&#x27;s the problem the next steps solve.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Brightness: 3,562 Hz → <strong>223 Hz</strong></li></ul>
+</div>
+</li>
+<li class="step">
+<h2>Add envelope to the filter</h2>
+<ul class="changes"><li><span class="control">VCF Env</span><span class="from">0.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">5.2</span></li></ul>
+<p>This is a trap worth seeing. Envelope amount sets how far the envelope pushes the cutoff, but init&#x27;s envelope sustains at full level. So the filter jumps partway open and stays there, as if you&#x27;d just raised the cutoff. Envelope amount only makes movement if the envelope itself moves.</p>
+
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/bass/step-04.mp3" aria-label="Step 4: Add envelope to the filter"></audio>
+  <p><strong>Listen for:</strong> Brighter again, and still static. There&#x27;s no sweep yet.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Brightness: 223 Hz → <strong>1,042 Hz</strong></li></ul>
+</div>
+</li>
+<li class="step">
+<h2>Make the envelope move</h2>
+<ul class="changes"><li><span class="control">Env T3 (decay)</span><span class="from">0.0 (about 10 ms to -20 dB)</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">3.6 (about 208 ms to -20 dB)</span></li><li><span class="control">Env L3 (sustain)</span><span class="from">10.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">1.5</span></li></ul>
+<p>A decay of 3.6 closes the filter in about 200 ms, and a low sustain gives it somewhere to close to. Now each note has a pluck, and at this tempo that pluck is the rhythm. But the amp is following the same envelope, so the level falls away too. There&#x27;s only one envelope on this synth, and this is the price of it.</p>
+<p class="alt"><strong>The other choice:</strong> A longer decay of around 4.5 turns the pluck into more of a growl, but the notes begin to run together at 8ths. A sustain of zero would close the filter completely, leaving a thinner tail on each note.</p>
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/bass/step-05.mp3" aria-label="Step 5: Make the envelope move"></audio>
+  <p><strong>Listen for:</strong> The pluck is there, but notes fade out and lose their weight. It sounds more like a pluck than a bass.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Filter sweep: 0.0 octaves → <strong>2.6 octaves</strong></li><li>Held level: -4 dB from peak → <strong>-21 dB from peak</strong></li></ul>
+</div>
+</li>
+<li class="step">
+<h2>Free the amp from the envelope</h2>
+<ul class="changes"><li><span class="control">VCA mode</span><span class="from">Normal</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">Gate</span></li></ul>
+<p>Gate mode is the key decision in this patch. The amp now simply opens and closes with the key, so the envelope is left to work only on the filter. That gives the note a bright front and a solid body, which sounds like two envelopes but is only one.</p>
+<p class="alt"><strong>The other choice:</strong> Raising sustain instead would keep the note loud, but the filter would also stay open, and the pluck would be lost. Normal mode suits patches where amp and filter should move together, such as Velvet Bass.</p>
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/bass/step-06.mp3" aria-label="Step 6: Free the amp from the envelope"></audio>
+  <p><strong>Listen for:</strong> This is the moment it becomes a bass: the same pluck, now with weight underneath.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Held level: -21 dB from peak → <strong>-5 dB from peak</strong></li><li>Loudness: -28.8 LUFS → <strong>-24.1 LUFS</strong></li></ul>
+</div>
+</li>
+<li class="step">
+<h2>Give the sweep an edge</h2>
+<ul class="changes"><li><span class="control">VCF Res</span><span class="from">0.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">2.0</span></li></ul>
+<p>A little resonance emphasises the frequencies around the cutoff as it sweeps, which makes the pluck more defined. Resonance on this filter also takes some energy away from the low end, so keep it small on a bass.</p>
+<p class="alt"><strong>The other choice:</strong> Grid Runner goes up to 6.2 for an acid character, then has to use the sub oscillator to put back the weight it loses.</p>
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/bass/step-07.mp3" aria-label="Step 7: Give the sweep an edge"></audio>
+  <p><strong>Listen for:</strong> A slightly more vocal attack on each note. It&#x27;s subtle at this setting, and it should be.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Loudness: -24.1 LUFS → <strong>-25.2 LUFS</strong></li></ul>
+</div>
+</li>
+<li class="step">
+<h2>Make it respond across the keyboard</h2>
+<ul class="changes"><li><span class="control">VCF Key follow</span><span class="from">0.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">3.0</span></li><li><span class="control">Env Key follow</span><span class="from">0.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">2.0</span></li></ul>
+<p>Key follow pivots around C4, so on bass notes it lowers the cutoff. Setting it to 3.0 darkens these notes a little, but the point is the range: a line that jumps up an octave stays bright enough to be heard, and low notes don&#x27;t get harsh. Envelope key follow shortens the envelope on higher notes, which keeps them snappy.</p>
+
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/bass/step-08.mp3" aria-label="Step 8: Make it respond across the keyboard"></audio>
+  <p><strong>Listen for:</strong> A touch darker and rounder. Try playing an octave jump to hear the balance.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Brightness: 781 Hz → <strong>662 Hz</strong></li></ul>
+</div>
+</li>
+<li class="step">
+<h2>Let velocity make the groove</h2>
+<ul class="changes"><li><span class="control">VCF Env mode</span><span class="from">Normal</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">Normal-Dynamic</span></li></ul>
+<p>Normal-Dynamic scales the filter envelope by velocity, and the effect on this synth is large. Hard notes now sweep much further than soft ones while the level stays even, because the amp is still in Gate mode. The line gets darker overall, as only the accents get the full sweep. The accent pattern in your MIDI has become the groove.</p>
+<p class="alt"><strong>The other choice:</strong> Rubber Coupe also makes the amp respond to velocity, which suits ghost notes in a funk line. Here it would make the bass level uneven under the kick.</p>
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/bass/step-09.mp3" aria-label="Step 9: Let velocity make the groove"></audio>
+  <p><strong>Listen for:</strong> The notes now differ: the accents bark and the in-between notes sit back. This is the patch&#x27;s character.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Hard note vs soft note brightness: 1.0x → <strong>4.0x</strong></li></ul>
+</div>
+</li>
+<li class="step">
+<h2>Tidy the note endings</h2>
+<ul class="changes"><li><span class="control">Env T4 (release)</span><span class="from">0.0 (about 10 ms to -20 dB)</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">0.8 (about 25 ms to -20 dB)</span></li></ul>
+<p>Release is a small tidying decision here. In Gate mode the amp closes with the key whatever this is set to, so even a much longer release barely changes when the note stops. It would only set the length of the tail in Normal mode, as on Velvet Bass.</p>
+
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/bass/step-10.mp3" aria-label="Step 10: Tidy the note endings"></audio>
+  <p><strong>Listen for:</strong> Practically no change, as the measurements below confirm. Not every setting is a big decision.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Tail after note-off: 40 ms → <strong>35 ms</strong></li></ul>
+</div>
+</li>
+<li class="step">
+<h2>Decide what the mod wheel does</h2>
+<ul class="changes"><li><span class="control">MW to DCO LFO</span><span class="from">1.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">0.0</span></li><li><span class="control">MW to VCF</span><span class="from">0.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">4.5</span></li></ul>
+<p>Init sends the wheel to vibrato, which is rarely right on a bass. Sending it to filter cutoff instead gives you one control for a brighter chorus section, either played live or automated.</p>
+
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/bass/step-11.mp3" aria-label="Step 11: Decide what the mod wheel does"></audio>
+  <p><strong>Listen for:</strong> In this preview the wheel rises across the last two bars, and the bass opens up.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Wheel up vs wheel down brightness: 1.0x → <strong>10.6x</strong></li></ul>
+</div>
+</li>
+<li class="step">
+<h2>Set the level</h2>
+<ul class="changes"><li><span class="control">Volume</span><span class="from">5.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">7.6</span></li></ul>
+<p>Presets in this bank aim for the same loudness, -18 LUFS on their preview phrase, so comparing patches is fair and you won&#x27;t choose one just because it&#x27;s louder. A patch that&#x27;s lost level to filtering needs more volume to get there. That&#x27;s it: this is the finished Nightdrive preset.</p>
+
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/bass/step-12.mp3" aria-label="Step 12: Set the level"></audio>
+  <p><strong>Listen for:</strong> The finished patch.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Loudness: -25.2 LUFS → <strong>-18.0 LUFS</strong></li></ul>
+</div>
+</li>
+</ol>
+<section class="install">
+<h2>What to take away</h2>
+<ul><li>One envelope can act like two: use VCA Gate when the filter should move and the note should hold.</li><li>Envelope amount does nothing useful without an envelope that moves. Check sustain before you reach for more amount.</li><li>On this synth, velocity is one of the strongest tone controls you have. Program your accents.</li></ul>
+</section>
+<h2 class="next">Where to go next</h2>
+<p>Starting points for moving from <a href="bass.html#nightdrive">Nightdrive</a> to another patch in the bank:</p>
+<ul class="pairs"><li><a href="bass.html#chrome-octave">Chrome Octave</a><span class="why">Try turning on the pulse at Pulse Tune +12, Pulse Volume 6.0 and Pulse Fine +7 cents, and return the VCF Env mode to Normal.</span></li><li><a href="bass.html#grid-runner">Grid Runner</a><span class="why">Go to 8&#x27; and bring in the sub at 1.3, raise VCF Res to 6.2, and drop Env L3 (sustain) to 0.</span></li><li><a href="bass.html#turbo-glide">Turbo Glide</a><span class="why">Set Portamento to On at time 2.6 and VCA mode back to Normal, with a slower T3 (decay) of 5.0.</span></li></ul>
+</div>
+</main>
+</div>
+<script src="site.js"></script>
+</body>
+</html>

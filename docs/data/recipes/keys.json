@@ -1,0 +1,170 @@
+{
+ "steps": [
+  {
+   "audio": "audio/recipes/keys/step-01.mp3",
+   "before": {
+    "Volume": 0.5
+   },
+   "after": {
+    "Volume": 0.38379071239149004
+   },
+   "measures": {}
+  },
+  {
+   "audio": "audio/recipes/keys/step-02.mp3",
+   "before": {
+    "DcoWaveSaw": 1.0,
+    "DcoWaveSub": 0.0,
+    "DcoSubLevel": 0.0,
+    "Octave": 0.0
+   },
+   "after": {
+    "DcoWaveSaw": 0,
+    "DcoWaveSub": 0,
+    "DcoSubLevel": 2.2,
+    "Octave": 1
+   },
+   "measures": {
+    "centroid_hz": [
+     4302.051897887685,
+     3778.146621572077
+    ]
+   }
+  },
+  {
+   "audio": "audio/recipes/keys/step-03.mp3",
+   "before": {
+    "EnvDecayTime": 0.0,
+    "EnvSustainLevel": 1.0,
+    "EnvReleaseTime": 0.0,
+    "NumberOfVoices": 5.0
+   },
+   "after": {
+    "EnvDecayTime": 0.62,
+    "EnvSustainLevel": 0.1,
+    "EnvReleaseTime": 0.45,
+    "NumberOfVoices": 7
+   },
+   "measures": {
+    "sustain_db": [
+     -0.387525299948043,
+     -7.947834444424577
+    ],
+    "tail_ms": [
+     9.977324263038549,
+     600.0
+    ]
+   }
+  },
+  {
+   "audio": "audio/recipes/keys/step-04.mp3",
+   "before": {
+    "DcoWavePulse": 0.0,
+    "specialPulseSync": 0.0,
+    "specialPulseTune": 0.0,
+    "specialPulseDcoEnv": 0.0,
+    "specialPulseVolume": 1.0
+   },
+   "after": {
+    "DcoWavePulse": 1,
+    "specialPulseSync": 1,
+    "specialPulseTune": 24,
+    "specialPulseDcoEnv": 0.15,
+    "specialPulseVolume": 0.42
+   },
+   "measures": {
+    "centroid_hz": [
+     3816.574440569403,
+     5294.666851680917
+    ]
+   }
+  },
+  {
+   "audio": "audio/recipes/keys/step-05.mp3",
+   "before": {
+    "VcfCutoff": 1.0,
+    "VcfKeyFollow": 0.0
+   },
+   "after": {
+    "VcfCutoff": 0.42,
+    "VcfKeyFollow": 0.6
+   },
+   "measures": {
+    "centroid_hz": [
+     5294.666851680917,
+     320.9076630770861
+    ]
+   }
+  },
+  {
+   "audio": "audio/recipes/keys/step-06.mp3",
+   "before": {
+    "VcfEnvMod": 0.0
+   },
+   "after": {
+    "VcfEnvMod": 0.42
+   },
+   "measures": {
+    "sweep_octaves": [
+     -0.17027620888279038,
+     1.6639393266102025
+    ],
+    "centroid_hz": [
+     320.9076630770861,
+     2819.424303017572
+    ]
+   }
+  },
+  {
+   "audio": "audio/recipes/keys/step-07.mp3",
+   "before": {
+    "VcfEnvMode": 0.0
+   },
+   "after": {
+    "VcfEnvMode": 2
+   },
+   "measures": {
+    "vel_bright_ratio": [
+     1.002494338426439,
+     4.182809952318313
+    ]
+   }
+  },
+  {
+   "audio": "audio/recipes/keys/step-08.mp3",
+   "before": {
+    "DcoChorusSwitch": 0.0,
+    "ChorusRate": 0.5
+   },
+   "after": {
+    "DcoChorusSwitch": 1,
+    "ChorusRate": 0.48
+   },
+   "measures": {
+    "side_mid": [
+     0.0,
+     0.583526630230739
+    ]
+   }
+  },
+  {
+   "audio": "audio/recipes/keys/step-09.mp3",
+   "before": {
+    "ModWheelDcoLfo": 0.1000000014901161,
+    "LfoRate": 0.5,
+    "reverbDryWet": 0.0
+   },
+   "after": {
+    "ModWheelDcoLfo": 0.06,
+    "LfoRate": 0.7,
+    "reverbDryWet": 0.14
+   },
+   "measures": {
+    "mw_vibrato_cents": [
+     59.28147153619118,
+     32.94986138606563
+    ]
+   }
+  }
+ ]
+}

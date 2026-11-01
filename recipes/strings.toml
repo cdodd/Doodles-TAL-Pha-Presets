@@ -1,0 +1,80 @@
+category = "Strings"
+patch = "Ensemble Sunset"
+phrase = "chords"
+title = "Building Ensemble Sunset from init"
+intro = "A string machine is simpler than it sounds: one saw and a very fast chorus. This recipe shows why those two things are enough, and how a thin low end makes it read as strings instead of a pad."
+setup = "Choose **Reset Parameters**, then loop four-note chords with one chord per bar."
+takeaways = [
+  "Chorus speed makes a big difference to character: slow gives width, and fast gives an ensemble.",
+  "Removing low end is often what makes a sound read as strings rather than a pad.",
+  "A bow can't start instantly, so even fast string parts need a little attack.",
+]
+
+[[step]]
+title = "Set the level first"
+set_volume_from_preset = true
+why = "Stacked chords add up fast, so set a sensible level before making decisions. Init's single saw is already the right waveform: a bowed string makes a roughly saw-shaped wave."
+listen = "A plain, bright, organ-like chord."
+
+[[step]]
+title = "Make it bowed"
+set = { EnvAttackTime = 0.42, EnvDecayTime = 0.5, NumberOfVoices = 7 }
+expect = { attack_s = "up" }
+why = "A bow takes time to catch the string. An attack of about 170 ms is what stops it sounding like an organ. More voices leave room for the release you'll add next."
+alternative = "Slow Bow goes up to about a second, for a swell that takes a whole bar. Staccato Run goes down to 15 ms, for short strokes."
+listen = "Each chord now has a soft entry."
+
+[[step]]
+title = "Let the notes ring on"
+set = { EnvReleaseTime = 0.5 }
+expect = { tail_ms = "up" }
+why = "Strings keep ringing after the bow lifts, and in a room you always hear some of that. A longer release also hides the joins between chords."
+listen = "Chord changes overlap a little."
+
+[[step]]
+title = "Remove the body"
+set = { HpfCutoff = 2 }
+expect = { low_energy_pct = "down" }
+why = "This is what sets a string machine apart from a pad. HP 1 takes out the low-end weight and leaves a lighter, more nasal tone. It also makes room for the bass."
+alternative = "Silver Screen leaves the low end in, for a big orchestral section rather than a machine."
+listen = "Thinner and lighter: it sounds less like a synth pad and more like strings."
+
+[[step]]
+title = "Trim the top"
+set = { VcfCutoff = 0.74, VcfKeyFollow = 0.3 }
+expect = { centroid_hz = "down" }
+why = "Real strings have less extreme top end than a raw saw. A cutoff near 3 kHz takes off the fizz but stays bright. Unlike a pad, it should stay airy."
+listen = "Less fizzy, still bright."
+
+[[step]]
+title = "Add the chorus"
+set = { DcoChorusSwitch = 1 }
+expect = { side_mid = "up" }
+why = "At its default rate the chorus adds width, as on a pad. That's already nicer, but it doesn't yet sound like many players."
+listen = "Wide, and much more lush. Compare it with the next step."
+
+[[step]]
+title = "Speed up the chorus"
+set = { ChorusRate = 0.78 }
+show = ["side_mid"]
+why = "This is the key decision. A fast chorus makes many tiny pitch changes at once, like an ensemble of players who aren't quite together. It's the whole trick of a string machine."
+alternative = "Rain City keeps the chorus slow for a calmer, darker section."
+listen = "A quick shimmer. It should now sound like the string machine on an old record."
+
+[[step]]
+title = "Finish it"
+set = { ModWheelVcfRange = 0.15, ModWheelDcoLfo = 0, reverbDryWet = 0.15, reverbSize = 0.5 }
+expect = { mw_bright_ratio = "up" }
+wheel = true
+why = "A small room suits a record, where a big hall would suggest an orchestra. The wheel gives you a gentle lift. That's the finished Ensemble Sunset."
+listen = "In this preview the wheel rises across the second half, and the strings open up."
+
+[[branch]]
+to = "Octave Ensemble"
+how = "Try turning on the pulse's Saw at Pulse Tune +12 and Volume 6.0."
+[[branch]]
+to = "Silver Screen"
+how = "Set HPF to Off, add 3 unison voices, slow the chorus to 5.0 and raise the reverb mix to -0.16."
+[[branch]]
+to = "Slow Bow"
+how = "Raise T1 to 6.2, close the filter to 5.0, and add VCF Env 2.0."

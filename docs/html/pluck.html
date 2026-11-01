@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pluck: Doodles TAL-Pha Presets</title>
+<link rel="stylesheet" href="style.css">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="index.html"><span>Doodles</span> TAL-Pha Presets</a>
+  <button type="button" id="theme" class="ghost" aria-label="Switch between light and dark theme">Theme</button>
+</header>
+<div class="layout">
+<nav class="sidebar" aria-label="Documentation">
+<a href="index.html">Overview</a>
+<p class="nav-label">Patches</p>
+<a href="bass.html">Bass</a>
+<a href="lead.html">Lead</a>
+<a href="pad.html">Pad</a>
+<a href="strings.html">Strings</a>
+<a href="brass.html">Brass</a>
+<a href="arp.html">Arp</a>
+<a href="pluck.html" aria-current=page>Pluck</a>
+<div class="subnav"><a class="recipe-link" href="pluck-recipe.html">Build from init</a><a href="#neon-pluck">Neon Pluck</a><a href="#glass-drop">Glass Drop</a><a href="#tape-pizz">Tape Pizz</a><a href="#pulse-tick">Pulse Tick</a><a href="#wooden-mallet">Wooden Mallet</a><a href="#synth-harp">Synth Harp</a><a href="#echo-street">Echo Street</a><a href="#resonant-blip">Resonant Blip</a><a href="#soft-rain">Soft Rain</a><a href="#koto-circuit">Koto Circuit</a></div>
+<a href="keys.html">Keys and Bells</a>
+<a href="chord.html">Chord and Stab</a>
+<a href="fx.html">FX and Atmosphere</a>
+<p class="nav-label">Guides</p>
+<a href="field-guide.html">Field guide</a>
+<a href="control-reference.html">Control reference</a>
+<a href="gallery.html">Sound gallery</a>
+<a href="sound-map.html">Sound map</a>
+<a href="kits.html">Starter kits</a>
+<a href="reaper-cheat-sheet.html">Reaper cheat sheet</a>
+</nav>
+<main>
+<h1>Pluck</h1>
+<p class="lede">10 patches. Control values are as shown on the plugin panel. Times and frequencies
+come from <a href="control-reference.html">measurements of the plugin</a>.</p>
+<a class="callout" href="pluck-recipe.html"><strong>New to this category?</strong> Build a patch from init, step by step, hearing each decision.</a>
+<section class="install">
+<h2>Mixing this category</h2>
+<p>Starting points for every patch here. Each patch's own notes cover what's different about it.</p>
+<ul><li>High-pass at about 200 Hz.</li><li>Lift 2-4 kHz a little for the attack, or shelve the top down for a softer part.</li><li>A little compression with a slow attack brings the transient out. It rarely needs sidechain.</li><li>Pan it off-centre as a counterpart to the lead, or use a stereo delay.</li><li>Delay suits these more than reverb, as short notes leave room for echoes.</li></ul>
+</section>
+<div class="chips" role="group" aria-label="Filter by subgenre"><button type="button" class="chip" aria-pressed="true" data-tag="">All</button><button type="button" class="chip" aria-pressed="false" data-tag="chillwave">chillwave</button><button type="button" class="chip" aria-pressed="false" data-tag="darksynth">darksynth</button><button type="button" class="chip" aria-pressed="false" data-tag="dreamwave">dreamwave</button><button type="button" class="chip" aria-pressed="false" data-tag="outrun">outrun</button></div>
+<article class="patch" id="neon-pluck" data-tags="outrun dreamwave">
+<header>
+  <h2>Neon Pluck</h2>
+  <div class="tags"><span class="tag">outrun</span><span class="tag">dreamwave</span></div>
+</header>
+<p class="profile">The all-purpose synthwave pluck: a saw with a fast filter snap and a wide, short echo.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/pluck/neon-pluck.mp3" aria-label="Preview of Neon Pluck"></audio>
+  <a class="ghost" href="../../presets/Doodles/Pluck/Neon%20Pluck.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>C3 to C6</dd></div><div><dt>Brightness</dt><dd>1433 Hz centroid</dd></div><div><dt>Low energy</dt><dd>1% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 0 ms</dd></div><div><dt>Decay</dt><dd>Falls 20 dB in 349 ms</dd></div><div><dt>Held note</dt><dd>Dies away</dd></div><div><dt>Width</dt><dd>Stereo, side/mid 0.62</dd></div><div><dt>Mono sum</dt><dd>-1.4 dB</dd></div><div><dt>Loudness</dt><dd>-19.9 LUFS, peak -3.0 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">Env T3 (decay)</th><td class="value">4.0 (about 304 ms to -20 dB)</td><td>About 300 ms: the shared envelope closes the filter and the amp together. That&#x27;s what makes a pluck.</td></tr><tr><th scope="row">Env L3 (sustain)</th><td class="value">0.0</td><td>Zero: every note dies away, whether the key is held or not.</td></tr><tr><th scope="row">Env T4 (release)</th><td class="value">3.4 (about 168 ms to -20 dB)</td><td>About 170 ms, so that a note doesn&#x27;t stop dead if you lift off early.</td></tr><tr><th scope="row">VCF Env mode</th><td class="value">Normal-Dynamic</td><td>Normal-Dynamic: harder notes snap brighter, so hand-played parts have life.</td></tr><tr><th scope="row">VCF Env</th><td class="value">3.8</td><td>A big, quick filter movement: the snap in the pluck.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Saw Saw; DCO Range 8&#x27;; Sub level 0.0 / 3; Chorus On; VCF Cutoff 4.5 (about 320 Hz at C4); VCF Res 1.0; VCF Key follow 5.0; Chorus Rate 5.0; MW to VCF 2.0; Voices 6; Delay mix -0.68; Delay Time 1/8.; Delay spread +3.00; Delay feedback 2.2.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Short notes and broken chords. Velocity sets the brightness of each snap.</p></section>
+  <section><h3>How to use it</h3><p>Hand-played arpeggios, verse hooks, and countermelodies.</p></section>
+  <section><h3>Mixing</h3><ul><li>High-pass at 200 Hz.</li><li>Sidechain to the kick for extra bounce.</li><li>Keep the delay or replace it with a tempo-synced send.</li><li>Built-in chorus and delay: turn them off if you&#x27;re using your own.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="bass.html#nightdrive">Nightdrive</a><span class="why">A rolling bass supports a pattern of plucks.</span></li><li><a href="pad.html#endless-highway">Endless Highway</a><span class="why">Short notes over a long bed.</span></li><li><strong>Clean guitar</strong><span class="why">They share the same attack and decay.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>ENV T3 (decay) to 5.0</strong><span>Longer ring, closer to a key sound.</span></li><li><strong>VCF RES to 4.0</strong><span>A more vocal snap.</span></li><li><strong>Delay mix to -0.40</strong><span>A more obvious echo.</span></li></ul>
+</article>
+<article class="patch" id="glass-drop" data-tags="dreamwave chillwave">
+<header>
+  <h2>Glass Drop</h2>
+  <div class="tags"><span class="tag">dreamwave</span><span class="tag">chillwave</span></div>
+</header>
+<p class="profile">A clean, high, resonant drop: like a single drip in a very large, reflective room.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/pluck/glass-drop.mp3" aria-label="Preview of Glass Drop"></audio>
+  <a class="ghost" href="../../presets/Doodles/Pluck/Glass%20Drop.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>C4 to C6</dd></div><div><dt>Brightness</dt><dd>6057 Hz centroid</dd></div><div><dt>Low energy</dt><dd>0% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 0 ms</dd></div><div><dt>Decay</dt><dd>Falls 20 dB in 494 ms</dd></div><div><dt>Held note</dt><dd>Dies away</dd></div><div><dt>Width</dt><dd>Stereo, side/mid 0.16</dd></div><div><dt>Mono sum</dt><dd>-0.1 dB</dd></div><div><dt>Loudness</dt><dd>-18.0 LUFS, peak -8.4 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">DCO Pulse</th><td class="value">Square</td><td>A square has few harmonics up here, for a clean, glassy tone.</td></tr><tr><th scope="row">VCF Res</th><td class="value">4.0</td><td>A resonant ping on the attack: this gives the &#x27;drop&#x27;.</td></tr><tr><th scope="row">VCF Key follow</th><td class="value">10.0</td><td>Full tracking, so the same &#x27;ping&#x27; appears on every note.</td></tr><tr><th scope="row">Reverb mix</th><td class="value">-0.20</td><td>A very wet, large space: it&#x27;s half the sound.</td></tr><tr><th scope="row">Reverb pre-delay</th><td class="value">40 ms</td><td>About 40 ms of pre-delay keeps the attack clean.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Saw Off; DCO Range 8&#x27;; Sub level 0.0 / 3; VCF Cutoff 5.8 (about 926 Hz at C4); VCF Env 2.2; Env T3 (decay) 4.0 (about 304 ms to -20 dB); Env L3 (sustain) 0.0; Env T4 (release) 4.2 (about 336 ms to -20 dB); Voices 6; Reverb size 8.5.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Sparse notes, with plenty of space around them. Fast lines will blur in the reverb.</p></section>
+  <section><h3>How to use it</h3><p>Sparse melodies and sound-design moments in a breakdown.</p></section>
+  <section><h3>Mixing</h3><ul><li>The reverb is doing a lot. Keep it.</li><li>No need for a high-pass; it&#x27;s already light.</li><li>Keep it low in the mix: pure tones carry.</li><li>Built-in reverb: part of this sound, so keep it.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="pad.html#cold-coast">Cold Coast</a><span class="why">Both pure and high.</span></li><li><a href="#soft-rain">Soft Rain</a><span class="why">Drops within a rainfall of plucks.</span></li><li><strong>Field recording of water</strong><span class="why">Adds a real sense of a place.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>VCF RES to 7.0</strong><span>A more electronic ping.</span></li><li><strong>Reverb mix to -0.60</strong><span>Closer and less dreamy.</span></li><li><strong>Range to 16&#x27;</strong><span>An octave down: rounder and warmer.</span></li></ul>
+</article>
+<article class="patch" id="tape-pizz" data-tags="chillwave dreamwave">
+<header>
+  <h2>Tape Pizz</h2>
+  <div class="tags"><span class="tag">chillwave</span><span class="tag">dreamwave</span></div>
+</header>
+<p class="profile">A plucked-string sound with a slight tape wobble, like a pizzicato sample from an old record.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/pluck/tape-pizz.mp3" aria-label="Preview of Tape Pizz"></audio>
+  <a class="ghost" href="../../presets/Doodles/Pluck/Tape%20Pizz.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>C3 to C5</dd></div><div><dt>Brightness</dt><dd>1595 Hz centroid</dd></div><div><dt>Low energy</dt><dd>0% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 0 ms</dd></div><div><dt>Decay</dt><dd>Falls 20 dB in 239 ms</dd></div><div><dt>Held note</dt><dd>Dies away</dd></div><div><dt>Width</dt><dd>Mono</dd></div><div><dt>Mono sum</dt><dd>-0.0 dB</dd></div><div><dt>Loudness</dt><dd>-18.0 LUFS, peak -4.6 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">Env T3 (decay)</th><td class="value">3.6 (about 208 ms to -20 dB)</td><td>About 200 ms: the short ring of a plucked string.</td></tr><tr><th scope="row">HPF</th><td class="value">HP 1</td><td>HP 1 thins the body, as a sample from an old record would be.</td></tr><tr><th scope="row">DCO LFO</th><td class="value">0.5</td><td>A slow, shallow pitch drift: old tape.</td></tr><tr><th scope="row">LFO Rate</th><td class="value">0.63 Hz</td><td>About 0.6 Hz: heard as instability, not vibrato.</td></tr><tr><th scope="row">Reverb tone</th><td class="value">-2.50</td><td>A small, dark room, the opposite of a clean studio.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Saw Saw; DCO Range 8&#x27;; Sub level 0.0 / 3; VCF Cutoff 4.6 (about 347 Hz at C4); VCF Env 2.8; VCF Key follow 5.0; Env T1 (attack) 0.5 (about 10 ms); Env L3 (sustain) 0.0; Env T4 (release) 2.8 (about 98 ms to -20 dB); MW to VCF 2.0; Voices 6; LFO wave Sine; Reverb mix -0.68; Reverb size 3.5.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Short, gentle lines. It works well as a counterpoint to a slower melody.</p></section>
+  <section><h3>How to use it</h3><p>Playful, nostalgic moments and chillwave hooks.</p></section>
+  <section><h3>Mixing</h3><ul><li>Add tape saturation and a high cut to push the old sample feel.</li><li>High-pass at 200 Hz.</li><li>Small room reverb only.</li><li>Built-in reverb: part of this sound, so keep it.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="strings.html#worn-tape-strings">Worn Tape Strings</a><span class="why">Bowed and plucked: same worn tape.</span></li><li><a href="bass.html#velvet-bass">Velvet Bass</a><span class="why">Soft and gentle together.</span></li><li><strong>Dusty drum loop</strong><span class="why">Reinforces the sampled feeling.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>DCO LFO to 1.2</strong><span>An obvious, seasick wobble.</span></li><li><strong>ENV T3 (decay) to 4.5</strong><span>A longer ring.</span></li><li><strong>HPF to Off</strong><span>A fuller, warmer pluck.</span></li></ul>
+</article>
+<article class="patch" id="pulse-tick" data-tags="outrun darksynth">
+<header>
+  <h2>Pulse Tick</h2>
+  <div class="tags"><span class="tag">outrun</span><span class="tag">darksynth</span></div>
+</header>
+<p class="profile">A very short, percussive pulse tick: more rhythm than pitch.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/pluck/pulse-tick.mp3" aria-label="Preview of Pulse Tick"></audio>
+  <a class="ghost" href="../../presets/Doodles/Pluck/Pulse%20Tick.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>C3 to C6</dd></div><div><dt>Brightness</dt><dd>1581 Hz centroid</dd></div><div><dt>Low energy</dt><dd>1% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 0 ms</dd></div><div><dt>Decay</dt><dd>Falls 20 dB in 60 ms</dd></div><div><dt>Held note</dt><dd>Dies away</dd></div><div><dt>Width</dt><dd>Mono</dd></div><div><dt>Mono sum</dt><dd>+0.0 dB</dd></div><div><dt>Loudness</dt><dd>-18.4 LUFS, peak -3.0 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">Env T3 (decay)</th><td class="value">2.0 (about 60 ms to -20 dB)</td><td>About 60 ms: almost all transient, so the rhythm comes first and pitch second.</td></tr><tr><th scope="row">DCO Pulse</th><td class="value">Pulse 25%</td><td>A 25% pulse is thin and bright, so the tick stays clear even at low level.</td></tr><tr><th scope="row">Env L3 (sustain)</th><td class="value">0.0</td><td>Zero, with no tail: the point is its shortness.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Saw Off; DCO Range 8&#x27;; Sub level 0.0 / 3; VCF Cutoff 6.8 (about 2083 Hz at C4); VCF Env 1.0; Env T4 (release) 1.0 (about 35 ms to -20 dB); MW to VCF 1.5; Voices 6; Delay mix -0.84; Delay Time 1/8; Delay feedback 1.0.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Fast, regular patterns. Think of it as a tuned hi-hat.</p></section>
+  <section><h3>How to use it</h3><p>Adds a rhythmic 16th or 8th layer. Good for tightening up a groove without adding a melody.</p></section>
+  <section><h3>Mixing</h3><ul><li>Very little needed: it&#x27;s mostly transient.</li><li>High-pass at 300 Hz.</li><li>A short delay can multiply the rhythm.</li><li>Built-in delay: turn it off if you&#x27;re using your own.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="lead.html#arcade-square">Arcade Square</a><span class="why">Same chip-era square world.</span></li><li><a href="bass.html#grid-runner">Grid Runner</a><span class="why">Very tight rhythm parts lock together.</span></li><li><strong>Hi-hat pattern</strong><span class="why">They reinforce each other.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>ENV T3 (decay) to 3.5</strong><span>More of a pitched blip.</span></li><li><strong>PULSE to Square</strong><span>A hollower tick.</span></li><li><strong>Delay mix to -0.50</strong><span>A more complex rhythm.</span></li></ul>
+</article>
+<article class="patch" id="wooden-mallet" data-tags="chillwave dreamwave">
+<header>
+  <h2>Wooden Mallet</h2>
+  <div class="tags"><span class="tag">chillwave</span><span class="tag">dreamwave</span></div>
+</header>
+<p class="profile">A warm, rounded mallet with a soft knock at the start: marimba crossed with a synthesizer.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/pluck/wooden-mallet.mp3" aria-label="Preview of Wooden Mallet"></audio>
+  <a class="ghost" href="../../presets/Doodles/Pluck/Wooden%20Mallet.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>C3 to C5</dd></div><div><dt>Brightness</dt><dd>949 Hz centroid</dd></div><div><dt>Low energy</dt><dd>0% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 0 ms</dd></div><div><dt>Decay</dt><dd>Falls 20 dB in 224 ms</dd></div><div><dt>Held note</dt><dd>Dies away</dd></div><div><dt>Width</dt><dd>Mono</dd></div><div><dt>Mono sum</dt><dd>-0.0 dB</dd></div><div><dt>Loudness</dt><dd>-18.0 LUFS, peak -7.2 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">DCO Pulse</th><td class="value">Square</td><td>A square has strong odd harmonics, which is broadly how a wooden bar behaves.</td></tr><tr><th scope="row">Noise</th><td class="value">0.3 / 3</td><td>A little noise through the same filter provides the &#x27;knock&#x27; of the mallet.</td></tr><tr><th scope="row">VCF Cutoff</th><td class="value">4.2 (about 252 Hz at C4)</td><td>About 250 Hz at C4: dark and wooden, with the envelope adding the strike.</td></tr><tr><th scope="row">VCF Key follow</th><td class="value">7.0</td><td>High notes stay brighter, as a real instrument&#x27;s would.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Saw Off; DCO Range 8&#x27;; Sub level 0.0 / 3; VCF Env 2.2; Env T3 (decay) 3.6 (about 208 ms to -20 dB); Env L3 (sustain) 0.0; Env T4 (release) 3.0 (about 105 ms to -20 dB); MW to VCF 1.5; Voices 6; Reverb mix -0.76; Reverb size 3.0.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Repeated patterns and gentle melodies, ideally in the mid range.</p></section>
+  <section><h3>How to use it</h3><p>Warm, playful patterns in chillwave or dreamwave, or as an alternative to a bright arp.</p></section>
+  <section><h3>Mixing</h3><ul><li>A boost at around 1 kHz emphasises the knock.</li><li>Short room reverb, no more.</li><li>High-pass at 150 Hz.</li><li>Built-in reverb: turn it off if you&#x27;re using your own.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="keys.html#warm-tines">Warm Tines</a><span class="why">Two warm, soft attacks that blend.</span></li><li><a href="bass.html#velvet-bass">Velvet Bass</a><span class="why">Gentle at both ends.</span></li><li><strong>Hand percussion</strong><span class="why">They share a natural, woody character.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>Noise to 0</strong><span>Removes the knock: smoother but less woody.</span></li><li><strong>ENV T3 (decay) to 5.0</strong><span>A longer ring, more like vibes.</span></li><li><strong>VCF Cutoff to 5.5</strong><span>Brighter, closer to a xylophone.</span></li></ul>
+</article>
+<article class="patch" id="synth-harp" data-tags="dreamwave outrun">
+<header>
+  <h2>Synth Harp</h2>
+  <div class="tags"><span class="tag">dreamwave</span><span class="tag">outrun</span></div>
+</header>
+<p class="profile">A long-ringing harp sound: higher notes decay faster, as real strings do.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/pluck/synth-harp.mp3" aria-label="Preview of Synth Harp"></audio>
+  <a class="ghost" href="../../presets/Doodles/Pluck/Synth%20Harp.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>C3 to C6</dd></div><div><dt>Brightness</dt><dd>2053 Hz centroid</dd></div><div><dt>Low energy</dt><dd>0% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 0 ms</dd></div><div><dt>Decay</dt><dd>Holds while the key is down</dd></div><div><dt>Filter closes</dt><dd>1.0 octaves</dd></div><div><dt>Held level</dt><dd>-13 dB from peak</dd></div><div><dt>Width</dt><dd>Stereo, side/mid 0.07</dd></div><div><dt>Mono sum</dt><dd>-0.0 dB</dd></div><div><dt>Loudness</dt><dd>-18.0 LUFS, peak -6.9 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">Env T3 (decay)</th><td class="value">6.2 (about 1.6 s to -20 dB)</td><td>About 1.5 seconds: a long ring, for the sound of a real string.</td></tr><tr><th scope="row">Env Key follow</th><td class="value">4.5</td><td>High notes decay faster than low ones. Real strings behave this way, and it adds a lot of realism.</td></tr><tr><th scope="row">Env T4 (release)</th><td class="value">6.0 (about 1.5 s to -20 dB)</td><td>The same as the decay: strings keep ringing after your finger lifts.</td></tr><tr><th scope="row">Voices</th><td class="value">10</td><td>10 voices let long-ringing notes overlap in a glissando.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Saw Saw; DCO Range 8&#x27;; Sub level 0.0 / 3; VCF Cutoff 5.0 (about 478 Hz at C4); VCF Env 2.8; VCF Key follow 6.0; Env L3 (sustain) 0.0; MW to VCF 1.5; Reverb mix -0.40; Reverb size 7.0.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Sweeping arpeggios and open chords. Let notes ring into one another.</p></section>
+  <section><h3>How to use it</h3><p>Dreamy fills, glissandos and intro textures.</p></section>
+  <section><h3>Mixing</h3><ul><li>Lots of overlapping notes can build up: compress gently.</li><li>Plenty of reverb suits it.</li><li>High-pass at 150 Hz.</li><li>Built-in reverb: turn it off if you&#x27;re using your own.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="strings.html#slow-bow">Slow Bow</a><span class="why">A plucked harp over slow strings, a classic orchestral pairing.</span></li><li><a href="lead.html#glass-whistle">Glass Whistle</a><span class="why">Dreamy and high together.</span></li><li><strong>Acoustic guitar</strong><span class="why">They complement each other&#x27;s natural attack.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>ENV Key follow to 8.0</strong><span>A much bigger difference between low and high notes.</span></li><li><strong>CHORUS on</strong><span>Dreamier and wider.</span></li><li><strong>VCF Env to 5.0</strong><span>A brighter, harder pluck.</span></li></ul>
+</article>
+<article class="patch" id="echo-street" data-tags="outrun dreamwave">
+<header>
+  <h2>Echo Street</h2>
+  <div class="tags"><span class="tag">outrun</span><span class="tag">dreamwave</span></div>
+</header>
+<p class="profile">A simple pluck that&#x27;s half delay: a dotted echo turns a short phrase into a long, flowing line.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/pluck/echo-street.mp3" aria-label="Preview of Echo Street"></audio>
+  <a class="ghost" href="../../presets/Doodles/Pluck/Echo%20Street.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>C3 to C5</dd></div><div><dt>Brightness</dt><dd>1613 Hz centroid</dd></div><div><dt>Low energy</dt><dd>0% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 0 ms</dd></div><div><dt>Decay</dt><dd>Falls 20 dB in 489 ms</dd></div><div><dt>Held note</dt><dd>Dies away</dd></div><div><dt>Width</dt><dd>Stereo, side/mid 0.33</dd></div><div><dt>Mono sum</dt><dd>-0.4 dB</dd></div><div><dt>Loudness</dt><dd>-18.0 LUFS, peak -7.1 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">Delay Time</th><td class="value">1/8.</td><td>A dotted 8th: echoes land between notes, turning sparse playing into a flowing pattern.</td></tr><tr><th scope="row">Delay mix</th><td class="value">-0.16</td><td>Loud echoes, so they&#x27;re part of the melody.</td></tr><tr><th scope="row">Delay feedback</th><td class="value">5.0</td><td>Enough repeats to carry through a bar.</td></tr><tr><th scope="row">Delay tone</th><td class="value">-1.50</td><td>Slightly dark, so that the echoes sit behind the notes.</td></tr><tr><th scope="row">Delay spread</th><td class="value">+3.50</td><td>Wide: the dry note stays centred, the echoes move around it.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Pulse Pulse PW; DCO Saw Off; DCO Range 8&#x27;; Sub level 0.0 / 3; PWM 5.0; PWM Rate 5.0; VCF Cutoff 5.0 (about 478 Hz at C4); VCF Env 2.6; VCF Key follow 5.0; Env T3 (decay) 3.8 (about 252 ms to -20 dB); Env L3 (sustain) 0.0; Env T4 (release) 3.0 (about 105 ms to -20 dB); MW to VCF 2.0; Voices 6.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Play simple, sparse notes: the delay fills in the rest. Leave space for it.</p></section>
+  <section><h3>How to use it</h3><p>Verse hooks and intros. Works well as the only melodic element.</p></section>
+  <section><h3>Mixing</h3><ul><li>Keep the delay: it&#x27;s the point of the sound.</li><li>High-pass at 200 Hz.</li><li>Sidechain the delay if it&#x27;s clouding the kick.</li><li>Built-in delay: part of this sound, so keep it.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="bass.html#neon-pulse">Neon Pulse</a><span class="why">A plain bass leaves the rhythm to the delay.</span></li><li><a href="pad.html#pulse-bloom">Pulse Bloom</a><span class="why">A straight pulse under a dotted pattern.</span></li><li><strong>Reverbed snare</strong><span class="why">Together they sound like a big, empty street.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>Delay feedback to 7.0</strong><span>Far longer trails.</span></li><li><strong>Delay Time to 1/4.</strong><span>Slower, more spacious echoes.</span></li><li><strong>Delay tone to -3.00</strong><span>Darker, further-away echoes.</span></li></ul>
+</article>
+<article class="patch" id="resonant-blip" data-tags="darksynth outrun">
+<header>
+  <h2>Resonant Blip</h2>
+  <div class="tags"><span class="tag">darksynth</span><span class="tag">outrun</span></div>
+</header>
+<p class="profile">A short, squelchy blip: the filter&#x27;s resonance does all the talking.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/pluck/resonant-blip.mp3" aria-label="Preview of Resonant Blip"></audio>
+  <a class="ghost" href="../../presets/Doodles/Pluck/Resonant%20Blip.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>C3 to C5</dd></div><div><dt>Brightness</dt><dd>1411 Hz centroid</dd></div><div><dt>Low energy</dt><dd>0% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 0 ms</dd></div><div><dt>Decay</dt><dd>Falls 20 dB in 110 ms</dd></div><div><dt>Held note</dt><dd>Dies away</dd></div><div><dt>Width</dt><dd>Mono</dd></div><div><dt>Mono sum</dt><dd>+0.0 dB</dd></div><div><dt>Loudness</dt><dd>-18.7 LUFS, peak -3.5 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">VCF Res</th><td class="value">6.8</td><td>High, so the filter&#x27;s sweep becomes a clear, whistling squelch.</td></tr><tr><th scope="row">VCF Env mode</th><td class="value">Normal-Dynamic</td><td>Normal-Dynamic: velocity changes how far the squelch sweeps.</td></tr><tr><th scope="row">VCF Env</th><td class="value">4.0</td><td>A wide, fast sweep for the resonant peak to travel.</td></tr><tr><th scope="row">Env T3 (decay)</th><td class="value">2.8 (about 107 ms to -20 dB)</td><td>About 100 ms: fast, so it&#x27;s a blip rather than a sweep.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Saw Saw; DCO Range 8&#x27;; Sub level 0.0 / 3; VCF Cutoff 3.8 (about 184 Hz at C4); VCF Key follow 6.0; Env L3 (sustain) 0.0; Env T4 (release) 1.5 (about 35 ms to -20 dB); MW to VCF 2.0; Voices 6.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Staccato phrases. Velocity changes how far each squelch sweeps.</p></section>
+  <section><h3>How to use it</h3><p>Sequenced hooks and acid-tinged riffs.</p></section>
+  <section><h3>Mixing</h3><ul><li>The peak moves around, so a static EQ cut won&#x27;t catch it.</li><li>Delay on a send adds excitement.</li><li>High-pass at 250 Hz.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="bass.html#grid-runner">Grid Runner</a><span class="why">Both are resonant and sequenced, in different registers.</span></li><li><a href="arp.html#digital-rain">Digital Rain</a><span class="why">Two kinds of busy, machine-like blips.</span></li><li><strong>808 cowbell</strong><span class="why">The same playful electronic world.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>VCF RES to 9.0</strong><span>An extreme whistle on every note.</span></li><li><strong>ENV T3 (decay) to 4.5</strong><span>A longer &#x27;wow&#x27;.</span></li><li><strong>VCF Cutoff to 2.5</strong><span>A much deeper start to the sweep.</span></li></ul>
+</article>
+<article class="patch" id="soft-rain" data-tags="chillwave dreamwave">
+<header>
+  <h2>Soft Rain</h2>
+  <div class="tags"><span class="tag">chillwave</span><span class="tag">dreamwave</span></div>
+</header>
+<p class="profile">A very soft pluck with a rounded attack, chorus and reverb, like gentle rain on a window.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/pluck/soft-rain.mp3" aria-label="Preview of Soft Rain"></audio>
+  <a class="ghost" href="../../presets/Doodles/Pluck/Soft%20Rain.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>C3 to C6</dd></div><div><dt>Brightness</dt><dd>735 Hz centroid</dd></div><div><dt>Low energy</dt><dd>0% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 10 ms</dd></div><div><dt>Decay</dt><dd>Falls 20 dB in 439 ms</dd></div><div><dt>Held note</dt><dd>Dies away</dd></div><div><dt>Width</dt><dd>Stereo, side/mid 0.53</dd></div><div><dt>Mono sum</dt><dd>-1.1 dB</dd></div><div><dt>Loudness</dt><dd>-17.9 LUFS, peak -7.4 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">Env T1 (attack)</th><td class="value">1.5 (about 15 ms)</td><td>About 15 ms: long enough to round off the click of the attack.</td></tr><tr><th scope="row">VCA mode</th><td class="value">Normal-Dynamic</td><td>Normal-Dynamic: velocity sets level, so soft notes fall away like light rain.</td></tr><tr><th scope="row">VCF Cutoff</th><td class="value">4.2 (about 252 Hz at C4)</td><td>Low: the softness comes from what&#x27;s taken away.</td></tr><tr><th scope="row">Reverb mix</th><td class="value">-0.36</td><td>A wet room softens what remains of the attack.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Pulse Pulse PW; DCO Saw Off; DCO Range 8&#x27;; Sub level 0.0 / 3; Chorus On; PWM 3.5; PWM Rate 4.5; VCF Env 1.8; VCF Key follow 5.0; Env T3 (decay) 4.6 (about 399 ms to -20 dB); Env L3 (sustain) 0.0; Env T4 (release) 4.2 (about 336 ms to -20 dB); Chorus Rate 4.0; MW to VCF 2.0; Voices 8; Reverb size 7.5.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Gentle broken chords, with velocity variation: soft notes get very quiet.</p></section>
+  <section><h3>How to use it</h3><p>Soft textures under a vocal, or as the lead element in a slow, sparse section.</p></section>
+  <section><h3>Mixing</h3><ul><li>Dynamic by design: compress lightly if at all.</li><li>Keep the reverb; a soft sound needs a soft space.</li><li>High-pass at 200 Hz.</li><li>Built-in reverb: part of this sound, so keep it. Built-in chorus: turn it off if you&#x27;re using your own.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="fx.html#night-rain">Night Rain</a><span class="why">A rain texture literally sets the scene.</span></li><li><a href="#glass-drop">Glass Drop</a><span class="why">Drops among a soft rainfall.</span></li><li><strong>Soft lead vocal</strong><span class="why">It won&#x27;t compete with the voice.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>VCF Cutoff to 5.0</strong><span>Clearer and more present.</span></li><li><strong>VCA mode to Normal</strong><span>All notes at equal level, for a steadier texture.</span></li><li><strong>ENV T1 (attack) to 0</strong><span>A sharper, clearer start.</span></li></ul>
+</article>
+<article class="patch" id="koto-circuit" data-tags="outrun darksynth">
+<header>
+  <h2>Koto Circuit</h2>
+  <div class="tags"><span class="tag">outrun</span><span class="tag">darksynth</span></div>
+</header>
+<p class="profile">A wiry, metallic plucked string with a hint of the East: a koto or shamisen made from circuits.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/pluck/koto-circuit.mp3" aria-label="Preview of Koto Circuit"></audio>
+  <a class="ghost" href="../../presets/Doodles/Pluck/Koto%20Circuit.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>C3 to C5</dd></div><div><dt>Brightness</dt><dd>2499 Hz centroid</dd></div><div><dt>Low energy</dt><dd>0% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 0 ms</dd></div><div><dt>Decay</dt><dd>Falls 20 dB in 554 ms</dd></div><div><dt>Held note</dt><dd>Dies away</dd></div><div><dt>Width</dt><dd>Mono</dd></div><div><dt>Mono sum</dt><dd>-0.0 dB</dd></div><div><dt>Loudness</dt><dd>-18.9 LUFS, peak -3.0 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">Pulse Sync</th><td class="value">On</td><td>Sync adds a metallic, wiry layer on top of the saw.</td></tr><tr><th scope="row">Pulse Tune</th><td class="value">+19 st</td><td>An octave and a fifth up: a clangy colour that still sits on the note&#x27;s harmonics.</td></tr><tr><th scope="row">Pulse Env mod</th><td class="value">+0.15</td><td>Sweeps only the synced pulse, so the twang is in the tone while the note&#x27;s pitch stays put. Pitch from DCO Env would follow this slow envelope and leave the note sharp for most of its length.</td></tr><tr><th scope="row">Env T2</th><td class="value">2.5</td><td>T2 falls fast: the pick attack.</td></tr><tr><th scope="row">Env L2</th><td class="value">4.5</td><td>L2 at 4.5: the drop from the pick into the ringing string.</td></tr><tr><th scope="row">Env L3 (sustain)</th><td class="value">0.0</td><td>Zero: the note dies away whether the key is held or not.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Pulse Square; DCO Saw Saw; DCO Range 8&#x27;; Sub level 0.0 / 3; VCF Cutoff 5.2 (about 564 Hz at C4); VCF Env 3.0; VCF Key follow 5.0; Env T3 (decay) 4.7 (about 455 ms to -20 dB); Env T4 (release) 3.4 (about 168 ms to -20 dB); MW to VCF 1.5; Voices 6; Pulse Volume 5.0; Reverb mix -0.72; Delay mix -0.72; Delay Time 1/8; Delay feedback 2.0.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Short melodic phrases. Each note starts with a wiry twang that settles quickly, and it stays in tune throughout.</p></section>
+  <section><h3>How to use it</h3><p>Cyberpunk moods, neon-city themes, and melodic hooks with an exotic colour.</p></section>
+  <section><h3>Mixing</h3><ul><li>High-pass at 200 Hz.</li><li>Short delay and a plate, for an old-film feel.</li><li>If it&#x27;s too metallic, dip around 3 kHz.</li><li>Built-in delay and reverb: turn them off if you&#x27;re using your own.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="strings.html#rain-city">Rain City</a><span class="why">Dark strings and a metallic pluck: a neon-noir world.</span></li><li><a href="arp.html#digital-rain">Digital Rain</a><span class="why">Together they suggest a futuristic city.</span></li><li><strong>Taiko drums</strong><span class="why">Reinforces the Eastern reference.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>Pulse Env mod to +0.30</strong><span>A harder, more clangorous twang, at the cost of a less clear pitch.</span></li><li><strong>Pulse Tune to +24</strong><span>A thinner, more metallic ring.</span></li><li><strong>ENV T3 (decay) to 5.5</strong><span>A longer ring, more like a sitar.</span></li><li><strong>DCO Env to 0.5</strong><span>A real pitch fall: each note starts up to 45 cents sharp. Any higher and it sounds out of tune.</span></li></ul>
+</article>
+</main>
+</div>
+<script src="site.js"></script>
+</body>
+</html>

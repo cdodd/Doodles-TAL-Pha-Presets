@@ -1,0 +1,544 @@
+category = "Arp"
+mix_defaults = [
+  "High-pass at about 250 Hz, or about 120 Hz for bass-register arps.",
+  "Keep it low in level rather than EQing it. Dip it where the lead sits if they compete.",
+  "It rarely needs compression. Sidechain lightly to lock it with the bass pump.",
+  "Keep the notes centred or use a stereo delay; hard-panned arps pull the ear away.",
+  "Delay sets the rhythm, so sync it to the project and keep feedback low.",
+]
+
+[[patch]]
+name = "Outrun Sixteenths"
+tags = ["outrun"]
+browser = "Up 16ths, 2 octaves | Arp | MW: open filter"
+profile = "The defining outrun arp: a tight saw running up in 16ths over two octaves, always moving forward."
+phrase = "arp"
+expect = { arp_notes_per_s = [4.5, 8.5], centroid_hz = [1000, 3000] }
+range = "C3 to C5"
+performance = "Hold a chord and it runs in time with your project. Mod wheel opens the filter for a build."
+use = "The motor of an outrun track, usually from the first verse onward."
+mix = [
+  "High-pass at 250 Hz; it should sit well above the bass.",
+  "Sidechain to the kick for the pump that defines the style.",
+  "Automate filter cutoff across a section for an easy build.",
+]
+pairings = [
+  { with = "Nightdrive", why = "8ths in the bass, 16ths above: the classic interlock." },
+  { with = "Endless Highway", why = "A slow pad fills the space between arp notes." },
+  { with = "Gated snare and LinnDrum-style kit", external = true, why = "The whole outrun recipe." },
+]
+tweaks = [
+  { control = "Arp range to 1 oct", result = "A tighter, more hypnotic pattern." },
+  { control = "Arp mode to Up & down", result = "A gentler rise and fall." },
+  { control = "ENV T3 (decay) to 4.0", result = "Longer notes that begin to overlap: smoother and less tight." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 1
+DcoSubLevel = 0
+NumberOfVoices = 5
+arpmode = 1
+arpsyncmode = 2
+arprate = 0.52
+arprange = 1
+VcfCutoff = 0.42
+VcfResonance = 0.15
+VcfEnvMod = 0.36
+VcfKeyFollow = 0.4
+EnvDecayTime = 0.28
+EnvSustainLevel = 0
+VcaEnvMode = 0
+EnvReleaseTime = 0.2
+ModWheelVcfRange = 0.3
+ModWheelDcoLfo = 0
+delayDryWet = 0.12
+delayTime = 0.15
+delayFeedback = 0.2
+[patch.why]
+arpmode = "Up: always climbing, then resetting. This gives the sense of forward motion."
+arpsyncmode = "Host sync: stays locked to your project's tempo, whatever it is."
+arprate = "16ths, the standard pace for outrun."
+arprange = "Two octaves, long enough to feel like a phrase rather than a loop."
+EnvDecayTime = "About 100 ms: notes are short enough that each one is distinct."
+EnvSustainLevel = "Zero: the amp fades between notes, which gives the arp its pulse."
+
+[[patch]]
+name = "Cascade"
+tags = ["dreamwave", "outrun"]
+browser = "Down 16ths, 3 octaves | Arp | MW: open filter"
+profile = "A shimmering PWM arp that falls across three octaves, like water running downhill."
+phrase = "arp"
+expect = { arp_notes_per_s = [4.5, 8.5], side_mid = [0.3, 0.9] }
+range = "C3 to C5"
+performance = "Hold chords: the falling direction feels calmer than a rising arp."
+use = "Dreamy sections, and verses that need movement without rising tension."
+mix = [
+  "High-pass at 250 Hz.",
+  "It sits nicely behind other parts, so mix it low.",
+  "The chorus already gives it width, so it can stay centred.",
+]
+pairings = [
+  { with = "Aurora Haze", why = "A slowly moving pad under a steady cascade." },
+  { with = "Velvet Bass", why = "Soft bass under gentle motion." },
+  { with = "Ambient guitar", external = true, why = "Two gentle, repeating textures." },
+]
+tweaks = [
+  { control = "Arp mode to Up", result = "The same notes feel far more tense when rising." },
+  { control = "Arp Rate to 1/16T", result = "Triplets add a flowing feel." },
+  { control = "PWM Rate to 2.0", result = "A slower shimmer, less busy." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 0
+DcoWavePulse = 3
+DcoPwmDepth = 0.55
+DcoPwmRate = 0.55
+DcoSubLevel = 0
+NumberOfVoices = 5
+arpmode = 2
+arpsyncmode = 2
+arprate = 0.52
+arprange = 2
+VcfCutoff = 0.58
+VcfEnvMod = 0.2
+VcfKeyFollow = 0.4
+EnvDecayTime = 0.34
+EnvSustainLevel = 0
+EnvReleaseTime = 0.3
+DcoChorusSwitch = 1
+ChorusRate = 0.5
+ModWheelVcfRange = 0.2
+ModWheelDcoLfo = 0
+reverbDryWet = 0.18
+[patch.why]
+arpmode = "Down: a falling pattern resolves rather than builds, which is calmer."
+arprange = "Three octaves, for a long fall."
+DcoWavePulse = "PWM keeps changing, so repeats of the pattern aren't identical."
+DcoChorusSwitch = "Adds shimmer and width."
+
+[[patch]]
+name = "Digital Rain"
+tags = ["darksynth", "dreamwave"]
+browser = "Random filter arp | Arp | MW: open filter"
+profile = "A steady arp with a filter that jumps randomly on every note, so each note gets a different tone."
+phrase = "arp"
+expect = { arp_notes_per_s = [4.5, 8.5] }
+range = "C3 to C5"
+performance = "The notes follow your chord but the tones are random, so it never quite repeats."
+use = "Cyberpunk tension, data-stream moods and long sections that need ongoing interest."
+mix = [
+  "Bright notes jump out at random, so use a little compression.",
+  "A wide delay spreads the random notes around.",
+  "High-pass at 250 Hz.",
+]
+pairings = [
+  { with = "Mainframe", why = "Both sound like machines thinking." },
+  { with = "Black Horizon", why = "Random bright drops over a dark bed." },
+  { with = "Glitchy percussion", external = true, why = "The same unpredictable detail." },
+]
+tweaks = [
+  { control = "VCF LFO to 6.0", result = "Much wider jumps from dark to bright." },
+  { control = "LFO Rate to 1/8", result = "Tone changes half as often, so notes pair up." },
+  { control = "VCF RES to 6.0", result = "Each note becomes a clear, resonant blip." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 1
+DcoSubLevel = 0
+NumberOfVoices = 5
+arpmode = 1
+arpsyncmode = 2
+arprate = 0.52
+arprange = 1
+VcfCutoff = 0.55
+VcfResonance = 0.38
+VcfEnvMod = 0.12
+VcfLfoMod = 0.32
+LfoWaveform = 4
+LfoSync = 1
+LfoRate = 0.93
+EnvDecayTime = 0.3
+EnvSustainLevel = 0
+EnvReleaseTime = 0.2
+ModWheelVcfRange = 0.2
+ModWheelDcoLfo = 0
+delayDryWet = 0.15
+delayTime = 0.15
+delayFeedback = 0.25
+delaySpread = 0.9
+[patch.why]
+LfoWaveform = "S&H: a new random filter position on every LFO cycle."
+LfoSync = "Tempo-synced, so the random changes stay on the same grid as the notes."
+LfoRate = "1/16, the same as the arp: effectively a random tone per note."
+VcfLfoMod = "A wide range, so that bright and dark notes are clearly different."
+VcfResonance = "Makes each tone change easy to hear."
+
+[[patch]]
+name = "Sequencer Drive"
+tags = ["darksynth", "outrun"]
+browser = "Low filter-decay sequence | Arp | Vel: none | MW: open filter"
+profile = "A tense, mechanical sequence in the low mids: a filter blip on every note, in the style of a modular sequencer."
+phrase = "arp"
+expect = { arp_notes_per_s = [9, 15], centroid_hz = [300, 900] }
+transpose = -12
+test_note = 45
+range = "C2 to C4"
+performance = "Hold one or two notes for a pattern. Changing the chord feels like changing gear."
+use = "Chase scenes and tension. Automate the cutoff for a slow-burn build."
+mix = [
+  "It overlaps a bass, so high-pass at 120 Hz or let it replace the bass.",
+  "Delay on a send thickens the rhythm.",
+  "Sidechain to the kick.",
+]
+pairings = [
+  { with = "Grid Runner", why = "Two sequenced lines an octave or two apart interlock." },
+  { with = "Night Patrol", why = "Sustained dark brass over a steady pulse." },
+  { with = "Tom pattern", external = true, why = "Marks out a rhythm with the sequence." },
+]
+tweaks = [
+  { control = "VCF RES to 7.0", result = "An acid squelch on every step." },
+  { control = "Arp mode to Random", result = "Less mechanical and more nervous." },
+  { control = "VCF Cutoff to 5.0", result = "A brighter, more exposed pattern." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 1
+DcoWaveSub = 0
+DcoSubLevel = 1.0
+NumberOfVoices = 3
+arpmode = 3
+arpsyncmode = 2
+arprate = 0.52
+arprange = 0
+VcfCutoff = 0.3
+VcfResonance = 0.32
+VcfEnvMod = 0.42
+VcfKeyFollow = 0.3
+EnvDecayTime = 0.28
+EnvSustainLevel = 0
+VcaEnvMode = 1
+EnvReleaseTime = 0.05
+ModWheelVcfRange = 0.35
+ModWheelDcoLfo = 0
+[patch.why]
+arpmode = "Up & down: a pattern with no sudden reset, like a looping sequencer."
+arprange = "A single octave, keeping it a tight, insistent figure."
+VcaEnvMode = "Gate: the amp stays open and the filter blip alone makes the rhythm, so the notes join up into a machine-like drive."
+VcfEnvMod = "A big, fast filter sweep on every note. This is the pattern's rhythm."
+DcoSubLevel = "A square below gives weight to a part that lives in the low mids."
+
+[[patch]]
+name = "Ping Pong Neon"
+tags = ["outrun", "chillwave"]
+browser = "Wide off-centre delay arp | Arp | MW: open filter"
+profile = "A plucky 25% pulse arp whose echoes sit off-centre around a centred note."
+phrase = "arp"
+range = "C3 to C5"
+expect = { side_mid = [0.1, 1.5] }
+performance = "Hold chords. The width comes from the delay, so it's strongest between notes."
+use = "Stereo interest in a verse. A good way to fill space without adding low-mid energy."
+mix = [
+  "The dry signal is centred and the echoes are wide, so it leaves the centre clear for a vocal or lead.",
+  "Delay is locked to your tempo, so no need to adjust it.",
+  "High-pass at 300 Hz.",
+]
+pairings = [
+  { with = "Crystal Steps", why = "Two arps, one wide and one high, for a dense, sparkling texture." },
+  { with = "Neon Pulse", why = "A simple, centred bass anchors all the movement." },
+  { with = "Vocal hook", external = true, why = "The centre stays clear for the voice." },
+]
+tweaks = [
+  { control = "Delay Time to 1/8.", result = "Dotted echoes that interlock with the notes." },
+  { control = "Delay feedback to 6.5", result = "A long, building trail of echoes." },
+  { control = "PULSE to Square", result = "A rounder, more hollow tone." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 0
+DcoWavePulse = 2
+DcoSubLevel = 0
+NumberOfVoices = 5
+arpmode = 1
+arpsyncmode = 2
+arprate = 0.33
+arprange = 1
+VcfCutoff = 0.58
+VcfEnvMod = 0.22
+VcfKeyFollow = 0.3
+EnvDecayTime = 0.3
+EnvSustainLevel = 0
+EnvReleaseTime = 0.2
+ModWheelVcfRange = 0.2
+ModWheelDcoLfo = 0
+delayDryWet = 0.34
+delayTime = 0.15
+delayFeedback = 0.45
+delaySpread = 1
+[patch.why]
+delaySpread = "Top of the range: the echoes lean off-centre while the note stays in the middle, which creates the width. It isn't a hard left-right bounce, which this delay can't do."
+delayTime = "1/8, the same as the arp, so each echo lands on the next note: it adds no extra rhythm, and the stereo tail is what fills the gaps."
+arprate = "1/8: a slower arp leaves space for the echoes."
+DcoWavePulse = "A narrow 25% pulse has a plucky, nasal tone that stays clear through the echoes."
+delayFeedback = "Several repeats, so the stereo movement is clearly heard."
+
+[[patch]]
+name = "Crystal Steps"
+tags = ["dreamwave", "chillwave"]
+browser = "High sparkling arp | Arp | MW: open filter"
+profile = "A delicate, sparkling arp running high above the rest of the track."
+phrase = "arp"
+transpose = 12
+test_note = 69
+range = "C4 to C6"
+expect = { low_energy_pct = [0, 5] }
+performance = "Simple chords, high on the keyboard. It needs very little to work."
+use = "The top layer in a chorus, or a light texture in a breakdown."
+mix = [
+  "It can poke out, so mix it low.",
+  "No need for extra high-pass: there's almost no low content.",
+  "Reverb adds to the sparkle.",
+]
+pairings = [
+  { with = "Neon Pulse", why = "A plain bass and a high arp, with the middle free." },
+  { with = "Ping Pong Neon", why = "High and wide: a very sparkling combination." },
+  { with = "Glockenspiel", external = true, why = "They share a bell-like register." },
+]
+tweaks = [
+  { control = "Arp Rate to 1/32", result = "A fast, glittering shimmer." },
+  { control = "DCO Range to 8'", result = "An octave down: warmer and more present." },
+  { control = "Reverb mix to -0.20", result = "Far away and soft." },
+]
+[patch.params]
+DcoRange = 0
+DcoWaveSaw = 0
+DcoWavePulse = 1
+DcoSubLevel = 0
+NumberOfVoices = 5
+arpmode = 1
+arpsyncmode = 2
+arprate = 0.52
+arprange = 1
+HpfCutoff = 2
+VcfCutoff = 0.82
+EnvDecayTime = 0.3
+EnvSustainLevel = 0
+EnvReleaseTime = 0.25
+ModWheelVcfRange = 0.1
+ModWheelDcoLfo = 0
+reverbDryWet = 0.26
+reverbSize = 0.65
+[patch.why]
+DcoRange = "4' places it an octave higher, clear of everything else."
+DcoWavePulse = "A square has a clean, simple, glass-like tone up here."
+HpfCutoff = "HP 1 removes any stray low-end weight."
+EnvDecayTime = "About 120 ms: short and bell-like."
+reverbDryWet = "The reverb gives the notes a halo."
+
+[[patch]]
+name = "Low Machine"
+tags = ["darksynth"]
+browser = "Low arp engine | Arp | MW: open filter"
+profile = "A dark, chugging low arp that doubles as a bass: heavy and relentless."
+phrase = "arp"
+expect = { arp_notes_per_s = [10, 18], centroid_hz = [120, 400] }
+transpose = -24
+test_note = 45
+range = "C1 to C3"
+performance = "One or two low notes: it's chugging, so large chords turn to mud."
+use = "Replaces a bass in darksynth, or adds a mechanical chug beneath one."
+mix = [
+  "Mono safe. Treat it just like a bass.",
+  "Sidechain hard to the kick.",
+  "Saturation adds menace.",
+]
+pairings = [
+  { with = "Cyber Scream", why = "Pure aggression at both ends of the spectrum." },
+  { with = "Black Horizon", why = "A static, dark bed over a low chug." },
+  { with = "Distorted drums", external = true, why = "Relentless low-end energy." },
+]
+tweaks = [
+  { control = "VCF Cutoff to 4.5", result = "A growlier, more exposed chug." },
+  { control = "Arp Rate to 1/8", result = "Half-time: heavier, less urgent." },
+  { control = "Sub level to 0", result = "Removes the weight, for layering over another bass." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 1
+DcoWaveSub = 0
+DcoSubLevel = 1.5
+NumberOfVoices = 3
+arpmode = 1
+arpsyncmode = 2
+arprate = 0.52
+arprange = 0
+VcfCutoff = 0.3
+VcfResonance = 0.18
+VcfEnvMod = 0.32
+VcfKeyFollow = 0.2
+EnvDecayTime = 0.26
+EnvSustainLevel = 0.1
+VcaEnvMode = 1
+EnvReleaseTime = 0.05
+ModWheelVcfRange = 0.3
+ModWheelDcoLfo = 0
+[patch.why]
+arprange = "One octave only, so that it stays in the bass register."
+DcoSubLevel = "A strong sub carries the fundamental at low pitch."
+VcaEnvMode = "Gate: the amp holds, while the filter envelope does the chugging."
+VcfCutoff = "About 100 Hz at C4, and darker still on low notes: it only opens on each step."
+NumberOfVoices = "4 voices are enough for simple chords; there's no call for more at this pitch."
+
+[[patch]]
+name = "Random Terminal"
+tags = ["darksynth", "outrun"]
+browser = "Random note order | Arp | MW: open filter"
+profile = "A square arp that plays your chord in random order: nervous, like a computer searching a terminal."
+phrase = "arp"
+expect = { arp_notes_per_s = [4.5, 8.5] }
+range = "C3 to C5"
+performance = "The chord you hold sets the notes; the order is up to the synth. More notes make more variety."
+use = "Tense sections, cyberpunk moods. Works best quietly behind other parts, as a texture."
+mix = [
+  "Low in the mix: random patterns draw attention.",
+  "High-pass at 300 Hz.",
+  "A short delay adds further confusion.",
+]
+pairings = [
+  { with = "Digital Rain", why = "Random pitch plus random tone: very busy." },
+  { with = "Grid Runner", why = "A random top against a very regular bass." },
+  { with = "Radio samples", external = true, why = "Adds to the feel of a transmission." },
+]
+tweaks = [
+  { control = "Arp Rate to 1/8", result = "Calmer, more readable as a melody." },
+  { control = "Arp range to 3 oct", result = "Wide, jumpy leaps." },
+  { control = "PULSE to Pulse 25%", result = "A thinner, older computer sound." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 0
+DcoWavePulse = 1
+DcoSubLevel = 0
+NumberOfVoices = 5
+arpmode = 4
+arpsyncmode = 2
+arprate = 0.52
+arprange = 1
+VcfCutoff = 0.65
+VcfEnvMod = 0.15
+EnvDecayTime = 0.22
+EnvSustainLevel = 0
+EnvReleaseTime = 0.1
+ModWheelVcfRange = 0.2
+ModWheelDcoLfo = 0
+delayDryWet = 0.1
+delayTime = 0.15
+delayFeedback = 0.2
+[patch.why]
+arpmode = "Random: no pattern to follow, which is the source of the nervous feel."
+DcoWavePulse = "A plain square sounds like old computer bleeps."
+EnvDecayTime = "About 70 ms: tiny, separate blips, as if from a machine."
+arprange = "Two octaves give it enough variety to sound unpredictable."
+
+[[patch]]
+name = "Dotted Eighth"
+tags = ["outrun", "dreamwave"]
+browser = "8th notes with dotted echoes | Arp | MW: open filter"
+profile = "A simple 8th-note arp, where the dotted-8th delay creates a rhythm that's more complex than the notes."
+phrase = "arp"
+expect = { arp_notes_per_s = [3, 6], side_mid = [0.3, 1.0] }
+range = "C3 to C5"
+performance = "Hold chords: the off-grid echoes do the work. Keep the chords simple."
+use = "Guitar-style echo patterns without a guitar. Great for verses and intros."
+mix = [
+  "The delay is part of the rhythm, so don't turn it off or replace it without matching the time.",
+  "High-pass at 250 Hz.",
+  "Sidechain lightly so the kick stays clean.",
+]
+pairings = [
+  { with = "Pulse Bloom", why = "A straight pump under a syncopated pattern." },
+  { with = "Nightdrive", why = "Plain 8ths in the bass let the dotted pattern be heard." },
+  { with = "Chorus guitar", external = true, why = "Echoes like these are a classic guitar sound." },
+]
+tweaks = [
+  { control = "Delay mix to +0.60", result = "The echoes become louder than the notes." },
+  { control = "Delay Time to 1/4T", result = "A triplet feel." },
+  { control = "Arp Rate to 1/16", result = "A much denser pattern." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 1
+DcoSubLevel = 0
+NumberOfVoices = 5
+arpmode = 1
+arpsyncmode = 2
+arprate = 0.33
+arprange = 1
+VcfCutoff = 0.52
+VcfEnvMod = 0.25
+VcfKeyFollow = 0.4
+EnvDecayTime = 0.3
+EnvSustainLevel = 0
+EnvReleaseTime = 0.25
+DcoChorusSwitch = 1
+ChorusRate = 0.5
+ModWheelVcfRange = 0.2
+ModWheelDcoLfo = 0
+delayDryWet = 0.42
+delayTime = 0.25
+delayFeedback = 0.42
+delaySpread = 0.7
+[patch.why]
+arprate = "Plain 8ths: simple on purpose, because the rhythm comes from the echoes."
+delayTime = "A dotted 8th: echoes fall between the notes, creating a pattern neither part has alone."
+delayDryWet = "Loud enough to be a part of the rhythm, not just an effect."
+delayFeedback = "A few audible repeats, without building up into a wash."
+
+[[patch]]
+name = "Octave Climb"
+tags = ["outrun", "dreamwave"]
+browser = "Up 4 octaves in triplets | Arp | MW: open filter"
+profile = "A bright arp that climbs four whole octaves in triplets: a build you can hold down with one hand."
+phrase = "arp"
+expect = { arp_notes_per_s = [7.5, 13], centroid_hz = [1500, 3500] }
+range = "C2 to C4"
+transpose = -12
+test_note = 45
+performance = "Hold a single note or a simple chord. It covers a huge range quickly, so start low."
+use = "Transitions and lifts into a chorus, or a bright top layer for one section."
+mix = [
+  "It covers a lot of the spectrum, so high-pass at 200 Hz.",
+  "The high notes can get piercing: use a gentle high shelf cut if needed.",
+  "Automate it in for the last bars of a build.",
+]
+pairings = [
+  { with = "Rising Tide", why = "Both are obvious builds." },
+  { with = "Sunrise Fanfare", why = "A climb that lands on the fanfare." },
+  { with = "Snare roll", external = true, why = "Accelerates the sense of a build." },
+]
+tweaks = [
+  { control = "Arp Rate to 1/16", result = "Straight, rather than a triplet feel." },
+  { control = "Arp range to 2 oct", result = "A shorter, more practical pattern." },
+  { control = "Arp mode to Up & down", result = "Rises and falls, losing some of its sense of climbing." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 1
+DcoSubLevel = 0
+NumberOfVoices = 5
+arpmode = 1
+arpsyncmode = 2
+arprate = 0.63
+arprange = 3
+VcfCutoff = 0.5
+VcfEnvMod = 0.28
+VcfKeyFollow = 0.8
+EnvDecayTime = 0.28
+EnvSustainLevel = 0
+EnvReleaseTime = 0.2
+ModWheelVcfRange = 0.2
+ModWheelDcoLfo = 0
+reverbDryWet = 0.12
+[patch.why]
+arprange = "Four octaves: the widest available, so that it's a big gesture."
+arprate = "16th-note triplets: a rolling feel, and a pattern that doesn't line up with the bar."
+VcfKeyFollow = "High: the filter opens with pitch, so high notes actually get brighter as it climbs."

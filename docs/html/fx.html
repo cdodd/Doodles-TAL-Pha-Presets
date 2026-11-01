@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FX and Atmosphere: Doodles TAL-Pha Presets</title>
+<link rel="stylesheet" href="style.css">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="index.html"><span>Doodles</span> TAL-Pha Presets</a>
+  <button type="button" id="theme" class="ghost" aria-label="Switch between light and dark theme">Theme</button>
+</header>
+<div class="layout">
+<nav class="sidebar" aria-label="Documentation">
+<a href="index.html">Overview</a>
+<p class="nav-label">Patches</p>
+<a href="bass.html">Bass</a>
+<a href="lead.html">Lead</a>
+<a href="pad.html">Pad</a>
+<a href="strings.html">Strings</a>
+<a href="brass.html">Brass</a>
+<a href="arp.html">Arp</a>
+<a href="pluck.html">Pluck</a>
+<a href="keys.html">Keys and Bells</a>
+<a href="chord.html">Chord and Stab</a>
+<a href="fx.html" aria-current=page>FX and Atmosphere</a>
+<div class="subnav"><a class="recipe-link" href="fx-recipe.html">Build from init</a><a href="#riser">Riser</a><a href="#downlifter">Downlifter</a><a href="#laser-zap">Laser Zap</a><a href="#ocean-static">Ocean Static</a><a href="#v8-drone">V8 Drone</a><a href="#sonar-ping">Sonar Ping</a><a href="#mainframe">Mainframe</a><a href="#alarm-siren">Alarm Siren</a><a href="#night-rain">Night Rain</a><a href="#sub-drop">Sub Drop</a></div>
+<p class="nav-label">Guides</p>
+<a href="field-guide.html">Field guide</a>
+<a href="control-reference.html">Control reference</a>
+<a href="gallery.html">Sound gallery</a>
+<a href="sound-map.html">Sound map</a>
+<a href="kits.html">Starter kits</a>
+<a href="reaper-cheat-sheet.html">Reaper cheat sheet</a>
+</nav>
+<main>
+<h1>FX and Atmosphere</h1>
+<p class="lede">10 patches. Control values are as shown on the plugin panel. Times and frequencies
+come from <a href="control-reference.html">measurements of the plugin</a>.</p>
+<a class="callout" href="fx-recipe.html"><strong>New to this category?</strong> Build a patch from init, step by step, hearing each decision.</a>
+<section class="install">
+<h2>Mixing this category</h2>
+<p>Starting points for every patch here. Each patch's own notes cover what's different about it.</p>
+<ul><li>High-pass at 100-300 Hz, unless the low end is the point, as in Sub Drop and V8 Drone.</li><li>EQ to taste: automate a high cut rather than setting a fixed one.</li><li>They rarely need compression. Automate the level instead, and sidechain drones to the kick.</li><li>Keep low FX centred, and pan or widen high ones for movement.</li><li>Use reverb throws at the end of a sweep. Mute the source on the downbeat for a clean cut.</li></ul>
+</section>
+<div class="chips" role="group" aria-label="Filter by subgenre"><button type="button" class="chip" aria-pressed="true" data-tag="">All</button><button type="button" class="chip" aria-pressed="false" data-tag="chillwave">chillwave</button><button type="button" class="chip" aria-pressed="false" data-tag="darksynth">darksynth</button><button type="button" class="chip" aria-pressed="false" data-tag="dreamwave">dreamwave</button><button type="button" class="chip" aria-pressed="false" data-tag="outrun">outrun</button></div>
+<article class="patch" id="riser" data-tags="outrun darksynth">
+<header>
+  <h2>Riser</h2>
+  <div class="tags"><span class="tag">outrun</span><span class="tag">darksynth</span></div>
+</header>
+<p class="profile">A noise-and-saw build that takes about four seconds to open up, built for the run into a chorus.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/fx/riser.mp3" aria-label="Preview of Riser"></audio>
+  <a class="ghost" href="../../presets/Doodles/FX%20and%20Atmosphere/Riser.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>Any note; try C4</dd></div><div><dt>Brightness</dt><dd>6960 Hz centroid</dd></div><div><dt>Low energy</dt><dd>1% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 2619 ms</dd></div><div><dt>Decay</dt><dd>Holds while the key is down</dd></div><div><dt>Filter closes</dt><dd>0.0 octaves</dd></div><div><dt>Held level</dt><dd>-2 dB from peak</dd></div><div><dt>Width</dt><dd>Stereo, side/mid 0.07</dd></div><div><dt>Mono sum</dt><dd>-0.0 dB</dd></div><div><dt>Loudness</dt><dd>-17.9 LUFS, peak -8.0 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">Env T1 (attack)</th><td class="value">7.8 (about 4.2 s)</td><td>About 4 seconds to reach both full level and full brightness. Because one envelope moves level and filter together, the sound gets both louder and brighter.</td></tr><tr><th scope="row">VCF Cutoff</th><td class="value">2.2 (about 51 Hz at C4)</td><td>Starts almost closed, at about 50 Hz, so there&#x27;s a very long way to go.</td></tr><tr><th scope="row">VCF Env</th><td class="value">6.8</td><td>Very large: it takes the filter from nearly closed to fully open.</td></tr><tr><th scope="row">Noise</th><td class="value">2.0 / 3</td><td>Noise is the classic riser sound, as it has no pitch to clash with the key.</td></tr><tr><th scope="row">VCF Res</th><td class="value">3.5</td><td>A slight peak, so you can hear the sweep moving through the noise.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Saw Saw; DCO Range 8&#x27;; Sub level 0.0 / 3; Env T3 (decay) 5.0 (about 678 ms to -20 dB); Env L3 (sustain) 10.0; Env T4 (release) 3.5 (about 190 ms to -20 dB); MW to VCF 2.0; Voices 4; Reverb mix -0.40; Reverb size 8.0.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Hold one note, starting about two bars ahead. Release on the downbeat.</p></section>
+  <section><h3>How to use it</h3><p>Lead-ins to any big section. Pairs with a snare roll.</p></section>
+  <section><h3>Mixing</h3><ul><li>Automate the level as well, for a bigger rise.</li><li>Cut it dead at the downbeat, or use a reverb throw.</li><li>High-pass at 300 Hz.</li><li>Built-in reverb: turn it off if you&#x27;re using your own.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="strings.html#rising-tide">Rising Tide</a><span class="why">Noise and strings rising together.</span></li><li><a href="#sub-drop">Sub Drop</a><span class="why">The rise resolves in a drop.</span></li><li><strong>Snare roll</strong><span class="why">The classic build.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>ENV T1 (attack) to 6.5</strong><span>A much shorter rise, of a little over a second.</span></li><li><strong>Noise to 0</strong><span>A tonal, less airy rise.</span></li><li><strong>VCF RES to 7.0</strong><span>A whistling peak that sweeps up with the noise.</span></li></ul>
+</article>
+<article class="patch" id="downlifter" data-tags="outrun darksynth">
+<header>
+  <h2>Downlifter</h2>
+  <div class="tags"><span class="tag">outrun</span><span class="tag">darksynth</span></div>
+</header>
+<p class="profile">A falling pitch and filter sweep with noise, to release energy after a hit.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/fx/downlifter.mp3" aria-label="Preview of Downlifter"></audio>
+  <a class="ghost" href="../../presets/Doodles/FX%20and%20Atmosphere/Downlifter.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>Try C5</dd></div><div><dt>Brightness</dt><dd>839 Hz centroid</dd></div><div><dt>Low energy</dt><dd>1% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 0 ms</dd></div><div><dt>Decay</dt><dd>Falls 20 dB in 3.1 s</dd></div><div><dt>Held note</dt><dd>Dies away</dd></div><div><dt>Width</dt><dd>Stereo, side/mid 0.10</dd></div><div><dt>Mono sum</dt><dd>-0.1 dB</dd></div><div><dt>Loudness</dt><dd>-18.3 LUFS, peak -3.5 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">DCO Env</th><td class="value">7.8 (reads 99)</td><td>Very high: the pitch begins a lot higher than the note and falls down to it.</td></tr><tr><th scope="row">Env T3 (decay)</th><td class="value">7.4 (about 4.3 s to -20 dB)</td><td>About 4 seconds: the whole gesture happens in the decay.</td></tr><tr><th scope="row">VCF Env</th><td class="value">4.0</td><td>The filter closes along with the pitch, which adds to the falling feeling.</td></tr><tr><th scope="row">Noise</th><td class="value">1.2 / 3</td><td>Adds an airy sweep as the filter closes.</td></tr><tr><th scope="row">VCA mode</th><td class="value">Normal</td><td>Normal: the level falls too, so the sound disappears as it lands.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Saw Saw; DCO Range 8&#x27;; Sub level 0.0 / 3; VCF Cutoff 4.0 (about 214 Hz at C4); Env L3 (sustain) 0.0; Env T4 (release) 7.0 (about 3.4 s to -20 dB); MW to VCF 2.0; Voices 4; Reverb mix -0.36; Reverb size 8.0.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Hit one note on the downbeat. It falls by itself over a few seconds.</p></section>
+  <section><h3>How to use it</h3><p>After a drop or a big hit, or at the end of a chorus going into a quieter section.</p></section>
+  <section><h3>Mixing</h3><ul><li>High-pass as it falls, using automation, if it&#x27;s clouding the low end.</li><li>Long reverb suits it.</li><li>Keep it just below the main hit.</li><li>Built-in reverb: turn it off if you&#x27;re using your own.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="brass.html#stadium-stab">Stadium Stab</a><span class="why">Hit, then fall.</span></li><li><a href="#riser">Riser</a><span class="why">The natural opposite.</span></li><li><strong>Crash cymbal</strong><span class="why">They share the same tail.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>DCO Env to 9.0</strong><span>A much bigger fall in pitch.</span></li><li><strong>ENV T3 (decay) to 6.0</strong><span>A much quicker fall.</span></li><li><strong>Noise to 0</strong><span>A pure tone that falls.</span></li></ul>
+</article>
+<article class="patch" id="laser-zap" data-tags="outrun chillwave">
+<header>
+  <h2>Laser Zap</h2>
+  <div class="tags"><span class="tag">outrun</span><span class="tag">chillwave</span></div>
+</header>
+<p class="profile">A very fast downward pitch zap: arcade laser fire.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/fx/laser-zap.mp3" aria-label="Preview of Laser Zap"></audio>
+  <a class="ghost" href="../../presets/Doodles/FX%20and%20Atmosphere/Laser%20Zap.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>C4 to C6</dd></div><div><dt>Brightness</dt><dd>3595 Hz centroid</dd></div><div><dt>Low energy</dt><dd>0% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 0 ms</dd></div><div><dt>Decay</dt><dd>Falls 20 dB in 329 ms</dd></div><div><dt>Held note</dt><dd>Dies away</dd></div><div><dt>Width</dt><dd>Mono</dd></div><div><dt>Mono sum</dt><dd>+0.0 dB</dd></div><div><dt>Loudness</dt><dd>-18.0 LUFS, peak -9.6 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">DCO Env</th><td class="value">9.2 (reads 117)</td><td>Nearly maximum, so the note starts about two octaves high and falls away.</td></tr><tr><th scope="row">Env T3 (decay)</th><td class="value">3.6 (about 208 ms to -20 dB)</td><td>About 200 ms: fast enough to read as a zap.</td></tr><tr><th scope="row">DCO Pulse</th><td class="value">Square</td><td>A plain square, the classic bleep of old game hardware.</td></tr><tr><th scope="row">Env L3 (sustain)</th><td class="value">0.0</td><td>Zero, for a single, self-contained shot.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Saw Off; DCO Range 8&#x27;; Sub level 0.0 / 3; VCF Cutoff 8.5 (about 7620 Hz at C4); Env T4 (release) 2.5 (about 90 ms to -20 dB); Voices 6; Delay mix -0.72; Delay Time 1/8; Delay feedback 2.0.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Short single hits, with varied notes for variety.</p></section>
+  <section><h3>How to use it</h3><p>Fills, transitions, and game references. Keep them occasional.</p></section>
+  <section><h3>Mixing</h3><ul><li>Panning each hit differently adds a lot of fun.</li><li>A short delay adds a sense of a battle.</li><li>High-pass at 300 Hz.</li><li>Built-in delay: turn it off if you&#x27;re using your own.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="lead.html#arcade-square">Arcade Square</a><span class="why">Game music, with sound effects.</span></li><li><a href="#sonar-ping">Sonar Ping</a><span class="why">A small box of sci-fi sounds.</span></li><li><strong>Tom fill</strong><span class="why">They land together.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>ENV T3 (decay) to 4.5</strong><span>A slower, more dramatic zap.</span></li><li><strong>DCO Env mode to Inverted</strong><span>It goes up instead of down.</span></li><li><strong>Delay mix to -0.40</strong><span>Repeats add a stuttering feel.</span></li></ul>
+</article>
+<article class="patch" id="ocean-static" data-tags="dreamwave chillwave">
+<header>
+  <h2>Ocean Static</h2>
+  <div class="tags"><span class="tag">dreamwave</span><span class="tag">chillwave</span></div>
+</header>
+<p class="profile">Pure filtered noise, rising and falling slowly like distant waves.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/fx/ocean-static.mp3" aria-label="Preview of Ocean Static"></audio>
+  <a class="ghost" href="../../presets/Doodles/FX%20and%20Atmosphere/Ocean%20Static.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>Any note</dd></div><div><dt>Brightness</dt><dd>1062 Hz centroid</dd></div><div><dt>Low energy</dt><dd>9% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 569 ms</dd></div><div><dt>Decay</dt><dd>Holds while the key is down</dd></div><div><dt>Filter closes</dt><dd>1.1 octaves</dd></div><div><dt>Held level</dt><dd>-8 dB from peak</dd></div><div><dt>Width</dt><dd>Stereo, side/mid 0.08</dd></div><div><dt>Mono sum</dt><dd>-0.0 dB</dd></div><div><dt>Loudness</dt><dd>-18.1 LUFS, peak -5.7 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">Noise</th><td class="value">3.0 / 3</td><td>Noise alone: the DCO is off entirely.</td></tr><tr><th scope="row">VCF LFO</th><td class="value">3.2</td><td>The filter makes the waves, moving by about an octave in each direction.</td></tr><tr><th scope="row">LFO Rate</th><td class="value">0.13 Hz</td><td>About 0.13 Hz: a wave every eight seconds or so.</td></tr><tr><th scope="row">LFO wave</th><td class="value">Sine</td><td>A sine rises and falls smoothly.</td></tr><tr><th scope="row">Env T1 (attack)</th><td class="value">6.0 (about 773 ms)</td><td>A slow fade-in, as it should simply appear in the mix.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Saw Off; DCO Range 8&#x27;; Sub level 0.0 / 3; VCF Cutoff 6.2 (about 1284 Hz at C4); Env T3 (decay) 5.0 (about 678 ms to -20 dB); Env L3 (sustain) 10.0; Env T4 (release) 6.0 (about 1.5 s to -20 dB); MW to VCF 2.0; Voices Mono (1); Reverb mix -0.40; Reverb size 8.0.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Hold one note. The waves roll on their own, about every 8 seconds.</p></section>
+  <section><h3>How to use it</h3><p>A background bed for intros and outros, or under dialogue samples.</p></section>
+  <section><h3>Mixing</h3><ul><li>Keep it very low: it&#x27;s meant to be felt.</li><li>Stereo widening suits it.</li><li>A low cut around 200 Hz keeps it out of the bass.</li><li>Built-in reverb: turn it off if you&#x27;re using your own.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="#night-rain">Night Rain</a><span class="why">A very natural-sounding bed.</span></li><li><a href="pad.html#cold-coast">Cold Coast</a><span class="why">A cold, empty shoreline.</span></li><li><strong>Spoken word</strong><span class="why">A classic bed for a voiceover.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>LFO Rate up to about 0.3 Hz</strong><span>Faster waves, a rougher sea.</span></li><li><strong>VCF LFO to 6.0</strong><span>A much bigger movement.</span></li><li><strong>VCF RES to 5.0</strong><span>A whistling, wind-like tone appears.</span></li></ul>
+</article>
+<article class="patch" id="v8-drone" data-tags="darksynth outrun">
+<header>
+  <h2>V8 Drone</h2>
+  <div class="tags"><span class="tag">darksynth</span><span class="tag">outrun</span></div>
+</header>
+<p class="profile">A low, idling engine rumble: heavy and slightly unstable, with two detuned oscillators beating against each other.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/fx/v8-drone.mp3" aria-label="Preview of V8 Drone"></audio>
+  <a class="ghost" href="../../presets/Doodles/FX%20and%20Atmosphere/V8%20Drone.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>C1 to C3</dd></div><div><dt>Brightness</dt><dd>164 Hz centroid</dd></div><div><dt>Low energy</dt><dd>89% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 50 ms</dd></div><div><dt>Decay</dt><dd>Holds while the key is down</dd></div><div><dt>Filter closes</dt><dd>0.0 octaves</dd></div><div><dt>Held level</dt><dd>-9 dB from peak</dd></div><div><dt>Width</dt><dd>Mono</dd></div><div><dt>Mono sum</dt><dd>+0.0 dB</dd></div><div><dt>Loudness</dt><dd>-19.0 LUFS, peak -3.0 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">DCO Range</th><td class="value">32&#x27;</td><td>32&#x27;, the lowest setting: so low that you hear individual pulses rather than a pitch.</td></tr><tr><th scope="row">Pulse Fine</th><td class="value">+20 cents</td><td>Well detuned, so the two oscillators beat against each other like uneven cylinders.</td></tr><tr><th scope="row">LFO wave</th><td class="value">Noise</td><td>Noise: a very slight random jitter. Its rate setting makes no measurable difference.</td></tr><tr><th scope="row">DCO LFO</th><td class="value">1.4</td><td>Small, so the jitter is barely there. The uneven idle comes mostly from the detuned pulse.</td></tr><tr><th scope="row">HPF</th><td class="value">Bass boost</td><td>Bass boost adds physical weight.</td></tr><tr><th scope="row">Bend range</th><td class="value">12 st</td><td>A full octave, so a pitch bend can rev the engine.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Pulse Pulse 25%; DCO Saw Saw; Sub level 0.0 / 3; VCF Cutoff 4.2 (about 252 Hz at C4); VCF Res 1.5; VCF LFO 0.8; LFO Rate 13.65 Hz; Env T1 (attack) 3.0 (about 70 ms); Env L3 (sustain) 10.0; Env T4 (release) 4.5 (about 419 ms to -20 dB); MW to VCF 3.5; Voices Mono (1).</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Hold one low note. Bending the pitch or riding the mod wheel makes it &#x27;rev&#x27;.</p></section>
+  <section><h3>How to use it</h3><p>Atmosphere for intros and darksynth tension, or as a car-themed sound effect.</p></section>
+  <section><h3>Mixing</h3><ul><li>High-pass under the bass or use it where there&#x27;s no bass.</li><li>Saturation adds grit.</li><li>Automate the level and cutoff for a revving effect.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="bass.html#steel-engine">Steel Engine</a><span class="why">The same engine, in rhythm.</span></li><li><a href="#night-rain">Night Rain</a><span class="why">A car idling in the rain.</span></li><li><strong>Car door sample</strong><span class="why">Adds a whole scene to the track.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>DCO Range to 16&#x27;</strong><span>A higher, faster idle: the pulses come twice as fast.</span></li><li><strong>VCF Cutoff to 5.0</strong><span>A much rougher sound.</span></li><li><strong>Pulse Fine to +50 cents</strong><span>Faster beating between the oscillators: a rougher, less even idle.</span></li></ul>
+</article>
+<article class="patch" id="sonar-ping" data-tags="dreamwave darksynth">
+<header>
+  <h2>Sonar Ping</h2>
+  <div class="tags"><span class="tag">dreamwave</span><span class="tag">darksynth</span></div>
+</header>
+<p class="profile">A single resonant ping with a long, dark echo: a submarine, far below.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/fx/sonar-ping.mp3" aria-label="Preview of Sonar Ping"></audio>
+  <a class="ghost" href="../../presets/Doodles/FX%20and%20Atmosphere/Sonar%20Ping.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>C4 to C6</dd></div><div><dt>Brightness</dt><dd>2410 Hz centroid</dd></div><div><dt>Low energy</dt><dd>0% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 0 ms</dd></div><div><dt>Decay</dt><dd>Falls 20 dB in 928 ms</dd></div><div><dt>Held note</dt><dd>Dies away</dd></div><div><dt>Width</dt><dd>Stereo, side/mid 0.34</dd></div><div><dt>Mono sum</dt><dd>+0.5 dB</dd></div><div><dt>Loudness</dt><dd>-17.9 LUFS, peak -4.8 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">VCF Res</th><td class="value">5.0</td><td>A strong peak gives the ping its ringing, metallic colour.</td></tr><tr><th scope="row">Delay feedback</th><td class="value">6.0</td><td>High: the repeats carry on for a long time, as sonar returns do.</td></tr><tr><th scope="row">Delay tone</th><td class="value">-2.00</td><td>Dark: each echo seems further away.</td></tr><tr><th scope="row">Delay Time</th><td class="value">1/4</td><td>1/4: slow, evenly spaced returns.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Pulse Square; DCO Saw Off; DCO Range 8&#x27;; Sub level 0.0 / 3; VCF Cutoff 6.0 (about 1092 Hz at C4); VCF Env 1.0; VCF Key follow 10.0; Env T3 (decay) 5.0 (about 678 ms to -20 dB); Env L3 (sustain) 0.0; Env T4 (release) 4.5 (about 419 ms to -20 dB); Voices 4; Reverb mix -0.50; Reverb size 8.0; Delay mix -0.16; Delay spread +2.00.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>One note every few seconds. It wants plenty of empty space.</p></section>
+  <section><h3>How to use it</h3><p>Tension, intros, and sparse atmosphere.</p></section>
+  <section><h3>Mixing</h3><ul><li>The echoes are essential, so keep the delay.</li><li>Mix it low; the ping cuts through easily.</li><li>Long reverb on a send adds depth.</li><li>Built-in delay: part of this sound, so keep it. Built-in reverb: turn it off if you&#x27;re using your own.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="pad.html#deep-space-drift">Deep Space Drift</a><span class="why">Empty and unsettling.</span></li><li><a href="#mainframe">Mainframe</a><span class="why">A control room in a film.</span></li><li><strong>Low drones</strong><span class="why">They set up the depths.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>Delay feedback to 8.0</strong><span>Very long trails of echoes.</span></li><li><strong>Delay Time to 1/2</strong><span>Slower, more spacious repeats.</span></li><li><strong>ENV T3 (decay) to 3.5</strong><span>A shorter, tighter ping.</span></li></ul>
+</article>
+<article class="patch" id="mainframe" data-tags="darksynth outrun">
+<header>
+  <h2>Mainframe</h2>
+  <div class="tags"><span class="tag">darksynth</span><span class="tag">outrun</span></div>
+</header>
+<p class="profile">A random stream of beeps: the sound of a film computer doing something important.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/fx/mainframe.mp3" aria-label="Preview of Mainframe"></audio>
+  <a class="ghost" href="../../presets/Doodles/FX%20and%20Atmosphere/Mainframe.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>C3 to C5</dd></div><div><dt>Brightness</dt><dd>1328 Hz centroid</dd></div><div><dt>Low energy</dt><dd>1% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 0 ms</dd></div><div><dt>Decay</dt><dd>Holds while the key is down</dd></div><div><dt>Filter closes</dt><dd>0.0 octaves</dd></div><div><dt>Held level</dt><dd>-2 dB from peak</dd></div><div><dt>Width</dt><dd>Mono</dd></div><div><dt>Mono sum</dt><dd>+0.0 dB</dd></div><div><dt>Loudness</dt><dd>-18.0 LUFS, peak -14.4 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">LFO wave</th><td class="value">S&amp;H</td><td>S&amp;H: a new random value at every step.</td></tr><tr><th scope="row">DCO LFO</th><td class="value">5.5</td><td>Sending random steps to pitch gives a new note each step, the classic computer sound.</td></tr><tr><th scope="row">LFO Rate</th><td class="value">1/16</td><td>1/16, tempo-synced: random notes on a regular grid.</td></tr><tr><th scope="row">DCO Pulse</th><td class="value">Square</td><td>A plain square, the sound of an old computer beeping.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Saw Off; DCO Range 8&#x27;; Sub level 0.0 / 3; VCF Cutoff 7.2 (about 2840 Hz at C4); VCF Res 2.0; Env L3 (sustain) 10.0; Env T4 (release) 2.0 (about 50 ms to -20 dB); MW to VCF 1.0; Voices Mono (1); LFO Sync On; Delay mix -0.70; Delay Time 1/8.; Delay feedback 3.0.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Hold one note: the pitch jumps randomly, locked to your tempo.</p></section>
+  <section><h3>How to use it</h3><p>Sci-fi moments, intros, and data-themed transitions. Works very low in the mix too.</p></section>
+  <section><h3>Mixing</h3><ul><li>Keep it low: it&#x27;s distracting at any level.</li><li>Hard-pan for a sense of equipment around the room.</li><li>High-pass at 300 Hz.</li><li>Built-in delay: turn it off if you&#x27;re using your own.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="arp.html#digital-rain">Digital Rain</a><span class="why">Machines thinking.</span></li><li><a href="#sonar-ping">Sonar Ping</a><span class="why">A control room.</span></li><li><strong>Teletype sample</strong><span class="why">Sets the film scene.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>LFO Rate to 1/8</strong><span>Slower, more readable beeps.</span></li><li><strong>DCO LFO to 7.0</strong><span>Wider jumps in pitch.</span></li><li><strong>LFO Sync off</strong><span>A free-running stream, with no relation to the tempo.</span></li></ul>
+</article>
+<article class="patch" id="alarm-siren" data-tags="darksynth outrun">
+<header>
+  <h2>Alarm Siren</h2>
+  <div class="tags"><span class="tag">darksynth</span><span class="tag">outrun</span></div>
+</header>
+<p class="profile">A wide, slow rising and falling siren.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/fx/alarm-siren.mp3" aria-label="Preview of Alarm Siren"></audio>
+  <a class="ghost" href="../../presets/Doodles/FX%20and%20Atmosphere/Alarm%20Siren.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>C3 to C5</dd></div><div><dt>Brightness</dt><dd>1301 Hz centroid</dd></div><div><dt>Low energy</dt><dd>1% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 30 ms</dd></div><div><dt>Decay</dt><dd>Holds while the key is down</dd></div><div><dt>Filter closes</dt><dd>0.0 octaves</dd></div><div><dt>Held level</dt><dd>-2 dB from peak</dd></div><div><dt>Width</dt><dd>Stereo, side/mid 0.06</dd></div><div><dt>Mono sum</dt><dd>-0.0 dB</dd></div><div><dt>Loudness</dt><dd>-18.0 LUFS, peak -11.9 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">DCO LFO</th><td class="value">7.2</td><td>Very wide: pitch moves about a whole tone up and down.</td></tr><tr><th scope="row">LFO Rate</th><td class="value">1.33 Hz</td><td>About 1.3 Hz: the pace of a real siren.</td></tr><tr><th scope="row">LFO wave</th><td class="value">Triangle</td><td>A triangle has a constant rise and fall, as a siren has.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Saw Saw; DCO Range 8&#x27;; Sub level 0.0 / 3; VCF Cutoff 7.0 (about 2448 Hz at C4); VCF Res 1.0; Env T1 (attack) 3.0 (about 70 ms); Env L3 (sustain) 10.0; Env T4 (release) 4.5 (about 419 ms to -20 dB); Voices Mono (1); Reverb mix -0.44; Reverb size 7.5.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Hold one note. Choose its speed by changing the LFO rate.</p></section>
+  <section><h3>How to use it</h3><p>Breakdowns, tension moments, and transitions.</p></section>
+  <section><h3>Mixing</h3><ul><li>Mix it low, or use for only a bar or two; it&#x27;s tiring.</li><li>Long reverb puts it in the distance, as a real siren would be.</li><li>High-pass at 250 Hz.</li><li>Built-in reverb: turn it off if you&#x27;re using your own.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="bass.html#steel-engine">Steel Engine</a><span class="why">A chase scene.</span></li><li><a href="brass.html#night-patrol">Night Patrol</a><span class="why">A dark and threatening combination.</span></li><li><strong>Crowd noise</strong><span class="why">Sets the scene.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>LFO Rate up to about 5 Hz</strong><span>A faster warble: a different type of alarm.</span></li><li><strong>LFO wave to REC</strong><span>Two-tone, like a European siren.</span></li><li><strong>Reverb mix to +0.20</strong><span>Further away.</span></li></ul>
+</article>
+<article class="patch" id="night-rain" data-tags="dreamwave chillwave">
+<header>
+  <h2>Night Rain</h2>
+  <div class="tags"><span class="tag">dreamwave</span><span class="tag">chillwave</span></div>
+</header>
+<p class="profile">Thin, bright noise that flickers randomly, in a reverb: rain on a street at night.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/fx/night-rain.mp3" aria-label="Preview of Night Rain"></audio>
+  <a class="ghost" href="../../presets/Doodles/FX%20and%20Atmosphere/Night%20Rain.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>Any note</dd></div><div><dt>Brightness</dt><dd>5885 Hz centroid</dd></div><div><dt>Low energy</dt><dd>0% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 374 ms</dd></div><div><dt>Decay</dt><dd>Holds while the key is down</dd></div><div><dt>Filter closes</dt><dd>0.3 octaves</dd></div><div><dt>Held level</dt><dd>-4 dB from peak</dd></div><div><dt>Width</dt><dd>Stereo, side/mid 0.05</dd></div><div><dt>Mono sum</dt><dd>-0.0 dB</dd></div><div><dt>Loudness</dt><dd>-18.0 LUFS, peak -10.8 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">HPF</th><td class="value">HP 2</td><td>HP 2: rain is mostly high-frequency hiss, with little body.</td></tr><tr><th scope="row">LFO wave</th><td class="value">S&amp;H</td><td>S&amp;H: small random filter jumps give the flickering of individual drops.</td></tr><tr><th scope="row">LFO Rate</th><td class="value">9.79 Hz</td><td>About 10 Hz: quick random changes, faster than you can follow.</td></tr><tr><th scope="row">Reverb mix</th><td class="value">-0.36</td><td>A city street, not a studio.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Saw Off; DCO Range 8&#x27;; Sub level 0.0 / 3; Noise 3.0 / 3; VCF Cutoff 8.2 (about 6021 Hz at C4); VCF Res 1.2; VCF LFO 1.4; Env T1 (attack) 5.5 (about 556 ms); Env L3 (sustain) 10.0; Env T4 (release) 6.0 (about 1.5 s to -20 dB); MW to VCF 0.8; Voices Mono (1); Reverb size 7.0.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Hold one note, and leave it running.</p></section>
+  <section><h3>How to use it</h3><p>Scene-setting for intros and noir sections, or under a whole quiet track.</p></section>
+  <section><h3>Mixing</h3><ul><li>Very low in the mix.</li><li>Stereo widening suits it.</li><li>Layer real rain if you have it: the synth adds movement.</li><li>Built-in reverb: part of this sound, so keep it.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="strings.html#rain-city">Rain City</a><span class="why">Sets the scene for the strings.</span></li><li><a href="pluck.html#soft-rain">Soft Rain</a><span class="why">A texture and a playable part with the same image.</span></li><li><strong>Saxophone</strong><span class="why">Noir, complete.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>LFO Rate up to about 20 Hz</strong><span>Heavier rainfall.</span></li><li><strong>HPF to HP 1</strong><span>A fuller, nearer downpour.</span></li><li><strong>Reverb mix to -0.70</strong><span>Closer, as if under an umbrella.</span></li></ul>
+</article>
+<article class="patch" id="sub-drop" data-tags="darksynth outrun">
+<header>
+  <h2>Sub Drop</h2>
+  <div class="tags"><span class="tag">darksynth</span><span class="tag">outrun</span></div>
+</header>
+<p class="profile">A deep sine-like impact that falls in pitch, felt as much as heard.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/fx/sub-drop.mp3" aria-label="Preview of Sub Drop"></audio>
+  <a class="ghost" href="../../presets/Doodles/FX%20and%20Atmosphere/Sub%20Drop.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>C2 to C4</dd></div><div><dt>Brightness</dt><dd>219 Hz centroid</dd></div><div><dt>Low energy</dt><dd>92% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 5 ms</dd></div><div><dt>Decay</dt><dd>Holds while the key is down</dd></div><div><dt>Filter closes</dt><dd>0.5 octaves</dd></div><div><dt>Held level</dt><dd>-7 dB from peak</dd></div><div><dt>Width</dt><dd>Mono</dd></div><div><dt>Mono sum</dt><dd>+0.0 dB</dd></div><div><dt>Loudness</dt><dd>-20.5 LUFS, peak -5.5 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">DCO Env</th><td class="value">7.0 (reads 89)</td><td>About an octave: the fall in pitch is what gives the feeling of an impact.</td></tr><tr><th scope="row">DCO Range</th><td class="value">16&#x27;</td><td>16&#x27;, to keep it in the sub range.</td></tr><tr><th scope="row">Env T3 (decay)</th><td class="value">6.2 (about 1.6 s to -20 dB)</td><td>About 1.5 seconds: long enough to feel, short enough not to obscure what follows.</td></tr><tr><th scope="row">VCF Cutoff</th><td class="value">3.6 (about 158 Hz at C4)</td><td>About 160 Hz at C4: removes the harmonics, leaving something close to a sine.</td></tr><tr><th scope="row">DCO Pulse</th><td class="value">Square</td><td>A square is the easiest wave to filter down to a near-sine.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Saw Off; Sub level 0.0 / 3; VCF Key follow 8.0; Env L3 (sustain) 0.0; Env T4 (release) 5.0 (about 778 ms to -20 dB); Voices Mono (1).</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>One note, exactly on a downbeat.</p></section>
+  <section><h3>How to use it</h3><p>The first beat of a drop or chorus. Use it sparingly, as it fills all the low-end headroom.</p></section>
+  <section><h3>Mixing</h3><ul><li>Duck the bass and kick out of the way for this one hit.</li><li>Check it on a full-range system: a small speaker won&#x27;t reproduce it.</li><li>Keep it mono.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="#riser">Riser</a><span class="why">The build, then the drop.</span></li><li><a href="brass.html#stadium-stab">Stadium Stab</a><span class="why">A huge downbeat: top end from the stab, weight from this.</span></li><li><strong>Big kick</strong><span class="why">Layered, for a massive impact.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>DCO Env to 5.0</strong><span>A smaller fall.</span></li><li><strong>ENV T3 (decay) to 7.0</strong><span>A longer, more dramatic drop.</span></li><li><strong>VCF Cutoff to 5.0</strong><span>Audible on small speakers, with more growl.</span></li></ul>
+</article>
+</main>
+</div>
+<script src="site.js"></script>
+</body>
+</html>

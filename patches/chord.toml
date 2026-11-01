@@ -1,0 +1,524 @@
+category = "Chord and Stab"
+mix_defaults = [
+  "High-pass at 100-200 Hz, or about 100 Hz for heavy riffs.",
+  "Lift 1-3 kHz for bite, or dip it to make room for the lead.",
+  "Compress stabs so they hit evenly. Sidechain sustained chords to the kick.",
+  "One key plays a parallel chord, so width comes from chorus and delay. Check it in mono.",
+  "Delay throws on the last stab of a phrase suit these well.",
+]
+
+[[patch]]
+name = "Minor Stab"
+tags = ["outrun", "darksynth"]
+browser = "One-finger minor stab | Vel: none | MW: open filter"
+profile = "A punchy minor triad on a single key: the classic filtered chord stab."
+phrase = "hits"
+range = "C3 to C5"
+chord = [60, 63, 67]
+chord_why = "A minor triad. One key plays the whole chord, and moving your finger moves it in parallel: a classic house and synth-pop trick."
+expect = { attack_s = [0, 0.02], sustain_db = [-200, -15] }
+performance = "Play single notes; each plays a minor chord. Riffs in parallel chords come very quickly."
+use = "Rhythmic hooks and riffs, particularly in minor keys."
+mix = [
+  "High-pass at 200 Hz.",
+  "Sidechain to the kick for bounce.",
+  "Parallel chords can clash with the key, so choose your root notes carefully.",
+]
+pairings = [
+  { with = "Nightdrive", why = "A rolling bass under syncopated stabs." },
+  { with = "Gated Chord", why = "Same chord, different rhythm." },
+  { with = "Gated snare", external = true, why = "They land together on the backbeat." },
+]
+tweaks = [
+  { control = "ENV T3 (decay) to 5.0", result = "Longer, more sustained hits." },
+  { control = "VCF RES to 5.0", result = "A more resonant, squelchy stab." },
+  { control = "Chord memory to major", result = "Hit the REC button and play a major triad for a sunnier hook." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 1
+DcoSubLevel = 0
+NumberOfVoices = 5
+VcfCutoff = 0.42
+VcfResonance = 0.12
+VcfEnvMod = 0.36
+VcfKeyFollow = 0.4
+EnvDecayTime = 0.4
+EnvSustainLevel = 0
+EnvReleaseTime = 0.3
+DcoChorusSwitch = 1
+ChorusRate = 0.5
+ModWheelVcfRange = 0.2
+ModWheelDcoLfo = 0
+reverbDryWet = 0.14
+[patch.why]
+VcfEnvMod = "A big, quick filter opening gives each stab its bark."
+EnvDecayTime = "About 300 ms: short, and with no sustain, a true stab."
+NumberOfVoices = "6 voices: chord memory needs enough voices for every note, and retriggers need a few spare."
+
+[[patch]]
+name = "Major 7 Haze"
+tags = ["dreamwave", "chillwave"]
+browser = "Soft held major 7 | Vel: none | MW: open filter"
+profile = "A warm, hazy major 7th chord on one key: instant nostalgia."
+phrase = "held"
+range = "C3 to C5"
+chord = [60, 64, 67, 71]
+chord_why = "A major 7th: dreamy and unresolved, and a much-loved chord of retro pop."
+expect = { attack_s = [0.002, 0.2] }
+performance = "Play slowly, one chord per bar or so. Moving by whole steps sounds lovely."
+use = "Chord beds for slow, dreamy tracks. It's possible to play a whole song with one finger."
+mix = [
+  "High-pass at 150 Hz.",
+  "A slow sidechain adds bounce.",
+  "Tape saturation adds more haze.",
+]
+pairings = [
+  { with = "Velvet Bass", why = "Soft and warm." },
+  { with = "Vox Machine", why = "Warm jazzy chords suit the vocal phrasing." },
+  { with = "Mellow drum machine", external = true, why = "A chillwave classic." },
+]
+tweaks = [
+  { control = "Chord memory to minor 7", result = "Moodier and darker." },
+  { control = "ENV T1 (attack) to 5.0", result = "A much slower fade-in, like a pad." },
+  { control = "CHORUS off", result = "Clearer, less hazy." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 0
+DcoWavePulse = 3
+DcoPwmDepth = 0.5
+DcoPwmRate = 0.45
+DcoSubLevel = 0.4
+NumberOfVoices = 7
+VcfCutoff = 0.52
+VcfEnvMod = 0.1
+VcfKeyFollow = 0.4
+EnvAttackTime = 0.3
+EnvDecayTime = 0.6
+EnvSustainLevel = 0.75
+EnvReleaseTime = 0.52
+DcoChorusSwitch = 1
+ChorusRate = 0.45
+ModWheelVcfRange = 0.2
+ModWheelDcoLfo = 0
+reverbDryWet = 0.26
+reverbSize = 0.65
+[patch.why]
+DcoWavePulse = "A moving pulse keeps the chord alive while it's held."
+EnvAttackTime = "About 70 ms: soft enough to avoid a hard stab."
+DcoChorusSwitch = "The chorus provides much of the haze."
+VcfCutoff = "Around 560 Hz: warm and a little muffled."
+
+[[patch]]
+name = "Power Fifth"
+tags = ["darksynth", "outrun"]
+browser = "Thick root and fifth | Vel: none | MW: open filter"
+profile = "A thick unison power chord, root, fifth and octave: the synth version of a distorted guitar."
+phrase = "hits"
+range = "C2 to C4"
+transpose = -12
+chord = [48, 55, 60]
+chord_why = "Root, fifth and octave, with no third: it's neither major nor minor, so it fits over anything, just as a guitar power chord does."
+expect = { attack_s = [0, 0.05] }
+performance = "Heavy riffs in low single notes. It's a riff tool, not a chord tool."
+use = "Riffs in place of a distorted guitar. Darksynth breakdowns and heavy choruses."
+mix = [
+  "High-pass at 80-100 Hz, so that it doesn't fight the bass.",
+  "Distortion after it makes it heavier still.",
+  "Sidechain to the kick.",
+]
+pairings = [
+  { with = "Steel Engine", why = "Very heavy together; high-pass this one further." },
+  { with = "Cyber Scream", why = "A heavy riff with a screaming lead." },
+  { with = "Distorted guitar", external = true, why = "Doubles the riff." },
+]
+tweaks = [
+  { control = "UNISON voices to 5", result = "Even thicker." },
+  { control = "ENV L3 (sustain) to 8.0", result = "Sustained, like a held power chord." },
+  { control = "VCF Cutoff to 7.0", result = "Raw and abrasive." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 1
+DcoSubLevel = 0
+NumberOfVoices = 5
+UnisonoVoices = 0.25
+UnisonoDetune = 0.14
+UnisonoSpread = 0.45
+VcfCutoff = 0.52
+VcfResonance = 0.1
+VcfEnvMod = 0.25
+EnvDecayTime = 0.45
+EnvSustainLevel = 0.4
+VcaEnvMode = 1
+EnvReleaseTime = 0.1
+ModWheelVcfRange = 0.2
+ModWheelDcoLfo = 0
+[patch.why]
+UnisonoVoices = "4 voices per note: a thick wall, as a distorted guitar's upper harmonics would make."
+VcaEnvMode = "Gate holds the level, so the chord feels heavy between attacks."
+UnisonoSpread = "Moderate: low notes shouldn't spread too widely."
+
+[[patch]]
+name = "Minor 9 Dream"
+tags = ["dreamwave", "chillwave"]
+browser = "Lush held minor 9 | Vel: none | MW: open filter"
+profile = "A lush, wide minor 9th: five notes on one key, with a long reverb."
+phrase = "held"
+range = "C3 to C5"
+chord = [60, 63, 67, 70, 74]
+chord_why = "A minor 9th: rich and melancholy, more complex than most people would play by hand in a riff."
+expect = { attack_s = [0.002, 0.8] }
+performance = "Play one note at a time, with plenty of space. It's thick, so low notes get muddy."
+use = "Lush chord beds, intros, and big emotional moments."
+mix = [
+  "Dip 300-500 Hz, where five notes can cloud things.",
+  "High-pass at 200 Hz.",
+  "Keep the reverb.",
+]
+pairings = [
+  { with = "Glass Whistle", why = "A pure line over a rich chord." },
+  { with = "Midnight Sub", why = "A plain sub under a rich chord." },
+  { with = "Saxophone", external = true, why = "Jazzy harmony suits the instrument." },
+]
+tweaks = [
+  { control = "Reverb mix to -0.70", result = "Clearer and closer." },
+  { control = "ENV T1 (attack) to 2.0", result = "A faster stab-like start." },
+  { control = "VCF Cutoff to 7.0", result = "Open and bright." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 1
+DcoSubLevel = 0
+NumberOfVoices = 9
+VcfCutoff = 0.55
+VcfEnvMod = 0.1
+VcfKeyFollow = 0.4
+EnvAttackTime = 0.45
+EnvDecayTime = 0.6
+EnvSustainLevel = 0.85
+EnvReleaseTime = 0.6
+DcoChorusSwitch = 1
+ChorusRate = 0.45
+ModWheelVcfRange = 0.2
+ModWheelDcoLfo = 0
+reverbDryWet = 0.4
+reverbSize = 0.8
+[patch.why]
+NumberOfVoices = "10 voices: five notes per key, with enough left for chords to overlap in the release."
+EnvAttackTime = "About 200 ms: gentle enough to be lush."
+EnvReleaseTime = "About 1.5 seconds: chords melt into one another."
+reverbDryWet = "A lush, wide space around the chord."
+
+[[patch]]
+name = "Sus Hit"
+tags = ["outrun", "dreamwave"]
+browser = "Bright suspended stab | Vel: brightness | MW: open filter"
+profile = "A bright, open suspended chord stab: hopeful and unresolved."
+phrase = "hits"
+range = "C3 to C5"
+chord = [60, 65, 67]
+chord_why = "A suspended 4th has no third, so it's neither major nor minor. It has an open, hopeful sound that works in most keys."
+expect = { attack_s = [0, 0.02], sustain_db = [-200, -15] }
+performance = "Short rhythmic hits. Because it has no third, you can move it around freely without clashing."
+use = "Uplifting hooks in choruses. An easy, safe chord for riffing."
+mix = [
+  "High-pass at 200 Hz.",
+  "A wide delay works very well.",
+  "Sidechain to the kick.",
+]
+pairings = [
+  { with = "Chrome Octave", why = "A bouncy bass with bright stabs." },
+  { with = "Hero Theme", why = "Open chords leave room for the lead's melody." },
+  { with = "Chorus guitar", external = true, why = "They share an open, ringing tone." },
+]
+tweaks = [
+  { control = "Chord memory to Sus 2", result = "A different openness, with a slightly more modern sound." },
+  { control = "Delay mix to -0.40", result = "A big, bouncing hook." },
+  { control = "VCF Env to 5.5", result = "A brighter strike on every hit." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 1
+DcoWavePulse = 1
+specialPulseVolume = 0.5
+DcoSubLevel = 0
+NumberOfVoices = 5
+VcfCutoff = 0.5
+VcfEnvMode = 2
+VcfEnvMod = 0.32
+VcfKeyFollow = 0.4
+EnvDecayTime = 0.38
+EnvSustainLevel = 0
+EnvReleaseTime = 0.3
+DcoChorusSwitch = 1
+ChorusRate = 0.55
+ModWheelVcfRange = 0.2
+ModWheelDcoLfo = 0
+delayDryWet = 0.15
+delayTime = 0.25
+delayFeedback = 0.25
+delaySpread = 0.8
+reverbDryWet = 0.12
+[patch.why]
+DcoWavePulse = "A square beside the saw adds a brighter, ringing edge."
+VcfEnvMode = "Normal-Dynamic: harder hits are brighter, so programmed riffs don't sound flat."
+delayTime = "A dotted 8th: echoes add a second rhythm between hits."
+
+[[patch]]
+name = "Club Neon"
+tags = ["outrun", "chillwave"]
+browser = "House-style minor 7 stab | Vel: none | MW: open filter"
+profile = "A short, resonant minor 7th stab with a big filter sweep, straight out of a warehouse party."
+phrase = "hits"
+range = "C3 to C5"
+chord = [60, 63, 67, 70]
+chord_why = "A minor 7th is the classic stab chord of early house music."
+expect = { attack_s = [0, 0.02], sustain_db = [-200, -15] }
+performance = "Off-beat hits and riffs. Automate the cutoff for a build."
+use = "Dance-leaning sections and off-beat chord riffs."
+mix = [
+  "Automate cutoff across a whole section.",
+  "Long reverb on a send for breakdowns.",
+  "High-pass at 200 Hz.",
+]
+pairings = [
+  { with = "Rubber Coupe", why = "A bouncy bass with off-beat stabs." },
+  { with = "Pulse Tick", why = "Two tight rhythm parts." },
+  { with = "Four-on-the-floor kick", external = true, why = "Off-beat stabs between kicks are the house formula." },
+]
+tweaks = [
+  { control = "VCF RES to 7.0", result = "More squelch on the sweep." },
+  { control = "ENV T3 (decay) to 3.0", result = "Shorter and tighter." },
+  { control = "VCF Cutoff to 2.5", result = "Darker, as at the start of a build." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 1
+DcoSubLevel = 0
+NumberOfVoices = 7
+VcfCutoff = 0.38
+VcfResonance = 0.42
+VcfEnvMod = 0.38
+VcfKeyFollow = 0.4
+EnvDecayTime = 0.36
+EnvSustainLevel = 0
+EnvReleaseTime = 0.25
+ModWheelVcfRange = 0.3
+ModWheelDcoLfo = 0
+reverbDryWet = 0.2
+reverbSize = 0.55
+[patch.why]
+VcfResonance = "A resonant peak makes every stab sound like it has a filter sweep on it."
+VcfCutoff = "About 180 Hz at C4: starts very dark, so that the envelope has further to go."
+EnvDecayTime = "About 200 ms: a short, sharp stab."
+
+[[patch]]
+name = "Backward Chord"
+tags = ["dreamwave", "chillwave"]
+browser = "Reverse-style swell | Vel: none | MW: open filter"
+profile = "A chord that swells up and stops dead, as if a tape had been played backwards."
+phrase = "held"
+range = "C3 to C5"
+chord = [60, 64, 67]
+chord_why = "A simple major triad: the effect is unusual enough, without complicating the harmony."
+hold = 3.0
+expect = { attack_s = [0.1, 1.5] }
+performance = "Start the note well before the beat, and release exactly on the beat. It's more like placing a sample than playing a chord."
+use = "Transitions into a downbeat, and psychedelic moments."
+mix = [
+  "Automate the level for a bigger rise.",
+  "A reverb before it (on a printed audio track) makes it even more convincing.",
+  "High-pass at 200 Hz.",
+]
+pairings = [
+  { with = "Riser", why = "Both approach a downbeat." },
+  { with = "Stadium Stab", why = "A swell that cuts into a hit." },
+  { with = "Reverse cymbal", external = true, why = "The real thing, layered with the imitation." },
+]
+tweaks = [
+  { control = "ENV T1 (attack) to 5.0", result = "A shorter swell, for faster tempos." },
+  { control = "ENV T4 (release) to 4.0", result = "A softer ending, less like a tape." },
+  { control = "VCF Env to 4.0", result = "Much brighter by the end of the swell." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 1
+DcoSubLevel = 0
+NumberOfVoices = 5
+VcfCutoff = 0.5
+VcfEnvMod = 0.2
+VcfKeyFollow = 0.4
+EnvAttackTime = 0.62
+EnvDecayTime = 0.5
+EnvSustainLevel = 1
+EnvReleaseTime = 0
+DcoChorusSwitch = 1
+ChorusRate = 0.5
+ModWheelVcfRange = 0.2
+ModWheelDcoLfo = 0
+[patch.why]
+EnvAttackTime = "About a second: a sound with a slow rise and no attack, which is what reversed audio is like."
+EnvReleaseTime = "Zero: stops dead when the key lifts, which is how a reversed sound ends."
+VcfEnvMod = "Opens the filter as it rises, reinforcing the reversed feel."
+
+[[patch]]
+name = "Gated Chord"
+tags = ["outrun", "darksynth"]
+browser = "Tempo-chopped chord | Vel: none | MW: open filter"
+profile = "A held chord chopped into 8ths by a tempo-synced square LFO on the filter."
+phrase = "held"
+range = "C3 to C5"
+chord = [60, 63, 67, 72]
+chord_why = "A minor triad with the octave doubled, solid enough to take the chopping."
+expect = { attack_s = [0, 0.1] }
+performance = "Hold one note: the rhythm happens by itself, locked to your tempo."
+use = "Instant rhythm without programming a pattern. Verses, builds, and transitions."
+mix = [
+  "High-pass at 200 Hz.",
+  "It's rhythmic, so don't add much delay.",
+  "Change the LFO rate between sections for interest.",
+]
+pairings = [
+  { with = "Minor Stab", why = "Same chord, with a programmed rhythm vs an automatic one." },
+  { with = "Grid Runner", why = "Both lock to the same grid." },
+  { with = "Tight electronic drums", external = true, why = "Clean, machine-like rhythm." },
+]
+tweaks = [
+  { control = "LFO Rate to 1/16", result = "Faster, more urgent." },
+  { control = "LFO Rate to 1/4", result = "Slower, heavier." },
+  { control = "LFO wave to S&H", result = "A random level each step, more like a modular patch." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 1
+DcoSubLevel = 0
+NumberOfVoices = 7
+VcfCutoff = 0.4
+VcfResonance = 0.15
+VcfLfoMod = 0.55
+LfoWaveform = 3
+LfoSync = 1
+LfoRate = 0.83
+LfoTrigger = 1
+EnvDecayTime = 0.5
+EnvSustainLevel = 1
+EnvReleaseTime = 0.2
+ModWheelVcfRange = 0.2
+ModWheelDcoLfo = 0
+reverbDryWet = 0.12
+[patch.why]
+LfoWaveform = "A square LFO: the filter switches between open and closed. There's no amp LFO on this synth, so this is the way to chop a sound."
+LfoSync = "Locked to your tempo, so the chops always land on the grid."
+LfoRate = "1/8 notes."
+LfoTrigger = "Restarts the LFO on each note, so the pattern starts the same way every time."
+VcfLfoMod = "Deep, so the closed position is nearly silent."
+
+[[patch]]
+name = "Memphis Cluster"
+tags = ["chillwave", "darksynth"]
+browser = "Detuned cluster chord | Vel: none | MW: open filter"
+profile = "A tense, slightly sour chord cluster, wide and detuned, with an uneasy edge."
+phrase = "held"
+range = "C3 to C5"
+chord = [60, 62, 67]
+chord_why = "A suspended 2nd: the whole-step clash between root and second gives it a tense, modern colour."
+expect = { attack_s = [0, 0.2] }
+performance = "Slow changes. It's dissonant enough that fast changes sound like mistakes."
+use = "Uneasy intros, tension and dark chillwave."
+mix = [
+  "Detune can make it wander: use it as the tuning reference.",
+  "High-pass at 200 Hz.",
+  "Keep it low, as dissonance draws attention.",
+]
+pairings = [
+  { with = "Deep Space Drift", why = "Unsettled harmony over an unsettled filter." },
+  { with = "Blacktop", why = "Dark and uneasy." },
+  { with = "Slowed vocal sample", external = true, why = "They share a queasy, off-kilter quality." },
+]
+tweaks = [
+  { control = "Chord memory to Sus 4", result = "Less tense, more open." },
+  { control = "UNISON detune to 0.30", result = "Far more sour." },
+  { control = "ENV T1 (attack) to 5.5", result = "A slow, sinister swell." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 1
+DcoSubLevel = 0
+NumberOfVoices = 5
+UnisonoVoices = 0.1
+UnisonoDetune = 0.18
+UnisonoSpread = 0.9
+VcfCutoff = 0.5
+VcfResonance = 0.1
+VcfEnvMod = 0.12
+EnvAttackTime = 0.28
+EnvDecayTime = 0.55
+EnvSustainLevel = 0.75
+EnvReleaseTime = 0.5
+DcoChorusSwitch = 1
+ChorusRate = 0.32
+ModWheelVcfRange = 0.2
+ModWheelDcoLfo = 0
+reverbDryWet = 0.24
+reverbSize = 0.65
+[patch.why]
+UnisonoDetune = "More than is polite, so that the sound never quite settles."
+UnisonoSpread = "Wide: the chord surrounds you."
+EnvAttackTime = "About 60 ms, enough to soften the stab of the clash."
+ChorusRate = "A slow chorus adds to the unease."
+
+[[patch]]
+name = "Broken Triad"
+tags = ["outrun", "dreamwave"]
+browser = "Chord played by the arp | Arp | MW: open filter"
+profile = "Chord memory meets arpeggiator: one key plays a whole arpeggiated minor triad across two octaves."
+phrase = "held"
+expect = { arp_notes_per_s = [4.5, 8.5] }
+range = "C3 to C5"
+chord = [60, 63, 67]
+chord_why = "A minor triad: the arp cycles through these notes, so one finger plays a complete pattern."
+performance = "Hold one note and move it to change chord. An entire arp part can be played with one finger."
+use = "Fast sketching, and live performance. An arp part that follows your bassline."
+mix = [
+  "High-pass at 250 Hz.",
+  "Sidechain to the kick.",
+  "Parallel chords can clash with your key, so choose root notes carefully.",
+]
+pairings = [
+  { with = "Neon Pulse", why = "A plain bass under a busy pattern." },
+  { with = "Endless Highway", why = "A slow bed under the moving pattern." },
+  { with = "Live keyboard player", external = true, why = "It frees up a hand for other parts." },
+]
+tweaks = [
+  { control = "Arp mode to Random", result = "An unpredictable pattern from the same notes." },
+  { control = "Arp range to 1 oct", result = "A tighter, simpler pattern." },
+  { control = "Chord memory to major", result = "Sunnier, more uplifting." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 1
+DcoSubLevel = 0
+NumberOfVoices = 5
+arpmode = 1
+arpsyncmode = 2
+arprate = 0.52
+arprange = 1
+VcfCutoff = 0.46
+VcfResonance = 0.1
+VcfEnvMod = 0.3
+VcfKeyFollow = 0.4
+EnvDecayTime = 0.3
+EnvSustainLevel = 0
+EnvReleaseTime = 0.2
+ModWheelVcfRange = 0.2
+ModWheelDcoLfo = 0
+delayDryWet = 0.12
+delayTime = 0.15
+delayFeedback = 0.2
+[patch.why]
+arpmode = "Up, over the notes that chord memory provides."
+arprange = "Two octaves, for a full pattern from one key."
+arprate = "16ths, the standard outrun pace."
+EnvDecayTime = "About 120 ms: short enough to keep notes separate at this speed."

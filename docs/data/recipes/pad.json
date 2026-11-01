@@ -1,0 +1,143 @@
+{
+ "steps": [
+  {
+   "audio": "audio/recipes/pad/step-01.mp3",
+   "before": {
+    "Volume": 0.5
+   },
+   "after": {
+    "Volume": 0.24016307145120974
+   },
+   "measures": {}
+  },
+  {
+   "audio": "audio/recipes/pad/step-02.mp3",
+   "before": {
+    "EnvAttackTime": 0.0,
+    "EnvDecayTime": 0.0,
+    "EnvSustainLevel": 1.0
+   },
+   "after": {
+    "EnvAttackTime": 0.5,
+    "EnvDecayTime": 0.6,
+    "EnvSustainLevel": 0.95
+   },
+   "measures": {
+    "attack_s": [
+     0.0,
+     0.22947845804988662
+    ]
+   }
+  },
+  {
+   "audio": "audio/recipes/pad/step-03.mp3",
+   "before": {
+    "EnvReleaseTime": 0.0,
+    "NumberOfVoices": 5.0
+   },
+   "after": {
+    "EnvReleaseTime": 0.55,
+    "NumberOfVoices": 7
+   },
+   "measures": {
+    "tail_ms": [
+     19.954648526077097,
+     600.0
+    ]
+   }
+  },
+  {
+   "audio": "audio/recipes/pad/step-04.mp3",
+   "before": {
+    "VcfCutoff": 1.0,
+    "VcfKeyFollow": 0.0,
+    "VcfEnvMod": 0.0,
+    "VcfResonance": 0.0
+   },
+   "after": {
+    "VcfCutoff": 0.62,
+    "VcfKeyFollow": 0.4,
+    "VcfEnvMod": 0.08,
+    "VcfResonance": 0.05
+   },
+   "measures": {
+    "centroid_hz": [
+     4640.473534080897,
+     1055.407734907075
+    ]
+   }
+  },
+  {
+   "audio": "audio/recipes/pad/step-05.mp3",
+   "before": {
+    "DcoWavePulse": 0.0,
+    "DcoPwmDepth": 0.0,
+    "DcoPwmRate": 0.5
+   },
+   "after": {
+    "DcoWavePulse": 3,
+    "DcoPwmDepth": 0.6,
+    "DcoPwmRate": 0.45
+   },
+   "measures": {
+    "lufs": [
+     -28.492165286466875,
+     -20.663318971931112
+    ]
+   }
+  },
+  {
+   "audio": "audio/recipes/pad/step-06.mp3",
+   "before": {
+    "DcoSubLevel": 0.0
+   },
+   "after": {
+    "DcoSubLevel": 0.5
+   },
+   "measures": {
+    "low_energy_pct": [
+     2.744568919944169,
+     3.3642203067529897
+    ]
+   }
+  },
+  {
+   "audio": "audio/recipes/pad/step-07.mp3",
+   "before": {
+    "DcoChorusSwitch": 0.0,
+    "ChorusRate": 0.5
+   },
+   "after": {
+    "DcoChorusSwitch": 1,
+    "ChorusRate": 0.5
+   },
+   "measures": {
+    "side_mid": [
+     0.0,
+     0.5853042283297335
+    ]
+   }
+  },
+  {
+   "audio": "audio/recipes/pad/step-08.mp3",
+   "before": {
+    "ModWheelVcfRange": 0.0,
+    "ModWheelDcoLfo": 0.1000000014901161,
+    "reverbDryWet": 0.0,
+    "reverbSize": 0.800000011920929
+   },
+   "after": {
+    "ModWheelVcfRange": 0.25,
+    "ModWheelDcoLfo": 0,
+    "reverbDryWet": 0.22,
+    "reverbSize": 0.7
+   },
+   "measures": {
+    "mw_bright_ratio": [
+     1.136204099970383,
+     3.4561318659045877
+    ]
+   }
+  }
+ ]
+}

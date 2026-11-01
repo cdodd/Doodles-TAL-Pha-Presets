@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Building Ensemble Sunset from init: Doodles TAL-Pha Presets</title>
+<link rel="stylesheet" href="style.css">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="index.html"><span>Doodles</span> TAL-Pha Presets</a>
+  <button type="button" id="theme" class="ghost" aria-label="Switch between light and dark theme">Theme</button>
+</header>
+<div class="layout">
+<nav class="sidebar" aria-label="Documentation">
+<a href="index.html">Overview</a>
+<p class="nav-label">Patches</p>
+<a href="bass.html">Bass</a>
+<a href="lead.html">Lead</a>
+<a href="pad.html">Pad</a>
+<a href="strings.html" aria-current=page>Strings</a>
+<div class="subnav"><a class="recipe-link" href="strings-recipe.html" aria-current=page>Build from init</a><a href="strings.html#ensemble-sunset">Ensemble Sunset</a><a href="strings.html#silver-screen">Silver Screen</a><a href="strings.html#neon-cello">Neon Cello</a><a href="strings.html#slow-bow">Slow Bow</a><a href="strings.html#staccato-run">Staccato Run</a><a href="strings.html#octave-ensemble">Octave Ensemble</a><a href="strings.html#high-rise">High Rise</a><a href="strings.html#worn-tape-strings">Worn Tape Strings</a><a href="strings.html#rising-tide">Rising Tide</a><a href="strings.html#rain-city">Rain City</a></div>
+<a href="brass.html">Brass</a>
+<a href="arp.html">Arp</a>
+<a href="pluck.html">Pluck</a>
+<a href="keys.html">Keys and Bells</a>
+<a href="chord.html">Chord and Stab</a>
+<a href="fx.html">FX and Atmosphere</a>
+<p class="nav-label">Guides</p>
+<a href="field-guide.html">Field guide</a>
+<a href="control-reference.html">Control reference</a>
+<a href="gallery.html">Sound gallery</a>
+<a href="sound-map.html">Sound map</a>
+<a href="kits.html">Starter kits</a>
+<a href="reaper-cheat-sheet.html">Reaper cheat sheet</a>
+</nav>
+<main>
+<div class="recipe">
+<h1>Building Ensemble Sunset from init</h1>
+<p class="lede">A string machine is simpler than it sounds: one saw and a very fast chorus. This recipe shows why those two things are enough, and how a thin low end makes it read as strings instead of a pad.</p>
+<section class="install">
+<h2>Setup</h2>
+<p>Choose <strong>Reset Parameters</strong>, then loop four-note chords with one chord per bar.</p>
+<p>Each step's preview adds to the one before. Measurements compare it with the previous step.</p>
+</section>
+<ol class="steps">
+<li class="step">
+<h2>Set the level first</h2>
+<ul class="changes"><li><span class="control">Volume</span><span class="from">5.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">3.9</span></li></ul>
+<p>Stacked chords add up fast, so set a sensible level before making decisions. Init&#x27;s single saw is already the right waveform: a bowed string makes a roughly saw-shaped wave.</p>
+
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/strings/step-01.mp3" aria-label="Step 1: Set the level first"></audio>
+  <p><strong>Listen for:</strong> A plain, bright, organ-like chord.</p>
+  
+</div>
+</li>
+<li class="step">
+<h2>Make it bowed</h2>
+<ul class="changes"><li><span class="control">Env T1 (attack)</span><span class="from">0.0 (about 1 ms)</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">4.2 (about 165 ms)</span></li><li><span class="control">Env T3 (decay)</span><span class="from">0.0 (about 10 ms to -20 dB)</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">5.0 (about 678 ms to -20 dB)</span></li><li><span class="control">Voices</span><span class="from">6</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">8</span></li></ul>
+<p>A bow takes time to catch the string. An attack of about 170 ms is what stops it sounding like an organ. More voices leave room for the release you&#x27;ll add next.</p>
+<p class="alt"><strong>The other choice:</strong> Slow Bow goes up to about a second, for a swell that takes a whole bar. Staccato Run goes down to 15 ms, for short strokes.</p>
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/strings/step-02.mp3" aria-label="Step 2: Make it bowed"></audio>
+  <p><strong>Listen for:</strong> Each chord now has a soft entry.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Time to half level: 0 ms → <strong>100 ms</strong></li></ul>
+</div>
+</li>
+<li class="step">
+<h2>Let the notes ring on</h2>
+<ul class="changes"><li><span class="control">Env T4 (release)</span><span class="from">0.0 (about 10 ms to -20 dB)</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">5.0 (about 778 ms to -20 dB)</span></li></ul>
+<p>Strings keep ringing after the bow lifts, and in a room you always hear some of that. A longer release also hides the joins between chords.</p>
+
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/strings/step-03.mp3" aria-label="Step 3: Let the notes ring on"></audio>
+  <p><strong>Listen for:</strong> Chord changes overlap a little.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Tail after note-off: 17 ms → <strong>600 ms</strong></li></ul>
+</div>
+</li>
+<li class="step">
+<h2>Remove the body</h2>
+<ul class="changes"><li><span class="control">HPF</span><span class="from">Off</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">HP 1</span></li></ul>
+<p>This is what sets a string machine apart from a pad. HP 1 takes out the low-end weight and leaves a lighter, more nasal tone. It also makes room for the bass.</p>
+<p class="alt"><strong>The other choice:</strong> Silver Screen leaves the low end in, for a big orchestral section rather than a machine.</p>
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/strings/step-04.mp3" aria-label="Step 4: Remove the body"></audio>
+  <p><strong>Listen for:</strong> Thinner and lighter: it sounds less like a synth pad and more like strings.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Energy below 150 Hz: 2% → <strong>2%</strong></li></ul>
+</div>
+</li>
+<li class="step">
+<h2>Trim the top</h2>
+<ul class="changes"><li><span class="control">VCF Cutoff</span><span class="from">10.0 (about 21726 Hz at C4)</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">7.4 (about 3295 Hz at C4)</span></li><li><span class="control">VCF Key follow</span><span class="from">0.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">3.0</span></li></ul>
+<p>Real strings have less extreme top end than a raw saw. A cutoff near 3 kHz takes off the fizz but stays bright. Unlike a pad, it should stay airy.</p>
+
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/strings/step-05.mp3" aria-label="Step 5: Trim the top"></audio>
+  <p><strong>Listen for:</strong> Less fizzy, still bright.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Brightness: 4,817 Hz → <strong>1,334 Hz</strong></li></ul>
+</div>
+</li>
+<li class="step">
+<h2>Add the chorus</h2>
+<ul class="changes"><li><span class="control">Chorus</span><span class="from">Off</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">On</span></li></ul>
+<p>At its default rate the chorus adds width, as on a pad. That&#x27;s already nicer, but it doesn&#x27;t yet sound like many players.</p>
+
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/strings/step-06.mp3" aria-label="Step 6: Add the chorus"></audio>
+  <p><strong>Listen for:</strong> Wide, and much more lush. Compare it with the next step.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Stereo width (side/mid): 0.00 → <strong>0.58</strong></li></ul>
+</div>
+</li>
+<li class="step">
+<h2>Speed up the chorus</h2>
+<ul class="changes"><li><span class="control">Chorus Rate</span><span class="from">5.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">7.8</span></li></ul>
+<p>This is the key decision. A fast chorus makes many tiny pitch changes at once, like an ensemble of players who aren&#x27;t quite together. It&#x27;s the whole trick of a string machine.</p>
+<p class="alt"><strong>The other choice:</strong> Rain City keeps the chorus slow for a calmer, darker section.</p>
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/strings/step-07.mp3" aria-label="Step 7: Speed up the chorus"></audio>
+  <p><strong>Listen for:</strong> A quick shimmer. It should now sound like the string machine on an old record.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Stereo width (side/mid): 0.58 → <strong>0.59</strong></li></ul>
+</div>
+</li>
+<li class="step">
+<h2>Finish it</h2>
+<ul class="changes"><li><span class="control">MW to VCF</span><span class="from">0.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">1.5</span></li><li><span class="control">MW to DCO LFO</span><span class="from">1.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">0.0</span></li><li><span class="control">Reverb mix</span><span class="from">OFF</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">-0.70</span></li><li><span class="control">Reverb size</span><span class="from">8.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">5.0</span></li></ul>
+<p>A small room suits a record, where a big hall would suggest an orchestra. The wheel gives you a gentle lift. That&#x27;s the finished Ensemble Sunset.</p>
+
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/strings/step-08.mp3" aria-label="Step 8: Finish it"></audio>
+  <p><strong>Listen for:</strong> In this preview the wheel rises across the second half, and the strings open up.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Wheel up vs wheel down brightness: 1.2x → <strong>1.8x</strong></li></ul>
+</div>
+</li>
+</ol>
+<section class="install">
+<h2>What to take away</h2>
+<ul><li>Chorus speed makes a big difference to character: slow gives width, and fast gives an ensemble.</li><li>Removing low end is often what makes a sound read as strings rather than a pad.</li><li>A bow can&#x27;t start instantly, so even fast string parts need a little attack.</li></ul>
+</section>
+<h2 class="next">Where to go next</h2>
+<p>Starting points for moving from <a href="strings.html#ensemble-sunset">Ensemble Sunset</a> to another patch in the bank:</p>
+<ul class="pairs"><li><a href="strings.html#octave-ensemble">Octave Ensemble</a><span class="why">Try turning on the pulse&#x27;s Saw at Pulse Tune +12 and Volume 6.0.</span></li><li><a href="strings.html#silver-screen">Silver Screen</a><span class="why">Set HPF to Off, add 3 unison voices, slow the chorus to 5.0 and raise the reverb mix to -0.16.</span></li><li><a href="strings.html#slow-bow">Slow Bow</a><span class="why">Raise T1 to 6.2, close the filter to 5.0, and add VCF Env 2.0.</span></li></ul>
+</div>
+</main>
+</div>
+<script src="site.js"></script>
+</body>
+</html>

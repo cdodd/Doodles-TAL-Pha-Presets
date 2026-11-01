@@ -1,0 +1,92 @@
+category = "Lead"
+patch = "Sunset Solo"
+phrase = "lead"
+title = "Building Sunset Solo from init"
+intro = "A good lead is mostly about what happens after the note starts. This recipe turns a plain saw into a singing solo, and the key decision is making vibrato arrive late, the way a player does."
+setup = "Choose **Reset Parameters**, then loop a simple melody around A4, with a mix of short and long notes."
+takeaways = [
+  "Delayed vibrato is what makes a synth lead feel played: short notes stay straight and only long ones bloom.",
+  "The mod wheel's vibrato scale is much stronger than the DCO LFO slider's: 0.8 on the wheel gives about as much swing as 2.0 on the slider.",
+  "A dotted 8th echo fills the gaps between phrases, without adding notes.",
+]
+
+[[step]]
+title = "Start from init"
+why = "A single saw, wide open, with six voices. It has the right harmonic series for a lead but no sense of being played."
+listen = "A bright, buzzing line. Notes are the same from start to end."
+
+[[step]]
+title = "Make it one player"
+set = { NumberOfVoices = 0 }
+why = "Mono means a new note always replaces the old one. A solo line should feel like a single player with a single instrument, and that's hard to fake with polyphony."
+alternative = "Hero Theme uses two voices, so the release can overlap the next note. That helps a wide, slow melody but sounds less like one player."
+listen = "Almost no change in this phrase: it matters once notes overlap."
+
+[[step]]
+title = "Soften the tone"
+set = { VcfCutoff = 0.62, VcfKeyFollow = 0.5 }
+expect = { centroid_hz = "down" }
+why = "A wide open saw is tiring. Closing the filter to about 1.3 kHz keeps it vocal rather than buzzy, and key follow keeps high notes from going dull as you climb."
+listen = "Warmer and less aggressive, while it's still clearly a saw."
+
+[[step]]
+title = "Shape the note"
+set = { VcfEnvMod = 0.12, EnvAttackTime = 0.05, EnvDecayTime = 0.5, EnvSustainLevel = 0.75, VcfResonance = 0.12 }
+expect = { sustain_db = "down" }
+why = "A small filter envelope gives each note a slight brightening at the start, like breath or bow pressure. Sustain below full lets the note relax after it speaks. A touch of resonance gives the filter a vocal edge."
+alternative = "A large filter envelope would sound more like a pluck or a brass stab, and would draw attention to every note."
+listen = "Notes now have a slight front edge, then settle."
+
+[[step]]
+title = "Let the note end naturally"
+set = { EnvReleaseTime = 0.3 }
+expect = { tail_ms = "up" }
+why = "A short release stops the end of each phrase from sounding chopped. In Normal VCA mode, it directly sets how the note fades."
+listen = "Phrase endings fade rather than cut off."
+
+[[step]]
+title = "Add vibrato"
+set = { DcoLfoMod = 0.09, LfoRate = 0.7, LfoDelay = 0 }
+expect = { vibrato_cents = "up", early_vibrato_cents = "up" }
+why = "About 5 Hz is close to a human vibrato, and 0.9 on the slider gives a gentle swing. But with no delay it starts at the same moment as the note, on every note. That's the giveaway of a machine."
+listen = "A constant wobble, even on short notes. It sounds a bit seasick."
+
+[[step]]
+title = "Make the vibrato arrive late"
+set = { LfoDelay = 0.5 }
+expect = { early_vibrato_cents = "down" }
+why = "This is the key decision. With 400 ms of delay, short notes stay straight and only held notes bloom into vibrato. That's how singers and players behave, and it's what makes it feel played."
+listen = "Short notes are now straight, and long notes start to sing as they're held."
+
+[[step]]
+title = "Trim the wheel's vibrato"
+set = { ModWheelDcoLfo = 0.08 }
+expect = { mw_vibrato_cents = "down" }
+wheel = true
+why = "Init already sends the wheel to this LFO at 1.0, which turned out to be wider than this lead needs. The automatic vibrato is gentle, and the wheel adds more at the peak of a phrase. The wheel's scale is strong, so 0.8 is plenty."
+listen = "In this preview the wheel rises across the second half, and the vibrato gets wider."
+
+[[step]]
+title = "Put it in a space"
+set = { delayDryWet = 0.22, delayTime = 0.25, delayFeedback = 0.3, reverbDryWet = 0.18, reverbSize = 0.5 }
+expect = { tail_ms = "up" }
+why = "A dotted 8th delay fills the gaps between notes and adds rhythm without adding notes. A small reverb gives it a room. At these settings neither adds much stereo width: the delay's spread is centred at its default, so this is about depth rather than width."
+alternative = "Turn these off if you'd rather use sends in your DAW, which lets several parts share a space."
+listen = "The melody now has echoes between notes, and it feels like it's in a real place."
+
+[[step]]
+title = "Set the level"
+set_volume_from_preset = true
+why = "Presets in this bank aim for the same loudness, so you can compare them fairly. This is the finished Sunset Solo."
+show = ["lufs"]
+listen = "The finished patch."
+
+[[branch]]
+to = "Hero Theme"
+how = "Try turning on unison at 4 voices, spread 0.80, with a quiet square an octave up, then raising the reverb."
+[[branch]]
+to = "Arcade Square"
+how = "Swap the saw for the pulse's Square, open the filter to 8.5, and raise LFO Rate to about 10 Hz."
+[[branch]]
+to = "Portamento Dream"
+how = "Try a moving pulse in place of the saw, Portamento All at 4.0, and the chorus on."

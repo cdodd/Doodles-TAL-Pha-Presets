@@ -1,0 +1,191 @@
+{
+ "steps": [
+  {
+   "audio": "audio/recipes/bass/step-01.mp3",
+   "before": {},
+   "after": {},
+   "measures": {}
+  },
+  {
+   "audio": "audio/recipes/bass/step-02.mp3",
+   "before": {
+    "DcoRange": 1.0,
+    "NumberOfVoices": 5.0
+   },
+   "after": {
+    "DcoRange": 2,
+    "NumberOfVoices": 0
+   },
+   "measures": {
+    "centroid_hz": [
+     3964.794023661191,
+     3561.966771387622
+    ]
+   }
+  },
+  {
+   "audio": "audio/recipes/bass/step-03.mp3",
+   "before": {
+    "VcfCutoff": 1.0
+   },
+   "after": {
+    "VcfCutoff": 0.27
+   },
+   "measures": {
+    "centroid_hz": [
+     3561.966771387622,
+     223.45507106432976
+    ]
+   }
+  },
+  {
+   "audio": "audio/recipes/bass/step-04.mp3",
+   "before": {
+    "VcfEnvMod": 0.0
+   },
+   "after": {
+    "VcfEnvMod": 0.52
+   },
+   "measures": {
+    "centroid_hz": [
+     223.45507106432976,
+     1041.764437247061
+    ]
+   }
+  },
+  {
+   "audio": "audio/recipes/bass/step-05.mp3",
+   "before": {
+    "EnvDecayTime": 0.0,
+    "EnvSustainLevel": 1.0
+   },
+   "after": {
+    "EnvDecayTime": 0.36,
+    "EnvSustainLevel": 0.15
+   },
+   "measures": {
+    "sweep_octaves": [
+     -0.04842600847233451,
+     2.5628081029714274
+    ],
+    "sustain_db": [
+     -4.046422146871317,
+     -20.676913830876423
+    ]
+   }
+  },
+  {
+   "audio": "audio/recipes/bass/step-06.mp3",
+   "before": {
+    "VcaEnvMode": 0.0
+   },
+   "after": {
+    "VcaEnvMode": 1
+   },
+   "measures": {
+    "sustain_db": [
+     -20.676913830876423,
+     -5.051530637293466
+    ],
+    "lufs": [
+     -28.801010486215787,
+     -24.065024303460067
+    ]
+   }
+  },
+  {
+   "audio": "audio/recipes/bass/step-07.mp3",
+   "before": {
+    "VcfResonance": 0.0
+   },
+   "after": {
+    "VcfResonance": 0.2
+   },
+   "measures": {
+    "lufs": [
+     -24.065024303460067,
+     -25.17418695752393
+    ]
+   }
+  },
+  {
+   "audio": "audio/recipes/bass/step-08.mp3",
+   "before": {
+    "VcfKeyFollow": 0.0,
+    "EnvKeyFollow": 0.0
+   },
+   "after": {
+    "VcfKeyFollow": 0.3,
+    "EnvKeyFollow": 0.2
+   },
+   "measures": {
+    "centroid_hz": [
+     781.4470293937417,
+     662.4093857627383
+    ]
+   }
+  },
+  {
+   "audio": "audio/recipes/bass/step-09.mp3",
+   "before": {
+    "VcfEnvMode": 0.0
+   },
+   "after": {
+    "VcfEnvMode": 2
+   },
+   "measures": {
+    "vel_bright_ratio": [
+     1.0027390642362326,
+     3.9825075119587097
+    ]
+   }
+  },
+  {
+   "audio": "audio/recipes/bass/step-10.mp3",
+   "before": {
+    "EnvReleaseTime": 0.0
+   },
+   "after": {
+    "EnvReleaseTime": 0.08
+   },
+   "measures": {
+    "tail_ms": [
+     39.909297052154194,
+     34.920634920634924
+    ]
+   }
+  },
+  {
+   "audio": "audio/recipes/bass/step-11.mp3",
+   "before": {
+    "ModWheelDcoLfo": 0.1000000014901161,
+    "ModWheelVcfRange": 0.0
+   },
+   "after": {
+    "ModWheelDcoLfo": 0,
+    "ModWheelVcfRange": 0.45
+   },
+   "measures": {
+    "mw_bright_ratio": [
+     1.0195072187531213,
+     10.558322438295727
+    ]
+   }
+  },
+  {
+   "audio": "audio/recipes/bass/step-12.mp3",
+   "before": {
+    "Volume": 0.5
+   },
+   "after": {
+    "Volume": 0.7558093584672678
+   },
+   "measures": {
+    "lufs": [
+     -25.182254523686463,
+     -17.977841721720434
+    ]
+   }
+  }
+ ]
+}

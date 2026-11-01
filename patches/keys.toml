@@ -1,0 +1,539 @@
+category = "Keys and Bells"
+mix_defaults = [
+  "High-pass at 100-200 Hz, depending on how much of the left hand you keep.",
+  "Dip 300-500 Hz if chords get muddy, and lift 2-3 kHz for the tine or bite.",
+  "Gentle compression evens out chords. Sidechain only in a dense chorus.",
+  "Keep tight rhythm parts near the centre, and let chorused keys go wide.",
+  "Use a short plate or room send, and keep it clear of the vocal.",
+]
+
+[[patch]]
+name = "Eighty-Four Tines"
+tags = ["dreamwave", "outrun"]
+browser = "DX-style digital EP | Vel: brightness | MW: vibrato"
+profile = "An approximation of the glassy 80s digital electric piano: a soft body with a metallic sync 'tine' on the attack. This synth isn't FM, so it's a close cousin rather than a copy."
+phrase = "keys"
+range = "C3 to C6"
+expect = { attack_s = [0, 0.03], sustain_db = [-200, -3] }
+performance = "Ballad chords and arpeggios. Harder notes bring out more of the tine."
+use = "The 80s power ballad electric piano, under a vocal or as the main chord part in a dreamy track."
+mix = [
+  "Lots of chorus already, so skip any more.",
+  "A little lift around 3 kHz helps the tine through.",
+  "High-pass at 120 Hz.",
+]
+pairings = [
+  { with = "Velvet Bass", why = "A soft bass under glassy keys: the ballad sound." },
+  { with = "Slow Bow", why = "Strings fading in behind an electric piano." },
+  { with = "Lead vocal", external = true, why = "A classic bed for a voice." },
+]
+tweaks = [
+  { control = "Pulse Volume to 8.0", result = "A louder, more metallic tine." },
+  { control = "Pulse Tune to +19", result = "A different, more bell-like ratio." },
+  { control = "CHORUS off", result = "Plainer and more direct." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 0
+DcoWavePulse = 1
+specialPulseSync = 1
+specialPulseTune = 24
+specialPulseDcoEnv = 0.15
+specialPulseVolume = 0.42
+DcoWaveSub = 0
+DcoSubLevel = 2.2
+Octave = 1
+NumberOfVoices = 7
+VcfCutoff = 0.42
+VcfEnvMode = 2
+VcfEnvMod = 0.42
+VcfKeyFollow = 0.6
+EnvDecayTime = 0.62
+EnvSustainLevel = 0.1
+EnvReleaseTime = 0.45
+DcoChorusSwitch = 1
+ChorusRate = 0.48
+ModWheelDcoLfo = 0.06
+LfoRate = 0.7
+reverbDryWet = 0.14
+[patch.why]
+specialPulseSync = "Sync produces the metallic, inharmonic-sounding overtones that imitate an FM tine."
+specialPulseTune = "Two octaves above: this high sync tone stands in for the tine."
+DcoSubLevel = "The sub's square is the soft, rounded body of the note."
+Octave = "The sub sits an octave below the DCO, so this brings the body up to the note you play."
+VcfEnvMod = "The filter opens only briefly, letting the tine through at the attack, then closing over it."
+VcfEnvMode = "Normal-Dynamic: harder notes reveal more tine, the main feature of a digital EP's response."
+DcoChorusSwitch = "Chorus was on almost every 80s EP you can think of."
+
+[[patch]]
+name = "Warm Tines"
+tags = ["chillwave", "dreamwave"]
+browser = "Soft mellow electric piano | Vel: level | MW: vibrato"
+profile = "A mellow, round electric piano: soft, warm and very responsive to how hard you play."
+phrase = "keys"
+range = "C3 to C5"
+expect = { attack_s = [0, 0.04], centroid_hz = [150, 1200] }
+performance = "Velocity sets the level, so a gentle touch gets a very quiet note. Try jazzy 7th chords."
+use = "Soft chord parts, chillwave grooves and laid-back intros."
+mix = [
+  "Dynamic by design, so compress with a slow attack.",
+  "A little tape saturation suits it.",
+  "High-pass at 120 Hz.",
+]
+pairings = [
+  { with = "Rubber Coupe", why = "Warm keys and a bouncy bass, for a chillwave groove." },
+  { with = "Silk Horn", why = "Two soft sounds, for a warm ballad." },
+  { with = "Brushed drums", external = true, why = "An intimate, soft setting." },
+]
+tweaks = [
+  { control = "VCF Cutoff to 5.5", result = "Brighter and less polite." },
+  { control = "CHORUS Rate to 8.0", result = "A faster, more obvious wobble." },
+  { control = "ENV L3 (sustain) to 0", result = "Decays away to nothing, more like a real tine." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 0
+DcoWavePulse = 1
+DcoSubLevel = 1
+NumberOfVoices = 7
+VcfCutoff = 0.46
+VcfEnvMod = 0.15
+VcfKeyFollow = 0.6
+VcaEnvMode = 2
+EnvAttackTime = 0.03
+EnvDecayTime = 0.62
+EnvSustainLevel = 0.25
+EnvReleaseTime = 0.4
+DcoChorusSwitch = 1
+ChorusRate = 0.5
+ModWheelDcoLfo = 0.05
+LfoRate = 0.7
+[patch.why]
+DcoWavePulse = "A filtered square is close to the rounded, hollow sound of a tine EP."
+VcaEnvMode = "Normal-Dynamic: velocity sets the level, which is most of what makes a piano feel like a piano."
+EnvDecayTime = "About 1.5 seconds: a long, natural fade, even when the key is held."
+EnvSustainLevel = "A little sustain, so that a held chord doesn't disappear completely."
+DcoChorusSwitch = "A slow chorus, as on so many classic electric pianos."
+
+[[patch]]
+name = "Glass Chime"
+tags = ["dreamwave", "outrun"]
+browser = "Bright bell chime | Vel: none | MW: none"
+profile = "A bright, ringing bell with a long tail, made from the synth's strange Saw 4 waveform."
+phrase = "keys"
+transpose = 12
+test_note = 72
+range = "C4 to C7"
+expect = { attack_s = [0, 0.02], low_energy_pct = [0, 5] }
+performance = "Single notes and octaves, high up. Leave room for the long tail."
+use = "Accent notes, intros, and adding sparkle to a chorus. A couple of notes are often enough."
+mix = [
+  "Long tails build up, so don't overplay.",
+  "It's already high-passed inside the synth.",
+  "A dark reverb on a send keeps the shine under control.",
+]
+pairings = [
+  { with = "Cold Coast", why = "Cold and clear together." },
+  { with = "Eighty-Four Tines", why = "Bells on top of an electric piano, the classic 80s layer." },
+  { with = "Tubular bells", external = true, why = "Layering them adds realism." },
+]
+tweaks = [
+  { control = "DCO Saw to Saw 3", result = "A different, more buzzy overtone mix." },
+  { control = "ENV T3 (decay) to 5.5", result = "A shorter ring, closer to a glockenspiel." },
+  { control = "HPF to HP 1", result = "More body under the shine." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 5
+DcoSubLevel = 0
+HpfCutoff = 3
+NumberOfVoices = 7
+VcfCutoff = 0.82
+EnvDecayTime = 0.68
+EnvSustainLevel = 0
+EnvReleaseTime = 0.65
+EnvKeyFollow = 0.3
+ModWheelDcoLfo = 0
+reverbDryWet = 0.3
+reverbSize = 0.75
+[patch.why]
+DcoWaveSaw = "Saw 4 has unusually strong peaks at the 2nd, 6th and 8th harmonics, which sounds bell-like without any FM."
+HpfCutoff = "HP 2 removes any body, leaving just the ringing upper partials."
+EnvDecayTime = "About 2.5 seconds: bells ring for a long time."
+EnvKeyFollow = "Higher notes ring for less time, as smaller bells do."
+reverbDryWet = "Bells are rarely heard dry; the space is part of the instrument."
+
+[[patch]]
+name = "Neon Organ"
+tags = ["outrun", "chillwave"]
+browser = "Bright chorused organ | Vel: none | MW: vibrato"
+profile = "A bright combo organ: no envelope to speak of, just a steady tone and a fast chorus."
+phrase = "keys"
+range = "C3 to C5"
+expect = { attack_s = [0, 0.02], sustain_db = [-5, 2] }
+performance = "Organ-style: notes start and stop with your fingers, with no decay. Try staccato chords and held pads."
+use = "Retro-pop rhythm parts, and a bright, steady alternative to a pad."
+mix = [
+  "It's constant, so sidechain it to create some bounce.",
+  "High-pass at 150 Hz.",
+  "Rotary or tremolo plugins suit it well.",
+]
+pairings = [
+  { with = "Rubber Coupe", why = "Funky bass and rhythm organ." },
+  { with = "Chrome Trumpet", why = "A retro band sound." },
+  { with = "Surf guitar", external = true, why = "They share the same retro brightness." },
+]
+tweaks = [
+  { control = "Sub level to 0", result = "Thinner, cheaper, more like a home organ." },
+  { control = "PULSE to Pulse 25%", result = "A reedy, more nasal organ." },
+  { control = "CHORUS Rate to 4.0", result = "A slower swirl, more like a slow rotary." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 0
+DcoWavePulse = 1
+DcoWaveSub = 0
+DcoSubLevel = 1.4
+NumberOfVoices = 7
+VcfCutoff = 0.8
+VcaEnvMode = 1
+EnvDecayTime = 0
+EnvSustainLevel = 1
+EnvReleaseTime = 0.05
+DcoChorusSwitch = 1
+ChorusRate = 0.8
+ModWheelDcoLfo = 0.05
+LfoRate = 0.72
+[patch.why]
+DcoWavePulse = "A square has odd harmonics only, like an organ with its drawbars mostly in."
+DcoSubLevel = "The sub-octave adds a pipe-like foundation, as a 16' drawbar would."
+VcaEnvMode = "Gate: an organ has no envelope, so a note is either on or off."
+ChorusRate = "Fast: this stands in for the rotary speaker's fast swirl."
+
+[[patch]]
+name = "Funk Clav"
+tags = ["outrun", "chillwave"]
+browser = "Thin funky clav | Vel: brightness | MW: none"
+profile = "A thin, biting, resonant clavinet: short, funky, and highly responsive to touch."
+phrase = "keys"
+range = "C3 to C5"
+expect = { attack_s = [0, 0.02], sustain_db = [-200, -15] }
+performance = "Short, syncopated rhythm parts, with varied velocity. Ghost notes are important."
+use = "Funky rhythm parts, retro-pop hooks, and adding snap to a groove."
+mix = [
+  "A wah or phaser suits it very well.",
+  "High-pass at 200 Hz; it should stay thin.",
+  "Keep it tight with little or no reverb.",
+]
+pairings = [
+  { with = "Rubber Coupe", why = "The classic syncopated partners." },
+  { with = "Miami Section", why = "A funk band: clav and horn stabs." },
+  { with = "Muted guitar", external = true, why = "Together they make a tight rhythm section." },
+]
+tweaks = [
+  { control = "VCF RES to 7.0", result = "A more wah-like squelch." },
+  { control = "ENV T3 (decay) to 4.5", result = "Longer notes, less tight." },
+  { control = "HPF to Off", result = "A fatter, less thin tone." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 0
+DcoWavePulse = 2
+DcoSubLevel = 0
+HpfCutoff = 3
+NumberOfVoices = 5
+VcfCutoff = 0.5
+VcfResonance = 0.38
+VcfEnvMode = 2
+VcfEnvMod = 0.3
+VcfKeyFollow = 0.5
+EnvDecayTime = 0.32
+EnvSustainLevel = 0
+EnvReleaseTime = 0.12
+ModWheelDcoLfo = 0
+[patch.why]
+DcoWavePulse = "A 25% pulse has the thin, nasal quality of a clavinet's struck string."
+HpfCutoff = "HP 2 removes the body: a clav cuts through because it doesn't take up low-end space."
+VcfResonance = "A resonant peak adds the funky 'wah' on each note."
+VcfEnvMode = "Normal-Dynamic: this is a touch-sensitive instrument, and velocity makes or breaks the groove."
+EnvDecayTime = "About 140 ms: tight enough to feel percussive."
+
+[[patch]]
+name = "Pocket Music Box"
+tags = ["dreamwave", "chillwave"]
+browser = "Tiny high music box | Vel: none | MW: none"
+profile = "A tiny wind-up music box: a nearly pure tone with a brief metallic ping, ringing on after each note."
+phrase = "pluck"
+test_note = 72
+range = "C4 to C6"
+expect = { attack_s = [0, 0.01], low_energy_pct = [0, 5], cents_off = [-15, 15] }
+performance = "Simple melodies and broken chords, played in the top half of the range. Every note rings on after you let go, so leave some space. Velocity does nothing, as the pins of a real music box pluck every tine alike."
+use = "Innocent, nostalgic moments. Lullaby-like melodies and intros."
+mix = [
+  "Very small in the mix: it's meant to sound distant.",
+  "Pitch-wobble or tape effects add to the nostalgia.",
+  "No high-pass needed.",
+]
+pairings = [
+  { with = "Tape Flute", why = "A memory-like pairing." },
+  { with = "Ghost Mall", why = "Innocent over hazy: quite eerie." },
+  { with = "Vinyl crackle", external = true, why = "Reinforces the sense of something old." },
+]
+tweaks = [
+  { control = "Range to 8'", result = "An octave down: more like a celesta." },
+  { control = "Pulse Tune to +24", result = "The ping lands on a harmonic: cleaner and more like a glockenspiel." },
+  { control = "ENV T4 (release) to 2.0", result = "Notes stop soon after you let go, like a damped tine." },
+  { control = "Reverb mix to -0.20", result = "Further away." },
+]
+[patch.params]
+DcoRange = 0
+DcoWaveSaw = 0
+DcoWavePulse = 1
+specialPulseVolume = 0.3
+specialPulseTune = 20
+DcoWaveSub = 0
+DcoSubLevel = 2
+NoDcOffset = 1
+Octave = 1
+HpfCutoff = 1
+NumberOfVoices = 11
+VcfCutoff = 0.46
+VcfEnvMod = 0.3
+VcfKeyFollow = 1
+EnvBreakTime = 0.2
+EnvBreakLevel = 0.35
+EnvDecayTime = 0.62
+EnvSustainLevel = 0
+EnvReleaseTime = 0.62
+EnvKeyFollow = 0.3
+ModWheelDcoLfo = 0
+reverbDryWet = 0.14
+reverbSize = 0.25
+[patch.why]
+DcoRange = "4' takes it up an octave: a music box is small, and the notes are high."
+DcoWaveSaw = "Off: a saw's strong even harmonics would make this sound like a synth."
+DcoSubLevel = "The sub's square has no 2nd harmonic, so the filter can reduce it to a nearly pure tone, like a steel tine."
+NoDcOffset = "Clean DCO on: with the square sub this loud, the DC step at each note-on added a low thump."
+Octave = "The sub sits an octave below the DCO, so this lifts the body to the same pitch as the 4' DCO: an octave above the key you play."
+specialPulseTune = "With the Octave switch on, about 6.35 times the pitch you hear, close to a real tine's first overtone. It isn't a harmonic, which is what makes it sound like metal."
+VcfCutoff = "Low enough that the ringing part of the note is mostly its fundamental."
+VcfEnvMod = "The filter opens only for the attack, letting the ping through for about 20 ms."
+VcfKeyFollow = "Full: the filter tracks the note, so the tone stays the same across the range."
+EnvBreakLevel = "L2 at 3.5: the quick drop from the pin's pluck into the ring."
+EnvDecayTime = "About a second to -20 dB: a tine rings on long after it's plucked."
+EnvReleaseTime = "As long as the decay: nothing damps a tine, so notes ring on after you let go."
+EnvKeyFollow = "Higher notes ring for less time, as shorter tines do."
+NumberOfVoices = "12 voices, so ringing notes aren't cut off by the next ones."
+reverbSize = "A small space, like the box itself."
+
+[[patch]]
+name = "Analog Poly Keys"
+tags = ["outrun", "dreamwave"]
+browser = "Classic poly synth keys | Vel: brightness | MW: open filter"
+profile = "The plain, useful poly synth keyboard part: bright when struck, warm when held."
+phrase = "keys"
+range = "C3 to C5"
+expect = { attack_s = [0, 0.02] }
+performance = "Comping chords, rhythm parts and simple hooks. It's a workhorse."
+use = "General-purpose chords, for almost any section of a track."
+mix = [
+  "High-pass at 150 Hz.",
+  "Sidechain lightly to the kick.",
+  "A short plate gives it a place in the room.",
+]
+pairings = [
+  { with = "Nightdrive", why = "A straightforward band setup: bass and comping keys." },
+  { with = "Sunset Solo", why = "Chords under a singing lead." },
+  { with = "Electric guitar", external = true, why = "They trade rhythm parts easily." },
+]
+tweaks = [
+  { control = "ENV L3 (sustain) to 2.0", result = "More of a pluck, less of a held chord." },
+  { control = "PWM Rate to 7.0", result = "Faster movement in the tone." },
+  { control = "VCF Env to 5.5", result = "A brighter strike on each chord." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 1
+DcoWavePulse = 3
+DcoPwmDepth = 0.45
+DcoPwmRate = 0.45
+DcoSubLevel = 0.3
+NumberOfVoices = 7
+VcfCutoff = 0.46
+VcfResonance = 0.1
+VcfEnvMode = 2
+VcfEnvMod = 0.36
+VcfKeyFollow = 0.5
+EnvDecayTime = 0.52
+EnvSustainLevel = 0.45
+EnvReleaseTime = 0.34
+DcoChorusSwitch = 1
+ChorusRate = 0.5
+ModWheelVcfRange = 0.2
+ModWheelDcoLfo = 0
+reverbDryWet = 0.12
+[patch.why]
+DcoWavePulse = "A saw and a moving pulse: the classic poly synth oscillator pair."
+VcfEnvMod = "Opens quickly on each chord, then settles: bright when struck, warm when held."
+VcfEnvMode = "Normal-Dynamic: a keyboard part should respond to your playing."
+EnvDecayTime = "About 800 ms, for a gentle fade to the sustain."
+EnvSustainLevel = "Held chords remain audible, so it works for both rhythm and held parts."
+
+[[patch]]
+name = "Lounge Vibes"
+tags = ["chillwave", "dreamwave"]
+browser = "Mellow vibraphone | Vel: level | MW: none"
+profile = "A mellow vibraphone with a slow filter shimmer standing in for its rotating fans."
+phrase = "keys"
+range = "C3 to C6"
+expect = { attack_s = [0, 0.02], centroid_hz = [200, 1500] }
+performance = "Gentle chords and melodies, with velocity variation. Let notes ring."
+use = "Lounge and vaporwave moods, soft jazz-tinged chord parts."
+mix = [
+  "A tremolo plugin would be more accurate, as this synth's LFO can't reach the amp.",
+  "Small room reverb suits it.",
+  "High-pass at 150 Hz.",
+]
+pairings = [
+  { with = "Ghost Mall", why = "An empty lounge." },
+  { with = "Velvet Bass", why = "A soft bass under a mellow vibraphone." },
+  { with = "Upright bass", external = true, why = "The natural jazz pairing." },
+]
+tweaks = [
+  { control = "VCF LFO to 2.5", result = "A more obvious shimmer." },
+  { control = "LFO Rate to about 2 Hz", result = "Slower fans, for a calmer feel." },
+  { control = "VCF Cutoff to 6.0", result = "Brighter, more like a glockenspiel." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 0
+DcoWavePulse = 1
+DcoSubLevel = 0
+NumberOfVoices = 7
+VcfCutoff = 0.5
+VcfLfoMod = 0.12
+LfoWaveform = 1
+LfoRate = 0.68
+VcfKeyFollow = 0.7
+VcaEnvMode = 2
+EnvDecayTime = 0.62
+EnvSustainLevel = 0
+EnvReleaseTime = 0.5
+ModWheelDcoLfo = 0
+reverbDryWet = 0.16
+reverbSize = 0.45
+[patch.why]
+DcoWavePulse = "A filtered square has the rounded tone of a struck metal bar."
+VcfLfoMod = "A real vibraphone uses rotating fans to change its level. This synth's LFO can't reach the amp, so filter movement approximates it."
+LfoRate = "About 4 Hz: the speed of the fans."
+VcaEnvMode = "Normal-Dynamic: velocity sets level, as with a mallet."
+EnvDecayTime = "About 1.5 seconds: a long, gentle ring."
+
+[[patch]]
+name = "Reed Drive"
+tags = ["chillwave", "outrun"]
+browser = "Wurlitzer-style reed | Vel: brightness | MW: vibrato"
+profile = "A slightly gritty, reedy electric piano in the style of a Wurlitzer, with a nasal bark on hard notes."
+phrase = "keys"
+range = "C3 to C5"
+expect = { attack_s = [0, 0.03] }
+performance = "Bluesy chords and fills. Hard notes bark and soft notes stay mellow, so vary your touch."
+use = "Soul-tinged retro parts, and an alternative to a tine EP that cuts through better."
+mix = [
+  "Light overdrive really suits it.",
+  "A tremolo plugin adds a classic touch.",
+  "High-pass at 150 Hz.",
+]
+pairings = [
+  { with = "Rubber Coupe", why = "Funky bass and gritty keys." },
+  { with = "Miami Section", why = "Soul horns and reed piano." },
+  { with = "Soul vocal", external = true, why = "A classic bed for a gritty voice." },
+]
+tweaks = [
+  { control = "EQ Gain to +9 dB", result = "A much more nasal bark." },
+  { control = "VCF Env to 6.0", result = "More difference between soft and hard." },
+  { control = "CHORUS on", result = "Softer and wider, less raw." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 0
+DcoWavePulse = 2
+DcoWaveSub = 0
+DcoSubLevel = 1
+NumberOfVoices = 7
+VcfCutoff = 0.46
+VcfResonance = 0.1
+VcfEnvMode = 2
+VcfEnvMod = 0.32
+VcfKeyFollow = 0.5
+EnvDecayTime = 0.55
+EnvSustainLevel = 0.15
+EnvReleaseTime = 0.25
+eqBellFreq = 0.47
+eqBellQ = 0.55
+eqBellGain = 5
+ModWheelDcoLfo = 0.05
+LfoRate = 0.7
+[patch.why]
+DcoWavePulse = "A 25% pulse is nasal and reedy, closer to a vibrating reed than a tine."
+eqBellGain = "A mid-range bell adds a nasal, slightly barking colour."
+eqBellFreq = "About 1 kHz, where a Wurlitzer's characteristic bark sits."
+VcfEnvMode = "Normal-Dynamic: playing harder brings out the bark, which is the instrument's character."
+DcoSubLevel = "A square below adds a fuller body."
+
+[[patch]]
+name = "Worn Piano"
+tags = ["chillwave", "dreamwave"]
+browser = "Faded synth piano | Vel: level | MW: none"
+profile = "A dull, slightly out-of-tune synthetic piano, as if played on an old cassette."
+phrase = "keys"
+range = "C2 to C5"
+expect = { attack_s = [0, 0.02], centroid_hz = [150, 1500] }
+performance = "Sparse, simple chords. Velocity sets the level, and the wobble rewards a slow pace."
+use = "Sad, nostalgic intros and interludes."
+mix = [
+  "Tape saturation and a high cut around 5 kHz add to the wear.",
+  "Keep the reverb small and dark.",
+  "High-pass at 100 Hz.",
+]
+pairings = [
+  { with = "Ghost Mall", why = "Together they sound like a memory." },
+  { with = "Tape Flute", why = "A very nostalgic duet." },
+  { with = "Field recording of a room", external = true, why = "Places the piano in a real, empty space." },
+]
+tweaks = [
+  { control = "DCO LFO to 1.0", result = "A more obvious wobble." },
+  { control = "Noise to 0", result = "Removes the hiss." },
+  { control = "VCF Cutoff to 6.0", result = "A brighter, less faded tone." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 1
+Noise = 0.1
+DcoWaveSub = 0
+DcoSubLevel = 0.5
+NumberOfVoices = 9
+VcfCutoff = 0.46
+VcfEnvMod = 0.2
+VcfKeyFollow = 0.7
+VcaEnvMode = 2
+EnvDecayTime = 0.68
+EnvSustainLevel = 0
+EnvReleaseTime = 0.45
+EnvKeyFollow = 0.3
+DcoLfoMod = 0.05
+LfoWaveform = 1
+LfoRate = 0.42
+DcoChorusSwitch = 1
+ChorusRate = 0.28
+ModWheelDcoLfo = 0
+reverbDryWet = 0.16
+reverbSize = 0.4
+reverbTone = 0.2
+[patch.why]
+EnvDecayTime = "About 2.5 seconds with no sustain: like a piano, every note fades even when held."
+EnvKeyFollow = "Higher notes decay faster, as piano strings do."
+VcaEnvMode = "Normal-Dynamic: velocity sets level, as it does on a piano."
+DcoLfoMod = "A slow, shallow pitch drift, like a tape running unevenly."
+Noise = "A small amount of hiss."
+VcfCutoff = "About 350 Hz at C4: dull, as old tape is."

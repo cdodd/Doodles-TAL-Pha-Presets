@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Building Riser from init: Doodles TAL-Pha Presets</title>
+<link rel="stylesheet" href="style.css">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="index.html"><span>Doodles</span> TAL-Pha Presets</a>
+  <button type="button" id="theme" class="ghost" aria-label="Switch between light and dark theme">Theme</button>
+</header>
+<div class="layout">
+<nav class="sidebar" aria-label="Documentation">
+<a href="index.html">Overview</a>
+<p class="nav-label">Patches</p>
+<a href="bass.html">Bass</a>
+<a href="lead.html">Lead</a>
+<a href="pad.html">Pad</a>
+<a href="strings.html">Strings</a>
+<a href="brass.html">Brass</a>
+<a href="arp.html">Arp</a>
+<a href="pluck.html">Pluck</a>
+<a href="keys.html">Keys and Bells</a>
+<a href="chord.html">Chord and Stab</a>
+<a href="fx.html" aria-current=page>FX and Atmosphere</a>
+<div class="subnav"><a class="recipe-link" href="fx-recipe.html" aria-current=page>Build from init</a><a href="fx.html#riser">Riser</a><a href="fx.html#downlifter">Downlifter</a><a href="fx.html#laser-zap">Laser Zap</a><a href="fx.html#ocean-static">Ocean Static</a><a href="fx.html#v8-drone">V8 Drone</a><a href="fx.html#sonar-ping">Sonar Ping</a><a href="fx.html#mainframe">Mainframe</a><a href="fx.html#alarm-siren">Alarm Siren</a><a href="fx.html#night-rain">Night Rain</a><a href="fx.html#sub-drop">Sub Drop</a></div>
+<p class="nav-label">Guides</p>
+<a href="field-guide.html">Field guide</a>
+<a href="control-reference.html">Control reference</a>
+<a href="gallery.html">Sound gallery</a>
+<a href="sound-map.html">Sound map</a>
+<a href="kits.html">Starter kits</a>
+<a href="reaper-cheat-sheet.html">Reaper cheat sheet</a>
+</nav>
+<main>
+<div class="recipe">
+<h1>Building Riser from init</h1>
+<p class="lede">Most FX patches use a single control pushed well past where you&#x27;d normally set it. This recipe builds a riser, and shows how one long envelope can move both level and filter, so you only need to hold down one key.</p>
+<section class="install">
+<h2>Setup</h2>
+<p>Choose <strong>Reset Parameters</strong> and hold one long note. It doesn't matter much which: noise has no pitch.</p>
+<p>Each step's preview adds to the one before. Measurements compare it with the previous step.</p>
+</section>
+<ol class="steps">
+<li class="step">
+<h2>Start from init</h2>
+
+<p>A saw, wide open, with a sharp start. Nothing changes over time.</p>
+
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/fx/step-01.mp3" aria-label="Step 1: Start from init"></audio>
+  <p><strong>Listen for:</strong> A constant buzz.</p>
+  
+</div>
+</li>
+<li class="step">
+<h2>Add noise</h2>
+<ul class="changes"><li><span class="control">Noise</span><span class="from">0.0 / 3</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">2.0 / 3</span></li></ul>
+<p>Noise has no pitch, so a riser won&#x27;t clash with your key. The saw is kept quietly underneath, so it&#x27;s not just hiss.</p>
+<p class="alt"><strong>The other choice:</strong> Remove the saw entirely, as in Ocean Static, for pure air. Remove the noise for a purely tonal rise.</p>
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/fx/step-02.mp3" aria-label="Step 2: Add noise"></audio>
+  <p><strong>Listen for:</strong> Airy and bright, still constant.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Brightness: 4,760 Hz → <strong>10,599 Hz</strong></li></ul>
+</div>
+</li>
+<li class="step">
+<h2>Close the filter almost entirely</h2>
+<ul class="changes"><li><span class="control">VCF Cutoff</span><span class="from">10.0 (about 21726 Hz at C4)</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">2.2 (about 51 Hz at C4)</span></li></ul>
+<p>At about 60 Hz, only a dull rumble gets through. That&#x27;s a far lower setting than you&#x27;d normally use, but it gives the sound a very long way to travel.</p>
+
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/fx/step-03.mp3" aria-label="Step 3: Close the filter almost entirely"></audio>
+  <p><strong>Listen for:</strong> A low, muffled rumble.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Brightness: 10,599 Hz → <strong>88 Hz</strong></li></ul>
+</div>
+</li>
+<li class="step">
+<h2>Make the filter&#x27;s journey long</h2>
+<ul class="changes"><li><span class="control">VCF Env</span><span class="from">0.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">6.8</span></li><li><span class="control">Env T1 (attack)</span><span class="from">0.0 (about 1 ms)</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">7.8 (about 4.2 s)</span></li><li><span class="control">Env T3 (decay)</span><span class="from">0.0 (about 10 ms to -20 dB)</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">5.0 (about 678 ms to -20 dB)</span></li><li><span class="control">Env L3 (sustain)</span><span class="from">10.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">10.0</span></li></ul>
+<p>This is the key decision. An attack of about four seconds is well past normal, and a very large envelope amount takes the filter nearly all the way open. Since one envelope moves both level and filter, the sound gets both louder and brighter from a single held note.</p>
+<p class="alt"><strong>The other choice:</strong> Try lowering T1 to 6.5 for a rise of a little over a second. Rising Tide uses the same idea with strings instead of noise.</p>
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/fx/step-04.mp3" aria-label="Step 4: Make the filter&#x27;s journey long"></audio>
+  <p><strong>Listen for:</strong> It rises by itself, from nothing to a bright rush.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Time to half level: 40 ms → <strong>2819 ms</strong></li></ul>
+</div>
+</li>
+<li class="step">
+<h2>Make the sweep audible</h2>
+<ul class="changes"><li><span class="control">VCF Res</span><span class="from">0.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">3.5</span></li></ul>
+<p>A resonant peak lets you hear the filter moving through the noise. Without it, a noise sweep can sound like a simple fade. Don&#x27;t overdo it, or it starts to whistle.</p>
+
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/fx/step-05.mp3" aria-label="Step 5: Make the sweep audible"></audio>
+  <p><strong>Listen for:</strong> A slight whistle rising through the noise.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Brightness: 5,972 Hz → <strong>6,989 Hz</strong></li></ul>
+</div>
+</li>
+<li class="step">
+<h2>Let it ring out</h2>
+<ul class="changes"><li><span class="control">Env T4 (release)</span><span class="from">0.0 (about 10 ms to -20 dB)</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">3.5 (about 190 ms to -20 dB)</span></li><li><span class="control">Voices</span><span class="from">6</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">4</span></li><li><span class="control">Reverb mix</span><span class="from">OFF</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">-0.40</span></li><li><span class="control">Reverb size</span><span class="from">8.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">8.0</span></li></ul>
+<p>A short release and a big reverb mean that when you let go on the downbeat, there&#x27;s a tail that blends into the next section. A few voices are enough for occasional overlap.</p>
+
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/fx/step-06.mp3" aria-label="Step 6: Let it ring out"></audio>
+  <p><strong>Listen for:</strong> A little more space and size around the rise.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Tail after note-off: 10 ms → <strong>359 ms</strong></li></ul>
+</div>
+</li>
+<li class="step">
+<h2>Set up the wheel</h2>
+<ul class="changes"><li><span class="control">MW to VCF</span><span class="from">0.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">2.0</span></li><li><span class="control">MW to DCO LFO</span><span class="from">1.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">0.0</span></li></ul>
+<p>The wheel adds some brightness for a final push. The default vibrato is turned off, as it would only make the saw layer wobble.</p>
+
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/fx/step-07.mp3" aria-label="Step 7: Set up the wheel"></audio>
+  <p><strong>Listen for:</strong> In this preview the wheel rises across the second half, as an extra push at the end.</p>
+  
+</div>
+</li>
+<li class="step">
+<h2>Set the level</h2>
+<ul class="changes"><li><span class="control">Volume</span><span class="from">5.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">5.6</span></li></ul>
+<p>The level is measured across the whole rise. That&#x27;s the finished Riser.</p>
+
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/fx/step-08.mp3" aria-label="Step 8: Set the level"></audio>
+  <p><strong>Listen for:</strong> The finished patch.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Loudness: -18.5 LUFS → <strong>-18.0 LUFS</strong></li></ul>
+</div>
+</li>
+</ol>
+<section class="install">
+<h2>What to take away</h2>
+<ul><li>One long envelope moves level and filter at the same time, which is what a riser needs.</li><li>Noise suits FX because it has no pitch to clash with your key.</li><li>FX come from pushing a control to extremes. Try the same approach with pitch envelope or LFO depth.</li></ul>
+</section>
+<h2 class="next">Where to go next</h2>
+<p>Starting points for moving from <a href="fx.html#riser">Riser</a> to another patch in the bank:</p>
+<ul class="pairs"><li><a href="fx.html#downlifter">Downlifter</a><span class="why">Reverse the idea: use a long decay with no sustain, and add DCO Env 7.8 for a falling pitch.</span></li><li><a href="fx.html#ocean-static">Ocean Static</a><span class="why">Turn off the saw, set noise to full, and move the filter with a slow LFO rather than the envelope.</span></li><li><a href="fx.html#night-rain">Night Rain</a><span class="why">Use noise only, with HP 2, and a fast S&amp;H LFO on the filter.</span></li></ul>
+</div>
+</main>
+</div>
+<script src="site.js"></script>
+</body>
+</html>

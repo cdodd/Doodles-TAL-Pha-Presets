@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Keys and Bells: Doodles TAL-Pha Presets</title>
+<link rel="stylesheet" href="style.css">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="index.html"><span>Doodles</span> TAL-Pha Presets</a>
+  <button type="button" id="theme" class="ghost" aria-label="Switch between light and dark theme">Theme</button>
+</header>
+<div class="layout">
+<nav class="sidebar" aria-label="Documentation">
+<a href="index.html">Overview</a>
+<p class="nav-label">Patches</p>
+<a href="bass.html">Bass</a>
+<a href="lead.html">Lead</a>
+<a href="pad.html">Pad</a>
+<a href="strings.html">Strings</a>
+<a href="brass.html">Brass</a>
+<a href="arp.html">Arp</a>
+<a href="pluck.html">Pluck</a>
+<a href="keys.html" aria-current=page>Keys and Bells</a>
+<div class="subnav"><a class="recipe-link" href="keys-recipe.html">Build from init</a><a href="#eighty-four-tines">Eighty-Four Tines</a><a href="#warm-tines">Warm Tines</a><a href="#glass-chime">Glass Chime</a><a href="#neon-organ">Neon Organ</a><a href="#funk-clav">Funk Clav</a><a href="#pocket-music-box">Pocket Music Box</a><a href="#analog-poly-keys">Analog Poly Keys</a><a href="#lounge-vibes">Lounge Vibes</a><a href="#reed-drive">Reed Drive</a><a href="#worn-piano">Worn Piano</a></div>
+<a href="chord.html">Chord and Stab</a>
+<a href="fx.html">FX and Atmosphere</a>
+<p class="nav-label">Guides</p>
+<a href="field-guide.html">Field guide</a>
+<a href="control-reference.html">Control reference</a>
+<a href="gallery.html">Sound gallery</a>
+<a href="sound-map.html">Sound map</a>
+<a href="kits.html">Starter kits</a>
+<a href="reaper-cheat-sheet.html">Reaper cheat sheet</a>
+</nav>
+<main>
+<h1>Keys and Bells</h1>
+<p class="lede">10 patches. Control values are as shown on the plugin panel. Times and frequencies
+come from <a href="control-reference.html">measurements of the plugin</a>.</p>
+<a class="callout" href="keys-recipe.html"><strong>New to this category?</strong> Build a patch from init, step by step, hearing each decision.</a>
+<section class="install">
+<h2>Mixing this category</h2>
+<p>Starting points for every patch here. Each patch's own notes cover what's different about it.</p>
+<ul><li>High-pass at 100-200 Hz, depending on how much of the left hand you keep.</li><li>Dip 300-500 Hz if chords get muddy, and lift 2-3 kHz for the tine or bite.</li><li>Gentle compression evens out chords. Sidechain only in a dense chorus.</li><li>Keep tight rhythm parts near the centre, and let chorused keys go wide.</li><li>Use a short plate or room send, and keep it clear of the vocal.</li></ul>
+</section>
+<div class="chips" role="group" aria-label="Filter by subgenre"><button type="button" class="chip" aria-pressed="true" data-tag="">All</button><button type="button" class="chip" aria-pressed="false" data-tag="chillwave">chillwave</button><button type="button" class="chip" aria-pressed="false" data-tag="dreamwave">dreamwave</button><button type="button" class="chip" aria-pressed="false" data-tag="outrun">outrun</button></div>
+<article class="patch" id="eighty-four-tines" data-tags="dreamwave outrun">
+<header>
+  <h2>Eighty-Four Tines</h2>
+  <div class="tags"><span class="tag">dreamwave</span><span class="tag">outrun</span></div>
+</header>
+<p class="profile">An approximation of the glassy 80s digital electric piano: a soft body with a metallic sync &#x27;tine&#x27; on the attack. This synth isn&#x27;t FM, so it&#x27;s a close cousin rather than a copy.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/keys/eighty-four-tines.mp3" aria-label="Preview of Eighty-Four Tines"></audio>
+  <a class="ghost" href="../../presets/Doodles/Keys%20and%20Bells/Eighty-Four%20Tines.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>C3 to C6</dd></div><div><dt>Brightness</dt><dd>1691 Hz centroid</dd></div><div><dt>Low energy</dt><dd>2% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 5 ms</dd></div><div><dt>Decay</dt><dd>Falls 20 dB in 1.1 s</dd></div><div><dt>Filter closes</dt><dd>1.0 octaves</dd></div><div><dt>Held level</dt><dd>-12 dB from peak</dd></div><div><dt>Width</dt><dd>Stereo, side/mid 0.59</dd></div><div><dt>Mono sum</dt><dd>-1.2 dB</dd></div><div><dt>Loudness</dt><dd>-18.0 LUFS, peak -5.2 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">Pulse Sync</th><td class="value">On</td><td>Sync produces the metallic, inharmonic-sounding overtones that imitate an FM tine.</td></tr><tr><th scope="row">Pulse Tune</th><td class="value">+24 st</td><td>Two octaves above: this high sync tone stands in for the tine.</td></tr><tr><th scope="row">Sub level</th><td class="value">2.2 / 3</td><td>The sub&#x27;s square is the soft, rounded body of the note.</td></tr><tr><th scope="row">Octave</th><td class="value">+1</td><td>The sub sits an octave below the DCO, so this brings the body up to the note you play.</td></tr><tr><th scope="row">VCF Env</th><td class="value">4.2</td><td>The filter opens only briefly, letting the tine through at the attack, then closing over it.</td></tr><tr><th scope="row">VCF Env mode</th><td class="value">Normal-Dynamic</td><td>Normal-Dynamic: harder notes reveal more tine, the main feature of a digital EP&#x27;s response.</td></tr><tr><th scope="row">Chorus</th><td class="value">On</td><td>Chorus was on almost every 80s EP you can think of.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Pulse Square; DCO Saw Off; Sub wave Square -1 oct (panel label: OFF); DCO Range 8&#x27;; VCF Cutoff 4.2 (about 252 Hz at C4); VCF Key follow 6.0; LFO Rate 5.03 Hz; Env T3 (decay) 6.2 (about 1.6 s to -20 dB); Env L3 (sustain) 1.0; Env T4 (release) 4.5 (about 419 ms to -20 dB); Chorus Rate 4.8; MW to DCO LFO 0.6; Voices 8; Pulse Volume 4.2; Pulse Env mod +0.15; Reverb mix -0.72.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Ballad chords and arpeggios. Harder notes bring out more of the tine.</p></section>
+  <section><h3>How to use it</h3><p>The 80s power ballad electric piano, under a vocal or as the main chord part in a dreamy track.</p></section>
+  <section><h3>Mixing</h3><ul><li>Lots of chorus already, so skip any more.</li><li>A little lift around 3 kHz helps the tine through.</li><li>High-pass at 120 Hz.</li><li>Built-in chorus: part of this sound, so keep it. Built-in reverb: turn it off if you&#x27;re using your own.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="bass.html#velvet-bass">Velvet Bass</a><span class="why">A soft bass under glassy keys: the ballad sound.</span></li><li><a href="strings.html#slow-bow">Slow Bow</a><span class="why">Strings fading in behind an electric piano.</span></li><li><strong>Lead vocal</strong><span class="why">A classic bed for a voice.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>Pulse Volume to 8.0</strong><span>A louder, more metallic tine.</span></li><li><strong>Pulse Tune to +19</strong><span>A different, more bell-like ratio.</span></li><li><strong>CHORUS off</strong><span>Plainer and more direct.</span></li></ul>
+</article>
+<article class="patch" id="warm-tines" data-tags="chillwave dreamwave">
+<header>
+  <h2>Warm Tines</h2>
+  <div class="tags"><span class="tag">chillwave</span><span class="tag">dreamwave</span></div>
+</header>
+<p class="profile">A mellow, round electric piano: soft, warm and very responsive to how hard you play.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/keys/warm-tines.mp3" aria-label="Preview of Warm Tines"></audio>
+  <a class="ghost" href="../../presets/Doodles/Keys%20and%20Bells/Warm%20Tines.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>C3 to C5</dd></div><div><dt>Brightness</dt><dd>508 Hz centroid</dd></div><div><dt>Low energy</dt><dd>7% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 5 ms</dd></div><div><dt>Decay</dt><dd>Falls 20 dB in 1.1 s</dd></div><div><dt>Filter closes</dt><dd>0.0 octaves</dd></div><div><dt>Held level</dt><dd>-15 dB from peak</dd></div><div><dt>Width</dt><dd>Stereo, side/mid 0.58</dd></div><div><dt>Mono sum</dt><dd>-1.3 dB</dd></div><div><dt>Loudness</dt><dd>-18.2 LUFS, peak -5.7 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">DCO Pulse</th><td class="value">Square</td><td>A filtered square is close to the rounded, hollow sound of a tine EP.</td></tr><tr><th scope="row">VCA mode</th><td class="value">Normal-Dynamic</td><td>Normal-Dynamic: velocity sets the level, which is most of what makes a piano feel like a piano.</td></tr><tr><th scope="row">Env T3 (decay)</th><td class="value">6.2 (about 1.6 s to -20 dB)</td><td>About 1.5 seconds: a long, natural fade, even when the key is held.</td></tr><tr><th scope="row">Env L3 (sustain)</th><td class="value">2.5</td><td>A little sustain, so that a held chord doesn&#x27;t disappear completely.</td></tr><tr><th scope="row">Chorus</th><td class="value">On</td><td>A slow chorus, as on so many classic electric pianos.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Saw Off; DCO Range 8&#x27;; Sub level 1.0 / 3; VCF Cutoff 4.6 (about 347 Hz at C4); VCF Env 1.5; VCF Key follow 6.0; LFO Rate 5.03 Hz; Env T1 (attack) 0.3 (about 4 ms); Env T4 (release) 4.0 (about 289 ms to -20 dB); Chorus Rate 5.0; MW to DCO LFO 0.5; Voices 8.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Velocity sets the level, so a gentle touch gets a very quiet note. Try jazzy 7th chords.</p></section>
+  <section><h3>How to use it</h3><p>Soft chord parts, chillwave grooves and laid-back intros.</p></section>
+  <section><h3>Mixing</h3><ul><li>Dynamic by design, so compress with a slow attack.</li><li>A little tape saturation suits it.</li><li>High-pass at 120 Hz.</li><li>Built-in chorus: part of this sound, so keep it.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="bass.html#rubber-coupe">Rubber Coupe</a><span class="why">Warm keys and a bouncy bass, for a chillwave groove.</span></li><li><a href="brass.html#silk-horn">Silk Horn</a><span class="why">Two soft sounds, for a warm ballad.</span></li><li><strong>Brushed drums</strong><span class="why">An intimate, soft setting.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>VCF Cutoff to 5.5</strong><span>Brighter and less polite.</span></li><li><strong>CHORUS Rate to 8.0</strong><span>A faster, more obvious wobble.</span></li><li><strong>ENV L3 (sustain) to 0</strong><span>Decays away to nothing, more like a real tine.</span></li></ul>
+</article>
+<article class="patch" id="glass-chime" data-tags="dreamwave outrun">
+<header>
+  <h2>Glass Chime</h2>
+  <div class="tags"><span class="tag">dreamwave</span><span class="tag">outrun</span></div>
+</header>
+<p class="profile">A bright, ringing bell with a long tail, made from the synth&#x27;s strange Saw 4 waveform.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/keys/glass-chime.mp3" aria-label="Preview of Glass Chime"></audio>
+  <a class="ghost" href="../../presets/Doodles/Keys%20and%20Bells/Glass%20Chime.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>C4 to C7</dd></div><div><dt>Brightness</dt><dd>3332 Hz centroid</dd></div><div><dt>Low energy</dt><dd>0% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 0 ms</dd></div><div><dt>Decay</dt><dd>Holds while the key is down</dd></div><div><dt>Filter closes</dt><dd>0.0 octaves</dd></div><div><dt>Held level</dt><dd>-8 dB from peak</dd></div><div><dt>Width</dt><dd>Stereo, side/mid 0.06</dd></div><div><dt>Mono sum</dt><dd>-0.0 dB</dd></div><div><dt>Loudness</dt><dd>-17.8 LUFS, peak -7.1 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">DCO Saw</th><td class="value">Saw 4</td><td>Saw 4 has unusually strong peaks at the 2nd, 6th and 8th harmonics, which sounds bell-like without any FM.</td></tr><tr><th scope="row">HPF</th><td class="value">HP 2</td><td>HP 2 removes any body, leaving just the ringing upper partials.</td></tr><tr><th scope="row">Env T3 (decay)</th><td class="value">6.8 (about 2.6 s to -20 dB)</td><td>About 2.5 seconds: bells ring for a long time.</td></tr><tr><th scope="row">Env Key follow</th><td class="value">3.0</td><td>Higher notes ring for less time, as smaller bells do.</td></tr><tr><th scope="row">Reverb mix</th><td class="value">-0.40</td><td>Bells are rarely heard dry; the space is part of the instrument.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Range 8&#x27;; Sub level 0.0 / 3; VCF Cutoff 8.2 (about 6021 Hz at C4); Env L3 (sustain) 0.0; Env T4 (release) 6.5 (about 2.2 s to -20 dB); Voices 8; Reverb size 7.5.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Single notes and octaves, high up. Leave room for the long tail.</p></section>
+  <section><h3>How to use it</h3><p>Accent notes, intros, and adding sparkle to a chorus. A couple of notes are often enough.</p></section>
+  <section><h3>Mixing</h3><ul><li>Long tails build up, so don&#x27;t overplay.</li><li>It&#x27;s already high-passed inside the synth.</li><li>A dark reverb on a send keeps the shine under control.</li><li>Built-in reverb: part of this sound, so keep it.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="pad.html#cold-coast">Cold Coast</a><span class="why">Cold and clear together.</span></li><li><a href="#eighty-four-tines">Eighty-Four Tines</a><span class="why">Bells on top of an electric piano, the classic 80s layer.</span></li><li><strong>Tubular bells</strong><span class="why">Layering them adds realism.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>DCO Saw to Saw 3</strong><span>A different, more buzzy overtone mix.</span></li><li><strong>ENV T3 (decay) to 5.5</strong><span>A shorter ring, closer to a glockenspiel.</span></li><li><strong>HPF to HP 1</strong><span>More body under the shine.</span></li></ul>
+</article>
+<article class="patch" id="neon-organ" data-tags="outrun chillwave">
+<header>
+  <h2>Neon Organ</h2>
+  <div class="tags"><span class="tag">outrun</span><span class="tag">chillwave</span></div>
+</header>
+<p class="profile">A bright combo organ: no envelope to speak of, just a steady tone and a fast chorus.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/keys/neon-organ.mp3" aria-label="Preview of Neon Organ"></audio>
+  <a class="ghost" href="../../presets/Doodles/Keys%20and%20Bells/Neon%20Organ.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>C3 to C5</dd></div><div><dt>Brightness</dt><dd>1472 Hz centroid</dd></div><div><dt>Low energy</dt><dd>12% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 0 ms</dd></div><div><dt>Decay</dt><dd>Holds while the key is down</dd></div><div><dt>Filter closes</dt><dd>0.0 octaves</dd></div><div><dt>Held level</dt><dd>-4 dB from peak</dd></div><div><dt>Width</dt><dd>Stereo, side/mid 0.60</dd></div><div><dt>Mono sum</dt><dd>-1.3 dB</dd></div><div><dt>Loudness</dt><dd>-18.1 LUFS, peak -7.4 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">DCO Pulse</th><td class="value">Square</td><td>A square has odd harmonics only, like an organ with its drawbars mostly in.</td></tr><tr><th scope="row">Sub level</th><td class="value">1.4 / 3</td><td>The sub-octave adds a pipe-like foundation, as a 16&#x27; drawbar would.</td></tr><tr><th scope="row">VCA mode</th><td class="value">Gate</td><td>Gate: an organ has no envelope, so a note is either on or off.</td></tr><tr><th scope="row">Chorus Rate</th><td class="value">8.0</td><td>Fast: this stands in for the rotary speaker&#x27;s fast swirl.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Saw Off; Sub wave Square -1 oct (panel label: OFF); DCO Range 8&#x27;; Chorus On; VCF Cutoff 8.0 (about 5146 Hz at C4); LFO Rate 5.94 Hz; Env T3 (decay) 0.0 (about 10 ms to -20 dB); Env L3 (sustain) 10.0; Env T4 (release) 0.5 (about 15 ms to -20 dB); MW to DCO LFO 0.5; Voices 8.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Organ-style: notes start and stop with your fingers, with no decay. Try staccato chords and held pads.</p></section>
+  <section><h3>How to use it</h3><p>Retro-pop rhythm parts, and a bright, steady alternative to a pad.</p></section>
+  <section><h3>Mixing</h3><ul><li>It&#x27;s constant, so sidechain it to create some bounce.</li><li>High-pass at 150 Hz.</li><li>Rotary or tremolo plugins suit it well.</li><li>Built-in chorus: part of this sound, so keep it.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="bass.html#rubber-coupe">Rubber Coupe</a><span class="why">Funky bass and rhythm organ.</span></li><li><a href="brass.html#chrome-trumpet">Chrome Trumpet</a><span class="why">A retro band sound.</span></li><li><strong>Surf guitar</strong><span class="why">They share the same retro brightness.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>Sub level to 0</strong><span>Thinner, cheaper, more like a home organ.</span></li><li><strong>PULSE to Pulse 25%</strong><span>A reedy, more nasal organ.</span></li><li><strong>CHORUS Rate to 4.0</strong><span>A slower swirl, more like a slow rotary.</span></li></ul>
+</article>
+<article class="patch" id="funk-clav" data-tags="outrun chillwave">
+<header>
+  <h2>Funk Clav</h2>
+  <div class="tags"><span class="tag">outrun</span><span class="tag">chillwave</span></div>
+</header>
+<p class="profile">A thin, biting, resonant clavinet: short, funky, and highly responsive to touch.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/keys/funk-clav.mp3" aria-label="Preview of Funk Clav"></audio>
+  <a class="ghost" href="../../presets/Doodles/Keys%20and%20Bells/Funk%20Clav.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>C3 to C5</dd></div><div><dt>Brightness</dt><dd>1483 Hz centroid</dd></div><div><dt>Low energy</dt><dd>1% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 0 ms</dd></div><div><dt>Decay</dt><dd>Falls 20 dB in 190 ms</dd></div><div><dt>Held note</dt><dd>Dies away</dd></div><div><dt>Width</dt><dd>Mono</dd></div><div><dt>Mono sum</dt><dd>+0.0 dB</dd></div><div><dt>Loudness</dt><dd>-22.7 LUFS, peak -1.2 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">DCO Pulse</th><td class="value">Pulse 25%</td><td>A 25% pulse has the thin, nasal quality of a clavinet&#x27;s struck string.</td></tr><tr><th scope="row">HPF</th><td class="value">HP 2</td><td>HP 2 removes the body: a clav cuts through because it doesn&#x27;t take up low-end space.</td></tr><tr><th scope="row">VCF Res</th><td class="value">3.8</td><td>A resonant peak adds the funky &#x27;wah&#x27; on each note.</td></tr><tr><th scope="row">VCF Env mode</th><td class="value">Normal-Dynamic</td><td>Normal-Dynamic: this is a touch-sensitive instrument, and velocity makes or breaks the groove.</td></tr><tr><th scope="row">Env T3 (decay)</th><td class="value">3.2 (about 144 ms to -20 dB)</td><td>About 140 ms: tight enough to feel percussive.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Saw Off; DCO Range 8&#x27;; Sub level 0.0 / 3; VCF Cutoff 5.0 (about 478 Hz at C4); VCF Env 3.0; VCF Key follow 5.0; Env L3 (sustain) 0.0; Env T4 (release) 1.2 (about 35 ms to -20 dB); Voices 6.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Short, syncopated rhythm parts, with varied velocity. Ghost notes are important.</p></section>
+  <section><h3>How to use it</h3><p>Funky rhythm parts, retro-pop hooks, and adding snap to a groove.</p></section>
+  <section><h3>Mixing</h3><ul><li>A wah or phaser suits it very well.</li><li>High-pass at 200 Hz; it should stay thin.</li><li>Keep it tight with little or no reverb.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="bass.html#rubber-coupe">Rubber Coupe</a><span class="why">The classic syncopated partners.</span></li><li><a href="brass.html#miami-section">Miami Section</a><span class="why">A funk band: clav and horn stabs.</span></li><li><strong>Muted guitar</strong><span class="why">Together they make a tight rhythm section.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>VCF RES to 7.0</strong><span>A more wah-like squelch.</span></li><li><strong>ENV T3 (decay) to 4.5</strong><span>Longer notes, less tight.</span></li><li><strong>HPF to Off</strong><span>A fatter, less thin tone.</span></li></ul>
+</article>
+<article class="patch" id="pocket-music-box" data-tags="dreamwave chillwave">
+<header>
+  <h2>Pocket Music Box</h2>
+  <div class="tags"><span class="tag">dreamwave</span><span class="tag">chillwave</span></div>
+</header>
+<p class="profile">A tiny wind-up music box: a nearly pure tone with a brief metallic ping, ringing on after each note.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/keys/pocket-music-box.mp3" aria-label="Preview of Pocket Music Box"></audio>
+  <a class="ghost" href="../../presets/Doodles/Keys%20and%20Bells/Pocket%20Music%20Box.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>C4 to C6</dd></div><div><dt>Brightness</dt><dd>4448 Hz centroid</dd></div><div><dt>Low energy</dt><dd>0% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 0 ms</dd></div><div><dt>Decay</dt><dd>Holds while the key is down</dd></div><div><dt>Filter closes</dt><dd>0.4 octaves</dd></div><div><dt>Held level</dt><dd>-19 dB from peak</dd></div><div><dt>Width</dt><dd>Mono</dd></div><div><dt>Mono sum</dt><dd>-0.0 dB</dd></div><div><dt>Loudness</dt><dd>-18.0 LUFS, peak -4.6 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">DCO Range</th><td class="value">4&#x27;</td><td>4&#x27; takes it up an octave: a music box is small, and the notes are high.</td></tr><tr><th scope="row">DCO Saw</th><td class="value">Off</td><td>Off: a saw&#x27;s strong even harmonics would make this sound like a synth.</td></tr><tr><th scope="row">Sub level</th><td class="value">2.0 / 3</td><td>The sub&#x27;s square has no 2nd harmonic, so the filter can reduce it to a nearly pure tone, like a steel tine.</td></tr><tr><th scope="row">Clean DCO</th><td class="value">On</td><td>Clean DCO on: with the square sub this loud, the DC step at each note-on added a low thump.</td></tr><tr><th scope="row">Octave</th><td class="value">+1</td><td>The sub sits an octave below the DCO, so this lifts the body to the same pitch as the 4&#x27; DCO: an octave above the key you play.</td></tr><tr><th scope="row">Pulse Tune</th><td class="value">+20 st</td><td>With the Octave switch on, about 6.35 times the pitch you hear, close to a real tine&#x27;s first overtone. It isn&#x27;t a harmonic, which is what makes it sound like metal.</td></tr><tr><th scope="row">VCF Cutoff</th><td class="value">4.6 (about 347 Hz at C4)</td><td>Low enough that the ringing part of the note is mostly its fundamental.</td></tr><tr><th scope="row">VCF Env</th><td class="value">3.0</td><td>The filter opens only for the attack, letting the ping through for about 20 ms.</td></tr><tr><th scope="row">VCF Key follow</th><td class="value">10.0</td><td>Full: the filter tracks the note, so the tone stays the same across the range.</td></tr><tr><th scope="row">Env L2</th><td class="value">3.5</td><td>L2 at 3.5: the quick drop from the pin&#x27;s pluck into the ring.</td></tr><tr><th scope="row">Env T3 (decay)</th><td class="value">6.2 (about 1.6 s to -20 dB)</td><td>About a second to -20 dB: a tine rings on long after it&#x27;s plucked.</td></tr><tr><th scope="row">Env T4 (release)</th><td class="value">6.2 (about 1.8 s to -20 dB)</td><td>As long as the decay: nothing damps a tine, so notes ring on after you let go.</td></tr><tr><th scope="row">Env Key follow</th><td class="value">3.0</td><td>Higher notes ring for less time, as shorter tines do.</td></tr><tr><th scope="row">Voices</th><td class="value">12</td><td>12 voices, so ringing notes aren&#x27;t cut off by the next ones.</td></tr><tr><th scope="row">Reverb size</th><td class="value">2.5</td><td>A small space, like the box itself.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Pulse Square; Sub wave Square -1 oct (panel label: OFF); HPF Off; Env T2 2.0; Env L3 (sustain) 0.0; Pulse Volume 3.0; Reverb mix -0.72.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Simple melodies and broken chords, played in the top half of the range. Every note rings on after you let go, so leave some space. Velocity does nothing, as the pins of a real music box pluck every tine alike.</p></section>
+  <section><h3>How to use it</h3><p>Innocent, nostalgic moments. Lullaby-like melodies and intros.</p></section>
+  <section><h3>Mixing</h3><ul><li>Very small in the mix: it&#x27;s meant to sound distant.</li><li>Pitch-wobble or tape effects add to the nostalgia.</li><li>No high-pass needed.</li><li>Built-in reverb: part of this sound, so keep it.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="lead.html#tape-flute">Tape Flute</a><span class="why">A memory-like pairing.</span></li><li><a href="pad.html#ghost-mall">Ghost Mall</a><span class="why">Innocent over hazy: quite eerie.</span></li><li><strong>Vinyl crackle</strong><span class="why">Reinforces the sense of something old.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>Range to 8&#x27;</strong><span>An octave down: more like a celesta.</span></li><li><strong>Pulse Tune to +24</strong><span>The ping lands on a harmonic: cleaner and more like a glockenspiel.</span></li><li><strong>ENV T4 (release) to 2.0</strong><span>Notes stop soon after you let go, like a damped tine.</span></li><li><strong>Reverb mix to -0.20</strong><span>Further away.</span></li></ul>
+</article>
+<article class="patch" id="analog-poly-keys" data-tags="outrun dreamwave">
+<header>
+  <h2>Analog Poly Keys</h2>
+  <div class="tags"><span class="tag">outrun</span><span class="tag">dreamwave</span></div>
+</header>
+<p class="profile">The plain, useful poly synth keyboard part: bright when struck, warm when held.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/keys/analog-poly-keys.mp3" aria-label="Preview of Analog Poly Keys"></audio>
+  <a class="ghost" href="../../presets/Doodles/Keys%20and%20Bells/Analog%20Poly%20Keys.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>C3 to C5</dd></div><div><dt>Brightness</dt><dd>1026 Hz centroid</dd></div><div><dt>Low energy</dt><dd>3% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 5 ms</dd></div><div><dt>Decay</dt><dd>Holds while the key is down</dd></div><div><dt>Filter closes</dt><dd>0.5 octaves</dd></div><div><dt>Held level</dt><dd>-13 dB from peak</dd></div><div><dt>Width</dt><dd>Stereo, side/mid 0.59</dd></div><div><dt>Mono sum</dt><dd>-1.3 dB</dd></div><div><dt>Loudness</dt><dd>-18.2 LUFS, peak -4.9 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">DCO Pulse</th><td class="value">Pulse PW</td><td>A saw and a moving pulse: the classic poly synth oscillator pair.</td></tr><tr><th scope="row">VCF Env</th><td class="value">3.6</td><td>Opens quickly on each chord, then settles: bright when struck, warm when held.</td></tr><tr><th scope="row">VCF Env mode</th><td class="value">Normal-Dynamic</td><td>Normal-Dynamic: a keyboard part should respond to your playing.</td></tr><tr><th scope="row">Env T3 (decay)</th><td class="value">5.2 (about 780 ms to -20 dB)</td><td>About 800 ms, for a gentle fade to the sustain.</td></tr><tr><th scope="row">Env L3 (sustain)</th><td class="value">4.5</td><td>Held chords remain audible, so it works for both rhythm and held parts.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Saw Saw; DCO Range 8&#x27;; Sub level 0.3 / 3; Chorus On; PWM 4.5; PWM Rate 4.5; VCF Cutoff 4.6 (about 347 Hz at C4); VCF Res 1.0; VCF Key follow 5.0; Env T4 (release) 3.4 (about 168 ms to -20 dB); Chorus Rate 5.0; MW to VCF 2.0; Voices 8; Reverb mix -0.76.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Comping chords, rhythm parts and simple hooks. It&#x27;s a workhorse.</p></section>
+  <section><h3>How to use it</h3><p>General-purpose chords, for almost any section of a track.</p></section>
+  <section><h3>Mixing</h3><ul><li>High-pass at 150 Hz.</li><li>Sidechain lightly to the kick.</li><li>A short plate gives it a place in the room.</li><li>Built-in chorus and reverb: turn them off if you&#x27;re using your own.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="bass.html#nightdrive">Nightdrive</a><span class="why">A straightforward band setup: bass and comping keys.</span></li><li><a href="lead.html#sunset-solo">Sunset Solo</a><span class="why">Chords under a singing lead.</span></li><li><strong>Electric guitar</strong><span class="why">They trade rhythm parts easily.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>ENV L3 (sustain) to 2.0</strong><span>More of a pluck, less of a held chord.</span></li><li><strong>PWM Rate to 7.0</strong><span>Faster movement in the tone.</span></li><li><strong>VCF Env to 5.5</strong><span>A brighter strike on each chord.</span></li></ul>
+</article>
+<article class="patch" id="lounge-vibes" data-tags="chillwave dreamwave">
+<header>
+  <h2>Lounge Vibes</h2>
+  <div class="tags"><span class="tag">chillwave</span><span class="tag">dreamwave</span></div>
+</header>
+<p class="profile">A mellow vibraphone with a slow filter shimmer standing in for its rotating fans.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/keys/lounge-vibes.mp3" aria-label="Preview of Lounge Vibes"></audio>
+  <a class="ghost" href="../../presets/Doodles/Keys%20and%20Bells/Lounge%20Vibes.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>C3 to C6</dd></div><div><dt>Brightness</dt><dd>340 Hz centroid</dd></div><div><dt>Low energy</dt><dd>4% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 0 ms</dd></div><div><dt>Decay</dt><dd>Holds while the key is down</dd></div><div><dt>Filter closes</dt><dd>0.0 octaves</dd></div><div><dt>Held level</dt><dd>-9 dB from peak</dd></div><div><dt>Width</dt><dd>Mono</dd></div><div><dt>Mono sum</dt><dd>-0.0 dB</dd></div><div><dt>Loudness</dt><dd>-18.0 LUFS, peak -6.4 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">DCO Pulse</th><td class="value">Square</td><td>A filtered square has the rounded tone of a struck metal bar.</td></tr><tr><th scope="row">VCF LFO</th><td class="value">1.2</td><td>A real vibraphone uses rotating fans to change its level. This synth&#x27;s LFO can&#x27;t reach the amp, so filter movement approximates it.</td></tr><tr><th scope="row">LFO Rate</th><td class="value">4.26 Hz</td><td>About 4 Hz: the speed of the fans.</td></tr><tr><th scope="row">VCA mode</th><td class="value">Normal-Dynamic</td><td>Normal-Dynamic: velocity sets level, as with a mallet.</td></tr><tr><th scope="row">Env T3 (decay)</th><td class="value">6.2 (about 1.6 s to -20 dB)</td><td>About 1.5 seconds: a long, gentle ring.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Saw Off; DCO Range 8&#x27;; Sub level 0.0 / 3; VCF Cutoff 5.0 (about 478 Hz at C4); VCF Key follow 7.0; Env L3 (sustain) 0.0; Env T4 (release) 5.0 (about 778 ms to -20 dB); Voices 8; LFO wave Sine; Reverb mix -0.68; Reverb size 4.5.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Gentle chords and melodies, with velocity variation. Let notes ring.</p></section>
+  <section><h3>How to use it</h3><p>Lounge and vaporwave moods, soft jazz-tinged chord parts.</p></section>
+  <section><h3>Mixing</h3><ul><li>A tremolo plugin would be more accurate, as this synth&#x27;s LFO can&#x27;t reach the amp.</li><li>Small room reverb suits it.</li><li>High-pass at 150 Hz.</li><li>Built-in reverb: turn it off if you&#x27;re using your own.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="pad.html#ghost-mall">Ghost Mall</a><span class="why">An empty lounge.</span></li><li><a href="bass.html#velvet-bass">Velvet Bass</a><span class="why">A soft bass under a mellow vibraphone.</span></li><li><strong>Upright bass</strong><span class="why">The natural jazz pairing.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>VCF LFO to 2.5</strong><span>A more obvious shimmer.</span></li><li><strong>LFO Rate to about 2 Hz</strong><span>Slower fans, for a calmer feel.</span></li><li><strong>VCF Cutoff to 6.0</strong><span>Brighter, more like a glockenspiel.</span></li></ul>
+</article>
+<article class="patch" id="reed-drive" data-tags="chillwave outrun">
+<header>
+  <h2>Reed Drive</h2>
+  <div class="tags"><span class="tag">chillwave</span><span class="tag">outrun</span></div>
+</header>
+<p class="profile">A slightly gritty, reedy electric piano in the style of a Wurlitzer, with a nasal bark on hard notes.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/keys/reed-drive.mp3" aria-label="Preview of Reed Drive"></audio>
+  <a class="ghost" href="../../presets/Doodles/Keys%20and%20Bells/Reed%20Drive.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>C3 to C5</dd></div><div><dt>Brightness</dt><dd>827 Hz centroid</dd></div><div><dt>Low energy</dt><dd>4% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 0 ms</dd></div><div><dt>Decay</dt><dd>Holds while the key is down</dd></div><div><dt>Filter closes</dt><dd>1.0 octaves</dd></div><div><dt>Held level</dt><dd>-12 dB from peak</dd></div><div><dt>Width</dt><dd>Mono</dd></div><div><dt>Mono sum</dt><dd>+0.0 dB</dd></div><div><dt>Loudness</dt><dd>-17.7 LUFS, peak -4.9 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">DCO Pulse</th><td class="value">Pulse 25%</td><td>A 25% pulse is nasal and reedy, closer to a vibrating reed than a tine.</td></tr><tr><th scope="row">EQ Gain</th><td class="value">+5.0 dB</td><td>A mid-range bell adds a nasal, slightly barking colour.</td></tr><tr><th scope="row">EQ Freq</th><td class="value">994 Hz</td><td>About 1 kHz, where a Wurlitzer&#x27;s characteristic bark sits.</td></tr><tr><th scope="row">VCF Env mode</th><td class="value">Normal-Dynamic</td><td>Normal-Dynamic: playing harder brings out the bark, which is the instrument&#x27;s character.</td></tr><tr><th scope="row">Sub level</th><td class="value">1.0 / 3</td><td>A square below adds a fuller body.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Saw Off; Sub wave Square -1 oct (panel label: OFF); DCO Range 8&#x27;; VCF Cutoff 4.6 (about 347 Hz at C4); VCF Res 1.0; VCF Env 3.2; VCF Key follow 5.0; LFO Rate 5.03 Hz; Env T3 (decay) 5.5 (about 963 ms to -20 dB); Env L3 (sustain) 1.5; Env T4 (release) 2.5 (about 90 ms to -20 dB); MW to DCO LFO 0.5; Voices 8; EQ Q 1.446.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Bluesy chords and fills. Hard notes bark and soft notes stay mellow, so vary your touch.</p></section>
+  <section><h3>How to use it</h3><p>Soul-tinged retro parts, and an alternative to a tine EP that cuts through better.</p></section>
+  <section><h3>Mixing</h3><ul><li>Light overdrive really suits it.</li><li>A tremolo plugin adds a classic touch.</li><li>High-pass at 150 Hz.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="bass.html#rubber-coupe">Rubber Coupe</a><span class="why">Funky bass and gritty keys.</span></li><li><a href="brass.html#miami-section">Miami Section</a><span class="why">Soul horns and reed piano.</span></li><li><strong>Soul vocal</strong><span class="why">A classic bed for a gritty voice.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>EQ Gain to +9 dB</strong><span>A much more nasal bark.</span></li><li><strong>VCF Env to 6.0</strong><span>More difference between soft and hard.</span></li><li><strong>CHORUS on</strong><span>Softer and wider, less raw.</span></li></ul>
+</article>
+<article class="patch" id="worn-piano" data-tags="chillwave dreamwave">
+<header>
+  <h2>Worn Piano</h2>
+  <div class="tags"><span class="tag">chillwave</span><span class="tag">dreamwave</span></div>
+</header>
+<p class="profile">A dull, slightly out-of-tune synthetic piano, as if played on an old cassette.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/keys/worn-piano.mp3" aria-label="Preview of Worn Piano"></audio>
+  <a class="ghost" href="../../presets/Doodles/Keys%20and%20Bells/Worn%20Piano.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>C2 to C5</dd></div><div><dt>Brightness</dt><dd>766 Hz centroid</dd></div><div><dt>Low energy</dt><dd>3% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 5 ms</dd></div><div><dt>Decay</dt><dd>Holds while the key is down</dd></div><div><dt>Filter closes</dt><dd>0.7 octaves</dd></div><div><dt>Held level</dt><dd>-5 dB from peak</dd></div><div><dt>Width</dt><dd>Stereo, side/mid 0.48</dd></div><div><dt>Mono sum</dt><dd>-0.9 dB</dd></div><div><dt>Loudness</dt><dd>-17.9 LUFS, peak -4.4 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">Env T3 (decay)</th><td class="value">6.8 (about 2.6 s to -20 dB)</td><td>About 2.5 seconds with no sustain: like a piano, every note fades even when held.</td></tr><tr><th scope="row">Env Key follow</th><td class="value">3.0</td><td>Higher notes decay faster, as piano strings do.</td></tr><tr><th scope="row">VCA mode</th><td class="value">Normal-Dynamic</td><td>Normal-Dynamic: velocity sets level, as it does on a piano.</td></tr><tr><th scope="row">DCO LFO</th><td class="value">0.5</td><td>A slow, shallow pitch drift, like a tape running unevenly.</td></tr><tr><th scope="row">Noise</th><td class="value">0.1 / 3</td><td>A small amount of hiss.</td></tr><tr><th scope="row">VCF Cutoff</th><td class="value">4.6 (about 347 Hz at C4)</td><td>About 350 Hz at C4: dull, as old tape is.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Saw Saw; Sub wave Square -1 oct (panel label: OFF); DCO Range 8&#x27;; Sub level 0.5 / 3; Chorus On; VCF Env 2.0; VCF Key follow 7.0; LFO Rate 0.49 Hz; Env L3 (sustain) 0.0; Env T4 (release) 4.5 (about 419 ms to -20 dB); Chorus Rate 2.8; Voices 10; LFO wave Sine; Reverb mix -0.68; Reverb size 4.0; Reverb tone -3.00.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Sparse, simple chords. Velocity sets the level, and the wobble rewards a slow pace.</p></section>
+  <section><h3>How to use it</h3><p>Sad, nostalgic intros and interludes.</p></section>
+  <section><h3>Mixing</h3><ul><li>Tape saturation and a high cut around 5 kHz add to the wear.</li><li>Keep the reverb small and dark.</li><li>High-pass at 100 Hz.</li><li>Built-in chorus and reverb: turn them off if you&#x27;re using your own.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="pad.html#ghost-mall">Ghost Mall</a><span class="why">Together they sound like a memory.</span></li><li><a href="lead.html#tape-flute">Tape Flute</a><span class="why">A very nostalgic duet.</span></li><li><strong>Field recording of a room</strong><span class="why">Places the piano in a real, empty space.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>DCO LFO to 1.0</strong><span>A more obvious wobble.</span></li><li><strong>Noise to 0</strong><span>Removes the hiss.</span></li><li><strong>VCF Cutoff to 6.0</strong><span>A brighter, less faded tone.</span></li></ul>
+</article>
+</main>
+</div>
+<script src="site.js"></script>
+</body>
+</html>

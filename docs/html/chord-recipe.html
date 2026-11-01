@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Building Minor Stab from init: Doodles TAL-Pha Presets</title>
+<link rel="stylesheet" href="style.css">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="index.html"><span>Doodles</span> TAL-Pha Presets</a>
+  <button type="button" id="theme" class="ghost" aria-label="Switch between light and dark theme">Theme</button>
+</header>
+<div class="layout">
+<nav class="sidebar" aria-label="Documentation">
+<a href="index.html">Overview</a>
+<p class="nav-label">Patches</p>
+<a href="bass.html">Bass</a>
+<a href="lead.html">Lead</a>
+<a href="pad.html">Pad</a>
+<a href="strings.html">Strings</a>
+<a href="brass.html">Brass</a>
+<a href="arp.html">Arp</a>
+<a href="pluck.html">Pluck</a>
+<a href="keys.html">Keys and Bells</a>
+<a href="chord.html" aria-current=page>Chord and Stab</a>
+<div class="subnav"><a class="recipe-link" href="chord-recipe.html" aria-current=page>Build from init</a><a href="chord.html#minor-stab">Minor Stab</a><a href="chord.html#major-7-haze">Major 7 Haze</a><a href="chord.html#power-fifth">Power Fifth</a><a href="chord.html#minor-9-dream">Minor 9 Dream</a><a href="chord.html#sus-hit">Sus Hit</a><a href="chord.html#club-neon">Club Neon</a><a href="chord.html#backward-chord">Backward Chord</a><a href="chord.html#gated-chord">Gated Chord</a><a href="chord.html#memphis-cluster">Memphis Cluster</a><a href="chord.html#broken-triad">Broken Triad</a></div>
+<a href="fx.html">FX and Atmosphere</a>
+<p class="nav-label">Guides</p>
+<a href="field-guide.html">Field guide</a>
+<a href="control-reference.html">Control reference</a>
+<a href="gallery.html">Sound gallery</a>
+<a href="sound-map.html">Sound map</a>
+<a href="kits.html">Starter kits</a>
+<a href="reaper-cheat-sheet.html">Reaper cheat sheet</a>
+</nav>
+<main>
+<div class="recipe">
+<h1>Building Minor Stab from init</h1>
+<p class="lede">Chord memory lets one key play a whole chord, and moving your finger moves it in parallel. That simple idea gave us a lot of early house and synth-pop. This recipe covers how to use it, and why the sound needs to be simple.</p>
+<section class="install">
+<h2>Setup</h2>
+<p>Choose <strong>Reset Parameters</strong> and loop a rhythmic line of single notes around A3. Don't play chords: the synth will do it.</p>
+<p>Each step's preview adds to the one before. Measurements compare it with the previous step.</p>
+</section>
+<ol class="steps">
+<li class="step">
+<h2>Set the level first</h2>
+<ul class="changes"><li><span class="control">Volume</span><span class="from">5.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">5.0</span></li></ul>
+<p>One key is about to play several notes, so set the level first. As it&#x27;s a stab, it needs to be punchy with plenty of headroom.</p>
+
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/chord/step-01.mp3" aria-label="Step 1: Set the level first"></audio>
+  <p><strong>Listen for:</strong> A single buzzy saw line.</p>
+  
+</div>
+</li>
+<li class="step">
+<h2>Record the chord</h2>
+<ul class="changes"><li><span class="control">Voices</span><span class="from">6</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">6</span></li><li><span class="control">Chord memory</span><span class="from">None</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">C4 Eb4 G4</span></li></ul>
+<p>This is the key decision. On the panel, press **REC** in the CHORD section, play C4, Eb4 and G4, then press it again. Each key you play now sounds a minor triad. Six voices leave room for release tails. In mono, only the top note would sound.</p>
+<p class="alt"><strong>The other choice:</strong> Try a minor 7th for a house stab (Club Neon), or a suspended 4th (Sus Hit), which has no third and fits over most keys.</p>
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/chord/step-02.mp3" aria-label="Step 2: Record the chord"></audio>
+  <p><strong>Listen for:</strong> Each note in the line is now a whole chord, moving in parallel.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Loudness: -23.5 LUFS → <strong>-18.6 LUFS</strong></li></ul>
+</div>
+</li>
+<li class="step">
+<h2>Make it a stab</h2>
+<ul class="changes"><li><span class="control">Env T3 (decay)</span><span class="from">0.0 (about 10 ms to -20 dB)</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">4.0 (about 304 ms to -20 dB)</span></li><li><span class="control">Env L3 (sustain)</span><span class="from">10.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">0.0</span></li><li><span class="control">Env T4 (release)</span><span class="from">0.0 (about 10 ms to -20 dB)</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">3.0 (about 105 ms to -20 dB)</span></li></ul>
+<p>With about 300 ms of decay and no sustain, every hit dies away, however long the key is held. That turns a chord into a rhythmic hit. The release keeps it from cutting off if notes are very short.</p>
+
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/chord/step-03.mp3" aria-label="Step 3: Make it a stab"></audio>
+  <p><strong>Listen for:</strong> Now rhythmic, though still harsh.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Held level: -4 dB from peak → <strong>-61 dB from peak</strong></li></ul>
+</div>
+</li>
+<li class="step">
+<h2>Close the filter</h2>
+<ul class="changes"><li><span class="control">VCF Cutoff</span><span class="from">10.0 (about 21726 Hz at C4)</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">4.2 (about 252 Hz at C4)</span></li><li><span class="control">VCF Key follow</span><span class="from">0.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">4.0</span></li></ul>
+<p>Three saws at once have a lot of top end. Closing the filter leaves room for the envelope to do something with it.</p>
+
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/chord/step-04.mp3" aria-label="Step 4: Close the filter"></audio>
+  <p><strong>Listen for:</strong> Dull, for now.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Brightness: 4,140 Hz → <strong>308 Hz</strong></li></ul>
+</div>
+</li>
+<li class="step">
+<h2>Add the bark</h2>
+<ul class="changes"><li><span class="control">VCF Env</span><span class="from">0.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">3.6</span></li><li><span class="control">VCF Res</span><span class="from">0.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">1.2</span></li></ul>
+<p>The envelope that&#x27;s closing the amp now also closes the filter. A big, fast sweep gives each hit its bark, and a little resonance makes that sweep stand out.</p>
+<p class="alt"><strong>The other choice:</strong> Club Neon goes much further with resonance, for a more squelchy house stab.</p>
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/chord/step-05.mp3" aria-label="Step 5: Add the bark"></audio>
+  <p><strong>Listen for:</strong> A strong &#x27;bark&#x27; on every hit: a real stab.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Brightness: 308 Hz → <strong>1,277 Hz</strong></li><li>Filter sweep: 0.0 octaves → <strong>1.8 octaves</strong></li></ul>
+</div>
+</li>
+<li class="step">
+<h2>Add width</h2>
+<ul class="changes"><li><span class="control">Chorus</span><span class="from">Off</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">On</span></li><li><span class="control">Chorus Rate</span><span class="from">5.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">5.0</span></li></ul>
+<p>Chorus widens the chord and adds a little movement, which helps it sound less like three identical oscillators.</p>
+
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/chord/step-06.mp3" aria-label="Step 6: Add width"></audio>
+  <p><strong>Listen for:</strong> Wider and softer around the edges.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Stereo width (side/mid): 0.00 → <strong>0.57</strong></li></ul>
+</div>
+</li>
+<li class="step">
+<h2>Finish it</h2>
+<ul class="changes"><li><span class="control">MW to VCF</span><span class="from">0.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">2.0</span></li><li><span class="control">MW to DCO LFO</span><span class="from">1.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">0.0</span></li><li><span class="control">Reverb mix</span><span class="from">OFF</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">-0.72</span></li></ul>
+<p>A small amount of reverb, and a wheel for opening the filter into a brighter section. That&#x27;s the finished Minor Stab.</p>
+
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/chord/step-07.mp3" aria-label="Step 7: Finish it"></audio>
+  <p><strong>Listen for:</strong> In this preview the wheel rises across the second half, and the stabs open up.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Wheel up vs wheel down brightness: 1.0x → <strong>2.8x</strong></li></ul>
+</div>
+</li>
+</ol>
+<section class="install">
+<h2>What to take away</h2>
+<ul><li>Chord memory needs enough voices. In mono, only the top note sounds.</li><li>Notes are recorded relative to C4, so you can record any chord and play it from any key.</li><li>Parallel chords can fall outside your key, so choose your root notes by ear.</li></ul>
+</section>
+<h2 class="next">Where to go next</h2>
+<p>Starting points for moving from <a href="chord.html#minor-stab">Minor Stab</a> to another patch in the bank:</p>
+<ul class="pairs"><li><a href="chord.html#sus-hit">Sus Hit</a><span class="why">Try recording C4, F4, G4 instead and adding a quiet square, plus a wide dotted delay.</span></li><li><a href="chord.html#club-neon">Club Neon</a><span class="why">Add Bb4 to the chord, raise resonance to 4.2, and darken the starting cutoff to 3.8.</span></li><li><a href="chord.html#gated-chord">Gated Chord</a><span class="why">Raise sustain to full and add a square LFO on the filter, synced to 1/8.</span></li></ul>
+</div>
+</main>
+</div>
+<script src="site.js"></script>
+</body>
+</html>

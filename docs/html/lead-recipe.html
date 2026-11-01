@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Building Sunset Solo from init: Doodles TAL-Pha Presets</title>
+<link rel="stylesheet" href="style.css">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="index.html"><span>Doodles</span> TAL-Pha Presets</a>
+  <button type="button" id="theme" class="ghost" aria-label="Switch between light and dark theme">Theme</button>
+</header>
+<div class="layout">
+<nav class="sidebar" aria-label="Documentation">
+<a href="index.html">Overview</a>
+<p class="nav-label">Patches</p>
+<a href="bass.html">Bass</a>
+<a href="lead.html" aria-current=page>Lead</a>
+<div class="subnav"><a class="recipe-link" href="lead-recipe.html" aria-current=page>Build from init</a><a href="lead.html#sunset-solo">Sunset Solo</a><a href="lead.html#laser-grid">Laser Grid</a><a href="lead.html#hero-theme">Hero Theme</a><a href="lead.html#glass-whistle">Glass Whistle</a><a href="lead.html#razor-fifth">Razor Fifth</a><a href="lead.html#cyber-scream">Cyber Scream</a><a href="lead.html#arcade-square">Arcade Square</a><a href="lead.html#portamento-dream">Portamento Dream</a><a href="lead.html#vox-machine">Vox Machine</a><a href="lead.html#tape-flute">Tape Flute</a></div>
+<a href="pad.html">Pad</a>
+<a href="strings.html">Strings</a>
+<a href="brass.html">Brass</a>
+<a href="arp.html">Arp</a>
+<a href="pluck.html">Pluck</a>
+<a href="keys.html">Keys and Bells</a>
+<a href="chord.html">Chord and Stab</a>
+<a href="fx.html">FX and Atmosphere</a>
+<p class="nav-label">Guides</p>
+<a href="field-guide.html">Field guide</a>
+<a href="control-reference.html">Control reference</a>
+<a href="gallery.html">Sound gallery</a>
+<a href="sound-map.html">Sound map</a>
+<a href="kits.html">Starter kits</a>
+<a href="reaper-cheat-sheet.html">Reaper cheat sheet</a>
+</nav>
+<main>
+<div class="recipe">
+<h1>Building Sunset Solo from init</h1>
+<p class="lede">A good lead is mostly about what happens after the note starts. This recipe turns a plain saw into a singing solo, and the key decision is making vibrato arrive late, the way a player does.</p>
+<section class="install">
+<h2>Setup</h2>
+<p>Choose <strong>Reset Parameters</strong>, then loop a simple melody around A4, with a mix of short and long notes.</p>
+<p>Each step's preview adds to the one before. Measurements compare it with the previous step.</p>
+</section>
+<ol class="steps">
+<li class="step">
+<h2>Start from init</h2>
+
+<p>A single saw, wide open, with six voices. It has the right harmonic series for a lead but no sense of being played.</p>
+
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/lead/step-01.mp3" aria-label="Step 1: Start from init"></audio>
+  <p><strong>Listen for:</strong> A bright, buzzing line. Notes are the same from start to end.</p>
+  
+</div>
+</li>
+<li class="step">
+<h2>Make it one player</h2>
+<ul class="changes"><li><span class="control">Voices</span><span class="from">6</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">Mono (1)</span></li></ul>
+<p>Mono means a new note always replaces the old one. A solo line should feel like a single player with a single instrument, and that&#x27;s hard to fake with polyphony.</p>
+<p class="alt"><strong>The other choice:</strong> Hero Theme uses two voices, so the release can overlap the next note. That helps a wide, slow melody but sounds less like one player.</p>
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/lead/step-02.mp3" aria-label="Step 2: Make it one player"></audio>
+  <p><strong>Listen for:</strong> Almost no change in this phrase: it matters once notes overlap.</p>
+  
+</div>
+</li>
+<li class="step">
+<h2>Soften the tone</h2>
+<ul class="changes"><li><span class="control">VCF Cutoff</span><span class="from">10.0 (about 21726 Hz at C4)</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">6.2 (about 1284 Hz at C4)</span></li><li><span class="control">VCF Key follow</span><span class="from">0.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">5.0</span></li></ul>
+<p>A wide open saw is tiring. Closing the filter to about 1.3 kHz keeps it vocal rather than buzzy, and key follow keeps high notes from going dull as you climb.</p>
+
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/lead/step-03.mp3" aria-label="Step 3: Soften the tone"></audio>
+  <p><strong>Listen for:</strong> Warmer and less aggressive, while it&#x27;s still clearly a saw.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Brightness: 4,792 Hz → <strong>969 Hz</strong></li></ul>
+</div>
+</li>
+<li class="step">
+<h2>Shape the note</h2>
+<ul class="changes"><li><span class="control">VCF Env</span><span class="from">0.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">1.2</span></li><li><span class="control">Env T1 (attack)</span><span class="from">0.0 (about 1 ms)</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">0.5 (about 10 ms)</span></li><li><span class="control">Env T3 (decay)</span><span class="from">0.0 (about 10 ms to -20 dB)</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">5.0 (about 678 ms to -20 dB)</span></li><li><span class="control">Env L3 (sustain)</span><span class="from">10.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">7.5</span></li><li><span class="control">VCF Res</span><span class="from">0.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">1.2</span></li></ul>
+<p>A small filter envelope gives each note a slight brightening at the start, like breath or bow pressure. Sustain below full lets the note relax after it speaks. A touch of resonance gives the filter a vocal edge.</p>
+<p class="alt"><strong>The other choice:</strong> A large filter envelope would sound more like a pluck or a brass stab, and would draw attention to every note.</p>
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/lead/step-04.mp3" aria-label="Step 4: Shape the note"></audio>
+  <p><strong>Listen for:</strong> Notes now have a slight front edge, then settle.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Held level: -1 dB from peak → <strong>-3 dB from peak</strong></li></ul>
+</div>
+</li>
+<li class="step">
+<h2>Let the note end naturally</h2>
+<ul class="changes"><li><span class="control">Env T4 (release)</span><span class="from">0.0 (about 10 ms to -20 dB)</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">3.0 (about 105 ms to -20 dB)</span></li></ul>
+<p>A short release stops the end of each phrase from sounding chopped. In Normal VCA mode, it directly sets how the note fades.</p>
+
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/lead/step-05.mp3" aria-label="Step 5: Let the note end naturally"></audio>
+  <p><strong>Listen for:</strong> Phrase endings fade rather than cut off.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Tail after note-off: 7 ms → <strong>284 ms</strong></li></ul>
+</div>
+</li>
+<li class="step">
+<h2>Add vibrato</h2>
+<ul class="changes"><li><span class="control">DCO LFO</span><span class="from">0.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">0.9</span></li><li><span class="control">LFO Rate</span><span class="from">0.95 Hz</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">5.03 Hz</span></li><li><span class="control">LFO Delay</span><span class="from">0.00 s</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">0.00 s</span></li></ul>
+<p>About 5 Hz is close to a human vibrato, and 0.9 on the slider gives a gentle swing. But with no delay it starts at the same moment as the note, on every note. That&#x27;s the giveaway of a machine.</p>
+
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/lead/step-06.mp3" aria-label="Step 6: Add vibrato"></audio>
+  <p><strong>Listen for:</strong> A constant wobble, even on short notes. It sounds a bit seasick.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Pitch movement on a held note: 0 cents → <strong>16 cents</strong></li><li>Pitch movement in the first 400 ms: 0 cents → <strong>14 cents</strong></li></ul>
+</div>
+</li>
+<li class="step">
+<h2>Make the vibrato arrive late</h2>
+<ul class="changes"><li><span class="control">LFO Delay</span><span class="from">0.00 s</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">0.40 s</span></li></ul>
+<p>This is the key decision. With 400 ms of delay, short notes stay straight and only held notes bloom into vibrato. That&#x27;s how singers and players behave, and it&#x27;s what makes it feel played.</p>
+
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/lead/step-07.mp3" aria-label="Step 7: Make the vibrato arrive late"></audio>
+  <p><strong>Listen for:</strong> Short notes are now straight, and long notes start to sing as they&#x27;re held.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Pitch movement in the first 400 ms: 14 cents → <strong>0 cents</strong></li></ul>
+</div>
+</li>
+<li class="step">
+<h2>Trim the wheel&#x27;s vibrato</h2>
+<ul class="changes"><li><span class="control">MW to DCO LFO</span><span class="from">1.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">0.8</span></li></ul>
+<p>Init already sends the wheel to this LFO at 1.0, which turned out to be wider than this lead needs. The automatic vibrato is gentle, and the wheel adds more at the peak of a phrase. The wheel&#x27;s scale is strong, so 0.8 is plenty.</p>
+
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/lead/step-08.mp3" aria-label="Step 8: Trim the wheel&#x27;s vibrato"></audio>
+  <p><strong>Listen for:</strong> In this preview the wheel rises across the second half, and the vibrato gets wider.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Vibrato with wheel up: 56 cents → <strong>45 cents</strong></li></ul>
+</div>
+</li>
+<li class="step">
+<h2>Put it in a space</h2>
+<ul class="changes"><li><span class="control">Delay mix</span><span class="from">OFF</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">-0.56</span></li><li><span class="control">Delay Time</span><span class="from">1/4</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">1/8.</span></li><li><span class="control">Delay feedback</span><span class="from">2.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">3.0</span></li><li><span class="control">Reverb mix</span><span class="from">OFF</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">-0.64</span></li><li><span class="control">Reverb size</span><span class="from">8.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">5.0</span></li></ul>
+<p>A dotted 8th delay fills the gaps between notes and adds rhythm without adding notes. A small reverb gives it a room. At these settings neither adds much stereo width: the delay&#x27;s spread is centred at its default, so this is about depth rather than width.</p>
+<p class="alt"><strong>The other choice:</strong> Turn these off if you&#x27;d rather use sends in your DAW, which lets several parts share a space.</p>
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/lead/step-09.mp3" aria-label="Step 9: Put it in a space"></audio>
+  <p><strong>Listen for:</strong> The melody now has echoes between notes, and it feels like it&#x27;s in a real place.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Tail after note-off: 284 ms → <strong>600 ms</strong></li></ul>
+</div>
+</li>
+<li class="step">
+<h2>Set the level</h2>
+<ul class="changes"><li><span class="control">Volume</span><span class="from">5.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">6.2</span></li></ul>
+<p>Presets in this bank aim for the same loudness, so you can compare them fairly. This is the finished Sunset Solo.</p>
+
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/lead/step-10.mp3" aria-label="Step 10: Set the level"></audio>
+  <p><strong>Listen for:</strong> The finished patch.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Loudness: -21.6 LUFS → <strong>-18.0 LUFS</strong></li></ul>
+</div>
+</li>
+</ol>
+<section class="install">
+<h2>What to take away</h2>
+<ul><li>Delayed vibrato is what makes a synth lead feel played: short notes stay straight and only long ones bloom.</li><li>The mod wheel&#x27;s vibrato scale is much stronger than the DCO LFO slider&#x27;s: 0.8 on the wheel gives about as much swing as 2.0 on the slider.</li><li>A dotted 8th echo fills the gaps between phrases, without adding notes.</li></ul>
+</section>
+<h2 class="next">Where to go next</h2>
+<p>Starting points for moving from <a href="lead.html#sunset-solo">Sunset Solo</a> to another patch in the bank:</p>
+<ul class="pairs"><li><a href="lead.html#hero-theme">Hero Theme</a><span class="why">Try turning on unison at 4 voices, spread 0.80, with a quiet square an octave up, then raising the reverb.</span></li><li><a href="lead.html#arcade-square">Arcade Square</a><span class="why">Swap the saw for the pulse&#x27;s Square, open the filter to 8.5, and raise LFO Rate to about 10 Hz.</span></li><li><a href="lead.html#portamento-dream">Portamento Dream</a><span class="why">Try a moving pulse in place of the saw, Portamento All at 4.0, and the chorus on.</span></li></ul>
+</div>
+</main>
+</div>
+<script src="site.js"></script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+{
+ "steps": [
+  {
+   "audio": "audio/recipes/fx/step-01.mp3",
+   "before": {},
+   "after": {},
+   "measures": {}
+  },
+  {
+   "audio": "audio/recipes/fx/step-02.mp3",
+   "before": {
+    "Noise": 0.0
+   },
+   "after": {
+    "Noise": 2
+   },
+   "measures": {
+    "centroid_hz": [
+     4759.919258412405,
+     10598.59787162326
+    ]
+   }
+  },
+  {
+   "audio": "audio/recipes/fx/step-03.mp3",
+   "before": {
+    "VcfCutoff": 1.0
+   },
+   "after": {
+    "VcfCutoff": 0.22
+   },
+   "measures": {
+    "centroid_hz": [
+     10598.59787162326,
+     88.4983252728566
+    ]
+   }
+  },
+  {
+   "audio": "audio/recipes/fx/step-04.mp3",
+   "before": {
+    "VcfEnvMod": 0.0,
+    "EnvAttackTime": 0.0,
+    "EnvDecayTime": 0.0,
+    "EnvSustainLevel": 1.0
+   },
+   "after": {
+    "VcfEnvMod": 0.68,
+    "EnvAttackTime": 0.78,
+    "EnvDecayTime": 0.5,
+    "EnvSustainLevel": 1
+   },
+   "measures": {
+    "attack_s": [
+     0.039909297052154194,
+     2.81859410430839
+    ]
+   }
+  },
+  {
+   "audio": "audio/recipes/fx/step-05.mp3",
+   "before": {
+    "VcfResonance": 0.0
+   },
+   "after": {
+    "VcfResonance": 0.35
+   },
+   "measures": {
+    "centroid_hz": [
+     5972.18673610926,
+     6988.76580460057
+    ]
+   }
+  },
+  {
+   "audio": "audio/recipes/fx/step-06.mp3",
+   "before": {
+    "EnvReleaseTime": 0.0,
+    "NumberOfVoices": 5.0,
+    "reverbDryWet": 0.0,
+    "reverbSize": 0.800000011920929
+   },
+   "after": {
+    "EnvReleaseTime": 0.35,
+    "NumberOfVoices": 3,
+    "reverbDryWet": 0.3,
+    "reverbSize": 0.8
+   },
+   "measures": {
+    "tail_ms": [
+     9.977324263038549,
+     359.1836734693877
+    ]
+   }
+  },
+  {
+   "audio": "audio/recipes/fx/step-07.mp3",
+   "before": {
+    "ModWheelVcfRange": 0.0,
+    "ModWheelDcoLfo": 0.1000000014901161
+   },
+   "after": {
+    "ModWheelVcfRange": 0.2,
+    "ModWheelDcoLfo": 0
+   },
+   "measures": {}
+  },
+  {
+   "audio": "audio/recipes/fx/step-08.mp3",
+   "before": {
+    "Volume": 0.5
+   },
+   "after": {
+    "Volume": 0.5591888716047545
+   },
+   "measures": {
+    "lufs": [
+     -18.514447694399482,
+     -17.965783266808636
+    ]
+   }
+  }
+ ]
+}

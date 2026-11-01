@@ -1,0 +1,122 @@
+{
+ "steps": [
+  {
+   "audio": "audio/recipes/chord/step-01.mp3",
+   "before": {
+    "Volume": 0.5
+   },
+   "after": {
+    "Volume": 0.5
+   },
+   "measures": {}
+  },
+  {
+   "audio": "audio/recipes/chord/step-02.mp3",
+   "before": {
+    "NumberOfVoices": 5.0
+   },
+   "after": {
+    "NumberOfVoices": 5
+   },
+   "measures": {
+    "lufs": [
+     -23.493559131887285,
+     -18.582105771221077
+    ]
+   }
+  },
+  {
+   "audio": "audio/recipes/chord/step-03.mp3",
+   "before": {
+    "EnvDecayTime": 0.0,
+    "EnvSustainLevel": 1.0,
+    "EnvReleaseTime": 0.0
+   },
+   "after": {
+    "EnvDecayTime": 0.4,
+    "EnvSustainLevel": 0,
+    "EnvReleaseTime": 0.3
+   },
+   "measures": {
+    "sustain_db": [
+     -3.9579533527272353,
+     -60.73801921230347
+    ]
+   }
+  },
+  {
+   "audio": "audio/recipes/chord/step-04.mp3",
+   "before": {
+    "VcfCutoff": 1.0,
+    "VcfKeyFollow": 0.0
+   },
+   "after": {
+    "VcfCutoff": 0.42,
+    "VcfKeyFollow": 0.4
+   },
+   "measures": {
+    "centroid_hz": [
+     4139.860344044918,
+     307.5398357241788
+    ]
+   }
+  },
+  {
+   "audio": "audio/recipes/chord/step-05.mp3",
+   "before": {
+    "VcfEnvMod": 0.0,
+    "VcfResonance": 0.0
+   },
+   "after": {
+    "VcfEnvMod": 0.36,
+    "VcfResonance": 0.12
+   },
+   "measures": {
+    "centroid_hz": [
+     307.5398357241788,
+     1277.0029221003194
+    ],
+    "sweep_octaves": [
+     -0.3550774722381162,
+     1.783143921632305
+    ]
+   }
+  },
+  {
+   "audio": "audio/recipes/chord/step-06.mp3",
+   "before": {
+    "DcoChorusSwitch": 0.0,
+    "ChorusRate": 0.5
+   },
+   "after": {
+    "DcoChorusSwitch": 1,
+    "ChorusRate": 0.5
+   },
+   "measures": {
+    "side_mid": [
+     0.0,
+     0.5656716075723311
+    ]
+   }
+  },
+  {
+   "audio": "audio/recipes/chord/step-07.mp3",
+   "before": {
+    "ModWheelVcfRange": 0.0,
+    "ModWheelDcoLfo": 0.1000000014901161,
+    "reverbDryWet": 0.0
+   },
+   "after": {
+    "ModWheelVcfRange": 0.2,
+    "ModWheelDcoLfo": 0,
+    "reverbDryWet": 0.14
+   },
+   "measures": {
+    "mw_bright_ratio": [
+     1.0046345129681526,
+     2.81680087442031
+    ]
+   }
+  }
+ ]
+}

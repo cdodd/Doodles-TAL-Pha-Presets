@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Building Endless Highway from init: Doodles TAL-Pha Presets</title>
+<link rel="stylesheet" href="style.css">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="index.html"><span>Doodles</span> TAL-Pha Presets</a>
+  <button type="button" id="theme" class="ghost" aria-label="Switch between light and dark theme">Theme</button>
+</header>
+<div class="layout">
+<nav class="sidebar" aria-label="Documentation">
+<a href="index.html">Overview</a>
+<p class="nav-label">Patches</p>
+<a href="bass.html">Bass</a>
+<a href="lead.html">Lead</a>
+<a href="pad.html" aria-current=page>Pad</a>
+<div class="subnav"><a class="recipe-link" href="pad-recipe.html" aria-current=page>Build from init</a><a href="pad.html#endless-highway">Endless Highway</a><a href="pad.html#aurora-haze">Aurora Haze</a><a href="pad.html#cold-coast">Cold Coast</a><a href="pad.html#analog-dusk">Analog Dusk</a><a href="pad.html#breathing-glass">Breathing Glass</a><a href="pad.html#deep-space-drift">Deep Space Drift</a><a href="pad.html#retro-choir">Retro Choir</a><a href="pad.html#pulse-bloom">Pulse Bloom</a><a href="pad.html#ghost-mall">Ghost Mall</a><a href="pad.html#black-horizon">Black Horizon</a></div>
+<a href="strings.html">Strings</a>
+<a href="brass.html">Brass</a>
+<a href="arp.html">Arp</a>
+<a href="pluck.html">Pluck</a>
+<a href="keys.html">Keys and Bells</a>
+<a href="chord.html">Chord and Stab</a>
+<a href="fx.html">FX and Atmosphere</a>
+<p class="nav-label">Guides</p>
+<a href="field-guide.html">Field guide</a>
+<a href="control-reference.html">Control reference</a>
+<a href="gallery.html">Sound gallery</a>
+<a href="sound-map.html">Sound map</a>
+<a href="kits.html">Starter kits</a>
+<a href="reaper-cheat-sheet.html">Reaper cheat sheet</a>
+</nav>
+<main>
+<div class="recipe">
+<h1>Building Endless Highway from init</h1>
+<p class="lede">A pad&#x27;s job is to fill space without demanding attention. This recipe builds the classic 80s pad, and the key decisions are about time: how a sound arrives, how it leaves, and how it keeps moving while it&#x27;s held.</p>
+<section class="install">
+<h2>Setup</h2>
+<p>Choose <strong>Reset Parameters</strong>, then loop four-note chords with one chord per bar.</p>
+<p>Each step's preview adds to the one before. Measurements compare it with the previous step.</p>
+</section>
+<ol class="steps">
+<li class="step">
+<h2>Set the level first</h2>
+<ul class="changes"><li><span class="control">Volume</span><span class="from">5.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">2.4</span></li></ul>
+<p>Pads stack several notes, each adding level. At init volume, four-note chords would be much louder than a single note. So turn it down first to keep your ears and meters honest.</p>
+
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/pad/step-01.mp3" aria-label="Step 1: Set the level first"></audio>
+  <p><strong>Listen for:</strong> A plain, buzzy chord: static and organ-like.</p>
+  
+</div>
+</li>
+<li class="step">
+<h2>Slow the arrival</h2>
+<ul class="changes"><li><span class="control">Env T1 (attack)</span><span class="from">0.0 (about 1 ms)</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">5.0 (about 399 ms)</span></li><li><span class="control">Env T3 (decay)</span><span class="from">0.0 (about 10 ms to -20 dB)</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">6.0 (about 1.4 s to -20 dB)</span></li><li><span class="control">Env L3 (sustain)</span><span class="from">10.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">9.5</span></li></ul>
+<p>An attack of about 400 ms lets chords swell in instead of being struck, so they feel like a bed rather than a part. It&#x27;s still quick enough to land close to the beat.</p>
+<p class="alt"><strong>The other choice:</strong> Analog Dusk uses two stages instead, with a soft arrival on time and a slow bloom after it.</p>
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/pad/step-02.mp3" aria-label="Step 2: Slow the arrival"></audio>
+  <p><strong>Listen for:</strong> Chords now swell in, though they still stop abruptly.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Time to half level: 0 ms → <strong>229 ms</strong></li></ul>
+</div>
+</li>
+<li class="step">
+<h2>Slow the departure</h2>
+<ul class="changes"><li><span class="control">Env T4 (release)</span><span class="from">0.0 (about 10 ms to -20 dB)</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">5.5 (about 1.1 s to -20 dB)</span></li><li><span class="control">Voices</span><span class="from">6</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">8</span></li></ul>
+<p>A long release lets chord changes overlap, which hides the join between them. Those overlapping notes use up voices, so go up to eight voices to prevent notes being stolen.</p>
+
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/pad/step-03.mp3" aria-label="Step 3: Slow the departure"></audio>
+  <p><strong>Listen for:</strong> Chord changes melt into one another.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Tail after note-off: 20 ms → <strong>600 ms</strong></li></ul>
+</div>
+</li>
+<li class="step">
+<h2>Darken it</h2>
+<ul class="changes"><li><span class="control">VCF Cutoff</span><span class="from">10.0 (about 21726 Hz at C4)</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">6.2 (about 1284 Hz at C4)</span></li><li><span class="control">VCF Key follow</span><span class="from">0.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">4.0</span></li><li><span class="control">VCF Env</span><span class="from">0.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">0.8</span></li><li><span class="control">VCF Res</span><span class="from">0.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">0.5</span></li></ul>
+<p>A pad shouldn&#x27;t compete with the lead&#x27;s top end. A cutoff around 1.4 kHz keeps it warm with some air. A very small filter envelope adds a little brightening as each chord arrives.</p>
+
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/pad/step-04.mp3" aria-label="Step 4: Darken it"></audio>
+  <p><strong>Listen for:</strong> Warm and much less buzzy, sitting further back.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Brightness: 4,640 Hz → <strong>1,055 Hz</strong></li></ul>
+</div>
+</li>
+<li class="step">
+<h2>Give it internal motion</h2>
+<ul class="changes"><li><span class="control">DCO Pulse</span><span class="from">Off</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">Pulse PW</span></li><li><span class="control">PWM</span><span class="from">0.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">6.0</span></li><li><span class="control">PWM Rate</span><span class="from">5.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">4.5</span></li></ul>
+<p>This is the first key decision. Adding a pulse whose width keeps changing means the harmonic balance never quite settles. The rate is slow, so it feels like breathing rather than an effect.</p>
+<p class="alt"><strong>The other choice:</strong> Aurora Haze gets its motion from a slow LFO on the filter instead, which moves brightness rather than texture.</p>
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/pad/step-05.mp3" aria-label="Step 5: Give it internal motion"></audio>
+  <p><strong>Listen for:</strong> The sound is now slowly shifting inside, even on a held chord.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Loudness: -28.5 LUFS → <strong>-20.7 LUFS</strong></li></ul>
+</div>
+</li>
+<li class="step">
+<h2>Add a little weight</h2>
+<ul class="changes"><li><span class="control">Sub level</span><span class="from">0.0 / 3</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">0.5 / 3</span></li></ul>
+<p>A quiet sub-octave adds some body. Keep it low, because the bass needs that space. Remember the panel&#x27;s sub &#x27;OFF&#x27; position is really a square, and the level is what controls it.</p>
+
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/pad/step-06.mp3" aria-label="Step 6: Add a little weight"></audio>
+  <p><strong>Listen for:</strong> Slightly fuller, without getting heavy.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Energy below 150 Hz: 3% → <strong>3%</strong></li></ul>
+</div>
+</li>
+<li class="step">
+<h2>Add the chorus</h2>
+<ul class="changes"><li><span class="control">Chorus</span><span class="from">Off</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">On</span></li><li><span class="control">Chorus Rate</span><span class="from">5.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">5.0</span></li></ul>
+<p>This is the second key decision, and the sound of the 80s. A mono pad becomes wide and shimmering at the press of a button, as it did on so many original Roland synths.</p>
+
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/pad/step-07.mp3" aria-label="Step 7: Add the chorus"></audio>
+  <p><strong>Listen for:</strong> A dramatic change: it now surrounds you.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Stereo width (side/mid): 0.00 → <strong>0.59</strong></li></ul>
+</div>
+</li>
+<li class="step">
+<h2>Finish it</h2>
+<ul class="changes"><li><span class="control">MW to VCF</span><span class="from">0.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">2.5</span></li><li><span class="control">MW to DCO LFO</span><span class="from">1.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">0.0</span></li><li><span class="control">Reverb mix</span><span class="from">OFF</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">-0.56</span></li><li><span class="control">Reverb size</span><span class="from">8.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">7.0</span></li></ul>
+<p>A little reverb puts it in a room. Sending the wheel to the filter means you can lift the pad into a chorus by hand, and turning off the wheel&#x27;s default vibrato avoids an unwanted wobble. That&#x27;s the finished Endless Highway.</p>
+
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/pad/step-08.mp3" aria-label="Step 8: Finish it"></audio>
+  <p><strong>Listen for:</strong> In this preview the wheel rises across the second half, and the pad opens up.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Wheel up vs wheel down brightness: 1.1x → <strong>3.5x</strong></li></ul>
+</div>
+</li>
+</ol>
+<section class="install">
+<h2>What to take away</h2>
+<ul><li>A held sound needs movement of its own. PWM and chorus provide it here, with no automation.</li><li>Stacking voices adds up quickly, so set the level first. This one needs far less volume than a single-note patch.</li><li>A long release needs spare voices: more release means more notes sounding at once.</li></ul>
+</section>
+<h2 class="next">Where to go next</h2>
+<p>Starting points for moving from <a href="pad.html#endless-highway">Endless Highway</a> to another patch in the bank:</p>
+<ul class="pairs"><li><a href="pad.html#aurora-haze">Aurora Haze</a><span class="why">Try removing the pulse and adding VCF LFO 2.2 at about 0.18 Hz, with a sine wave.</span></li><li><a href="pad.html#analog-dusk">Analog Dusk</a><span class="why">Lower Env L1 to 4.5 and use a slow Env T2 of 6.8, for a two-stage swell.</span></li><li><a href="pad.html#ghost-mall">Ghost Mall</a><span class="why">Replace PWM with a Square at Pulse Fine +12 cents, and add a slow DCO LFO for a tape wobble.</span></li></ul>
+</div>
+</main>
+</div>
+<script src="site.js"></script>
+</body>
+</html>

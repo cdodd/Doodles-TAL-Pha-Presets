@@ -1,0 +1,79 @@
+category = "Pad"
+patch = "Endless Highway"
+phrase = "chords"
+title = "Building Endless Highway from init"
+intro = "A pad's job is to fill space without demanding attention. This recipe builds the classic 80s pad, and the key decisions are about time: how a sound arrives, how it leaves, and how it keeps moving while it's held."
+setup = "Choose **Reset Parameters**, then loop four-note chords with one chord per bar."
+takeaways = [
+  "A held sound needs movement of its own. PWM and chorus provide it here, with no automation.",
+  "Stacking voices adds up quickly, so set the level first. This one needs far less volume than a single-note patch.",
+  "A long release needs spare voices: more release means more notes sounding at once.",
+]
+
+[[step]]
+title = "Set the level first"
+set_volume_from_preset = true
+why = "Pads stack several notes, each adding level. At init volume, four-note chords would be much louder than a single note. So turn it down first to keep your ears and meters honest."
+listen = "A plain, buzzy chord: static and organ-like."
+
+[[step]]
+title = "Slow the arrival"
+set = { EnvAttackTime = 0.5, EnvDecayTime = 0.6, EnvSustainLevel = 0.95 }
+expect = { attack_s = "up" }
+why = "An attack of about 400 ms lets chords swell in instead of being struck, so they feel like a bed rather than a part. It's still quick enough to land close to the beat."
+alternative = "Analog Dusk uses two stages instead, with a soft arrival on time and a slow bloom after it."
+listen = "Chords now swell in, though they still stop abruptly."
+
+[[step]]
+title = "Slow the departure"
+set = { EnvReleaseTime = 0.55, NumberOfVoices = 7 }
+expect = { tail_ms = "up" }
+why = "A long release lets chord changes overlap, which hides the join between them. Those overlapping notes use up voices, so go up to eight voices to prevent notes being stolen."
+listen = "Chord changes melt into one another."
+
+[[step]]
+title = "Darken it"
+set = { VcfCutoff = 0.62, VcfKeyFollow = 0.4, VcfEnvMod = 0.08, VcfResonance = 0.05 }
+expect = { centroid_hz = "down" }
+why = "A pad shouldn't compete with the lead's top end. A cutoff around 1.4 kHz keeps it warm with some air. A very small filter envelope adds a little brightening as each chord arrives."
+listen = "Warm and much less buzzy, sitting further back."
+
+[[step]]
+title = "Give it internal motion"
+set = { DcoWavePulse = 3, DcoPwmDepth = 0.6, DcoPwmRate = 0.45 }
+expect = { lufs = "up" }
+why = "This is the first key decision. Adding a pulse whose width keeps changing means the harmonic balance never quite settles. The rate is slow, so it feels like breathing rather than an effect."
+alternative = "Aurora Haze gets its motion from a slow LFO on the filter instead, which moves brightness rather than texture."
+listen = "The sound is now slowly shifting inside, even on a held chord."
+
+[[step]]
+title = "Add a little weight"
+set = { DcoSubLevel = 0.5 }
+expect = { low_energy_pct = "up" }
+why = "A quiet sub-octave adds some body. Keep it low, because the bass needs that space. Remember the panel's sub 'OFF' position is really a square, and the level is what controls it."
+listen = "Slightly fuller, without getting heavy."
+
+[[step]]
+title = "Add the chorus"
+set = { DcoChorusSwitch = 1, ChorusRate = 0.5 }
+expect = { side_mid = "up" }
+why = "This is the second key decision, and the sound of the 80s. A mono pad becomes wide and shimmering at the press of a button, as it did on so many original Roland synths."
+listen = "A dramatic change: it now surrounds you."
+
+[[step]]
+title = "Finish it"
+set = { ModWheelVcfRange = 0.25, ModWheelDcoLfo = 0, reverbDryWet = 0.22, reverbSize = 0.7 }
+expect = { mw_bright_ratio = "up" }
+wheel = true
+why = "A little reverb puts it in a room. Sending the wheel to the filter means you can lift the pad into a chorus by hand, and turning off the wheel's default vibrato avoids an unwanted wobble. That's the finished Endless Highway."
+listen = "In this preview the wheel rises across the second half, and the pad opens up."
+
+[[branch]]
+to = "Aurora Haze"
+how = "Try removing the pulse and adding VCF LFO 2.2 at about 0.18 Hz, with a sine wave."
+[[branch]]
+to = "Analog Dusk"
+how = "Lower Env L1 to 4.5 and use a slow Env T2 of 6.8, for a two-stage swell."
+[[branch]]
+to = "Ghost Mall"
+how = "Replace PWM with a Square at Pulse Fine +12 cents, and add a slow DCO LFO for a tape wobble."

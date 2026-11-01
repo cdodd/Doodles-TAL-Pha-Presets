@@ -1,0 +1,11 @@
+# Every patch name in the bank, by category. tools/verify.py checks patches and pairings against this.
+Bass = ["Nightdrive", "Neon Pulse", "Chrome Octave", "Midnight Sub", "Blacktop", "Turbo Glide", "Steel Engine", "Rubber Coupe", "Grid Runner", "Velvet Bass"]
+Lead = ["Sunset Solo", "Laser Grid", "Hero Theme", "Glass Whistle", "Razor Fifth", "Cyber Scream", "Arcade Square", "Portamento Dream", "Vox Machine", "Tape Flute"]
+Pad = ["Endless Highway", "Aurora Haze", "Cold Coast", "Analog Dusk", "Breathing Glass", "Deep Space Drift", "Retro Choir", "Pulse Bloom", "Ghost Mall", "Black Horizon"]
+Strings = ["Ensemble Sunset", "Silver Screen", "Neon Cello", "Slow Bow", "Staccato Run", "Octave Ensemble", "High Rise", "Worn Tape Strings", "Rising Tide", "Rain City"]
+Brass = ["Sunrise Fanfare", "Stadium Stab", "Silk Horn", "Power Brass", "Sforzando", "Chrome Trumpet", "Low Rider", "Miami Section", "Metal Brass", "Night Patrol"]
+Arp = ["Outrun Sixteenths", "Cascade", "Digital Rain", "Sequencer Drive", "Ping Pong Neon", "Crystal Steps", "Low Machine", "Random Terminal", "Dotted Eighth", "Octave Climb"]
+Pluck = ["Neon Pluck", "Glass Drop", "Tape Pizz", "Pulse Tick", "Wooden Mallet", "Synth Harp", "Echo Street", "Resonant Blip", "Soft Rain", "Koto Circuit"]
+"Keys and Bells" = ["Eighty-Four Tines", "Warm Tines", "Glass Chime", "Neon Organ", "Funk Clav", "Pocket Music Box", "Analog Poly Keys", "Lounge Vibes", "Reed Drive", "Worn Piano"]
+"Chord and Stab" = ["Minor Stab", "Major 7 Haze", "Power Fifth", "Minor 9 Dream", "Sus Hit", "Club Neon", "Backward Chord", "Gated Chord", "Memphis Cluster", "Broken Triad"]
+"FX and Atmosphere" = ["Riser", "Downlifter", "Laser Zap", "Ocean Static", "V8 Drone", "Sonar Ping", "Mainframe", "Alarm Siren", "Night Rain", "Sub Drop"]

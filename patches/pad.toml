@@ -1,0 +1,557 @@
+category = "Pad"
+mix_defaults = [
+  "High-pass at 150-200 Hz, higher in a busy mix.",
+  "Dip 300-500 Hz if chords cloud.",
+  "Sidechain to the kick with a slower release than the bass, about 200-300 ms.",
+  "Let it be the widest part of the mix, and check it in mono.",
+  "A shared long reverb works well. Keep any delay low, as sustained chords smear it.",
+]
+
+[[patch]]
+name = "Endless Highway"
+tags = ["outrun", "dreamwave"]
+browser = "Classic PWM pad | Vel: none | MW: open filter"
+profile = "The classic 80s pad: saw and moving pulse through a warm chorus, wide and gently alive."
+phrase = "chords"
+range = "C3 to C5"
+expect = { attack_s = [0.05, 1.0], side_mid = [0.2, 1.3] }
+performance = "Play sustained chords and let them overlap. Mod wheel opens the filter for a lift into a chorus."
+use = "The default bed under an outrun verse or chorus. It fills the mids without demanding attention."
+mix = [
+  "High-pass at 150-200 Hz so it leaves the bass alone.",
+  "Sidechain to the kick for the classic pumping pad.",
+  "Dip 300-500 Hz by a couple of dB if chords feel cloudy.",
+]
+pairings = [
+  { with = "Nightdrive", why = "Short bass notes leave space that the pad's sustain fills." },
+  { with = "Sunset Solo", why = "A soft bed under a singing lead is the core outrun texture." },
+  { with = "Clean chorus guitar", external = true, why = "They share a shimmer without competing for attack." },
+]
+tweaks = [
+  { control = "PWM RATE to 7.0", result = "Faster movement, closer to a string machine." },
+  { control = "CHORUS off", result = "Reveals the raw oscillators: narrower and more honest." },
+  { control = "ENV T1 (attack) to 6.5", result = "A slower swell, for intros." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 1
+DcoWavePulse = 3
+DcoPwmDepth = 0.6
+DcoPwmRate = 0.45
+DcoSubLevel = 0.5
+NumberOfVoices = 7
+VcfCutoff = 0.62
+VcfResonance = 0.05
+VcfEnvMod = 0.08
+VcfKeyFollow = 0.4
+EnvAttackTime = 0.5
+EnvDecayTime = 0.6
+EnvSustainLevel = 0.95
+EnvReleaseTime = 0.55
+DcoChorusSwitch = 1
+ChorusRate = 0.5
+ModWheelVcfRange = 0.25
+ModWheelDcoLfo = 0
+reverbDryWet = 0.22
+reverbSize = 0.7
+[patch.why]
+DcoWavePulse = "A saw alone is static. Adding a pulse whose width keeps moving gives the sound its slow internal motion."
+DcoPwmRate = "Slow enough to feel like breathing, rather than an effect."
+DcoChorusSwitch = "The chorus supplies most of the width and the classic 80s shimmer."
+VcfCutoff = "About 1.3 kHz: warm, with air still present in the top."
+EnvAttackTime = "About 400 ms: soft enough to swell in, quick enough to stay on the beat."
+EnvReleaseTime = "A long tail lets chord changes overlap and hide the join."
+
+[[patch]]
+name = "Aurora Haze"
+tags = ["dreamwave", "chillwave"]
+browser = "Slowly sweeping pad | Vel: none | MW: open filter"
+profile = "A pad whose brightness rises and falls by itself, like slow waves of light."
+phrase = "chords"
+range = "C3 to C5"
+expect = { attack_s = [0.05, 1.5] }
+performance = "Hold chords for several bars; the movement takes about five seconds to complete a cycle."
+use = "Long held sections where nothing else is moving, such as intros and breakdowns. The pad gives motion on its own."
+mix = [
+  "Leave a little room for the sweep: it gets brighter than a static pad at its peak.",
+  "High-pass at 200 Hz.",
+  "Avoid a second moving filter elsewhere in the mix; the two would blur together.",
+]
+pairings = [
+  { with = "Portamento Dream", why = "Both move slowly, which gives a floating, unhurried section." },
+  { with = "Midnight Sub", why = "A plain sub is all it needs underneath." },
+  { with = "Ambient guitar swells", external = true, why = "They fade in and out with the same slow pace." },
+]
+tweaks = [
+  { control = "VCF LFO to 4.0", result = "A much deeper sweep from dark to bright." },
+  { control = "LFO Sync on, 2/1", result = "Locks the sweep to your tempo, with one cycle every two bars." },
+  { control = "VCF RES to 5.0", result = "The sweep becomes clearly audible, even vocal." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 1
+DcoSubLevel = 0.4
+NumberOfVoices = 7
+VcfCutoff = 0.55
+VcfResonance = 0.2
+VcfLfoMod = 0.22
+LfoWaveform = 1
+LfoRate = 0.3
+VcfKeyFollow = 0.4
+EnvAttackTime = 0.55
+EnvDecayTime = 0.6
+EnvSustainLevel = 1
+EnvReleaseTime = 0.6
+DcoChorusSwitch = 1
+ChorusRate = 0.3
+ModWheelVcfRange = 0.25
+ModWheelDcoLfo = 0
+reverbDryWet = 0.3
+reverbSize = 0.8
+[patch.why]
+VcfLfoMod = "Moves the filter by about two-thirds of an octave each way, enough to notice without looking for it."
+LfoRate = "About 0.18 Hz: a cycle of about five seconds, which is slower than the chord changes."
+LfoWaveform = "A sine has no corners, so the motion never draws attention to itself."
+VcfResonance = "A small peak makes the sweep audible; without it, the movement nearly disappears."
+ChorusRate = "A slow chorus, so that it doesn't compete with the filter for your attention."
+
+[[patch]]
+name = "Cold Coast"
+tags = ["dreamwave", "darksynth"]
+browser = "Airy high-passed pad | Vel: none | MW: open filter"
+profile = "Cold, airy pad with no low end at all, just a thin shimmer of harmonics and breath."
+phrase = "chords"
+range = "C4 to C6"
+transpose = 12
+expect = { low_energy_pct = [0, 5], attack_s = [0.05, 1.5] }
+performance = "Works best high on the keyboard, with open voicings."
+use = "Adds air on top of another pad or thin arrangements, or works alone in sparse sections."
+mix = [
+  "No high-pass needed: the synth's HPF has already done it.",
+  "It can take a lot of reverb.",
+  "Layer over a warmer pad to add sparkle to it.",
+]
+pairings = [
+  { with = "Black Horizon", why = "Together they cover both ends, with an empty middle for a vocal or lead." },
+  { with = "Glass Whistle", why = "Two pure, cold sounds in the same high register." },
+  { with = "Field recording of wind", external = true, why = "Adds to the sense of an empty, cold place." },
+]
+tweaks = [
+  { control = "HPF to HP 1", result = "Lets a little body back in: warmer and more usable as a main pad." },
+  { control = "Noise to 0", result = "Pure tone, no breath." },
+  { control = "CHORUS on", result = "Wider and softer, though less cold." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 1
+Noise = 0.3
+DcoSubLevel = 0
+HpfCutoff = 3
+NumberOfVoices = 7
+VcfCutoff = 0.78
+VcfKeyFollow = 0.2
+EnvAttackTime = 0.55
+EnvDecayTime = 0.6
+EnvSustainLevel = 1
+EnvReleaseTime = 0.6
+UnisonoVoices = 0.1
+UnisonoDetune = 0.1
+UnisonoSpread = 0.9
+ModWheelVcfRange = 0.15
+ModWheelDcoLfo = 0
+reverbDryWet = 0.42
+reverbSize = 0.85
+reverbTone = 0.45
+[patch.why]
+HpfCutoff = "HP 2 is the steepest setting, down 13 dB at 200 Hz. This is what makes it sound cold."
+Noise = "Air: a little noise through the same filter gives the sound breath."
+VcfCutoff = "About 4.5 kHz: open, because the high harmonics are all that's left after the HPF."
+UnisonoVoices = "Three slightly detuned voices stand in for the chorus, without its warmth."
+reverbDryWet = "Heavy reverb: the sound of distance and open space."
+
+[[patch]]
+name = "Analog Dusk"
+tags = ["outrun", "dreamwave"]
+browser = "Two-stage swell pad | Vel: none | MW: open filter"
+profile = "A pad with a two-stage swell: an immediate soft body, then a slow bloom over the next few seconds."
+phrase = "swells"
+range = "C3 to C5"
+hold = 6.0
+expect = { attack_s = [0.01, 3] }
+performance = "Hold chords for at least two bars. Short chords only hear the first stage."
+use = "Chord changes that need to be on time but also evolve: the first stage marks the change and the second adds drama."
+mix = [
+  "The bloom increases the level over time, so automate it down if it masks a vocal.",
+  "High-pass at 180 Hz.",
+  "Try sidechain with a slow release to emphasise the bloom.",
+]
+pairings = [
+  { with = "Hero Theme", why = "Its slow bloom builds up behind a big held note." },
+  { with = "Blacktop", why = "A brooding bass suits the darkening-to-glowing movement." },
+  { with = "Slow tom build", external = true, why = "Both grow towards a downbeat." },
+]
+tweaks = [
+  { control = "Env L1 to 8.0", result = "A stronger first stage and less of a bloom." },
+  { control = "Env T2 to 5.0", result = "A much quicker bloom, for faster tempos." },
+  { control = "VCF Env to 4.0", result = "The bloom becomes much brighter and more dramatic." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 1
+DcoWavePulse = 3
+DcoPwmDepth = 0.4
+DcoPwmRate = 0.4
+DcoSubLevel = 0.5
+NumberOfVoices = 7
+VcfCutoff = 0.45
+VcfEnvMod = 0.25
+VcfKeyFollow = 0.4
+EnvAttackTime = 0.35
+EnvAttackLevel = 0.45
+EnvBreakTime = 0.68
+EnvBreakLevel = 1
+EnvDecayTime = 0.6
+EnvSustainLevel = 0.85
+EnvReleaseTime = 0.58
+DcoChorusSwitch = 1
+ChorusRate = 0.45
+ModWheelVcfRange = 0.2
+ModWheelDcoLfo = 0
+reverbDryWet = 0.25
+reverbSize = 0.75
+[patch.why]
+EnvAttackTime = "T1: the first stage, quick but soft, so the chord arrives on time."
+EnvAttackLevel = "L1: stops at a little under half level, leaving somewhere to go."
+EnvBreakTime = "T2: the second stage rises slowly. A plain ADSR can't do this, and it's a real strength of this envelope."
+EnvBreakLevel = "L2: the bloom reaches full level and, with the filter envelope, full brightness."
+VcfEnvMod = "Because the shared envelope also moves the filter, the bloom gets brighter as well as louder."
+
+[[patch]]
+name = "Breathing Glass"
+tags = ["dreamwave", "chillwave"]
+browser = "Noise and tone pad | Vel: none | MW: open filter"
+profile = "A delicate, hollow tone with a faint layer of filtered noise, like a sustained breath through a glass tube."
+phrase = "chords"
+range = "C3 to C5"
+expect = { attack_s = [0.05, 1.5] }
+performance = "Simple, spacious chords. Busy voicings blur in the chorus and reverb."
+use = "Soft, textural sections. Good for adding breath to a brighter pad or to a vocal."
+mix = [
+  "The noise can build up across a mix: check it isn't adding hiss to the whole track.",
+  "High-pass at 200 Hz.",
+  "Automate its level; it works well brought up only at the ends of phrases.",
+]
+pairings = [
+  { with = "Tape Flute", why = "They share a breathy character for a soft duet." },
+  { with = "Warm Tines", why = "Soft electric piano sits gently over a breathing bed." },
+  { with = "Whispered vocals", external = true, why = "The noise blends into the breath of the voice." },
+]
+tweaks = [
+  { control = "Noise to 2.5", result = "Much more air, though the tone still leads." },
+  { control = "VCF RES to 7.0", result = "A whistling tone appears in the noise." },
+  { control = "PULSE to Pulse 25%", result = "More nasal and less pure, like a reed." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 0
+DcoWavePulse = 1
+Noise = 1.2
+DcoSubLevel = 0
+NumberOfVoices = 7
+VcfCutoff = 0.6
+VcfResonance = 0.35
+VcfKeyFollow = 0.7
+VcfLfoMod = 0.08
+LfoWaveform = 1
+LfoRate = 0.38
+EnvAttackTime = 0.55
+EnvDecayTime = 0.6
+EnvSustainLevel = 1
+EnvReleaseTime = 0.58
+DcoChorusSwitch = 1
+ChorusRate = 0.3
+ModWheelVcfRange = 0.2
+ModWheelDcoLfo = 0
+reverbDryWet = 0.3
+reverbSize = 0.7
+[patch.why]
+Noise = "The noise sits about 19 dB under the square, so it's a faint breath around the tone rather than an equal partner."
+DcoWavePulse = "A square has the hollow, tube-like odd harmonics that make the 'glass' tone."
+VcfResonance = "A resonant peak gives the noise a tuned, whistling colour."
+VcfKeyFollow = "Follows the notes, so the resonant colour stays in tune with each chord."
+VcfLfoMod = "A slight filter drift makes it feel like breathing."
+
+[[patch]]
+name = "Deep Space Drift"
+tags = ["dreamwave", "darksynth"]
+browser = "Random filter pad | Vel: none | MW: open filter"
+profile = "Wide, unsettled pad whose filter jumps to a new random position about every 1.5 seconds."
+phrase = "chords"
+range = "C3 to C5"
+expect = { attack_s = [0.05, 1.5] }
+performance = "Hold chords and let the randomness play out. Each pass is different."
+use = "Space scenes, tension and intros. It keeps long, static chords interesting without any automation."
+mix = [
+  "Because it's unpredictable, leave some headroom around it.",
+  "Long reverb smooths out the jumps; use more if they're too obvious.",
+  "High-pass at 200 Hz.",
+]
+pairings = [
+  { with = "Mainframe", why = "Random blips over random filter movement, for a computer in space." },
+  { with = "Grid Runner", why = "Unpredictable pad over a very regular bass creates tension." },
+  { with = "Sparse piano notes", external = true, why = "They mark time while the pad wanders." },
+]
+tweaks = [
+  { control = "LFO wave to Triangle", result = "Smooth, even movement in place of random steps." },
+  { control = "LFO Rate up to about 2 Hz", result = "Much busier, closer to a sequencer." },
+  { control = "VCF LFO to 1.0", result = "Subtle instability you feel more than hear." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 1
+DcoSubLevel = 0.4
+NumberOfVoices = 7
+UnisonoVoices = 0.1
+UnisonoDetune = 0.14
+UnisonoSpread = 0.65
+VcfCutoff = 0.5
+VcfResonance = 0.36
+VcfLfoMod = 0.18
+LfoWaveform = 4
+LfoRate = 0.45
+EnvAttackTime = 0.55
+EnvDecayTime = 0.6
+EnvSustainLevel = 1
+EnvReleaseTime = 0.62
+ModWheelVcfRange = 0.2
+ModWheelDcoLfo = 0
+reverbDryWet = 0.45
+reverbSize = 0.9
+[patch.why]
+LfoWaveform = "S&H picks a new random value on each LFO cycle: the filter jumps, with no pattern to it."
+LfoRate = "About 0.6 Hz: a new position every 1.5 seconds or so, slow enough not to sound rhythmic."
+VcfResonance = "Each new filter position is easily heard, thanks to this peak."
+UnisonoSpread = "Wide, for a surrounding, vast feeling. Going any wider starts to lose level in mono."
+reverbDryWet = "A very large, wet reverb smooths the jumps and adds distance."
+
+[[patch]]
+name = "Retro Choir"
+tags = ["outrun", "dreamwave"]
+browser = "Synthetic vowel choir | Vel: none | MW: vibrato"
+profile = "The synthetic choir of an 80s soundtrack: an 'ooh' vowel made from an EQ peak, chorus and a little vibrato."
+phrase = "chords"
+range = "C3 to C5"
+expect = { attack_s = [0.05, 1.5] }
+performance = "Simple triads in a mid range sound most vocal. Mod wheel adds vibrato."
+use = "Soundtrack moments, big chorus lifts, or behind a real vocal to thicken it."
+mix = [
+  "The EQ peak is the vowel, so don't cut it.",
+  "Double it with a real vocal pad, if you have one, to add realism.",
+  "High-pass at 200 Hz.",
+]
+pairings = [
+  { with = "Silver Screen", why = "Strings and choir together are the sound of an 80s film score." },
+  { with = "Sunrise Fanfare", why = "Choir plus brass for a heroic climax." },
+  { with = "Lead vocal", external = true, why = "It works as an unobtrusive backing vocal." },
+]
+tweaks = [
+  { control = "EQ Freq to about 1 kHz", result = "An 'aah' vowel instead of an 'ooh'." },
+  { control = "EQ Q down", result = "A broader, less distinct vowel: more like a pad." },
+  { control = "ENV T1 (attack) to 3.5", result = "A quicker, more articulated choir for rhythmic parts." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 0
+DcoWavePulse = 3
+DcoPwmDepth = 0.35
+DcoPwmRate = 0.55
+DcoSubLevel = 0
+NumberOfVoices = 7
+VcfCutoff = 0.58
+VcfResonance = 0.15
+VcfKeyFollow = 0.3
+EnvAttackTime = 0.52
+EnvDecayTime = 0.6
+EnvSustainLevel = 1
+EnvReleaseTime = 0.55
+DcoLfoMod = 0.03
+LfoRate = 0.7
+LfoDelay = 0.5
+DcoChorusSwitch = 1
+ChorusRate = 0.6
+eqBellFreq = 0.38
+eqBellQ = 0.65
+eqBellGain = 9
+ModWheelDcoLfo = 0.06
+reverbDryWet = 0.32
+reverbSize = 0.75
+[patch.why]
+eqBellGain = "A strong boost acts as a fixed vocal formant. This, more than the oscillator, is what reads as a voice."
+eqBellFreq = "About 450 Hz: the region of a rounded 'ooh'."
+DcoWavePulse = "A moving pulse is softer than a saw and has more of a hollow, sung quality."
+ChorusRate = "A slightly fast chorus adds the sense of several singers."
+DcoLfoMod = "A tiny delayed vibrato: real singers are never perfectly still."
+
+[[patch]]
+name = "Pulse Bloom"
+tags = ["outrun", "chillwave"]
+browser = "Tempo-synced filter pump | Vel: none | MW: open filter"
+profile = "A pad that pumps by itself: its filter drops sharply and recovers, once every quarter note."
+phrase = "chords"
+range = "C3 to C5"
+expect = { attack_s = [0.01, 1] }
+performance = "The motion follows your project's tempo. Hold chords and it does the rest."
+use = "Adds rhythm without any sidechain: a pulsing bed under verses, or a build without drums."
+mix = [
+  "Don't also sidechain heavily, as two different pumps will conflict.",
+  "Try setting the LFO to 1/8 in a section that needs more energy.",
+  "High-pass at 200 Hz.",
+]
+pairings = [
+  { with = "Nightdrive", why = "They lock together on the same grid." },
+  { with = "Dotted Eighth", why = "The arp adds a syncopated pattern over the straight pump." },
+  { with = "Four-on-the-floor kick", external = true, why = "The filter pulses at the same quarter-note rate as the kick." },
+]
+tweaks = [
+  { control = "LFO Rate to 1/8", result = "Twice as fast: more urgent." },
+  { control = "LFO Inv on", result = "The filter jumps open and closes gradually: more of a bloom than a pump." },
+  { control = "VCF LFO to 6.0", result = "A much deeper, almost gated effect." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 1
+DcoSubLevel = 0.4
+NumberOfVoices = 7
+VcfCutoff = 0.52
+VcfResonance = 0.15
+VcfLfoMod = 0.38
+LfoWaveform = 2
+LfoSync = 1
+LfoRate = 0.75
+EnvAttackTime = 0.3
+EnvDecayTime = 0.5
+EnvSustainLevel = 1
+EnvReleaseTime = 0.45
+DcoChorusSwitch = 1
+ChorusRate = 0.45
+ModWheelVcfRange = 0.2
+ModWheelDcoLfo = 0
+reverbDryWet = 0.2
+[patch.why]
+LfoSync = "Locks the LFO to the host tempo, so the movement always falls on the beat."
+LfoRate = "1/4 note: the same pulse as a four-on-the-floor kick."
+LfoWaveform = "Saw: a slow rise and a sudden drop, which sounds like a sidechain recovery rather than a wobble."
+VcfLfoMod = "Deep enough to feel: this synth's LFO can't reach the amp, so the filter has to produce the pump."
+
+[[patch]]
+name = "Ghost Mall"
+tags = ["chillwave", "dreamwave"]
+browser = "Detuned vaporwave pad | Vel: none | MW: open filter"
+profile = "A faded, slightly out-of-tune pad, like muzak drifting through an empty shopping mall."
+phrase = "chords"
+range = "C3 to C5"
+expect = { attack_s = [0.05, 1.5] }
+performance = "Jazzy 7th and 9th chords suit it. The slight wobble means it never quite settles."
+use = "Vaporwave and chillwave beds, or a nostalgic interlude."
+mix = [
+  "Try a high cut around 6 kHz and low-bit or tape effects to push the old recording feel.",
+  "High-pass at 200 Hz.",
+  "Keep other parts in tune with it by using it as the pitch reference.",
+]
+pairings = [
+  { with = "Velvet Bass", why = "Same soft, hazy world." },
+  { with = "Worn Piano", why = "Together they sound like a memory of a lounge." },
+  { with = "Vinyl crackle", external = true, why = "Adds to the feel of old, half-remembered audio." },
+]
+tweaks = [
+  { control = "Pulse Fine to +25 cents", result = "Much more out of tune: seasick." },
+  { control = "DCO LFO to 1.5", result = "A strong tape wobble." },
+  { control = "Octave to +1", result = "Up an octave: lighter and less murky." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 1
+DcoWavePulse = 1
+specialPulseFineTune = 0.12
+specialPulseVolume = 0.7
+DcoSubLevel = 0
+NumberOfVoices = 7
+VcfCutoff = 0.52
+VcfKeyFollow = 0.3
+EnvAttackTime = 0.48
+EnvDecayTime = 0.6
+EnvSustainLevel = 0.9
+EnvReleaseTime = 0.55
+DcoLfoMod = 0.05
+LfoWaveform = 1
+LfoRate = 0.42
+DcoChorusSwitch = 1
+ChorusRate = 0.28
+ModWheelVcfRange = 0.2
+ModWheelDcoLfo = 0
+reverbDryWet = 0.28
+reverbSize = 0.65
+reverbTone = 0.2
+[patch.why]
+specialPulseFineTune = "About 12 cents sharp against the saw. It's a beat you can hear, more than polite detune and less than a mistake."
+DcoLfoMod = "A slow, shallow pitch drift of a few cents, like tape running unevenly."
+LfoRate = "About 0.5 Hz: slow enough to be heard as instability, not vibrato."
+VcfCutoff = "About 600 Hz: muffled, as if heard through a wall."
+reverbTone = "A dark reverb tone, so the space sounds old and worn."
+
+[[patch]]
+name = "Black Horizon"
+tags = ["darksynth"]
+browser = "Dark boosted low pad | Vel: none | MW: open filter"
+profile = "A very dark, heavy low pad: ominous weight rather than a chord you can pick out."
+phrase = "chords"
+transpose = -12
+test_note = 45
+range = "C2 to C4"
+expect = { centroid_hz = [100, 700], attack_s = [0.05, 3] }
+performance = "Simple low chords and fifths: dense voicings will turn to mud at this pitch."
+use = "Darksynth foundations, tension under a verse, or a low drone behind everything."
+mix = [
+  "Sidechain to the kick, or it will fight for the same space.",
+  "High-pass any other pads above about 300 Hz around this one.",
+  "Check it on a full-range system; much of it is low.",
+]
+pairings = [
+  { with = "Cold Coast", why = "Together they cover both ends of the spectrum." },
+  { with = "Night Patrol", why = "Low brass over a low pad: very heavy, and very dark." },
+  { with = "Grid Runner", why = "A moving sequence over a static dark bed." },
+  { with = "Distorted baritone guitar", external = true, why = "The pad holds the dark low mids steady, so palm-muted riffs can stop and start over it." },
+]
+tweaks = [
+  { control = "VCF Cutoff to 5.0", result = "Much clearer, turning a drone into a chord." },
+  { control = "HPF to Off", result = "Less weight, fitting more easily above a bass." },
+  { control = "VCF LFO to 2.0", result = "A breathing motion in the darkness, at about one cycle a second." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 1
+DcoWaveSub = 0
+DcoSubLevel = 1.2
+HpfCutoff = 0
+NumberOfVoices = 7
+UnisonoVoices = 0.1
+UnisonoDetune = 0.1
+UnisonoSpread = 0.4
+VcfCutoff = 0.42
+VcfResonance = 0.1
+VcfKeyFollow = 0.2
+EnvAttackTime = 0.55
+EnvDecayTime = 0.6
+EnvSustainLevel = 1
+EnvReleaseTime = 0.58
+ModWheelVcfRange = 0.2
+ModWheelDcoLfo = 0
+reverbDryWet = 0.2
+reverbSize = 0.7
+reverbTone = 0.2
+[patch.why]
+VcfCutoff = "About 260 Hz, so most harmonics are gone: it's felt more than heard."
+HpfCutoff = "The shelving bass boost adds up to 6 dB of low-mid weight."
+DcoSubLevel = "A strong square an octave down adds further darkness and mass."
+UnisonoSpread = "Narrow: wide low frequencies would only make it harder to mix."
+reverbTone = "A dark reverb, so that even the space doesn't brighten the sound."

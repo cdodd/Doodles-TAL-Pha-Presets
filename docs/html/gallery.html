@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sound gallery: Doodles TAL-Pha Presets</title>
+<link rel="stylesheet" href="style.css">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="index.html"><span>Doodles</span> TAL-Pha Presets</a>
+  <button type="button" id="theme" class="ghost" aria-label="Switch between light and dark theme">Theme</button>
+</header>
+<div class="layout">
+<nav class="sidebar" aria-label="Documentation">
+<a href="index.html">Overview</a>
+<p class="nav-label">Patches</p>
+<a href="bass.html">Bass</a>
+<a href="lead.html">Lead</a>
+<a href="pad.html">Pad</a>
+<a href="strings.html">Strings</a>
+<a href="brass.html">Brass</a>
+<a href="arp.html">Arp</a>
+<a href="pluck.html">Pluck</a>
+<a href="keys.html">Keys and Bells</a>
+<a href="chord.html">Chord and Stab</a>
+<a href="fx.html">FX and Atmosphere</a>
+<p class="nav-label">Guides</p>
+<a href="field-guide.html">Field guide</a>
+<a href="control-reference.html">Control reference</a>
+<a href="gallery.html" aria-current=page>Sound gallery</a>
+<a href="sound-map.html">Sound map</a>
+<a href="kits.html">Starter kits</a>
+<a href="reaper-cheat-sheet.html">Reaper cheat sheet</a>
+</nav>
+<main>
+<div class="prose"><h1>Sound gallery</h1>
+<p class="lede">Hear and see what each waveform and key control does. Each sample is an A3 held for two seconds, changing only what's named. Every spectrogram uses the same scale, so you can compare them directly.</p>
+<h2>Saw waveforms</h2>
+<p>The manual shows these as icons. All are the same note, with the filter open.</p>
+<p><strong>Saw.</strong> The full harmonic series, and the usual starting point. </p><audio controls preload="none" src="../../audio/gallery/saw-waveforms-saw.mp3"></audio>
+<p><img alt="Spectrogram of Saw" src="img/gallery/saw-waveforms-saw.png" /></p>
+<p><strong>Saw 2.</strong> The 2nd harmonic is strongest, so it sounds an octave up and hollow. </p><audio controls preload="none" src="../../audio/gallery/saw-waveforms-saw-2.mp3"></audio>
+<p><img alt="Spectrogram of Saw 2" src="img/gallery/saw-waveforms-saw-2.png" /></p>
+<p><strong>Saw PW.</strong> Shifts continuously with PWM. Blacktop uses it. </p><audio controls preload="none" src="../../audio/gallery/saw-waveforms-saw-pw.mp3"></audio>
+<p><img alt="Spectrogram of Saw PW" src="img/gallery/saw-waveforms-saw-pw.png" /></p>
+<p><strong>Saw 3.</strong> Top-heavy and buzzy, with the 8th harmonic strongest. </p><audio controls preload="none" src="../../audio/gallery/saw-waveforms-saw-3.mp3"></audio>
+<p><img alt="Spectrogram of Saw 3" src="img/gallery/saw-waveforms-saw-3.png" /></p>
+<p><strong>Saw 4.</strong> Strong peaks at the 2nd, 6th and 8th harmonics: bell-like. Glass Chime uses it. </p><audio controls preload="none" src="../../audio/gallery/saw-waveforms-saw-4.mp3"></audio>
+<p><img alt="Spectrogram of Saw 4" src="img/gallery/saw-waveforms-saw-4.png" /></p>
+<h2>Pulse waveforms</h2>
+<p>Pulse positions can be retuned and synced separately from the saw.</p>
+<p><strong>Square.</strong> Odd harmonics only: hollow. </p><audio controls preload="none" src="../../audio/gallery/pulse-waveforms-square.mp3"></audio>
+<p><img alt="Spectrogram of Square" src="img/gallery/pulse-waveforms-square.png" /></p>
+<p><strong>Pulse 25%.</strong> Nasal, with every 4th harmonic missing. </p><audio controls preload="none" src="../../audio/gallery/pulse-waveforms-pulse-25.mp3"></audio>
+<p><img alt="Spectrogram of Pulse 25%" src="img/gallery/pulse-waveforms-pulse-25.png" /></p>
+<p><strong>Pulse PW.</strong> The width moves, so the harmonics do too. This is the classic pad motion. </p><audio controls preload="none" src="../../audio/gallery/pulse-waveforms-pulse-pw.mp3"></audio>
+<p><img alt="Spectrogram of Pulse PW" src="img/gallery/pulse-waveforms-pulse-pw.png" /></p>
+<p><strong>Saw position.</strong> The plain saw's harmonic series, but it can be retuned and synced separately. </p><audio controls preload="none" src="../../audio/gallery/pulse-waveforms-saw-position.mp3"></audio>
+<p><img alt="Spectrogram of Saw position" src="img/gallery/pulse-waveforms-saw-position.png" /></p>
+<h2>Sub oscillator</h2>
+<p>Alone at full level, played at A3. Only level 0 turns the sub off.</p>
+<p><strong>Square -1 oct.</strong> The panel labels this position OFF. </p><audio controls preload="none" src="../../audio/gallery/sub-oscillator-square--1-oct.mp3"></audio>
+<p><img alt="Spectrogram of Square -1 oct" src="img/gallery/sub-oscillator-square--1-oct.png" /></p>
+<p><strong>Pulse 25% -1 oct.</strong> Adds the octave above: more defined. </p><audio controls preload="none" src="../../audio/gallery/sub-oscillator-pulse-25--1-oct.mp3"></audio>
+<p><img alt="Spectrogram of Pulse 25% -1 oct" src="img/gallery/sub-oscillator-pulse-25--1-oct.png" /></p>
+<p><strong>Mixed -1 oct.</strong> Strong upper partials: the brightest of the -1 octave positions. </p><audio controls preload="none" src="../../audio/gallery/sub-oscillator-mixed--1-oct.mp3"></audio>
+<p><img alt="Spectrogram of Mixed -1 oct" src="img/gallery/sub-oscillator-mixed--1-oct.png" /></p>
+<p><strong>Bright square -1 oct.</strong> Odd harmonics only, like the square, but with stronger upper ones. </p><audio controls preload="none" src="../../audio/gallery/sub-oscillator-bright-square--1-oct.mp3"></audio>
+<p><img alt="Spectrogram of Bright square -1 oct" src="img/gallery/sub-oscillator-bright-square--1-oct.png" /></p>
+<p><strong>Square -2 oct.</strong> Very low: for higher notes, rather than bass. </p><audio controls preload="none" src="../../audio/gallery/sub-oscillator-square--2-oct.mp3"></audio>
+<p><img alt="Spectrogram of Square -2 oct" src="img/gallery/sub-oscillator-square--2-oct.png" /></p>
+<p><strong>Pulse 25% -2 oct.</strong> Adds the octave above the sub, so it reads more clearly than the -2 octave square. </p><audio controls preload="none" src="../../audio/gallery/sub-oscillator-pulse-25--2-oct.mp3"></audio>
+<p><img alt="Spectrogram of Pulse 25% -2 oct" src="img/gallery/sub-oscillator-pulse-25--2-oct.png" /></p>
+<h2>Resonance</h2>
+<p>A saw with the filter sweeping. Only the resonance changes.</p>
+<p><strong>Resonance 0.</strong> A smooth sweep. </p><audio controls preload="none" src="../../audio/gallery/resonance-resonance-0.mp3"></audio>
+<p><img alt="Spectrogram of Resonance 0" src="img/gallery/resonance-resonance-0.png" /></p>
+<p><strong>Resonance 4.</strong> A clear peak travels with the sweep. </p><audio controls preload="none" src="../../audio/gallery/resonance-resonance-4.mp3"></audio>
+<p><img alt="Spectrogram of Resonance 4" src="img/gallery/resonance-resonance-4.png" /></p>
+<p><strong>Resonance 8.</strong> Strongly vocal. The low end drops noticeably. </p><audio controls preload="none" src="../../audio/gallery/resonance-resonance-8.mp3"></audio>
+<p><img alt="Spectrogram of Resonance 8" src="img/gallery/resonance-resonance-8.png" /></p>
+<p><strong>Resonance 8 + BOOST.</strong> A slightly stronger peak. Resonance goes higher still, and BOOST matters most at the top of its range. </p><audio controls preload="none" src="../../audio/gallery/resonance-resonance-8-and-boost.mp3"></audio>
+<p><img alt="Spectrogram of Resonance 8 + BOOST" src="img/gallery/resonance-resonance-8-and-boost.png" /></p>
+<h2>High-pass and bass boost</h2>
+<p>A saw, played low. The filter has four positions, and 'off' is the second.</p>
+<p><strong>Bass boost.</strong> A broad lift of about 6 dB up to 250 Hz. </p><audio controls preload="none" src="../../audio/gallery/high-pass-and-bass-boost-bass-boost.mp3"></audio>
+<p><img alt="Spectrogram of Bass boost" src="img/gallery/high-pass-and-bass-boost-bass-boost.png" /></p>
+<p><strong>Bass boost + ALT.</strong> A tighter peak around 80 Hz. </p><audio controls preload="none" src="../../audio/gallery/high-pass-and-bass-boost-bass-boost-and-alt.mp3"></audio>
+<p><img alt="Spectrogram of Bass boost + ALT" src="img/gallery/high-pass-and-bass-boost-bass-boost-and-alt.png" /></p>
+<p><strong>Off.</strong> Neutral. </p><audio controls preload="none" src="../../audio/gallery/high-pass-and-bass-boost-off.mp3"></audio>
+<p><img alt="Spectrogram of Off" src="img/gallery/high-pass-and-bass-boost-off.png" /></p>
+<p><strong>HP 1.</strong> A gentle low cut. </p><audio controls preload="none" src="../../audio/gallery/high-pass-and-bass-boost-hp-1.mp3"></audio>
+<p><img alt="Spectrogram of HP 1" src="img/gallery/high-pass-and-bass-boost-hp-1.png" /></p>
+<p><strong>HP 2.</strong> A strong low cut, down 13 dB at 200 Hz. </p><audio controls preload="none" src="../../audio/gallery/high-pass-and-bass-boost-hp-2.mp3"></audio>
+<p><img alt="Spectrogram of HP 2" src="img/gallery/high-pass-and-bass-boost-hp-2.png" /></p>
+<h2>Chorus</h2>
+<p>A saw chord would mask the effect, so this is one note. Width isn't visible in a spectrogram: listen on headphones.</p>
+<p><strong>Chorus off.</strong> Dry and centred. </p><audio controls preload="none" src="../../audio/gallery/chorus-chorus-off.mp3"></audio>
+<p><img alt="Spectrogram of Chorus off" src="img/gallery/chorus-chorus-off.png" /></p>
+<p><strong>Chorus, slow.</strong> Gentle width. </p><audio controls preload="none" src="../../audio/gallery/chorus-chorus,-slow.mp3"></audio>
+<p><img alt="Spectrogram of Chorus, slow" src="img/gallery/chorus-chorus,-slow.png" /></p>
+<p><strong>Chorus, fast.</strong> A quick shimmer: the string machine's trick. </p><audio controls preload="none" src="../../audio/gallery/chorus-chorus,-fast.mp3"></audio>
+<p><img alt="Spectrogram of Chorus, fast" src="img/gallery/chorus-chorus,-fast.png" /></p>
+<h2>Unison</h2>
+<p>Detune 0.20 and spread 0.80. Each voice count is one note played on one key.</p>
+<p><strong>3 voices.</strong> A clear thickening. </p><audio controls preload="none" src="../../audio/gallery/unison-3-voices.mp3"></audio>
+<p><img alt="Spectrogram of 3 voices" src="img/gallery/unison-3-voices.png" /></p>
+<p><strong>5 voices.</strong> A wall, with some loss of pitch focus. </p><audio controls preload="none" src="../../audio/gallery/unison-5-voices.mp3"></audio>
+<p><img alt="Spectrogram of 5 voices" src="img/gallery/unison-5-voices.png" /></p>
+<p><strong>7 voices.</strong> The maximum. </p><audio controls preload="none" src="../../audio/gallery/unison-7-voices.mp3"></audio>
+<p><img alt="Spectrogram of 7 voices" src="img/gallery/unison-7-voices.png" /></p>
+<h2>Envelope and VCA mode</h2>
+<p>The same filter sweep through the shared envelope, with a different amp mode.</p>
+<p><strong>VCA Normal.</strong> Amp and filter close together: a pluck. </p><audio controls preload="none" src="../../audio/gallery/envelope-and-vca-mode-vca-normal.mp3"></audio>
+<p><img alt="Spectrogram of VCA Normal" src="img/gallery/envelope-and-vca-mode-vca-normal.png" /></p>
+<p><strong>VCA Gate.</strong> The amp holds and only the filter closes: the note keeps its weight. </p><audio controls preload="none" src="../../audio/gallery/envelope-and-vca-mode-vca-gate.mp3"></audio>
+<p><img alt="Spectrogram of VCA Gate" src="img/gallery/envelope-and-vca-mode-vca-gate.png" /></p></div>
+</main>
+</div>
+<script src="site.js"></script>
+</body>
+</html>

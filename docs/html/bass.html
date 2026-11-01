@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bass: Doodles TAL-Pha Presets</title>
+<link rel="stylesheet" href="style.css">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="index.html"><span>Doodles</span> TAL-Pha Presets</a>
+  <button type="button" id="theme" class="ghost" aria-label="Switch between light and dark theme">Theme</button>
+</header>
+<div class="layout">
+<nav class="sidebar" aria-label="Documentation">
+<a href="index.html">Overview</a>
+<p class="nav-label">Patches</p>
+<a href="bass.html" aria-current=page>Bass</a>
+<div class="subnav"><a class="recipe-link" href="bass-recipe.html">Build from init</a><a href="#nightdrive">Nightdrive</a><a href="#neon-pulse">Neon Pulse</a><a href="#chrome-octave">Chrome Octave</a><a href="#midnight-sub">Midnight Sub</a><a href="#blacktop">Blacktop</a><a href="#turbo-glide">Turbo Glide</a><a href="#steel-engine">Steel Engine</a><a href="#rubber-coupe">Rubber Coupe</a><a href="#grid-runner">Grid Runner</a><a href="#velvet-bass">Velvet Bass</a></div>
+<a href="lead.html">Lead</a>
+<a href="pad.html">Pad</a>
+<a href="strings.html">Strings</a>
+<a href="brass.html">Brass</a>
+<a href="arp.html">Arp</a>
+<a href="pluck.html">Pluck</a>
+<a href="keys.html">Keys and Bells</a>
+<a href="chord.html">Chord and Stab</a>
+<a href="fx.html">FX and Atmosphere</a>
+<p class="nav-label">Guides</p>
+<a href="field-guide.html">Field guide</a>
+<a href="control-reference.html">Control reference</a>
+<a href="gallery.html">Sound gallery</a>
+<a href="sound-map.html">Sound map</a>
+<a href="kits.html">Starter kits</a>
+<a href="reaper-cheat-sheet.html">Reaper cheat sheet</a>
+</nav>
+<main>
+<h1>Bass</h1>
+<p class="lede">10 patches. Control values are as shown on the plugin panel. Times and frequencies
+come from <a href="control-reference.html">measurements of the plugin</a>.</p>
+<a class="callout" href="bass-recipe.html"><strong>New to this category?</strong> Build a patch from init, step by step, hearing each decision.</a>
+<section class="install">
+<h2>Mixing this category</h2>
+<p>Starting points for every patch here. Each patch's own notes cover what's different about it.</p>
+<ul><li>High-pass around 30 Hz; below that there&#x27;s little but rumble.</li><li>Lift 800 Hz to 1.5 kHz a little for small speakers, and leave the lows alone.</li><li>Sidechain to the kick with a fast attack and about 100 ms release, for 3-6 dB of reduction.</li><li>Keep it centred. Narrow anything wide below about 120 Hz.</li><li>Keep reverb and delay off the low end: filter the send, or use none.</li></ul>
+</section>
+<div class="chips" role="group" aria-label="Filter by subgenre"><button type="button" class="chip" aria-pressed="true" data-tag="">All</button><button type="button" class="chip" aria-pressed="false" data-tag="chillwave">chillwave</button><button type="button" class="chip" aria-pressed="false" data-tag="darksynth">darksynth</button><button type="button" class="chip" aria-pressed="false" data-tag="dreamwave">dreamwave</button><button type="button" class="chip" aria-pressed="false" data-tag="outrun">outrun</button></div>
+<article class="patch" id="nightdrive" data-tags="outrun darksynth">
+<header>
+  <h2>Nightdrive</h2>
+  <div class="tags"><span class="tag">outrun</span><span class="tag">darksynth</span></div>
+</header>
+<p class="profile">Tight, rolling filter bass that drives a track without covering the kick.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/bass/nightdrive.mp3" aria-label="Preview of Nightdrive"></audio>
+  <a class="ghost" href="../../presets/Doodles/Bass/Nightdrive.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>E2 to A3 (sounds an octave lower, 16&#x27;)</dd></div><div><dt>Brightness</dt><dd>405 Hz centroid</dd></div><div><dt>Low energy</dt><dd>84% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 5 ms</dd></div><div><dt>Decay</dt><dd>Holds while the key is down</dd></div><div><dt>Filter closes</dt><dd>2.1 octaves</dd></div><div><dt>Held level</dt><dd>-4 dB from peak</dd></div><div><dt>Width</dt><dd>Mono</dd></div><div><dt>Mono sum</dt><dd>+0.0 dB</dd></div><div><dt>Loudness</dt><dd>-18.0 LUFS, peak -6.1 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">DCO Range</th><td class="value">16&#x27;</td><td>16&#x27; saw: strong fundamental around 55 Hz for typical bass notes, plus harmonics that survive small speakers.</td></tr><tr><th scope="row">DCO Saw</th><td class="value">Saw</td><td>The plain saw has the even harmonic series a filter sweep needs.</td></tr><tr><th scope="row">VCF Cutoff</th><td class="value">2.7 (about 78 Hz at C4)</td><td>Starts dark, so the envelope does the talking and notes don&#x27;t crowd the kick&#x27;s click.</td></tr><tr><th scope="row">VCF Res</th><td class="value">2.0</td><td>Just enough to give the sweep an edge without thinning the low end.</td></tr><tr><th scope="row">VCF Env mode</th><td class="value">Normal-Dynamic</td><td>Normal-Dynamic: harder notes open the filter more. This is the source of the groove.</td></tr><tr><th scope="row">VCF Env</th><td class="value">5.2</td><td>Big enough that accents sweep well above the resting cutoff, while soft notes barely open.</td></tr><tr><th scope="row">Env T3 (decay)</th><td class="value">3.6 (about 208 ms to -20 dB)</td><td>A fast close around 200 ms sets the rhythmic &#x27;pluck&#x27; of each 8th.</td></tr><tr><th scope="row">VCA mode</th><td class="value">Gate</td><td>Gate holds the amp open while the shared envelope closes the filter, so the note keeps its weight after the pluck.</td></tr><tr><th scope="row">Voices</th><td class="value">Mono (1)</td><td>Mono, so notes never smear the low end.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> Sub level 0.0 / 3; VCF Key follow 3.0; Env L3 (sustain) 1.5; Env T4 (release) 0.8 (about 25 ms to -20 dB); Env Key follow 2.0; MW to VCF 4.5.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Velocity sets the filter sweep: accent the on-beats for the classic pumping groove. Mod wheel opens the filter for a brighter chorus section.</p></section>
+  <section><h3>How to use it</h3><p>Straight 8ths or 16ths under verse and chorus: the default engine of an outrun track. Program velocity accents rather than playing all notes equal.</p></section>
+  <section><h3>Mixing</h3><ul><li>High-pass at 30 Hz; little useful energy sits below the 16&#x27; fundamental.</li><li>Sidechain to the kick with a fast release (around 80-120 ms) so the pump sits with the 8ths.</li><li>Keep it dead centre; it is already mono.</li><li>A small 800 Hz to 1.5 kHz lift brings it through on small speakers; don&#x27;t touch the lows.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="arp.html#outrun-sixteenths">Outrun Sixteenths</a><span class="why">Bass plays 8ths, arp plays 16ths an octave or two up, so the rhythm interlocks without masking.</span></li><li><a href="pad.html#endless-highway">Endless Highway</a><span class="why">Slow PWM pad fills the mids above the short bass notes.</span></li><li><strong>Gated snare and LinnDrum-style kit</strong><span class="why">The short decay leaves room for a big snare tail.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>VCF Cutoff to 4.0</strong><span>Brighter, more aggressive; useful for a final chorus.</span></li><li><strong>VCF ENV mode to Normal</strong><span>Removes velocity response; every note is equally bright and mechanical.</span></li><li><strong>ENV T3 (decay) to 4.5</strong><span>Each note stays open longer, turning the rolling feel into a longer growl.</span></li></ul>
+</article>
+<article class="patch" id="neon-pulse" data-tags="outrun dreamwave">
+<header>
+  <h2>Neon Pulse</h2>
+  <div class="tags"><span class="tag">outrun</span><span class="tag">dreamwave</span></div>
+</header>
+<p class="profile">Round, hollow square-and-sub bass that stays out of the way of busy arps.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/bass/neon-pulse.mp3" aria-label="Preview of Neon Pulse"></audio>
+  <a class="ghost" href="../../presets/Doodles/Bass/Neon%20Pulse.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>E2 to A3</dd></div><div><dt>Brightness</dt><dd>234 Hz centroid</dd></div><div><dt>Low energy</dt><dd>88% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 5 ms</dd></div><div><dt>Decay</dt><dd>Holds while the key is down</dd></div><div><dt>Filter closes</dt><dd>0.5 octaves</dd></div><div><dt>Held level</dt><dd>-2 dB from peak</dd></div><div><dt>Width</dt><dd>Mono</dd></div><div><dt>Mono sum</dt><dd>+0.0 dB</dd></div><div><dt>Loudness</dt><dd>-18.0 LUFS, peak -12.1 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">DCO Range</th><td class="value">8&#x27;</td><td>8&#x27; with the sub an octave down: the sub carries the fundamental and the square adds definition an octave up.</td></tr><tr><th scope="row">DCO Pulse</th><td class="value">Square</td><td>A square has only odd harmonics, which gives the hollow character and leaves gaps for other parts.</td></tr><tr><th scope="row">Sub wave</th><td class="value">Square -1 oct (panel label: OFF)</td><td>The panel labels this position OFF, but it is a square one octave down. Only level 0 silences the sub.</td></tr><tr><th scope="row">Sub level</th><td class="value">1.5 / 3</td><td>About the same weight as the square, so the two fuse into one note.</td></tr><tr><th scope="row">HPF</th><td class="value">Bass boost</td><td>Bass boost with ALT: a +6 dB peak at 80 Hz rather than the boomier shelf.</td></tr><tr><th scope="row">VCF Cutoff</th><td class="value">3.6 (about 158 Hz at C4)</td><td>About 160 Hz: warm and rounded, with the third harmonic audible but soft.</td></tr><tr><th scope="row">VCF Env</th><td class="value">2.2</td><td>Only a small sweep, so the note has a soft front without a bright pluck.</td></tr><tr><th scope="row">Env L3 (sustain)</th><td class="value">4.5</td><td>Moderate sustain keeps a steady tone rather than a decaying one.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> VCA mode Gate; DCO Saw Off; VCF Res 0.8; VCF Key follow 2.5; Env T3 (decay) 4.2 (about 322 ms to -20 dB); Env T4 (release) 1.0 (about 35 ms to -20 dB); MW to VCF 4.0; Voices Mono (1); Bass boost ALT On (+6 dB at 80 Hz).</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Even and steady on purpose: no velocity response. Mod wheel opens the filter.</p></section>
+  <section><h3>How to use it</h3><p>Under dense arrangements where a saw bass would fight the arp and pads. Good for simple root-note lines.</p></section>
+  <section><h3>Mixing</h3><ul><li>Almost no compression needed; the level is very even.</li><li>The ALT boost already adds weight at 80 Hz, so don&#x27;t stack another low boost on it.</li><li>Sidechain lightly: the sustained body makes a heavy duck obvious.</li><li>Add gentle saturation if it vanishes on phone speakers.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="arp.html#crystal-steps">Crystal Steps</a><span class="why">A high, busy arp has the whole spectrum above this simple bass to itself.</span></li><li><a href="lead.html#hero-theme">Hero Theme</a><span class="why">A wide lead needs a steady, uncomplicated foundation.</span></li><li><strong>Clean chorus electric guitar</strong><span class="why">Hollow square leaves the guitar&#x27;s low mids free.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>SUB OSC level to 2.5</strong><span>More weight at the sub-octave; check on a big system for boom.</span></li><li><strong>PULSE to 25%</strong><span>Nasal and more present; even harmonics return, so it&#x27;s less hollow.</span></li><li><strong>VCF Cutoff to 5.0</strong><span>Reveals the square&#x27;s odd harmonics for a gamey, 8-bit edge.</span></li></ul>
+</article>
+<article class="patch" id="chrome-octave" data-tags="outrun darksynth">
+<header>
+  <h2>Chrome Octave</h2>
+  <div class="tags"><span class="tag">outrun</span><span class="tag">darksynth</span></div>
+</header>
+<p class="profile">Saw with a slightly detuned pulse an octave up: metallic presence for octave-jumping lines.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/bass/chrome-octave.mp3" aria-label="Preview of Chrome Octave"></audio>
+  <a class="ghost" href="../../presets/Doodles/Bass/Chrome%20Octave.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>E2 to E3</dd></div><div><dt>Brightness</dt><dd>583 Hz centroid</dd></div><div><dt>Low energy</dt><dd>53% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 10 ms</dd></div><div><dt>Decay</dt><dd>Holds while the key is down</dd></div><div><dt>Filter closes</dt><dd>1.9 octaves</dd></div><div><dt>Held level</dt><dd>-3 dB from peak</dd></div><div><dt>Width</dt><dd>Mono</dd></div><div><dt>Mono sum</dt><dd>+0.0 dB</dd></div><div><dt>Loudness</dt><dd>-18.0 LUFS, peak -7.1 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">DCO Pulse</th><td class="value">Square</td><td>The second sound source; it can be retuned separately from the saw, a TAL addition to the original hardware.</td></tr><tr><th scope="row">Pulse Tune</th><td class="value">+12 st</td><td>An octave up, so the pulse adds presence while the saw holds the fundamental.</td></tr><tr><th scope="row">Pulse Fine</th><td class="value">+7 cents</td><td>About 7 cents sharp: slow beating that reads as metallic shine rather than out-of-tune.</td></tr><tr><th scope="row">Pulse Volume</th><td class="value">6.0</td><td>Below the saw so the bass stays the main identity.</td></tr><tr><th scope="row">VCF Cutoff</th><td class="value">3.2 (about 117 Hz at C4)</td><td>About 120 Hz at rest, opening on each note.</td></tr><tr><th scope="row">Env T3 (decay)</th><td class="value">3.4 (about 173 ms to -20 dB)</td><td>Short enough that fast octave jumps stay separate.</td></tr><tr><th scope="row">VCA mode</th><td class="value">Gate</td><td>Gate: the amp holds, so jumps stay connected even as the filter closes.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Saw Saw; DCO Range 16&#x27;; Sub level 0.0 / 3; VCF Res 2.2; VCF Env 4.2; VCF Key follow 3.5; Env L3 (sustain) 2.0; Env T4 (release) 0.8 (about 25 ms to -20 dB); MW to VCF 4.0; Voices Mono (1).</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Designed for root-octave-root patterns: the detuned upper layer gives each high note extra shimmer.</p></section>
+  <section><h3>How to use it</h3><p>The classic octave-jump disco and outrun bassline. Also solid on pumping 16ths in the highest-energy section.</p></section>
+  <section><h3>Mixing</h3><ul><li>Plenty of mid content, so it can be mixed lower than you&#x27;d expect.</li><li>If it clashes with lead or guitar, dip 1-2 kHz by 2 dB rather than filtering the bass.</li><li>Slow beating from the detune is a feature; don&#x27;t over-compress it.</li><li>Mono, so no low-end width problems.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="lead.html#hero-theme">Hero Theme</a><span class="why">The octave motion gives a held lead rhythmic support.</span></li><li><a href="brass.html#sunrise-fanfare">Sunrise Fanfare</a><span class="why">Brass stabs land between octave jumps in a classic disco arrangement.</span></li><li><strong>Four-on-the-floor kick</strong><span class="why">Off-beat high notes fill the gaps between kicks.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>Pulse TUNE to +7</strong><span>A fifth above instead of an octave: darker, power-chord feel, but careful with minor keys.</span></li><li><strong>Pulse fine tune to 0</strong><span>Stops the beating for a cleaner, more static tone.</span></li><li><strong>Pulse VOLUME to 3.0</strong><span>Pulls the metal back; closer to a plain saw bass.</span></li></ul>
+</article>
+<article class="patch" id="midnight-sub" data-tags="dreamwave chillwave outrun">
+<header>
+  <h2>Midnight Sub</h2>
+  <div class="tags"><span class="tag">dreamwave</span><span class="tag">chillwave</span><span class="tag">outrun</span></div>
+</header>
+<p class="profile">A near-sine foundation with no bite: pure low end for layering or ballads.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/bass/midnight-sub.mp3" aria-label="Preview of Midnight Sub"></audio>
+  <a class="ghost" href="../../presets/Doodles/Bass/Midnight%20Sub.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>E2 to E3</dd></div><div><dt>Brightness</dt><dd>86 Hz centroid</dd></div><div><dt>Low energy</dt><dd>100% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 20 ms</dd></div><div><dt>Decay</dt><dd>Holds while the key is down</dd></div><div><dt>Filter closes</dt><dd>0.1 octaves</dd></div><div><dt>Held level</dt><dd>-2 dB from peak</dd></div><div><dt>Width</dt><dd>Mono</dd></div><div><dt>Mono sum</dt><dd>+0.0 dB</dd></div><div><dt>Loudness</dt><dd>-18.0 LUFS, peak -11.2 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">DCO Pulse</th><td class="value">Square</td><td>A square has no 2nd harmonic and its 3rd is already 10 dB down, so it&#x27;s the easiest wave to filter into a near-sine.</td></tr><tr><th scope="row">VCF Cutoff</th><td class="value">3.9 (about 191 Hz at C4)</td><td>About 190 Hz at C4; with full key follow the filter stays about 1.5x above the note wherever you play.</td></tr><tr><th scope="row">VCF Key follow</th><td class="value">10.0</td><td>Full tracking: a constant tone on every note. Without it the higher notes would sound dull and thin.</td></tr><tr><th scope="row">Env T1 (attack)</th><td class="value">1.5 (about 15 ms)</td><td>About 15 ms of attack removes the click a sine-like wave would otherwise make.</td></tr><tr><th scope="row">Env T4 (release)</th><td class="value">2.5 (about 90 ms to -20 dB)</td><td>A short tail prevents an abrupt stop that would read as a click.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> VCA mode Normal; DCO Saw Off; DCO Range 16&#x27;; Sub level 0.0 / 3; VCF Res 0.0; Env T3 (decay) 0.0 (about 10 ms to -20 dB); Env L3 (sustain) 10.0; Voices Mono (1).</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Play long notes. There&#x27;s no filter sweep or velocity response, by design.</p></section>
+  <section><h3>How to use it</h3><p>Under another bass as a dedicated sub layer, or alone on ballads. Doubling a bright bass with this lets you high-pass the bright part freely.</p></section>
+  <section><h3>Mixing</h3><ul><li>Almost entirely below 150 Hz: check it on a system or headphones that reproduce that range.</li><li>Add saturation on a copy if it must translate to small speakers.</li><li>Sidechain to the kick, since both live in the same band.</li><li>When layering, high-pass the other bass around 120 Hz and keep this mono.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="#chrome-octave">Chrome Octave</a><span class="why">A classic layer: high-pass Chrome Octave around 120 Hz and let this carry the sub.</span></li><li><a href="#steel-engine">Steel Engine</a><span class="why">Adds a solid mono centre under the wide unison.</span></li><li><a href="#velvet-bass">Velvet Bass</a><span class="why">A soft, deep pair for slow dreamwave passages.</span></li><li><strong>Felt piano and soft vocals</strong><span class="why">A plain low end stays out of the way of a delicate ballad arrangement.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>VCF Cutoff to 5.0</strong><span>Lets the square&#x27;s third harmonic through, so it&#x27;s audible on small speakers.</span></li><li><strong>ENV T1 (attack) to 0</strong><span>Harder start with a slight click; can help definition.</span></li><li><strong>PORTAMENTO to ON, time 2</strong><span>Smooth slides between overlapping notes, for 808-style movement.</span></li></ul>
+</article>
+<article class="patch" id="blacktop" data-tags="darksynth outrun">
+<header>
+  <h2>Blacktop</h2>
+  <div class="tags"><span class="tag">darksynth</span><span class="tag">outrun</span></div>
+</header>
+<p class="profile">Dark, throaty bass with a slowly shifting tone and heavy low-mid weight: menacing without being harsh.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/bass/blacktop.mp3" aria-label="Preview of Blacktop"></audio>
+  <a class="ghost" href="../../presets/Doodles/Bass/Blacktop.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>E2 to A3</dd></div><div><dt>Brightness</dt><dd>286 Hz centroid</dd></div><div><dt>Low energy</dt><dd>58% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 5 ms</dd></div><div><dt>Decay</dt><dd>Holds while the key is down</dd></div><div><dt>Filter closes</dt><dd>0.7 octaves</dd></div><div><dt>Held level</dt><dd>-3 dB from peak</dd></div><div><dt>Width</dt><dd>Mono</dd></div><div><dt>Mono sum</dt><dd>+0.0 dB</dd></div><div><dt>Loudness</dt><dd>-18.1 LUFS, peak -10.2 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">DCO Saw</th><td class="value">Saw PW</td><td>The Saw PW wave: unlike a plain saw, its harmonic balance shifts with the PWM, which gives the tone its throaty movement.</td></tr><tr><th scope="row">PWM</th><td class="value">5.5</td><td>Enough movement to hear the tone change, without turning into an obvious wobble.</td></tr><tr><th scope="row">PWM Rate</th><td class="value">3.2</td><td>Slow, so the shift unfolds across several notes: more unease than effect.</td></tr><tr><th scope="row">DCO Range</th><td class="value">8&#x27;</td><td>8&#x27; with the sub an octave down: the sub carries the fundamental and the moving saw sits above it.</td></tr><tr><th scope="row">Sub level</th><td class="value">1.6 / 3</td><td>A solid square underneath that stays steady while the saw moves.</td></tr><tr><th scope="row">HPF</th><td class="value">Bass boost</td><td>The shelving bass boost lifts everything up to about 250 Hz by about 6 dB. This is the source of the heavy low-mid weight.</td></tr><tr><th scope="row">VCF Cutoff</th><td class="value">3.3 (about 126 Hz at C4)</td><td>Dark, keeping the upper harmonics tucked away.</td></tr><tr><th scope="row">VCF Env</th><td class="value">2.8</td><td>A small sweep: a slight bark at the start of each note, with no bright pluck.</td></tr><tr><th scope="row">VCA mode</th><td class="value">Gate</td><td>Gate: the amp holds while the filter settles, so notes keep their weight.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> Sub wave Square -1 oct (panel label: OFF); VCF Res 1.5; VCF Key follow 3.0; Env T3 (decay) 4.2 (about 322 ms to -20 dB); Env L3 (sustain) 4.0; Env T4 (release) 1.0 (about 35 ms to -20 dB); MW to VCF 3.5; Voices Mono (1).</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Plays evenly at any velocity, so the tension comes from the notes and the slow tonal shift. Hold longer notes to hear the movement. Mod wheel opens the filter from dark to growling.</p></section>
+  <section><h3>How to use it</h3><p>Brooding darksynth verses, slower outrun grooves and half-time sections. Works as a plain 8ths line or long, held root notes.</p></section>
+  <section><h3>Mixing</h3><ul><li>The bass boost already adds about 6 dB up to 250 Hz, so don&#x27;t add another low boost; cut around 200 Hz if it turns boomy.</li><li>Sidechain to the kick; there&#x27;s a lot of sustained low-mid energy between hits.</li><li>Mono, so it&#x27;s safe in the centre.</li><li>For more aggression, add saturation after the synth rather than opening the filter.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="brass.html#night-patrol">Night Patrol</a><span class="why">Dark sustained brass over a brooding line is the core darksynth texture.</span></li><li><a href="pad.html#black-horizon">Black Horizon</a><span class="why">Both are dark, so keep the pad high-passed above the bass and let the slow movements overlap.</span></li><li><strong>Deep analog toms</strong><span class="why">Tom fills speak clearly over the steady low-mid weight.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>HPF to Off</strong><span>Removes the low boost: tighter, and easier to fit under a big kick.</span></li><li><strong>PWM RATE to 6.0</strong><span>Faster movement that adds a nervous, agitated shimmer.</span></li><li><strong>VCF Cutoff to 5.0</strong><span>Brings the growl forward for a chorus or drop.</span></li></ul>
+</article>
+<article class="patch" id="turbo-glide" data-tags="outrun dreamwave">
+<header>
+  <h2>Turbo Glide</h2>
+  <div class="tags"><span class="tag">outrun</span><span class="tag">dreamwave</span></div>
+</header>
+<p class="profile">Mono saw with legato glide: slides between overlapping notes, retriggers cleanly on detached ones.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/bass/turbo-glide.mp3" aria-label="Preview of Turbo Glide"></audio>
+  <a class="ghost" href="../../presets/Doodles/Bass/Turbo%20Glide.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>E2 to E3</dd></div><div><dt>Brightness</dt><dd>317 Hz centroid</dd></div><div><dt>Low energy</dt><dd>70% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 10 ms</dd></div><div><dt>Decay</dt><dd>Holds while the key is down</dd></div><div><dt>Filter closes</dt><dd>1.1 octaves</dd></div><div><dt>Held level</dt><dd>-10 dB from peak</dd></div><div><dt>Width</dt><dd>Mono</dd></div><div><dt>Mono sum</dt><dd>+0.0 dB</dd></div><div><dt>Loudness</dt><dd>-18.0 LUFS, peak -3.0 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">Portamento</th><td class="value">On (overlapping notes)</td><td>ON glides only between overlapping notes, so each part decides where slides happen. Measured: detached notes jump straight to pitch.</td></tr><tr><th scope="row">Portamento Time</th><td class="value">2.6</td><td>About 70 ms per octave: an audible slide that still lands within an 8th note at synthwave tempos.</td></tr><tr><th scope="row">Voices</th><td class="value">Mono (1)</td><td>Mono is what makes legato gliding work properly.</td></tr><tr><th scope="row">VCF Key follow</th><td class="value">6.0</td><td>Follows the pitch partially, so a note keeps its brightness as it slides.</td></tr><tr><th scope="row">Env T3 (decay)</th><td class="value">5.0 (about 678 ms to -20 dB)</td><td>A slower close than the rolling patches: sustained notes stay expressive.</td></tr><tr><th scope="row">Bend range</th><td class="value">7 st</td><td>A fifth up or down for dramatic manual bends.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> VCA mode Normal; DCO Saw Saw; DCO Range 16&#x27;; Sub level 0.0 / 3; VCF Cutoff 3.0 (about 100 Hz at C4); VCF Res 2.5; VCF Env 3.2; Env L3 (sustain) 4.5; Env T4 (release) 1.5 (about 35 ms to -20 dB); MW to VCF 4.0.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Overlap notes to slide; lift between notes for no slide. Slides are therefore a playing choice in each MIDI part. Pitch bend reaches a fifth.</p></section>
+  <section><h3>How to use it</h3><p>Expressive fills and turnarounds, or a melodic bass answering the lead. Slide into the downbeat of a new section.</p></section>
+  <section><h3>Mixing</h3><ul><li>Listen to slides against the kick: pitch movement can make sidechain feel uneven.</li><li>Compress lightly; glides change perceived loudness.</li><li>Keep other parts out of the low mids during long slides.</li><li>Mono, so it&#x27;s safe in the centre.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="lead.html#portamento-dream">Portamento Dream</a><span class="why">The bass and lead can slide together for a floating section.</span></li><li><a href="pad.html#analog-dusk">Analog Dusk</a><span class="why">A static pad makes the movement stand out.</span></li><li><strong>Fretless-style bass DI</strong><span class="why">Double for a hybrid organic and synthetic line.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>PORTAMENTO mode to ALL</strong><span>Every note glides, including detached ones: more drunken and dramatic.</span></li><li><strong>Portamento TIME to 4</strong><span>Slower slides, for half-time and intros.</span></li><li><strong>VCF RES to 4.5</strong><span>A vocal &#x27;wah&#x27; on each slide.</span></li></ul>
+</article>
+<article class="patch" id="steel-engine" data-tags="darksynth">
+<header>
+  <h2>Steel Engine</h2>
+  <div class="tags"><span class="tag">darksynth</span></div>
+</header>
+<p class="profile">Unison saw wall with a narrow stereo spread: thick and engine-like.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/bass/steel-engine.mp3" aria-label="Preview of Steel Engine"></audio>
+  <a class="ghost" href="../../presets/Doodles/Bass/Steel%20Engine.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>E2 to E3</dd></div><div><dt>Brightness</dt><dd>570 Hz centroid</dd></div><div><dt>Low energy</dt><dd>78% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 5 ms</dd></div><div><dt>Decay</dt><dd>Holds while the key is down</dd></div><div><dt>Filter closes</dt><dd>0.9 octaves</dd></div><div><dt>Held level</dt><dd>-5 dB from peak</dd></div><div><dt>Width</dt><dd>Stereo, side/mid 0.14</dd></div><div><dt>Mono sum</dt><dd>-0.1 dB</dd></div><div><dt>Loudness</dt><dd>-16.8 LUFS, peak -2.8 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">Unison voices</th><td class="value">4</td><td>4 stacked voices give thickness a single DCO can&#x27;t.</td></tr><tr><th scope="row">Unison detune</th><td class="value">0.12</td><td>Small: engine-like beating rather than a chorus of separate pitches. Too much loses the sense of a bass note.</td></tr><tr><th scope="row">Unison spread</th><td class="value">0.25</td><td>Deliberately narrow; full spread measured almost as much side as mid, even below 150 Hz.</td></tr><tr><th scope="row">VCF Cutoff</th><td class="value">4.2 (about 252 Hz at C4)</td><td>Open enough to hear the beating in the harmonics.</td></tr><tr><th scope="row">Env L3 (sustain)</th><td class="value">5.5</td><td>High sustain keeps the engine running between attacks.</td></tr><tr><th scope="row">EQ Gain</th><td class="value">+2.5 dB</td><td>A mid lift helps it read as aggression rather than mud.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> VCA mode Gate; DCO Saw Saw; DCO Range 16&#x27;; Sub level 0.0 / 3; VCF Res 1.0; VCF Env 3.0; VCF Key follow 3.0; Env T3 (decay) 4.5 (about 349 ms to -20 dB); Env T4 (release) 1.0 (about 35 ms to -20 dB); MW to VCF 3.0; Voices Mono (1); EQ Freq 641 Hz; EQ Q 0.478.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Best in low, simple patterns; fast movement blurs through the detune. Unison runs free, so each note starts differently: the first 300 ms measures about 2 dB louder or quieter from note to note. That is part of the life of the sound; compress if you need it even.</p></section>
+  <section><h3>How to use it</h3><p>Heavy sections: breakdowns, drops and big final choruses. Too thick for a sparse verse.</p></section>
+  <section><h3>Mixing</h3><ul><li>Essential: collapse below about 120 Hz to mono in the mix. This patch has some low-end width from unison.</li><li>Or high-pass at 120 Hz and put Midnight Sub underneath.</li><li>Sidechain hard; it&#x27;s a constant wall of energy.</li><li>Check mono compatibility: unison can thin out when summed.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="#midnight-sub">Midnight Sub</a><span class="why">Solid mono sub under the wide wall.</span></li><li><a href="brass.html#power-brass">Power Brass</a><span class="why">Together they&#x27;re the wall of a darksynth drop.</span></li><li><strong>Big gated snare</strong><span class="why">Needs a large snare to punch through this much sustain.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>UNISON spread to 0</strong><span>All voices centred: fully mono-safe, and more of a focused buzz.</span></li><li><strong>UNISON detune to 0.30</strong><span>Wider beating, more dissonant and aggressive.</span></li><li><strong>VCF Cutoff to 6.0</strong><span>Opens right up to a raw, abrasive roar.</span></li></ul>
+</article>
+<article class="patch" id="rubber-coupe" data-tags="outrun chillwave">
+<header>
+  <h2>Rubber Coupe</h2>
+  <div class="tags"><span class="tag">outrun</span><span class="tag">chillwave</span></div>
+</header>
+<p class="profile">Bouncy, elastic bass with a highly touch-sensitive, resonant filter.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/bass/rubber-coupe.mp3" aria-label="Preview of Rubber Coupe"></audio>
+  <a class="ghost" href="../../presets/Doodles/Bass/Rubber%20Coupe.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>E2 to A3</dd></div><div><dt>Brightness</dt><dd>808 Hz centroid</dd></div><div><dt>Low energy</dt><dd>48% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 15 ms</dd></div><div><dt>Decay</dt><dd>Holds while the key is down</dd></div><div><dt>Filter closes</dt><dd>2.6 octaves</dd></div><div><dt>Held level</dt><dd>-10 dB from peak</dd></div><div><dt>Width</dt><dd>Mono</dd></div><div><dt>Mono sum</dt><dd>+0.0 dB</dd></div><div><dt>Loudness</dt><dd>-18.0 LUFS, peak -8.4 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">DCO Pulse</th><td class="value">Pulse 25%</td><td>A 25% pulse is nasal and full of even harmonics, which the resonant filter turns into a &#x27;rubber&#x27; tone.</td></tr><tr><th scope="row">Sub wave</th><td class="value">Pulse 25% -1 oct</td><td>A 25% sub-pulse adds thump and a touch of the octave above.</td></tr><tr><th scope="row">VCF Res</th><td class="value">4.8</td><td>Strong enough to give a vocal, squelchy peak as the filter sweeps.</td></tr><tr><th scope="row">VCF Env mode</th><td class="value">Normal-Dynamic</td><td>Normal-Dynamic: velocity sets how far the filter opens. Measured from about 136 Hz at velocity 30 to about 1.6 kHz at velocity 100 on a similar setting.</td></tr><tr><th scope="row">VCA mode</th><td class="value">Gate-Dynamic</td><td>Gate-Dynamic: velocity also sets level, so ghost notes really are quiet.</td></tr><tr><th scope="row">Env T3 (decay)</th><td class="value">3.0 (about 120 ms to -20 dB)</td><td>About 120 ms: elastic snap on each note.</td></tr><tr><th scope="row">Env Key follow</th><td class="value">3.0</td><td>Higher notes get a shorter envelope, keeping fast upper-range fills tight.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Saw Off; DCO Range 8&#x27;; Sub level 1.2 / 3; VCF Cutoff 2.5 (about 66 Hz at C4); VCF Env 6.2; VCF Key follow 4.0; Env L3 (sustain) 1.0; Env T4 (release) 0.8 (about 25 ms to -20 dB); MW to VCF 3.5; Voices Mono (1).</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Very responsive to velocity: both filter and level follow it. Ghost notes around 40-60, accents above 110.</p></section>
+  <section><h3>How to use it</h3><p>Syncopated funk lines, retro-pop and chillwave. Vary the velocity programming or it will sound flat.</p></section>
+  <section><h3>Mixing</h3><ul><li>Dynamics are part of the sound: use slow-attack compression only.</li><li>Boost around 900 Hz if you want more of the &#x27;rubber&#x27; in the mix.</li><li>Less sidechain than a rolling bass; the groove is already in the notes.</li><li>Pairs well with tight, dry drums.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="keys.html#funk-clav">Funk Clav</a><span class="why">The classic syncopated partners.</span></li><li><a href="chord.html#major-7-haze">Major 7 Haze</a><span class="why">Warm chord stabs over a bouncy line suit retro-pop.</span></li><li><strong>Slap bass or muted guitar</strong><span class="why">Same rhythmic family: double the accents.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>VCF RES to 7.0</strong><span>A much more vocal, squelchy response to velocity.</span></li><li><strong>VCA mode to Gate</strong><span>Removes the velocity-to-level response, leaving brightness only.</span></li><li><strong>ENV T3 (decay) to 4.0</strong><span>Longer, more relaxed bounce for slower tempos.</span></li></ul>
+</article>
+<article class="patch" id="grid-runner" data-tags="outrun darksynth">
+<header>
+  <h2>Grid Runner</h2>
+  <div class="tags"><span class="tag">outrun</span><span class="tag">darksynth</span></div>
+</header>
+<p class="profile">Resonant, slightly acid-tinged sequencer bass with slow filter drift.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/bass/grid-runner.mp3" aria-label="Preview of Grid Runner"></audio>
+  <a class="ghost" href="../../presets/Doodles/Bass/Grid%20Runner.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>E2 to E3</dd></div><div><dt>Brightness</dt><dd>513 Hz centroid</dd></div><div><dt>Low energy</dt><dd>76% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 25 ms</dd></div><div><dt>Decay</dt><dd>Holds while the key is down</dd></div><div><dt>Filter closes</dt><dd>2.2 octaves</dd></div><div><dt>Held level</dt><dd>-16 dB from peak</dd></div><div><dt>Width</dt><dd>Mono</dd></div><div><dt>Mono sum</dt><dd>+0.0 dB</dd></div><div><dt>Loudness</dt><dd>-18.0 LUFS, peak -9.3 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">VCF Res</th><td class="value">6.2</td><td>High resonance is the acid character, but it also hollows out the fundamental.</td></tr><tr><th scope="row">Sub level</th><td class="value">1.3 / 3</td><td>The fix for that: an octave below the resonant sweep, it restores the weight resonance takes away.</td></tr><tr><th scope="row">DCO Range</th><td class="value">8&#x27;</td><td>8&#x27; plus sub, so the bright sweep sits above and the weight stays below.</td></tr><tr><th scope="row">VCF LFO</th><td class="value">0.8</td><td>A small, slow drift: repeated notes evolve instead of repeating exactly.</td></tr><tr><th scope="row">LFO Rate</th><td class="value">0.23 Hz</td><td>Around 0.2 Hz: slow enough to be felt over bars rather than heard as wobble.</td></tr><tr><th scope="row">Env T3 (decay)</th><td class="value">2.8 (about 107 ms to -20 dB)</td><td>Very short, so 16ths stay separate even at high tempos.</td></tr><tr><th scope="row">Env L3 (sustain)</th><td class="value">0.0</td><td>Zero: the filter closes fully after each pluck, leaving rhythmic space.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> VCA mode Gate; DCO Saw Saw; Sub wave Square -1 oct (panel label: OFF); VCF Cutoff 2.2 (about 51 Hz at C4); VCF Env 4.8; VCF Key follow 4.0; Env T4 (release) 0.5 (about 15 ms to -20 dB); MW to VCF 4.0; Voices Mono (1); LFO wave Triangle.</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Made for fast repeating 16ths. Filter drift means repeats aren&#x27;t identical over a few bars.</p></section>
+  <section><h3>How to use it</h3><p>Sequenced 16th-note patterns with one or two note changes: Terminator-style tension and chase scenes. Automate cutoff for build-ups.</p></section>
+  <section><h3>Mixing</h3><ul><li>The sub oscillator supports the low end that resonance takes away; keep both.</li><li>Use a tempo-synced delay on a send to thicken the 16ths.</li><li>Automate VCF Cutoff across a section for an easy build.</li><li>Resonant peaks can jump out: use a gentle dynamic EQ if a note pokes through.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="arp.html#sequencer-drive">Sequencer Drive</a><span class="why">Two sequenced lines an octave or two apart create classic interlock.</span></li><li><a href="pad.html#black-horizon">Black Horizon</a><span class="why">A dark, static pad sets off the moving filter.</span></li><li><strong>Tight LinnDrum-style toms</strong><span class="why">Same rhythmic grid, different register.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>VCF RES to 8.0</strong><span>Fully acid and squelchy; thins the low end further.</span></li><li><strong>VCF LFO to 0</strong><span>Removes drift for fully repeatable, mechanical sequences.</span></li><li><strong>VCF Cutoff to 1.5</strong><span>Darker, tenser and more subdued, for verses.</span></li></ul>
+</article>
+<article class="patch" id="velvet-bass" data-tags="dreamwave chillwave">
+<header>
+  <h2>Velvet Bass</h2>
+  <div class="tags"><span class="tag">dreamwave</span><span class="tag">chillwave</span></div>
+</header>
+<p class="profile">Soft, warm PWM bass with chorus: gentle movement for slow dreamy tracks.</p>
+<div class="player">
+  <audio controls preload="none" src="../../audio/bass/velvet-bass.mp3" aria-label="Preview of Velvet Bass"></audio>
+  <a class="ghost" href="../../presets/Doodles/Bass/Velvet%20Bass.talalpha" download>Preset file</a>
+</div>
+<dl class="facts"><div><dt>Playing range</dt><dd>E2 to A3</dd></div><div><dt>Brightness</dt><dd>192 Hz centroid</dd></div><div><dt>Low energy</dt><dd>83% below 150 Hz</dd></div><div><dt>Attack</dt><dd>Half level in 10 ms</dd></div><div><dt>Decay</dt><dd>Holds while the key is down</dd></div><div><dt>Filter closes</dt><dd>0.2 octaves</dd></div><div><dt>Held level</dt><dd>-4 dB from peak</dd></div><div><dt>Width</dt><dd>Stereo, side/mid 0.60</dd></div><div><dt>Mono sum</dt><dd>-1.5 dB</dd></div><div><dt>Loudness</dt><dd>-18.1 LUFS, peak -8.5 dBFS</dd></div></dl>
+<h3>Significant parameters</h3>
+<div class="table-wrap"><table class="params">
+<thead><tr><th scope="col">Control</th><th scope="col">Value</th><th scope="col">Why</th></tr></thead>
+<tbody><tr><th scope="row">DCO Pulse</th><td class="value">Pulse PW</td><td>A PWM pulse: its harmonic balance shifts slowly over time, giving movement without any added effect.</td></tr><tr><th scope="row">PWM Rate</th><td class="value">2.8</td><td>Slow, so the motion is felt rather than heard.</td></tr><tr><th scope="row">Chorus</th><td class="value">On</td><td>The chorus provides much of the &#x27;velvet&#x27;; it&#x27;s also the cause of the low-end width.</td></tr><tr><th scope="row">VCF Cutoff</th><td class="value">3.7 (about 171 Hz at C4)</td><td>Low enough that the top end stays soft, even with PWM moving.</td></tr><tr><th scope="row">Env T1 (attack)</th><td class="value">1.2 (about 15 ms)</td><td>A tiny attack softens the front of each note.</td></tr><tr><th scope="row">Env T4 (release)</th><td class="value">3.4 (about 168 ms to -20 dB)</td><td>A slight tail so notes overlap gently at slow tempos.</td></tr><tr><th scope="row">VCA mode</th><td class="value">Normal</td><td>Normal, unlike the rolling patches: the amp shares the soft envelope, so each note has a gentle swell and decay.</td></tr></tbody>
+</table></div>
+<p class="other"><strong>Other settings:</strong> DCO Saw Off; Sub wave Square -1 oct (panel label: OFF); DCO Range 8&#x27;; Sub level 1.4 / 3; PWM 3.8; VCF Res 0.5; VCF Env 1.5; VCF Key follow 3.0; Env T3 (decay) 5.5 (about 963 ms to -20 dB); Env L3 (sustain) 7.5; Chorus Rate 3.0; MW to VCF 3.5; Voices Mono (1).</p>
+<div class="columns">
+  <section><h3>Performance</h3><p>Long, connected notes. The motion comes from PWM and chorus, not from your playing.</p></section>
+  <section><h3>How to use it</h3><p>Slow dreamwave and chillwave passages, and sparse intros and outros.</p></section>
+  <section><h3>Mixing</h3><ul><li>The chorus adds some low-end width: narrow below 120 Hz in the mix, or turn the chorus off if it sounds unsteady.</li><li>Slow compression only; preserve the soft swell.</li><li>Light sidechain, or none, in a sparse arrangement.</li><li>Plate reverb on a very quiet send adds to the soft feel.</li><li>Built-in chorus: part of this sound, so keep it.</li></ul></section>
+  <section><h3>Pairings</h3><ul class="pairs"><li><a href="pad.html#ghost-mall">Ghost Mall</a><span class="why">Same soft, slightly hazy world.</span></li><li><a href="keys.html#warm-tines">Warm Tines</a><span class="why">Soft electric-piano chords sit gently over it.</span></li><li><strong>Dry, intimate vocal</strong><span class="why">Stays out of the vocal&#x27;s way.</span></li></ul></section>
+</div>
+<h3>Tweak it</h3>
+<ul class="tweaks"><li><strong>CHORUS off</strong><span>Focused, mono-safe and more solid; loses the velvet shimmer.</span></li><li><strong>PWM RATE to 5.0</strong><span>Faster, more obvious movement: more &#x27;analog string&#x27; than soft bass.</span></li><li><strong>VCF Cutoff to 5.0</strong><span>Reveals the movement of the pulse width; brighter and less polite.</span></li></ul>
+</article>
+</main>
+</div>
+<script src="site.js"></script>
+</body>
+</html>

@@ -1,0 +1,539 @@
+category = "Brass"
+mix_defaults = [
+  "High-pass at about 150 Hz; low sections less.",
+  "Lift 1-2 kHz for bite, and dip it under vocals.",
+  "Compress to hold stabs level with each other, with a slow enough attack to keep the front edge.",
+  "Centre mono parts, and let unison and detuned sections sit wider.",
+  "A short room or plate send suits stabs. Keep long tails out of fast figures.",
+]
+
+[[patch]]
+name = "Sunrise Fanfare"
+tags = ["outrun", "dreamwave"]
+browser = "Bright poly brass | Vel: brightness | MW: open filter"
+profile = "Bright, confident 80s poly brass: the filter opens on each chord, like a section taking a breath and playing."
+phrase = "stabs"
+range = "C3 to C5"
+expect = { attack_s = [0.005, 0.15], sweep_octaves = [-3, 1] }
+performance = "Short chords and punchy lines. Harder notes get brighter, as real brass does."
+use = "Chorus hits, intro fanfares and uplifting lines. The default for 'big and hopeful'."
+mix = [
+  "A boost around 1-2 kHz gives it more bite.",
+  "A short plate helps it sound like a section in a room.",
+  "High-pass at 150 Hz.",
+]
+pairings = [
+  { with = "Chrome Octave", why = "Stabs land between the octave jumps, in a classic disco arrangement." },
+  { with = "Hero Theme", why = "Fanfare punctuates the big lead." },
+  { with = "Gated snare", external = true, why = "An 80s stadium chorus needs both." },
+]
+tweaks = [
+  { control = "VCF Env to 5.0", result = "A bigger, more aggressive 'blat' on each hit." },
+  { control = "ENV T1 (attack) to 4.0", result = "A slower, softer swell, like horns rather than trumpets." },
+  { control = "Chorus off", result = "Tighter and more direct." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 1
+DcoSubLevel = 0
+NumberOfVoices = 7
+VcfCutoff = 0.5
+VcfResonance = 0.05
+VcfEnvMode = 2
+VcfEnvMod = 0.32
+VcfKeyFollow = 0.4
+EnvAttackTime = 0.25
+EnvDecayTime = 0.45
+EnvSustainLevel = 0.65
+EnvReleaseTime = 0.3
+DcoChorusSwitch = 1
+ChorusRate = 0.5
+ModWheelVcfRange = 0.2
+ModWheelDcoLfo = 0
+reverbDryWet = 0.18
+reverbSize = 0.5
+[patch.why]
+EnvAttackTime = "About 55 ms: filter and level rise together. This delayed bloom, more than anything else, is what makes a saw sound like brass."
+VcfEnvMod = "The filter opens as the note begins, then settles. Real brass also gets brighter as it speaks."
+VcfEnvMode = "Normal-Dynamic: harder notes get brighter. Brass really does this, and it adds life to programmed parts."
+EnvSustainLevel = "Settles to a slightly darker tone, leaving room after the initial bloom."
+DcoChorusSwitch = "Makes one synth sound like a section."
+
+[[patch]]
+name = "Stadium Stab"
+tags = ["outrun", "darksynth"]
+browser = "Short huge hit | Vel: none | MW: open filter"
+profile = "A short, huge brass hit with a big room behind it, built for a single chord on the downbeat."
+phrase = "stabs"
+range = "C3 to C5"
+expect = { attack_s = [0, 0.1], sustain_db = [-200, -8] }
+performance = "One hit at a time, with space around it. It relies on the release and reverb tail to fill the gap."
+use = "Downbeats, drop hits, and rhythmic accents in a chorus."
+mix = [
+  "Layer it with a kick or snare hit for a bigger impact.",
+  "Duck its reverb tail with the next hit, if needed.",
+  "High-pass at 150 Hz.",
+]
+pairings = [
+  { with = "Rising Tide", why = "A swell resolves into this hit." },
+  { with = "Steel Engine", why = "A thick bass and a short hit: a very big downbeat." },
+  { with = "Orchestral timpani hit", external = true, why = "Layered, for a cinematic impact." },
+]
+tweaks = [
+  { control = "ENV L3 (sustain) to 5.0", result = "Longer body on each hit." },
+  { control = "Reverb mix to -0.70", result = "Dry and tight: good for fast rhythms." },
+  { control = "VCF Env to 6.0", result = "A much harder, brighter blat." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 1
+DcoSubLevel = 0.3
+NumberOfVoices = 7
+UnisonoVoices = 0.1
+UnisonoDetune = 0.1
+UnisonoSpread = 0.7
+VcfCutoff = 0.5
+VcfEnvMod = 0.38
+VcfKeyFollow = 0.3
+EnvAttackTime = 0.12
+EnvDecayTime = 0.42
+EnvSustainLevel = 0.12
+EnvReleaseTime = 0.4
+DcoChorusSwitch = 1
+ChorusRate = 0.55
+ModWheelVcfRange = 0.2
+ModWheelDcoLfo = 0
+reverbDryWet = 0.3
+reverbSize = 0.75
+[patch.why]
+EnvAttackTime = "About 15 ms: still has the bloom of brass, but hits hard."
+EnvDecayTime = "About 330 ms with low sustain: a hit, not a held note."
+UnisonoVoices = "Three voices per note for a big, slightly smeared section."
+reverbDryWet = "A wet room: the stadium is half the sound."
+VcfEnvMod = "A strong, quick filter opening gives the bright 'blat' of the hit."
+
+[[patch]]
+name = "Silk Horn"
+tags = ["dreamwave", "chillwave"]
+browser = "Soft mellow horn | Vel: none | MW: vibrato"
+profile = "Soft, rounded horn with a slow attack and no bite: more French horn than trumpet."
+phrase = "chords"
+range = "C3 to C5"
+expect = { attack_s = [0.02, 0.6], centroid_hz = [200, 1500] }
+performance = "Long, smooth chords and slow lines. Mod wheel adds a gentle vibrato."
+use = "Warm harmony behind a vocal, or soft melodic lines in a dreamy section."
+mix = [
+  "Little processing needed: it's already soft.",
+  "High-pass at 150 Hz.",
+  "Use it as a warm layer under a brighter pad.",
+]
+pairings = [
+  { with = "Warm Tines", why = "A soft electric piano and horn are a natural pairing." },
+  { with = "Velvet Bass", why = "Soft all round, for a gentle section." },
+  { with = "Lead vocal", external = true, why = "It stays out of the way of the voice." },
+]
+tweaks = [
+  { control = "VCF Cutoff to 5.5", result = "Brighter and more present." },
+  { control = "ENV T1 (attack) to 2.5", result = "Faster speech, more like a played phrase." },
+  { control = "Pulse Volume to 10", result = "A more hollow, woody tone." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 1
+DcoWavePulse = 1
+specialPulseVolume = 0.6
+DcoSubLevel = 0
+NumberOfVoices = 7
+VcfCutoff = 0.42
+VcfEnvMod = 0.2
+VcfKeyFollow = 0.5
+EnvAttackTime = 0.38
+EnvDecayTime = 0.5
+EnvSustainLevel = 0.8
+EnvReleaseTime = 0.42
+DcoChorusSwitch = 1
+ChorusRate = 0.4
+ModWheelDcoLfo = 0.06
+LfoRate = 0.68
+reverbDryWet = 0.25
+reverbSize = 0.6
+[patch.why]
+VcfCutoff = "About 250 Hz at C4, opened a little by the envelope: warm with no edge."
+VcfEnvMod = "A small filter rise: enough to say 'brass', without any bite."
+EnvAttackTime = "About 120 ms: a soft entry, the main thing that separates a horn from a trumpet."
+DcoWavePulse = "A square adds a slightly hollow, woody colour under the saw."
+
+[[patch]]
+name = "Power Brass"
+tags = ["darksynth", "outrun"]
+browser = "Thick unison brass | Vel: none | MW: open filter"
+profile = "Thick, aggressive unison brass that fills the whole mid-range."
+phrase = "stabs"
+range = "C3 to C5"
+expect = { attack_s = [0.002, 0.15], side_mid = [0.1, 1.2] }
+performance = "Strong, simple chords and fifths: it's thick enough that big voicings blur."
+use = "Big chorus hooks, drops, and any point where you need a wall of brass."
+mix = [
+  "It takes a lot of space: lower pads or remove them when this comes in.",
+  "High-pass at 200 Hz.",
+  "Saturation helps it stand up in a dense mix.",
+]
+pairings = [
+  { with = "Steel Engine", why = "Together they make the wall of a darksynth drop." },
+  { with = "Octave Ensemble", why = "Strings carry a melody on top of a brass wall." },
+  { with = "Heavy guitar", external = true, why = "The two thicken each other." },
+]
+tweaks = [
+  { control = "UNISON voices to 6", result = "An even bigger wall." },
+  { control = "UNISON spread to 0.20", result = "Tighter and more centred, for a dense mix." },
+  { control = "VCF Cutoff to 7.0", result = "Raw, bright, and abrasive." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 1
+DcoSubLevel = 0.5
+NumberOfVoices = 7
+UnisonoVoices = 0.25
+UnisonoDetune = 0.16
+UnisonoSpread = 0.6
+VcfCutoff = 0.52
+VcfResonance = 0.1
+VcfEnvMod = 0.3
+VcfKeyFollow = 0.4
+EnvAttackTime = 0.2
+EnvDecayTime = 0.45
+EnvSustainLevel = 0.7
+EnvReleaseTime = 0.25
+ModWheelVcfRange = 0.2
+ModWheelDcoLfo = 0
+reverbDryWet = 0.12
+[patch.why]
+UnisonoVoices = "4 voices per note: a wall of sound rather than a section of players."
+UnisonoDetune = "Enough beating to thicken the sound and add aggression."
+EnvAttackTime = "About 25 ms: it speaks quickly, with just enough brass-like bloom."
+VcfEnvMod = "Strong enough to make each chord bite through the thickness."
+reverbDryWet = "Kept low: reverb would blur something this dense."
+
+[[patch]]
+name = "Sforzando"
+tags = ["outrun", "darksynth"]
+browser = "Hit, dip, then swell | Vel: none | MW: open filter"
+profile = "The classic brass effect: a sharp attack, a sudden drop, then a long swell back up."
+phrase = "swells"
+hold = 6.0
+range = "C3 to C5"
+expect = { attack_s = [0, 0.2], sustain_db = [-12, 2] }
+performance = "Hold chords for two bars or more to hear the whole gesture."
+use = "Dramatic transitions into a new section. Time it so that the swell peaks on the downbeat."
+mix = [
+  "A compressor will flatten the shape, so use a light touch.",
+  "Automating it up further during the swell adds impact.",
+  "High-pass at 150 Hz.",
+]
+pairings = [
+  { with = "Rising Tide", why = "Both swell into a downbeat." },
+  { with = "Stadium Stab", why = "This builds up, that lands the hit." },
+  { with = "Rolling toms", external = true, why = "They rise with the swell." },
+]
+tweaks = [
+  { control = "Env T3 (decay) to 5.0", result = "A much quicker swell, for faster tempos." },
+  { control = "Env L2 to 5.0", result = "A shallower dip, less dramatic." },
+  { control = "VCF Env to 5.0", result = "A much brighter peak." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 1
+DcoSubLevel = 0.2
+NumberOfVoices = 7
+VcfCutoff = 0.46
+VcfEnvMod = 0.32
+VcfKeyFollow = 0.4
+EnvAttackTime = 0.12
+EnvAttackLevel = 1
+EnvBreakTime = 0.3
+EnvBreakLevel = 0.22
+EnvDecayTime = 0.66
+EnvSustainLevel = 1
+EnvReleaseTime = 0.3
+DcoChorusSwitch = 1
+ChorusRate = 0.5
+ModWheelVcfRange = 0.15
+ModWheelDcoLfo = 0
+reverbDryWet = 0.2
+[patch.why]
+EnvAttackLevel = "L1 at full: the sharp initial hit."
+EnvBreakTime = "T2 falls fast, in about 100 ms."
+EnvBreakLevel = "L2 at 2.2: the sudden drop. This needs the extra stage, as a plain ADSR can't fall and then rise."
+EnvDecayTime = "T3 here rises rather than falls, because L3 is above L2: a slow two-second swell."
+EnvSustainLevel = "L3 at full: the destination of the swell. Filter and level both reach their peak."
+
+[[patch]]
+name = "Chrome Trumpet"
+tags = ["outrun", "dreamwave"]
+browser = "Mono trumpet lead | Vel: brightness | MW: vibrato"
+profile = "A bright mono trumpet with a quick pitch 'blip' at the start of each note, as a lip slur would have."
+phrase = "lead"
+transpose = -12
+test_note = 57
+range = "C3 to C5"
+expect = { attack_s = [0, 0.15] }
+performance = "Play it monophonically like a real trumpet, with short breath-like phrases. Velocity sets brightness; mod wheel adds vibrato."
+use = "Melodic hooks and short solos, or call-and-response with a lead."
+mix = [
+  "Boost slightly at 1-3 kHz for more 'brassy' bite.",
+  "A plate reverb and short delay put it on a stage.",
+  "High-pass at 200 Hz.",
+]
+pairings = [
+  { with = "Rubber Coupe", why = "Funky bass with a stabby trumpet line." },
+  { with = "Miami Section", why = "A solo trumpet playing over the section." },
+  { with = "Sax solo", external = true, why = "Traded phrases, in the classic style." },
+]
+tweaks = [
+  { control = "DCO Env to 3.0", result = "A larger pitch fall: sounds almost like a falling lip slur." },
+  { control = "VCF Cutoff to 7.0", result = "Bright, almost a piccolo trumpet." },
+  { control = "Portamento to On", result = "Smooth slides on overlapping notes." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 1
+DcoSubLevel = 0
+NumberOfVoices = 0
+VcfCutoff = 0.52
+VcfResonance = 0.08
+VcfEnvMode = 2
+VcfEnvMod = 0.3
+VcfKeyFollow = 0.6
+DcoEnvMod = 0.06
+EnvAttackTime = 0.2
+EnvDecayTime = 0.3
+EnvSustainLevel = 0
+VcaEnvMode = 1
+EnvReleaseTime = 0.2
+ModWheelDcoLfo = 0.07
+LfoRate = 0.7
+delayDryWet = 0.15
+delayTime = 0.25
+delayFeedback = 0.2
+reverbDryWet = 0.18
+[patch.why]
+DcoEnvMod = "A small pitch blip of under a semitone that falls away, mimicking a lip settling on a note. Any deeper and short notes sound out of tune."
+EnvDecayTime = "About 120 ms: the blip is over within 100 ms, so even short notes sit in tune. A slower decay leaves the whole note sharp."
+EnvSustainLevel = "Zero, so the pitch blip always returns to the note. Any sustain would leave held notes sharp."
+VcaEnvMode = "Gate holds the note while the shared envelope shapes pitch and filter."
+EnvAttackTime = "About 25 ms, for filter and pitch only: in Gate mode the amp ignores attack and opens at once. So the note starts instantly, then the tone speaks."
+VcfEnvMode = "Normal-Dynamic: harder notes open the filter further, as blowing harder does."
+
+[[patch]]
+name = "Low Rider"
+tags = ["outrun", "chillwave"]
+browser = "Low trombone section | Vel: none | MW: open filter"
+profile = "Warm, low trombone-like section with a slight growl, for sustained support under the arrangement."
+phrase = "chords"
+transpose = -12
+test_note = 45
+range = "C2 to C4"
+expect = { centroid_hz = [150, 1500], attack_s = [0.002, 0.3] }
+performance = "Fifths and simple chords, low on the keyboard. Busy voicings get muddy down here."
+use = "Harmonic support under a higher brass line, or a bassline in sparse sections."
+mix = [
+  "It shares space with the bass, so high-pass at 100 Hz or thin the voicing.",
+  "A small lift at around 800 Hz adds growl.",
+  "Light sidechain to the kick.",
+]
+pairings = [
+  { with = "Sunrise Fanfare", why = "Low and high sections together make a full brass arrangement." },
+  { with = "Neon Pulse", why = "A plain bass doesn't crowd it." },
+  { with = "Baritone sax", external = true, why = "They share a low, warm growl." },
+]
+tweaks = [
+  { control = "VCF RES to 4.0", result = "More growl and character." },
+  { control = "Sub level to 0", result = "Less weight, leaving more room for the bass." },
+  { control = "VCF Env to 5.0", result = "A bigger 'blat' on each note." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 1
+DcoWaveSub = 0
+DcoSubLevel = 0.7
+NumberOfVoices = 7
+VcfCutoff = 0.42
+VcfResonance = 0.15
+VcfEnvMod = 0.3
+VcfKeyFollow = 0.3
+EnvAttackTime = 0.28
+EnvDecayTime = 0.5
+EnvSustainLevel = 0.6
+EnvReleaseTime = 0.3
+DcoChorusSwitch = 1
+ChorusRate = 0.4
+ModWheelVcfRange = 0.2
+ModWheelDcoLfo = 0
+reverbDryWet = 0.16
+[patch.why]
+VcfCutoff = "Around 250 Hz, so the filter is only just above the notes, for a dark tone."
+VcfEnvMod = "Enough to give each note a soft 'blat' as it begins."
+EnvAttackTime = "About 60 ms: heavier instruments speak more slowly."
+DcoSubLevel = "A quiet square an octave down adds weight."
+VcfResonance = "A little resonance adds a trombone-like growl around the filter's sweep."
+
+[[patch]]
+name = "Miami Section"
+tags = ["outrun", "chillwave"]
+browser = "Detuned stab section | Vel: none | MW: open filter"
+profile = "A slightly detuned, bright stab section with a sunny, 80s TV theme feel."
+phrase = "stabs"
+range = "C3 to C5"
+expect = { attack_s = [0.002, 0.12] }
+performance = "Syncopated short chords. Sequence it tight to the grid or play it loosely by hand."
+use = "Retro-pop hooks and TV-theme horn lines."
+mix = [
+  "Bright, so it can sit lower than you'd expect.",
+  "A short delay adds a stereo slap to it.",
+  "High-pass at 200 Hz.",
+]
+pairings = [
+  { with = "Rubber Coupe", why = "Funky bass and syncopated stabs." },
+  { with = "Chrome Trumpet", why = "A solo line over the section." },
+  { with = "Congas and shakers", external = true, why = "They add the Miami setting to it." },
+]
+tweaks = [
+  { control = "Pulse Fine to +25 cents", result = "A stronger, sour detune, like an out-of-tune section." },
+  { control = "ENV T3 (decay) to 3.0", result = "Shorter, tighter stabs." },
+  { control = "Pulse Tune to +7", result = "A fifth in each note: a thick, hooky sound." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 1
+DcoWavePulse = 1
+specialPulseFineTune = 0.1
+specialPulseVolume = 0.7
+DcoSubLevel = 0
+NumberOfVoices = 7
+VcfCutoff = 0.54
+VcfEnvMod = 0.3
+VcfKeyFollow = 0.4
+EnvAttackTime = 0.2
+EnvDecayTime = 0.4
+EnvSustainLevel = 0.35
+EnvReleaseTime = 0.25
+DcoChorusSwitch = 1
+ChorusRate = 0.62
+ModWheelVcfRange = 0.2
+ModWheelDcoLfo = 0
+delayDryWet = 0.12
+delayTime = 0.15
+delayFeedback = 0.15
+delaySpread = 0.9
+[patch.why]
+specialPulseFineTune = "A square 10 cents sharp of the saw: two 'players' per note, a little out of tune, as real sections are."
+DcoWavePulse = "A square adds a brighter, more hollow edge beside the saw."
+EnvSustainLevel = "Low, as the sound should be gone before the next stab."
+delayTime = "A short, wide 1/8 echo fills the gaps between syncopated hits."
+
+[[patch]]
+name = "Metal Brass"
+tags = ["darksynth"]
+browser = "Sync-edged brass | Vel: none | MW: open filter"
+profile = "Hard, metallic brass with an oscillator-sync edge: part horn, part machine."
+phrase = "stabs"
+range = "C3 to C5"
+expect = { attack_s = [0, 0.15], centroid_hz = [500, 5000] }
+performance = "Short, punchy riffs. Big chords can get harsh."
+use = "Darksynth hooks and aggressive breaks."
+mix = [
+  "Dip 2-4 kHz slightly if it's fatiguing.",
+  "Saturation makes it even more metallic.",
+  "High-pass at 200 Hz.",
+]
+pairings = [
+  { with = "Cyber Scream", why = "Harmonised lines, for a very aggressive hook." },
+  { with = "Blacktop", why = "Dark bass under a metallic top." },
+  { with = "Industrial hits", external = true, why = "The same machine-like character." },
+]
+tweaks = [
+  { control = "Pulse Volume to 3.0", result = "Less metal, more brass." },
+  { control = "Pulse Tune to +7", result = "A tighter, more nasal metallic ring." },
+  { control = "Pulse Env mod to +0.60", result = "A big sweeping 'rip' on each note." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 1
+DcoWavePulse = 1
+specialPulseSync = 1
+specialPulseTune = 15
+specialPulseDcoEnv = 0.25
+specialPulseVolume = 0.55
+DcoSubLevel = 0
+NumberOfVoices = 7
+VcfCutoff = 0.56
+VcfResonance = 0.1
+VcfEnvMod = 0.25
+VcfKeyFollow = 0.4
+EnvAttackTime = 0.18
+EnvDecayTime = 0.42
+EnvSustainLevel = 0.5
+EnvReleaseTime = 0.22
+ModWheelVcfRange = 0.2
+ModWheelDcoLfo = 0
+reverbDryWet = 0.1
+[patch.why]
+specialPulseSync = "Hard sync on the pulse adds a metallic layer of harmonics on top of the saw."
+specialPulseTune = "A non-octave tuning produces clangy, inharmonic-sounding overtones."
+specialPulseDcoEnv = "A small sweep gives each note a metallic 'zing'."
+specialPulseVolume = "Below the saw, so it still reads as brass."
+EnvAttackTime = "About 20 ms: a brass-like speech, under the machine edge."
+
+[[patch]]
+name = "Night Patrol"
+tags = ["darksynth", "dreamwave"]
+browser = "Dark sustained brass | Vel: none | MW: open filter"
+profile = "Dark, ominous sustained low brass, like the opening of a John Carpenter score."
+phrase = "chords"
+transpose = -12
+test_note = 45
+range = "C2 to C4"
+expect = { centroid_hz = [100, 900], attack_s = [0.01, 0.6] }
+performance = "Slow, simple chords and held fifths. Mod wheel opens it for tension."
+use = "Slow-burning verses, ominous intros, and tension before a drop."
+mix = [
+  "Sidechain to the kick if it's in the same space.",
+  "A long, dark reverb suits it.",
+  "Keep other parts out of 150-400 Hz.",
+]
+pairings = [
+  { with = "Blacktop", why = "A brooding bass under dark brass is the core of darksynth." },
+  { with = "Black Horizon", why = "Heavy and dark, for a very ominous section." },
+  { with = "Slow, deep toms", external = true, why = "They add to the sense of something approaching." },
+]
+tweaks = [
+  { control = "VCF Cutoff to 5.0", result = "Brighter and more threatening." },
+  { control = "VCF RES to 4.0", result = "A growl in the low end." },
+  { control = "ENV T1 (attack) to 6.0", result = "A very slow swell, as if from a distance." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 1
+DcoSubLevel = 0.4
+NumberOfVoices = 7
+VcfCutoff = 0.34
+VcfResonance = 0.12
+VcfEnvMod = 0.22
+VcfKeyFollow = 0.2
+EnvAttackTime = 0.42
+EnvDecayTime = 0.55
+EnvSustainLevel = 0.75
+EnvReleaseTime = 0.5
+DcoChorusSwitch = 1
+ChorusRate = 0.3
+ModWheelVcfRange = 0.3
+ModWheelDcoLfo = 0
+reverbDryWet = 0.3
+reverbSize = 0.75
+reverbTone = 0.2
+[patch.why]
+VcfCutoff = "About 130 Hz at C4: only the lowest harmonics remain, which is where the menace comes from."
+VcfEnvMod = "A small opening at the start, so that it reads as brass rather than a pad."
+EnvAttackTime = "About 170 ms: slow and heavy."
+reverbTone = "A dark reverb, so that the space adds no brightness."
+ChorusRate = "A slow chorus adds width with little motion."

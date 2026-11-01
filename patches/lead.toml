@@ -1,0 +1,583 @@
+category = "Lead"
+mix_defaults = [
+  "High-pass at 200-300 Hz.",
+  "Lift a little around 2-3 kHz to bring it forward, and dip it there if it competes with a vocal.",
+  "Light compression evens out phrases. It doesn't need sidechain.",
+  "Centre it, with width coming from its delay and reverb.",
+  "Give it its own delay send, then duck the send under the dry line if it clouds.",
+]
+
+[[patch]]
+name = "Sunset Solo"
+tags = ["outrun", "dreamwave"]
+browser = "Classic saw solo | Vel: none | MW: vibrato"
+profile = "The classic outrun solo: warm mono saw with vibrato that arrives late, like a player leaning into a held note."
+phrase = "lead"
+range = "A3 to A5"
+expect = { centroid_hz = [500, 3000] }
+performance = "Hold notes to let the automatic vibrato arrive after half a second. Mod wheel adds deeper vibrato on top for peaks."
+use = "Main melodies and solos, doubling a vocal line, or the last chorus hook. It's the safe first choice for an outrun lead."
+mix = [
+  "High-pass around 200 Hz; there's nothing useful below that for a lead.",
+  "The built-in delay is part of the sound. Turn it off if you'd rather use a tempo-synced send.",
+  "A small lift around 2-3 kHz helps it sit over pads.",
+  "Almost mono as it stands: move Delay spread away from 0.00 if you want wider echoes.",
+]
+pairings = [
+  { with = "Endless Highway", why = "A slow PWM pad gives the solo a soft bed without competing for the top end." },
+  { with = "Nightdrive", why = "A rolling bass gives the long notes momentum." },
+  { with = "Clean electric guitar", external = true, why = "Trade phrases: the guitar has the attack, this has the sustain." },
+]
+tweaks = [
+  { control = "Portamento to On, time 2.0", result = "Legato slides between overlapping notes, more like a pitch-bent guitar." },
+  { control = "VCF Cutoff to 7.0", result = "Brighter and more forward for a big final chorus." },
+  { control = "LFO Delay to 0", result = "Vibrato starts immediately: less natural, more mechanical." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 1
+DcoSubLevel = 0
+NumberOfVoices = 0
+VcfCutoff = 0.62
+VcfResonance = 0.12
+VcfEnvMod = 0.12
+VcfKeyFollow = 0.5
+EnvAttackTime = 0.05
+EnvDecayTime = 0.5
+EnvSustainLevel = 0.75
+EnvReleaseTime = 0.3
+DcoLfoMod = 0.09
+LfoRate = 0.7
+LfoDelay = 0.5
+ModWheelDcoLfo = 0.08
+BenderRange = 2
+delayDryWet = 0.22
+delayTime = 0.25
+delayFeedback = 0.3
+reverbDryWet = 0.18
+reverbSize = 0.5
+[patch.why]
+DcoWaveSaw = "A single saw with its full harmonic series: simple and vocal, and easy to place in a mix."
+NumberOfVoices = "Mono is what makes a solo line feel like one player."
+VcfCutoff = "Around 1.3 kHz: open enough to speak, soft enough not to bite."
+DcoLfoMod = "A gentle vibrato of a few cents each way, the natural amount for a sustained note."
+LfoRate = "About 5 Hz, close to a human vibrato."
+LfoDelay = "About 400 ms: short notes stay straight and only held notes bloom. This is the patch's expressive signature."
+delayTime = "A dotted 8th echo repeats between the notes, the classic lead delay."
+
+[[patch]]
+name = "Laser Grid"
+tags = ["outrun", "darksynth"]
+browser = "Sync sweep lead | Vel: brightness | MW: open filter"
+profile = "Sweeping hard-sync lead, bright and arcade-like, that cuts through a dense mix."
+phrase = "lead"
+range = "A3 to A5"
+expect = { centroid_hz = [1000, 6000] }
+performance = "Each note triggers a fast sync sweep, and harder notes open the filter further. Play short, punchy phrases."
+use = "Riffs and hooks that need to cut through, and fills between vocal lines. Use it for a phrase rather than a long melody, as it can tire the ear."
+mix = [
+  "High-pass at 300 Hz and treat it as a feature part.",
+  "If it's harsh, dip 3-4 kHz by 2-3 dB rather than closing the filter.",
+  "A short plate reverb on a send softens the edge without pushing it back.",
+  "Keep it centre, or double a phrase hard-panned for the last chorus.",
+]
+pairings = [
+  { with = "Chrome Octave", why = "Octave motion under a fast riff gives high-energy forward drive." },
+  { with = "Black Horizon", why = "A dark pad leaves the entire top end for this lead." },
+  { with = "Driving 16th hi-hats", external = true, why = "The sync sweep sits in the same bright, fast world." },
+]
+tweaks = [
+  { control = "Pulse TUNE to +19", result = "A higher, more screaming resonant peak." },
+  { control = "Pulse ENV to +0.70", result = "A much bigger sweep, for a dramatic laser-like start to each note." },
+  { control = "ENV T3 (decay) to 6.0", result = "A slower sweep that becomes part of the melody." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 0
+DcoWavePulse = 1
+specialPulseSync = 1
+specialPulseTune = 12
+specialPulseDcoEnv = 0.48
+DcoWaveSub = 0
+DcoSubLevel = 0.8
+NumberOfVoices = 0
+VcfCutoff = 0.68
+VcfResonance = 0.1
+VcfEnvMode = 2
+VcfEnvMod = 0.2
+VcaEnvMode = 1
+EnvDecayTime = 0.46
+EnvSustainLevel = 0.2
+EnvReleaseTime = 0.1
+ModWheelVcfRange = 0.25
+ModWheelDcoLfo = 0
+delayDryWet = 0.16
+delayTime = 0.15
+delayFeedback = 0.25
+reverbDryWet = 0.12
+[patch.why]
+specialPulseSync = "Hard sync to the sub oscillator: the waveform restarts each cycle, producing the tearing, metallic harmonics."
+specialPulseTune = "Sets the resting pitch of the synced wave an octave up, so it sings above the note."
+specialPulseDcoEnv = "The envelope sweeps the synced pitch down on every note, which is the 'laser' you hear."
+DcoSubLevel = "The sync reference oscillator also adds some body and a clear sense of pitch."
+EnvDecayTime = "About 400 ms: the sweep is heard as a gesture, not a static tone."
+VcaEnvMode = "Gate holds the level while the shared envelope runs the sweep."
+VcfEnvMode = "Normal-Dynamic: hard notes are brighter, which keeps fast riffs from sounding like a sequencer."
+
+[[patch]]
+name = "Hero Theme"
+tags = ["outrun", "dreamwave"]
+browser = "Wide unison anthem | Vel: none | MW: vibrato"
+profile = "Big, wide unison lead for the anthem moment: a detuned stack with a quiet octave on top and a long echo."
+phrase = "lead"
+range = "A3 to E5"
+expect = { centroid_hz = [500, 3500], side_mid = [0.2, 1.2] }
+performance = "Play simple, singable lines and long notes; fast passages blur in the detune. Mod wheel adds vibrato at the peak of a phrase."
+use = "The chorus hook or the big instrumental theme. It takes up a lot of room, so strip other parts back to let it through."
+mix = [
+  "Automate it up for the theme and pull pads down by 2-3 dB under it.",
+  "High-pass at 200 Hz to keep the unison from clouding the low mids.",
+  "Check in mono; the stack loses a little width but should hold up.",
+  "Sidechain it lightly to the kick for pump if the arrangement is dense.",
+]
+pairings = [
+  { with = "Neon Pulse", why = "A steady, plain bass doesn't compete with a wide lead." },
+  { with = "Sunrise Fanfare", why = "Brass stabs punctuate the gaps in the theme." },
+  { with = "Big gated drums", external = true, why = "This is the sound of an 80s stadium, and it needs a snare to match." },
+]
+tweaks = [
+  { control = "UNISON voices to 7", result = "Even thicker, at the cost of a clear pitch centre." },
+  { control = "UNISON detune to 0.10", result = "More focused: less chorus, more single-instrument weight." },
+  { control = "Reverb mix to -0.20", result = "Pushes it back into the distance for intros." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 1
+DcoWavePulse = 1
+specialPulseTune = 12
+specialPulseVolume = 0.35
+DcoSubLevel = 0
+NumberOfVoices = 1
+UnisonoVoices = 0.25
+UnisonoDetune = 0.2
+UnisonoSpread = 0.8
+VcfCutoff = 0.65
+VcfResonance = 0.08
+VcfEnvMod = 0.1
+VcfKeyFollow = 0.4
+EnvAttackTime = 0.1
+EnvDecayTime = 0.5
+EnvSustainLevel = 0.85
+EnvReleaseTime = 0.38
+ModWheelDcoLfo = 0.08
+LfoRate = 0.7
+delayDryWet = 0.25
+delayTime = 0.25
+delayFeedback = 0.35
+delaySpread = 0.8
+reverbDryWet = 0.26
+reverbSize = 0.7
+[patch.why]
+specialPulseTune = "A quiet square an octave up adds an extra heroic ring on top of the saw."
+UnisonoVoices = "4 stacked voices are the width and size of the sound."
+UnisonoDetune = "Enough beating to feel huge, not so much that the note loses its pitch."
+UnisonoSpread = "Wide on purpose: a lead sits above the bass, so low-end mono concerns don't apply."
+NumberOfVoices = "Two voices let the release tail overlap the next note, which helps long lines feel connected."
+EnvAttackTime = "A slight softening of the start: bigger sounds feel more natural if they don't snap on."
+delaySpread = "A wide stereo echo adds to the size without more level."
+
+[[patch]]
+name = "Glass Whistle"
+tags = ["dreamwave", "chillwave"]
+browser = "High pure whistle | Vel: none | MW: vibrato"
+profile = "A pure, high whistle with a gentle glide, sitting above everything else: mostly fundamental, with a soft 3rd harmonic."
+phrase = "legato"
+range = "A4 to C6"
+transpose = 12
+test_note = 81
+expect = { centroid_hz = [500, 2500] }
+performance = "Overlap notes to glide. It works best in the upper octave, with few notes. Mod wheel adds vibrato."
+use = "Sparse counter-melodies above a chorus, or as the sole melody in a dreamy breakdown."
+mix = [
+  "Almost no EQ needed: there's little in the signal but the fundamental and a 3rd harmonic about 13 dB down.",
+  "High-pass at 300 Hz to be safe.",
+  "The reverb and delay are doing a lot of the work here. Keep them if you can.",
+  "Keep it low in the mix; pure tones cut through more than the meters suggest.",
+]
+pairings = [
+  { with = "Ghost Mall", why = "A hazy pad under a clear whistle is the core dreamwave contrast." },
+  { with = "Velvet Bass", why = "Together they're soft at both ends of the spectrum, for a sparse section." },
+  { with = "Distant vocal harmonies", external = true, why = "It blends into a vocal stack as an extra airy voice." },
+]
+tweaks = [
+  { control = "Portamento to All", result = "Every note glides in, for an eerie theremin feel." },
+  { control = "DCO LFO to 3.0", result = "A wide, unstable wobble, like a saw played with a bow." },
+  { control = "Noise to 0.5", result = "Adds breath to the tone: closer to an actual whistle." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 0
+DcoWavePulse = 1
+DcoSubLevel = 0
+NumberOfVoices = 0
+VcfCutoff = 0.57
+VcfKeyFollow = 1
+PortamentoMode = 1
+PortamentoTime = 0.2
+EnvAttackTime = 0.2
+EnvDecayTime = 0.5
+EnvSustainLevel = 0.9
+EnvReleaseTime = 0.42
+ModWheelDcoLfo = 0.05
+DcoLfoMod = 0.05
+LfoRate = 0.7
+LfoDelay = 0.45
+delayDryWet = 0.28
+delayTime = 0.25
+delayFeedback = 0.4
+delayTone = 0.6
+reverbDryWet = 0.35
+reverbSize = 0.75
+[patch.why]
+DcoWavePulse = "A square has no 2nd harmonic and a weak 3rd, so it filters down to a simple, whistle-like tone."
+VcfCutoff = "With full key follow, the filter stays about three times above the note: the 3rd harmonic stays, about 13 dB down, and the higher ones are almost gone."
+VcfKeyFollow = "Full tracking: the same pure tone anywhere you play."
+PortamentoTime = "About 50 ms per octave: enough for a singing connection between notes without sounding like a slide effect."
+EnvAttackTime = "A soft start with no click, as a whistle would have."
+reverbDryWet = "A pure tone has little of its own texture, so the space around it provides the interest."
+
+[[patch]]
+name = "Razor Fifth"
+tags = ["darksynth", "outrun"]
+browser = "Baritone parallel-fifth lead | Vel: brightness | MW: vibrato"
+profile = "A dark, low lead that plays in parallel fifths: a saw with a pulse tuned a fifth above, and a slight pitch stab into each note."
+phrase = "lead"
+transpose = -12
+test_note = 57
+range = "A2 to A4"
+expect = { centroid_hz = [400, 2500] }
+performance = "Play single lines: every note is already an interval, so added notes get muddy fast. Harder notes open the filter further, and the mod wheel adds vibrato."
+use = "Darksynth riffs and menacing unison lines, below where most leads sit. It also doubles a bass riff an octave up."
+mix = [
+  "It sits lower than a typical lead: high-pass at 120-150 Hz and leave the bass its own space below that.",
+  "Sidechain it lightly to the kick if it shares a riff with the bass.",
+  "Saturation suits it, and the fifth stays clean because the two pitches are in tune.",
+  "It's narrow as it stands, so width has to come from a send.",
+]
+pairings = [
+  { with = "Steel Engine", why = "Two heavy parts: keep this one an octave above the bass to separate them." },
+  { with = "Night Patrol", why = "Sustained dark brass underneath gives it harmonic support." },
+  { with = "Distorted kick", external = true, why = "It needs a forceful kick to match the weight of the riff." },
+]
+tweaks = [
+  { control = "Pulse TUNE to +5", result = "A fourth instead of a fifth: darker and more unresolved." },
+  { control = "DCO ENV to 2.0", result = "A stab of about 2 semitones into each note: more aggressive, but short notes sound less in tune." },
+  { control = "Pulse off", result = "A single saw: the interval goes, and it reads as an ordinary low lead." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 1
+DcoWavePulse = 1
+specialPulseTune = 7
+specialPulseVolume = 0.45
+DcoSubLevel = 0
+NumberOfVoices = 0
+DcoEnvMod = 0.06
+VcfCutoff = 0.55
+VcfResonance = 0.25
+VcfEnvMode = 2
+VcfEnvMod = 0.25
+VcfKeyFollow = 0.4
+VcaEnvMode = 1
+EnvDecayTime = 0.3
+EnvSustainLevel = 0
+EnvReleaseTime = 0.2
+ModWheelDcoLfo = 0.08
+LfoRate = 0.72
+delayDryWet = 0.14
+delayTime = 0.15
+delayFeedback = 0.2
+reverbDryWet = 0.12
+[patch.why]
+specialPulseTune = "Seven semitones up: every note plays as a perfect fifth, which is the patch's signature."
+specialPulseVolume = "Leaves the fifth about level with the root, so the note you played still reads as the pitch."
+DcoEnvMod = "About 40 cents above the note at the start, settling in about 100 ms: it adds bite to the attack without sounding out of tune."
+EnvSustainLevel = "Zero, so the pitch lands exactly on the note. Any sustain here would leave held notes sharp."
+EnvDecayTime = "About 120 ms: the stab and the filter snap are over quickly, so short notes still sound in tune."
+VcaEnvMode = "Gate holds the note while the shared envelope runs the stab and the filter."
+VcfCutoff = "Around 720 Hz: dark at rest, with the brightness coming from the attack."
+VcfEnvMode = "Normal-Dynamic: harder notes snap brighter, which gives a riff some accents."
+NumberOfVoices = "Mono: a held fifth is already two pitches, and overlapping notes would turn it into a cluster."
+
+[[patch]]
+name = "Cyber Scream"
+tags = ["darksynth"]
+browser = "Resonant screaming lead | Vel: brightness | AT: open filter | MW: vibrato"
+profile = "Very resonant, aggressive lead that howls as the filter sweeps: tense and synthetic."
+phrase = "lead"
+range = "A3 to A5"
+expect = { centroid_hz = [500, 3500] }
+performance = "Velocity sets how far each note howls. Aftertouch pushes the filter open further, and the mod wheel adds vibrato for a real scream."
+use = "Short, aggressive phrases in darksynth, or tension-building lines before a drop."
+mix = [
+  "The resonant peak moves, so a static EQ cut won't catch it. Try a dynamic EQ or a de-esser around 2-3 kHz.",
+  "High-pass at 250 Hz.",
+  "Saturation before a short reverb helps it sit in a dense mix.",
+  "Keep it from running for too long; it's fatiguing by design.",
+]
+pairings = [
+  { with = "Blacktop", why = "A dark, solid bass contrasts with the top-end aggression." },
+  { with = "Metal Brass", why = "Harmonised with edgy brass, for a darksynth hook." },
+  { with = "Industrial percussion", external = true, why = "They share the same harsh, mechanical character." },
+]
+tweaks = [
+  { control = "Res BOOST off", result = "Less howl, more of a conventional filtered saw." },
+  { control = "VCF KEY FOLLOW to 10", result = "The howl tracks your pitch and becomes a more melodic tone." },
+  { control = "ENV T3 (decay) to 6.0", result = "A long, slow howl on every note." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 1
+DcoSubLevel = 0
+NumberOfVoices = 0
+VcfCutoff = 0.5
+VcfResonance = 0.8
+resonanceBoost = 1
+VcfEnvMode = 2
+VcfEnvMod = 0.3
+VcfKeyFollow = 0.6
+VcfAftertouch = 0.5
+VcaEnvMode = 1
+EnvDecayTime = 0.5
+EnvSustainLevel = 0.3
+EnvReleaseTime = 0.15
+ModWheelDcoLfo = 0.15
+LfoRate = 0.73
+reverbDryWet = 0.15
+reverbSize = 0.45
+[patch.why]
+VcfResonance = "High resonance turns the sweep into something close to a voice."
+resonanceBoost = "The BOOST button adds further intensity, past what the standard resonance gives."
+VcfEnvMode = "Normal-Dynamic: playing harder makes the howl climb higher."
+VcfAftertouch = "Lets you lean into a held note and push the filter higher, like adding pressure on a guitar string."
+VcfKeyFollow = "Partial tracking: higher notes stay screaming and lower notes don't get lost."
+
+[[patch]]
+name = "Arcade Square"
+tags = ["outrun", "chillwave"]
+browser = "Chip-style square | Vel: none | MW: vibrato"
+profile = "A bright, cheerful square lead with a short echo and a fast vibrato on the mod wheel: 8-bit in spirit."
+phrase = "lead"
+range = "A3 to A5"
+expect = { centroid_hz = [500, 4000] }
+performance = "Simple melodies played with short notes. Mod wheel adds a fast chip-style vibrato."
+use = "Playful hooks, video-game references, and retro-pop. Great doubled an octave above another lead."
+mix = [
+  "A square is very clear: mix it lower than a saw would be.",
+  "The odd harmonics leave gaps, so it can sit easily alongside other parts.",
+  "Keep effects short; a long reverb spoils the crisp, game-like feel.",
+  "High-pass at 200 Hz.",
+]
+pairings = [
+  { with = "Rubber Coupe", why = "A bouncy bass under a chirpy lead suits a playful track." },
+  { with = "Pulse Tick", why = "Both are square-based and rhythmic, like game music parts." },
+  { with = "Dry electronic drums", external = true, why = "Keeps the crisp feel of old game hardware." },
+]
+tweaks = [
+  { control = "PULSE to 25%", result = "Thinner and more nasal: the other classic chip tone." },
+  { control = "Portamento to All, time 1.0", result = "Quick slides into each note, for a game-like blip." },
+  { control = "Range to 4'", result = "An octave up, chirpy and small." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 0
+DcoWavePulse = 1
+DcoSubLevel = 0
+NumberOfVoices = 0
+VcfCutoff = 0.85
+VcaEnvMode = 0
+EnvDecayTime = 0.35
+EnvSustainLevel = 0.72
+EnvReleaseTime = 0.15
+ModWheelDcoLfo = 0.08
+LfoRate = 0.78
+delayDryWet = 0.12
+delayTime = 0.15
+delayFeedback = 0.15
+[patch.why]
+DcoWavePulse = "A true square: odd harmonics only, which is the hollow sound of old game chips."
+VcfCutoff = "Almost open: chip sounds aren't filtered, so the edge is part of the tone."
+EnvDecayTime = "A slight drop after the attack keeps short notes bouncy."
+LfoRate = "About 10 Hz: faster than human vibrato, the fast warble of game music."
+NumberOfVoices = "Mono, as on old sound chips with limited channels."
+
+[[patch]]
+name = "Portamento Dream"
+tags = ["dreamwave", "chillwave"]
+browser = "Slow gliding lead | Vel: none | MW: vibrato"
+profile = "Soft, floating PWM lead where every note glides slowly into the next."
+phrase = "legato"
+range = "A3 to A5"
+expect = { centroid_hz = [300, 2000] }
+performance = "Every note glides, so play slowly and let the pitch travel. Leave room for the slide before the beat."
+use = "Dreamy melodies in slow tracks, intros and outros. Start notes a little early so they arrive on the beat."
+mix = [
+  "Use light compression; glides sound uneven if squashed.",
+  "The stereo effects are part of the feel. Keep them, or replace them with a long plate send.",
+  "High-pass at 200 Hz.",
+  "Keep it clear of the vocal range during vocal sections.",
+]
+pairings = [
+  { with = "Turbo Glide", why = "Both slide, so have the bass and the lead move together for a floating section." },
+  { with = "Aurora Haze", why = "A slowly evolving pad keeps the harmony moving under the slides." },
+  { with = "Soft drum machine with brushes", external = true, why = "A gentle rhythm suits the unhurried pitch movement." },
+]
+tweaks = [
+  { control = "Portamento TIME to 2.0", result = "Quicker, more practical slides for faster melodies." },
+  { control = "Portamento mode to On", result = "Glides only on overlapping notes, so you can pick when it slides." },
+  { control = "CHORUS off", result = "A more focused, centred tone." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 0
+DcoWavePulse = 3
+DcoPwmDepth = 0.45
+DcoPwmRate = 0.4
+DcoSubLevel = 0
+NumberOfVoices = 0
+PortamentoMode = 2
+PortamentoTime = 0.4
+VcfCutoff = 0.6
+VcfResonance = 0.05
+VcfKeyFollow = 0.5
+EnvAttackTime = 0.25
+EnvDecayTime = 0.55
+EnvSustainLevel = 0.85
+EnvReleaseTime = 0.45
+DcoChorusSwitch = 1
+ChorusRate = 0.35
+ModWheelDcoLfo = 0.06
+LfoRate = 0.68
+delayDryWet = 0.24
+delayTime = 0.3
+delayFeedback = 0.4
+reverbDryWet = 0.3
+reverbSize = 0.75
+[patch.why]
+PortamentoMode = "All: every note glides, even detached ones, so the whole line floats."
+PortamentoTime = "About 190 ms per octave: long enough to hear the journey, as much a part of the melody as the notes."
+DcoWavePulse = "PWM moves gently under the slides, so the tone never sits still."
+EnvAttackTime = "A soft fade-in hides the note's start, so you hear pitch moving rather than notes changing."
+DcoChorusSwitch = "Adds the soft, slightly unstable width that suits this floating character."
+
+[[patch]]
+name = "Vox Machine"
+tags = ["outrun", "chillwave"]
+browser = "Vowel-like resonant lead | Vel: brightness | AT: open filter | MW: vibrato"
+profile = "A talking, vowel-like lead: a resonant bell EQ and filter sweep suggest a voice singing through a machine."
+phrase = "lead"
+range = "A3 to E5"
+expect = { centroid_hz = [400, 2500] }
+performance = "Velocity shapes the 'wah' at the start of each note. Aftertouch opens the filter for a vowel change on a held note."
+use = "Hooks that nod to the talkbox and vocoder without using one. Short phrases, call-and-response with the real vocal."
+mix = [
+  "The bell EQ is the vowel: don't cut in the 800 Hz to 1 kHz range if you want to keep it.",
+  "High-pass at 200 Hz.",
+  "Try doubling with a quiet, low-mixed vocal to reinforce the effect.",
+  "Keep other parts clear of the formant during the phrase.",
+]
+pairings = [
+  { with = "Rubber Coupe", why = "Funky bass with a talking lead is the classic talkbox pairing." },
+  { with = "Major 7 Haze", why = "Warm jazzy chords suit the vocal phrasing." },
+  { with = "Lead vocal", external = true, why = "Call and response: the machine answers the singer." },
+]
+tweaks = [
+  { control = "EQ Freq to about 500 Hz", result = "A darker 'oh' vowel in place of the more open 'ah'." },
+  { control = "VCF RES to 7.0", result = "A clearer vocal squelch on every note." },
+  { control = "ENV T3 (decay) to 5.5", result = "A slower, more drawn-out 'wow'." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 1
+DcoSubLevel = 0
+NumberOfVoices = 0
+PortamentoMode = 1
+PortamentoTime = 0.15
+VcfCutoff = 0.5
+VcfResonance = 0.55
+VcfEnvMode = 2
+VcfEnvMod = 0.28
+VcfKeyFollow = 0.4
+VcfAftertouch = 0.45
+VcaEnvMode = 1
+EnvDecayTime = 0.45
+EnvSustainLevel = 0.35
+EnvReleaseTime = 0.15
+eqBellFreq = 0.47
+eqBellQ = 0.7
+eqBellGain = 10
+ModWheelDcoLfo = 0.07
+LfoRate = 0.68
+[patch.why]
+eqBellGain = "A strong narrow boost acts as a fixed formant, the resonance of a vocal tract."
+eqBellFreq = "About 1 kHz: an open 'ah'-like vowel."
+VcfResonance = "Enough for the sweep to read as a 'wah', like a mouth opening."
+VcfEnvMode = "Normal-Dynamic: harder notes get a wider 'wah', like a singer leaning in."
+VcfAftertouch = "Pressure opens the filter, a kind of vowel change on a held note."
+PortamentoTime = "A short glide connects notes the way a voice does."
+
+[[patch]]
+name = "Tape Flute"
+tags = ["dreamwave", "chillwave"]
+browser = "Breathy wobbling flute | Vel: level | MW: deeper wobble"
+profile = "Breathy flute-like tone with noise and slow pitch wobble, like an old tape of a flute patch."
+phrase = "lead"
+range = "A3 to A5"
+expect = { centroid_hz = [400, 3000] }
+performance = "Velocity affects level, so play with dynamics, as a player's breath would vary. Mod wheel deepens the slow wobble: it shares the LFO, so it can't add a faster vibrato."
+use = "Wistful melodies in slow tracks, memory-like interludes, and intros. Very evocative in a sparse arrangement."
+mix = [
+  "A gentle high cut around 8 kHz adds to the tape feel.",
+  "Add tape saturation or a wow-and-flutter plugin if you have one.",
+  "Plenty of reverb suits it.",
+  "High-pass at 250 Hz.",
+]
+pairings = [
+  { with = "Worn Tape Strings", why = "They share the same aged, wobbling world." },
+  { with = "Worn Piano", why = "A faded piano and flute make a very nostalgic pair." },
+  { with = "Vinyl noise bed", external = true, why = "Reinforces the feeling of an old recording." },
+]
+tweaks = [
+  { control = "Noise to 1.5", result = "Much breathier, as if blown harder." },
+  { control = "LFO Rate up to about 1 Hz", result = "A faster, seasick wobble." },
+  { control = "VCF Cutoff to 7.0", result = "A clearer, brighter tone, closer to a piccolo." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 0
+DcoWavePulse = 1
+DcoSubLevel = 0
+Noise = 0.45
+NumberOfVoices = 0
+VcfCutoff = 0.6
+VcfKeyFollow = 0.8
+VcaEnvMode = 2
+EnvAttackTime = 0.22
+EnvDecayTime = 0.5
+EnvSustainLevel = 0.8
+EnvReleaseTime = 0.35
+DcoLfoMod = 0.06
+LfoRate = 0.42
+LfoWaveform = 1
+ModWheelDcoLfo = 0.07
+reverbDryWet = 0.3
+reverbSize = 0.6
+reverbTone = 0.25
+[patch.why]
+DcoWavePulse = "A square filtered low has the hollow, odd-harmonic tone of a flute."
+Noise = "A small amount acts as breath, passing through the same filter as the tone."
+DcoLfoMod = "A slow, shallow pitch drift that sounds like an old tape's wobble."
+LfoRate = "About 0.5 Hz: slow enough to be felt as instability, not heard as vibrato."
+LfoWaveform = "A sine moves smoothly, like tape speed drifting, with no corners."
+EnvAttackTime = "A soft start, as a flute's sound has when breath builds."
+VcaEnvMode = "Normal-Dynamic: velocity sets level, which gives the phrase breathing dynamics."

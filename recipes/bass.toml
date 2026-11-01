@@ -1,0 +1,115 @@
+# A build-from-init recipe. Each step's `set` applies on top of the previous steps, and
+# `expect` states which way each measurement must move compared with the previous step:
+# tools/make_recipes.py fails if the sound doesn't do what the explanation says, or if the
+# last step doesn't match the real preset.
+
+category = "Bass"
+patch = "Nightdrive"
+phrase = "rolling"
+title = "Building Nightdrive from init"
+intro = "Nightdrive looks simple, but it teaches the most important thing about this synth: one envelope has to do the job of two. You'll start from a plain buzzy saw and make a rolling outrun bass, hearing each decision as you go."
+setup = "Open TAL-Pha, click the preset name and choose **Reset Parameters**. Loop a bass line of 8ths around A2 with some velocity variation, as in the previews. Soft notes matter later on."
+
+takeaways = [
+  "One envelope can act like two: use VCA Gate when the filter should move and the note should hold.",
+  "Envelope amount does nothing useful without an envelope that moves. Check sustain before you reach for more amount.",
+  "On this synth, velocity is one of the strongest tone controls you have. Program your accents.",
+]
+
+[[step]]
+title = "Start from init"
+why = "Init is a single saw through a fully open filter, with the amp following a full-sustain envelope. Nothing is shaping the sound yet, so anything you add from here is a decision you can hear."
+listen = "A bright, static buzz. Every note is the same and it has no rhythm of its own."
+
+[[step]]
+title = "Move it into the bass register and make it mono"
+set = { DcoRange = 2, NumberOfVoices = 0 }
+expect = { centroid_hz = "down" }
+why = "16' moves the saw down an octave, so A2 now has its fundamental at 55 Hz. The saw's harmonics extend far above that, which is why this will still be audible on small speakers. Mono means only one note ever sounds, so low notes can't overlap and turn to mud. You won't hear that yet because these notes don't overlap, but it matters as soon as you add release or play legato."
+alternative = "You could use 8' with the sub oscillator instead. That's how Neon Pulse gets its weight, but the steady sub sits below the filter's sweep and makes the pluck you'll add later less pronounced. Don't use 16' with the sub at this pitch: the sub would sit at 27.5 Hz, too low to be useful."
+listen = "Deeper, but still a constant buzz."
+
+[[step]]
+title = "Close the filter"
+set = { VcfCutoff = 0.27 }
+expect = { centroid_hz = "down" }
+why = "With cutoff at 2.7 the filter sits around 80 Hz, close to the fundamental. This is deliberately too far. On this synth the envelope is very strong, so it's easier to start dark and let the envelope open the sound than to start bright and work out what to remove."
+listen = "Dull and muffled, with no front to the note. That's the problem the next steps solve."
+
+[[step]]
+title = "Add envelope to the filter"
+set = { VcfEnvMod = 0.52 }
+expect = { centroid_hz = "up" }
+why = "This is a trap worth seeing. Envelope amount sets how far the envelope pushes the cutoff, but init's envelope sustains at full level. So the filter jumps partway open and stays there, as if you'd just raised the cutoff. Envelope amount only makes movement if the envelope itself moves."
+listen = "Brighter again, and still static. There's no sweep yet."
+
+[[step]]
+title = "Make the envelope move"
+set = { EnvDecayTime = 0.36, EnvSustainLevel = 0.15 }
+expect = { sweep_octaves = "up", sustain_db = "down" }
+why = "A decay of 3.6 closes the filter in about 200 ms, and a low sustain gives it somewhere to close to. Now each note has a pluck, and at this tempo that pluck is the rhythm. But the amp is following the same envelope, so the level falls away too. There's only one envelope on this synth, and this is the price of it."
+alternative = "A longer decay of around 4.5 turns the pluck into more of a growl, but the notes begin to run together at 8ths. A sustain of zero would close the filter completely, leaving a thinner tail on each note."
+listen = "The pluck is there, but notes fade out and lose their weight. It sounds more like a pluck than a bass."
+
+[[step]]
+title = "Free the amp from the envelope"
+set = { VcaEnvMode = 1 }
+expect = { sustain_db = "up", lufs = "up" }
+why = "Gate mode is the key decision in this patch. The amp now simply opens and closes with the key, so the envelope is left to work only on the filter. That gives the note a bright front and a solid body, which sounds like two envelopes but is only one."
+alternative = "Raising sustain instead would keep the note loud, but the filter would also stay open, and the pluck would be lost. Normal mode suits patches where amp and filter should move together, such as Velvet Bass."
+listen = "This is the moment it becomes a bass: the same pluck, now with weight underneath."
+
+[[step]]
+title = "Give the sweep an edge"
+set = { VcfResonance = 0.2 }
+expect = { lufs = "down" }
+why = "A little resonance emphasises the frequencies around the cutoff as it sweeps, which makes the pluck more defined. Resonance on this filter also takes some energy away from the low end, so keep it small on a bass."
+alternative = "Grid Runner goes up to 6.2 for an acid character, then has to use the sub oscillator to put back the weight it loses."
+listen = "A slightly more vocal attack on each note. It's subtle at this setting, and it should be."
+
+[[step]]
+title = "Make it respond across the keyboard"
+set = { VcfKeyFollow = 0.3, EnvKeyFollow = 0.2 }
+expect = { centroid_hz = "down" }
+why = "Key follow pivots around C4, so on bass notes it lowers the cutoff. Setting it to 3.0 darkens these notes a little, but the point is the range: a line that jumps up an octave stays bright enough to be heard, and low notes don't get harsh. Envelope key follow shortens the envelope on higher notes, which keeps them snappy."
+listen = "A touch darker and rounder. Try playing an octave jump to hear the balance."
+
+[[step]]
+title = "Let velocity make the groove"
+set = { VcfEnvMode = 2 }
+expect = { vel_bright_ratio = "up" }
+why = "Normal-Dynamic scales the filter envelope by velocity, and the effect on this synth is large. Hard notes now sweep much further than soft ones while the level stays even, because the amp is still in Gate mode. The line gets darker overall, as only the accents get the full sweep. The accent pattern in your MIDI has become the groove."
+alternative = "Rubber Coupe also makes the amp respond to velocity, which suits ghost notes in a funk line. Here it would make the bass level uneven under the kick."
+listen = "The notes now differ: the accents bark and the in-between notes sit back. This is the patch's character."
+
+[[step]]
+title = "Tidy the note endings"
+set = { EnvReleaseTime = 0.08 }
+show = ["tail_ms"]
+why = "Release is a small tidying decision here. In Gate mode the amp closes with the key whatever this is set to, so even a much longer release barely changes when the note stops. It would only set the length of the tail in Normal mode, as on Velvet Bass."
+listen = "Practically no change, as the measurements below confirm. Not every setting is a big decision."
+
+[[step]]
+title = "Decide what the mod wheel does"
+set = { ModWheelDcoLfo = 0, ModWheelVcfRange = 0.45 }
+expect = { mw_bright_ratio = "up" }
+wheel = true
+why = "Init sends the wheel to vibrato, which is rarely right on a bass. Sending it to filter cutoff instead gives you one control for a brighter chorus section, either played live or automated."
+listen = "In this preview the wheel rises across the last two bars, and the bass opens up."
+
+[[step]]
+title = "Set the level"
+set_volume_from_preset = true
+expect = { lufs = "up" }
+why = "Presets in this bank aim for the same loudness, -18 LUFS on their preview phrase, so comparing patches is fair and you won't choose one just because it's louder. A patch that's lost level to filtering needs more volume to get there. That's it: this is the finished Nightdrive preset."
+listen = "The finished patch."
+
+[[branch]]
+to = "Chrome Octave"
+how = "Try turning on the pulse at Pulse Tune +12, Pulse Volume 6.0 and Pulse Fine +7 cents, and return the VCF Env mode to Normal."
+[[branch]]
+to = "Grid Runner"
+how = "Go to 8' and bring in the sub at 1.3, raise VCF Res to 6.2, and drop Env L3 (sustain) to 0."
+[[branch]]
+to = "Turbo Glide"
+how = "Set Portamento to On at time 2.6 and VCA mode back to Normal, with a slower T3 (decay) of 5.0."

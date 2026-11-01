@@ -1,0 +1,86 @@
+category = "Keys and Bells"
+patch = "Eighty-Four Tines"
+phrase = "keys"
+title = "Building Eighty-Four Tines from init"
+intro = "This synth can't do FM, but the 80s digital electric piano is such an important sound that it's worth getting close. This recipe builds it from two separate layers: a soft body and a metallic tine that's only heard at the start of a note."
+setup = "Choose **Reset Parameters** and loop some gentle chords around C4, with velocity variation. Harder notes will show the tine."
+takeaways = [
+  "Sync is a good stand-in for FM's metallic overtones, within limits.",
+  "Filter envelope can be used to reveal a layer briefly: the tine is only audible while the filter's open.",
+  "Layering a body and an attack is a useful way to build almost any keyboard sound.",
+]
+
+[[step]]
+title = "Set the level first"
+set_volume_from_preset = true
+why = "Chords add up, so set a sensible level first. Then you can judge each change for what it does, rather than how loud it is."
+listen = "A plain, buzzy saw chord."
+
+[[step]]
+title = "Replace the saw with a soft body"
+set = { DcoWaveSaw = 0, DcoWaveSub = 0, DcoSubLevel = 2.2, Octave = 1 }
+expect = { centroid_hz = "down" }
+why = "An electric piano's body is rounded and simple, nothing like a saw. A square from the sub oscillator gives you that. The sub sits an octave below the DCO, so Octave +1 brings it back up to the note you're playing."
+alternative = "Warm Tines uses a filtered square at the played pitch and leaves out the tine completely, for a mellower electric piano."
+listen = "Hollow and low. The panel says the sub is 'OFF', but it's really a square."
+
+[[step]]
+title = "Make it die away"
+set = { EnvDecayTime = 0.62, EnvSustainLevel = 0.1, EnvReleaseTime = 0.45, NumberOfVoices = 7 }
+expect = { sustain_db = "down", tail_ms = "up" }
+why = "Struck instruments fade even while the key is held. A decay of about 1.5 seconds with a little sustain gives you a natural fade. More voices let the ringing notes overlap."
+listen = "Each chord fades away, like a struck key."
+
+[[step]]
+title = "Add the tine"
+set = { DcoWavePulse = 1, specialPulseSync = 1, specialPulseTune = 24, specialPulseDcoEnv = 0.15, specialPulseVolume = 0.42 }
+expect = { centroid_hz = "up" }
+why = "This is the key decision. A pulse hard-synced two octaves up makes a metallic set of overtones similar to an FM tine. A small pulse envelope makes the tone change as the note fades. You won't hear this as a separate tine yet: it's on all the time."
+alternative = "Try other Pulse Tune values such as +19 for a different metallic ratio. Real FM has more variety; this has its own charm."
+listen = "A constant metallic buzz over the body. Too much for now."
+
+[[step]]
+title = "Hide the tine behind a filter"
+set = { VcfCutoff = 0.42, VcfKeyFollow = 0.6 }
+expect = { centroid_hz = "down" }
+why = "With the filter closed, the high tine disappears, leaving only the body. Key follow makes higher notes brighter, as on a real keyboard."
+listen = "A soft, rounded electric piano with almost no tine."
+
+[[step]]
+title = "Reveal the tine at the attack"
+set = { VcfEnvMod = 0.42 }
+expect = { sweep_octaves = "up", centroid_hz = "up" }
+why = "Now the filter opens for an instant, so the tine is only heard at the very start of the note. This is the same fade as in the previous steps, and it's what makes it sound struck. The same principle works for bells and clavs."
+listen = "A glassy 'ting' at the start of each note, then the soft body."
+
+[[step]]
+title = "Let velocity control the tine"
+set = { VcfEnvMode = 2 }
+expect = { vel_bright_ratio = "up" }
+why = "On a real digital EP, playing harder brings out more of the tine. Normal-Dynamic does the same, and it's what makes it feel like an instrument."
+listen = "Soft chords are mellow, and accents bring out the bell-like edge."
+
+[[step]]
+title = "Add the 80s"
+set = { DcoChorusSwitch = 1, ChorusRate = 0.48 }
+expect = { side_mid = "up" }
+why = "Almost every 80s electric piano you can think of had chorus on it. It adds width and hides the difference between this sound and the real thing."
+listen = "Wide and glassy: that's the sound."
+
+[[step]]
+title = "Finish it"
+set = { ModWheelDcoLfo = 0.06, LfoRate = 0.7, reverbDryWet = 0.14 }
+expect = { mw_vibrato_cents = "down" }
+wheel = true
+why = "A little reverb, and a trim to the wheel's vibrato. Init already sends the wheel to vibrato at 1.0, which is too wide for an electric piano, so 0.6 is plenty. That's the finished Eighty-Four Tines."
+listen = "In this preview the wheel rises across the second half, adding vibrato."
+
+[[branch]]
+to = "Warm Tines"
+how = "Try removing the sync layer, returning Octave to 0, and using a filtered Square at the played pitch with VCA Normal-Dynamic."
+[[branch]]
+to = "Glass Chime"
+how = "Use Saw 4 instead, set the HPF to HP 2, open the filter and remove sustain."
+[[branch]]
+to = "Funk Clav"
+how = "Use Pulse 25%, HP 2, add resonance and shorten the decay to 3.2."

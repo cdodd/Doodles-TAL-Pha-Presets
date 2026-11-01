@@ -1,0 +1,85 @@
+category = "Pluck"
+patch = "Neon Pluck"
+phrase = "pluck"
+title = "Building Neon Pluck from init"
+intro = "A pluck is one of the simplest sounds to build, and one of the most useful. It's the mirror image of the Bass recipe: here you want the shared envelope to close the amp and filter together, so that the note dies away whether the key is held or not."
+setup = "Choose **Reset Parameters** and loop a broken-chord pattern of 8th notes around A4, with some velocity variation."
+takeaways = [
+  "With sustain at zero, a single envelope closes both amp and filter together. This is why a pluck is so easy on this synth.",
+  "Decay time decides what the sound is: tick, pluck, or key, all with the same settings otherwise.",
+  "Velocity to filter makes a hand-played part feel alive.",
+]
+
+[[step]]
+title = "Start from init"
+why = "A sustained saw through an open filter."
+listen = "A buzzy organ-like line."
+
+[[step]]
+title = "Make every note die away"
+set = { EnvDecayTime = 0.4, EnvSustainLevel = 0 }
+expect = { sustain_db = "down" }
+why = "This is the key decision. With no sustain, a note fades whether the key is held or not, which is how a plucked string behaves. Decay of about 300 ms is a useful middle ground."
+alternative = "A decay of 2.0 gives Pulse Tick's tiny tick. A decay of 6.2 gives Synth Harp's long ring."
+listen = "It already sounds plucked, if a bit harsh."
+
+[[step]]
+title = "Let notes ring past the key"
+set = { EnvReleaseTime = 0.34, NumberOfVoices = 5 }
+expect = { short_tail_ms = "up" }
+why = "A real string doesn't stop when your finger lifts. Without release, short notes cut off early. Six voices let those tails overlap."
+listen = "Short notes now have a natural tail."
+
+[[step]]
+title = "Close the filter"
+set = { VcfCutoff = 0.45, VcfKeyFollow = 0.5 }
+expect = { centroid_hz = "down" }
+why = "A plucked string is bright at first and darkens as it dies. To hear that, the filter needs to start closed, so that the envelope can open it. Key follow keeps high notes bright enough."
+listen = "Duller, with no snap: the next step fixes it."
+
+[[step]]
+title = "Add the snap"
+set = { VcfEnvMod = 0.38, VcfResonance = 0.1 }
+expect = { centroid_hz = "up", sweep_octaves = "up" }
+why = "A big, fast filter sweep from the same envelope gives the snap of the pluck. A little resonance makes it more defined."
+listen = "A clear 'pew' on every note: it's a pluck now."
+
+[[step]]
+title = "Add touch sensitivity"
+set = { VcfEnvMode = 2 }
+expect = { vel_bright_ratio = "up" }
+why = "Normal-Dynamic makes harder notes snap brighter. In a repeating pattern, this stops every note sounding the same and gives you an easy way to shape a phrase."
+listen = "Accented notes snap brighter than others."
+
+[[step]]
+title = "Add width and echo"
+set = { DcoChorusSwitch = 1, ChorusRate = 0.5, delayDryWet = 0.16, delayTime = 0.25, delayFeedback = 0.22, delaySpread = 0.8 }
+expect = { side_mid = "up" }
+why = "Chorus gives width, and a short dotted 8th echo spreads each note into the gaps between others. This turns a simple line into something that sounds more complicated than it is."
+alternative = "Echo Street goes much further with the delay, so the echoes become part of the melody."
+listen = "Much bigger, with a rhythm in the echoes."
+
+[[step]]
+title = "Set up the wheel"
+set = { ModWheelVcfRange = 0.2, ModWheelDcoLfo = 0 }
+expect = { mw_bright_ratio = "up" }
+wheel = true
+why = "The wheel opens the filter, for a brighter section. The default vibrato is turned off, as it would make short notes sound unstable."
+listen = "In this preview the wheel rises across the second half, and the pluck gets brighter."
+
+[[step]]
+title = "Set the level"
+set_volume_from_preset = true
+why = "This takes it to the same loudness as the other presets. That's the finished Neon Pluck."
+show = ["lufs"]
+listen = "The finished patch."
+
+[[branch]]
+to = "Pulse Tick"
+how = "Try swapping to Pulse 25%, opening the filter to 6.8, and shortening the decay to 2.0."
+[[branch]]
+to = "Synth Harp"
+how = "Lengthen decay and release to about 6.0, and add Env Key follow 4.5 so that high notes die faster."
+[[branch]]
+to = "Resonant Blip"
+how = "Raise resonance to 6.8, shorten the decay to 2.8 and remove the chorus."

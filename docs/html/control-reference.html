@@ -1,0 +1,1297 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Control reference: Doodles TAL-Pha Presets</title>
+<link rel="stylesheet" href="style.css">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="index.html"><span>Doodles</span> TAL-Pha Presets</a>
+  <button type="button" id="theme" class="ghost" aria-label="Switch between light and dark theme">Theme</button>
+</header>
+<div class="layout">
+<nav class="sidebar" aria-label="Documentation">
+<a href="index.html">Overview</a>
+<p class="nav-label">Patches</p>
+<a href="bass.html">Bass</a>
+<a href="lead.html">Lead</a>
+<a href="pad.html">Pad</a>
+<a href="strings.html">Strings</a>
+<a href="brass.html">Brass</a>
+<a href="arp.html">Arp</a>
+<a href="pluck.html">Pluck</a>
+<a href="keys.html">Keys and Bells</a>
+<a href="chord.html">Chord and Stab</a>
+<a href="fx.html">FX and Atmosphere</a>
+<p class="nav-label">Guides</p>
+<a href="field-guide.html">Field guide</a>
+<a href="control-reference.html" aria-current=page>Control reference</a>
+<a href="gallery.html">Sound gallery</a>
+<a href="sound-map.html">Sound map</a>
+<a href="kits.html">Starter kits</a>
+<a href="reaper-cheat-sheet.html">Reaper cheat sheet</a>
+</nav>
+<main>
+<div class="prose"><h1>TAL-Pha control reference</h1>
+<p class="lede">What the controls actually do, measured by rendering the plugin (<code>tools/calibrate.py</code> and <code>tools/calibrate_controls.py</code>, raw data in
+<a href="../data/calibration.json"><code>calibration.json</code></a> and <a href="../data/calibration_controls.json"><code>calibration_controls.json</code></a>). It fills gaps in the manual and corrects labels the plugin
+reports wrongly. For how to use the controls and typical values by sound, see the <a href="field-guide.html">field guide</a>.</p>
+<p>Panel values are the 0-10 scale the plugin displays, unless noted. Preset files store most of these as 0-1. A few read differently: DCO Env reads 0-127 (slider position 4.2 reads 53), delay and reverb mix read Off, then about -1.00 to +1.00, and delay tone, delay spread and reverb tone read -5 to +5.</p>
+<p>Oscillators and effects run free, so repeat runs differ slightly, most of all in reverb tails (up to about 3 dB). Treat the figures here as typical values rather than exact ones.</p>
+<h2>Corrections to labels and assumptions</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>What you might assume</th>
+<th>What was measured</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sub wave "OFF" means no sub</td>
+<td>It's a <strong>square one octave down</strong>. Only <strong>sub level 0</strong> silences the sub.</td>
+</tr>
+<tr>
+<td>A DCO range of 16' with the sub on is a good bass</td>
+<td>The sub is an octave below the range, so for an A2 note it's at 27.5 Hz, too low to be useful. Use 8' + sub for this.</td>
+</tr>
+<tr>
+<td>Key follow brightens as you go up</td>
+<td>The pivot is around <strong>C4</strong>. At full follow the cutoff is correct at C4 and <strong>2 octaves lower at C2</strong>, so key follow darkens bass notes. Raise cutoff to compensate.</td>
+</tr>
+<tr>
+<td>Oscillator sync locks the pulse to the saw</td>
+<td>It syncs to the <strong>sub oscillator</strong>, so the waveform repeats an octave below the note. This is where sync patches get extra low growl.</td>
+</tr>
+<tr>
+<td>Portamento mode labels ("ALWAYS", "Unknown")</td>
+<td>Values are <strong>Off / On (overlapping notes only) / All notes</strong>, as the manual says.</td>
+</tr>
+<tr>
+<td>Resonance boost label "Unknown"</td>
+<td>File value 1 is the <strong>BOOST</strong> button being on. It's a display quirk.</td>
+</tr>
+<tr>
+<td>Voices label "50.00"</td>
+<td>File value N gives <strong>N + 1 voices</strong>, so 0 is mono and 11 is 12 voices.</td>
+</tr>
+<tr>
+<td>Pulse position "SAW" differs from Saw</td>
+<td>It has the same harmonic series as the plain saw. It's useful because it can be retuned and synced separately.</td>
+</tr>
+</tbody>
+</table></div>
+<h2>Filter</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Cutoff (panel)</th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hz, approx.</td>
+<td>9</td>
+<td>20</td>
+<td>45</td>
+<td>100</td>
+<td>220</td>
+<td>470</td>
+<td>1.1k</td>
+<td>2.3k</td>
+<td>5k</td>
+<td>11k</td>
+<td>21k</td>
+</tr>
+</tbody>
+</table></div>
+<p>Cutoff roughly doubles for each 1.0 on the panel.</p>
+<p><strong>Envelope amount is very strong.</strong> With cutoff at 2 and sustain full: env 2 reaches about 210 Hz, env 4 about 930 Hz, env 6 about 4.3 kHz, env 8 about 20 kHz. So small changes matter.</p>
+<p><strong>Velocity in Normal-Dynamic mode is also very strong.</strong> With cutoff 2, env 6: velocity 30 reaches about 130 Hz, 64 about 440 Hz, 100 about 1.7 kHz, 127 about 4.5 kHz. Velocity programming is a main performance tool on this synth.</p>
+<p><strong>Resonance.</strong> How far the peak stands above the level an octave below it, and what the note loses. Peak height uses noise at cutoff 6; level uses a saw at C2 with cutoff 5.5:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Resonance</th>
+<th>0</th>
+<th>2.5</th>
+<th>5</th>
+<th>7.5</th>
+<th>9</th>
+<th>10</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Peak, dB</td>
+<td>1</td>
+<td>2</td>
+<td>9</td>
+<td>16</td>
+<td>21</td>
+<td>24</td>
+</tr>
+<tr>
+<td>Peak with BOOST, dB</td>
+<td>1</td>
+<td>2</td>
+<td>8</td>
+<td>18</td>
+<td>25</td>
+<td>29</td>
+</tr>
+<tr>
+<td>Saw level change, dB</td>
+<td>0</td>
+<td>-2</td>
+<td>-4</td>
+<td>-8</td>
+<td>-</td>
+<td>-7</td>
+</tr>
+<tr>
+<td>Saw level change with BOOST, dB</td>
+<td>0</td>
+<td>-2</td>
+<td>-4</td>
+<td>-7</td>
+<td>-</td>
+<td>-1</td>
+</tr>
+</tbody>
+</table></div>
+<p>Resonance thins low notes, so turn the patch up to compensate. BOOST changes little below 7.5, and most at the top of the range, where it brings back nearly all the lost level.</p>
+<p><strong>Self-oscillation.</strong> The manual says BOOST can self-oscillate. In these tests, with resonance 10, BOOST on, cutoff 6 and the DCO silent, the output stayed around -68 dB. Faint noise made it ring, but not as a steady tone. Don't count on it as a sine source without trying it at your settings.</p>
+<p><strong>Modulating the cutoff.</strong> All measured from a cutoff of about 470 Hz or lower, as noted. The VCF LFO and wheel to VCF LFO share a scale. A slow square LFO shows the two extremes:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>VCF LFO</th>
+<th>1</th>
+<th>2</th>
+<th>4</th>
+<th>6</th>
+<th>10</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cutoff range, Hz</td>
+<td>380-600</td>
+<td>310-740</td>
+<td>200-1.1k</td>
+<td>120-1.6k</td>
+<td>80-3.6k</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Control</th>
+<th>1</th>
+<th>2.5</th>
+<th>5</th>
+<th>10</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MW to VCF, wheel full, from 100 Hz</td>
+<td>210 Hz</td>
+<td>600 Hz</td>
+<td>3.9 kHz</td>
+<td>17.6 kHz</td>
+</tr>
+<tr>
+<td>VCF AT, full pressure, from 220 Hz</td>
+<td>-</td>
+<td>560 Hz</td>
+<td>1.4 kHz</td>
+<td>8.5 kHz</td>
+</tr>
+</tbody>
+</table></div>
+<p>Half pressure gives about half the movement in octaves.</p>
+<h2>HPF and bass boost</h2>
+<p>Level change in dB compared with HPF off:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>30-60 Hz</th>
+<th>60-120</th>
+<th>120-250</th>
+<th>250-500</th>
+<th>500-1k</th>
+<th>1k-2k</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bass boost</td>
+<td>+5</td>
+<td>+6</td>
+<td>+6</td>
+<td>+3</td>
+<td>+1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Bass boost + ALT</td>
+<td>+3</td>
+<td>+5</td>
+<td>+2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>HP 1</td>
+<td>-13</td>
+<td>-8</td>
+<td>-4</td>
+<td>-1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>HP 2</td>
+<td>-25</td>
+<td>-19</td>
+<td>-13</td>
+<td>-7</td>
+<td>-3</td>
+<td>-1</td>
+</tr>
+</tbody>
+</table></div>
+<p>"Off" is the second position, not the first. HP 1 is a gentle low-cut, useful for thinning a sound inside the synth.</p>
+<h2>Envelope times</h2>
+<p>Measured with Env Key follow at 0. The times are not linear: most usable settings are below 7.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Panel</th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>T1 attack, to 90%</td>
+<td>0</td>
+<td>15 ms</td>
+<td>25 ms</td>
+<td>70 ms</td>
+<td>145 ms</td>
+<td>400 ms</td>
+<td>0.8 s</td>
+<td>1.8 s</td>
+<td>5 s</td>
+</tr>
+<tr>
+<td>T3 decay, to -20 dB</td>
+<td>10 ms</td>
+<td>35 ms</td>
+<td>60 ms</td>
+<td>120 ms</td>
+<td>300 ms</td>
+<td>680 ms</td>
+<td>1.4 s</td>
+<td>3 s</td>
+<td>7.6 s</td>
+</tr>
+<tr>
+<td>T4 release, to -20 dB</td>
+<td>10 ms</td>
+<td>35 ms</td>
+<td>50 ms</td>
+<td>120 ms</td>
+<td>290 ms</td>
+<td>760 ms</td>
+<td>1.5 s</td>
+<td>3.2 s</td>
+<td>8.1 s</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>There's only one envelope,</strong> shared by filter, pitch and amp. VCA <strong>Gate</strong> gives the amp its own on/off behaviour, so the filter can sweep while the note stays loud.</p>
+<p><strong>In Gate mode, T4 barely changes note length.</strong> The amp closes with the key: the tail stayed around 35-45 ms at T4 settings from 0.8 to 6.0. In Normal mode, a T4 of 4.0 already leaves a tail of over 600 ms.</p>
+<p><strong>T2 falls faster than T3.</strong> At the same setting, T2 took about half as long to reach -20 dB (2: 30 ms, 3: 60 ms, 4: 135 ms, 5: 335 ms, 6: 680 ms).</p>
+<p><strong>Env Key follow</strong> changes every envelope time around C4. At T3 = 5, time to -20 dB:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Key follow</th>
+<th>C2</th>
+<th>C4</th>
+<th>C6</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0.95 s</td>
+<td>0.95 s</td>
+<td>0.95 s</td>
+</tr>
+<tr>
+<td>5</td>
+<td>1.9 s</td>
+<td>0.95 s</td>
+<td>0.5 s</td>
+</tr>
+<tr>
+<td>10</td>
+<td>3.65 s</td>
+<td>0.95 s</td>
+<td>0.25 s</td>
+</tr>
+</tbody>
+</table></div>
+<p>So at full follow, each octave down doubles the time. Low notes linger and high notes snap shut, as on an acoustic instrument.</p>
+<p><strong>Velocity to level.</strong> In the VCA's Normal-Dynamic and Gate-Dynamic modes, compared with velocity 127: velocity 100 is -1.8 dB, 64 is -5.1 dB and 30 is -10 dB. In the plain modes, velocity makes no difference to level.</p>
+<h2>Waveforms</h2>
+<p>Level of the first 8 harmonics in dB, relative to the strongest. These explain what the icons sound like:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Wave</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>Character</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Saw</td>
+<td>0</td>
+<td>-7</td>
+<td>-10</td>
+<td>-12</td>
+<td>-14</td>
+<td>-16</td>
+<td>-18</td>
+<td>-18</td>
+<td>Full, even series; the classic start</td>
+</tr>
+<tr>
+<td>Saw 2</td>
+<td>-4</td>
+<td>0</td>
+<td>-15</td>
+<td>-20</td>
+<td>-18</td>
+<td>-9</td>
+<td>-22</td>
+<td>-27</td>
+<td>Octave-heavy, hollow</td>
+</tr>
+<tr>
+<td>Saw 3</td>
+<td>-7</td>
+<td>-13</td>
+<td>-15</td>
+<td>-16</td>
+<td>-15</td>
+<td>-15</td>
+<td>-10</td>
+<td>0</td>
+<td>Top-heavy, buzzy</td>
+</tr>
+<tr>
+<td>Saw 4</td>
+<td>-5</td>
+<td>0</td>
+<td>-14</td>
+<td>-17</td>
+<td>-14</td>
+<td>-1</td>
+<td>-9</td>
+<td>0</td>
+<td>Strong peaks at 2, 6, 8: bell-like</td>
+</tr>
+<tr>
+<td>Square</td>
+<td>0</td>
+<td>off</td>
+<td>-10</td>
+<td>off</td>
+<td>-14</td>
+<td>off</td>
+<td>-18</td>
+<td>off</td>
+<td>Odd harmonics only: hollow</td>
+</tr>
+<tr>
+<td>Pulse 25%</td>
+<td>0</td>
+<td>-4</td>
+<td>-10</td>
+<td>off</td>
+<td>-14</td>
+<td>-13</td>
+<td>-18</td>
+<td>off</td>
+<td>Nasal: every 4th harmonic missing</td>
+</tr>
+</tbody>
+</table></div>
+<p>Saw PW and Pulse PW depend on the PWM settings. The table's Saw 3 and Saw 4 are the panel's "SAW 3" and "SAW 4" (file values 4 and 5).</p>
+<p><strong>Sub wave</strong> has six positions. The names here are descriptive, as the panel shows icons. You can hear each one in the <a href="gallery.html">sound gallery</a>.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>File value</th>
+<th>Name here</th>
+<th>Fundamental</th>
+<th>Upper harmonics</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Square -1 oct (panel label: OFF)</td>
+<td>1 octave down</td>
+<td>Odd only: 3rd -10 dB, 5th -15 dB</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Pulse 25% -1 oct</td>
+<td>1 octave down</td>
+<td>Adds a 2nd at -3 dB: 3rd -10 dB, 5th -15 dB</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Mixed -1 oct</td>
+<td>1 octave down</td>
+<td>Strong: 3rd and 4th -2 dB, 5th -7 dB</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Bright square -1 oct</td>
+<td>1 octave down</td>
+<td>Odd only, stronger than the square: 3rd -8 dB, 5th -10 dB</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Square -2 oct</td>
+<td>2 octaves down</td>
+<td>Odd only: 3rd -9 dB, 5th -14 dB</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Pulse 25% -2 oct</td>
+<td>2 octaves down</td>
+<td>Adds a 2nd at -3 dB: 3rd -9 dB, 5th -14 dB</td>
+</tr>
+</tbody>
+</table></div>
+<h2>Oscillator levels and pulse width</h2>
+<p>Level change from each mixer control, in dB:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>10</th>
+<th>7.5</th>
+<th>5</th>
+<th>2.5</th>
+<th>1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Saw Volume, Pulse Volume</td>
+<td>0</td>
+<td>-2.5</td>
+<td>-6</td>
+<td>-12</td>
+<td>-19</td>
+</tr>
+<tr>
+<td>VCA Level</td>
+<td>0</td>
+<td>-4.6</td>
+<td>-10.8</td>
+<td>-19.2</td>
+<td>-</td>
+</tr>
+</tbody>
+</table></div>
+<p>A square is 4.8 dB louder than a saw at the same setting. Sub and noise run from 0 to 3 on the panel. Their level alone, compared with a saw alone at full volume:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>0.5</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sub, dB</td>
+<td>-14.5</td>
+<td>-8.5</td>
+<td>-2.5</td>
+<td>+1</td>
+</tr>
+<tr>
+<td>Noise, dB</td>
+<td>-11.4</td>
+<td>-5.5</td>
+<td>+0.4</td>
+<td>+3.8</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Pulse width.</strong> Of the pulse positions, only PULSE PW responds. SAW PW also changes with the PWM slider, but as a shift in harmonic balance rather than a width. With PWM Rate at 0, the PWM slider sets a fixed width:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>PWM</th>
+<th>0</th>
+<th>2.5</th>
+<th>5</th>
+<th>7.5</th>
+<th>10</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Width</td>
+<td>50%</td>
+<td>38%</td>
+<td>25%</td>
+<td>13%</td>
+<td>3%</td>
+</tr>
+</tbody>
+</table></div>
+<p>With PWM Rate above 0, the width sweeps between 50% and that value. The rate roughly doubles with each step:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>PWM Rate</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hz</td>
+<td>0.08</td>
+<td>0.14</td>
+<td>0.28</td>
+<td>0.6</td>
+<td>1.2</td>
+<td>2.4</td>
+<td>4.9</td>
+<td>9.9</td>
+<td>20</td>
+</tr>
+</tbody>
+</table></div>
+<p>The sweep narrows at the fastest settings: PWM 6 covers 49% to 21% at most rates, but only 41% to 29% at rate 10.</p>
+<p><strong>Pulse Tune, Fine and Mod.</strong> Tune is exact in semitones, ±24. Fine reads -1 to +1, which is ±100 cents, and Master Fine Tune has the same range. The pulse's own Env and LFO mods read -1 to +1, grow with the square of the setting, and move only the pulse:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Pulse mod setting</th>
+<th>0.05</th>
+<th>0.1</th>
+<th>0.25</th>
+<th>0.5</th>
+<th>1.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Env, peak pitch change, cents</td>
+<td>-</td>
+<td>23</td>
+<td>144</td>
+<td>576</td>
+<td>2304</td>
+</tr>
+<tr>
+<td>LFO, total swing, cents</td>
+<td>11</td>
+<td>45</td>
+<td>283</td>
+<td>1131</td>
+<td>-</td>
+</tr>
+</tbody>
+</table></div>
+<p>Negative values mirror these. As with DCO Env, use sustain 0 if the pulse should return to pitch.</p>
+<p><strong>Range</strong> positions, from file value 0 to 3, are 4', 8', 16' and 32'.</p>
+<h2>Unison</h2>
+<p>The panel offers Off, then 3 to 7 voices.</p>
+<p>Stereo spread is wide even at low frequencies, and this is the main mix risk with unison on a bass. Side/mid ratio with 4 voices, detune 0.30, measured on a low note:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Spread</th>
+<th>0</th>
+<th>0.3</th>
+<th>0.6</th>
+<th>1.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Side/mid</td>
+<td>0</td>
+<td>0.24</td>
+<td>0.45</td>
+<td>1.07</td>
+</tr>
+</tbody>
+</table></div>
+<p>Unison voices run free, so each note starts differently. On Steel Engine the first 300 ms varies by about ±2 dB from note to note.</p>
+<h2>Pitch depth: LFO, wheel and envelope</h2>
+<p>The DCO LFO slider and the mod wheel have very different scales. Total pitch swing on a held note, in cents:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>0.5</th>
+<th>1.0</th>
+<th>2.0</th>
+<th>4.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DCO LFO slider</td>
+<td>8</td>
+<td>16</td>
+<td>42</td>
+<td>124</td>
+</tr>
+<tr>
+<td>MW to DCO LFO, wheel full up</td>
+<td>28</td>
+<td>58</td>
+<td>119</td>
+<td>-</td>
+</tr>
+</tbody>
+</table></div>
+<p>So 0.5 to 1.0 on the wheel is already a strong vibrato. <strong>Init sets it to 1.0</strong>, so a patch with an unused wheel should set it to 0 to avoid an unwanted wobble.</p>
+<p>DCO envelope, peak pitch change: 1.0 is about 1 semitone, 2.0 about 2.4, 4.0 about 5.7, 7.0 about 13, and 10 about 30.</p>
+<p><strong>A pitch envelope needs sustain at 0.</strong> With sustain above 0, held notes stay off pitch. An inverted envelope at 4.2 with sustain 1.5 left held notes about 88 cents flat.</p>
+<h2>LFO</h2>
+<p><strong>Rate</strong> runs from 0.01 to 61 Hz, and the panel reading is accurate. Measured at settings reading 0.18, 0.95, 5.03 and 11.56 Hz, the real rate matched each. With <strong>Sync</strong> on, the control steps from 16/1 to 1/16T in straight and triplet values. Checks at 120 BPM (2/1T, 1/1T, 1/4T) landed on the right rate. 4/1 measured 0.11 Hz against an expected 0.125 Hz, which is close given that the test covers only about 1.5 of its cycles.</p>
+<p><strong>Waveforms:</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Wave</th>
+<th>Pitch movement at the same depth</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Triangle</td>
+<td>Even rise and fall, ±78 cents</td>
+<td>General vibrato and sweeps</td>
+</tr>
+<tr>
+<td>Sine</td>
+<td>Rounder, ±83 cents</td>
+<td>Vibrato</td>
+</tr>
+<tr>
+<td>Saw</td>
+<td>Slow rise, then a sudden drop, ±75 cents</td>
+<td>Rhythmic pumps. INV flips it to a sudden rise and slow fall</td>
+</tr>
+<tr>
+<td>REC</td>
+<td>Jumps between two values, ±84 cents</td>
+<td>Trills and gates</td>
+</tr>
+<tr>
+<td>S&amp;H</td>
+<td>Random steps, about -150 to +90 cents</td>
+<td>Random filter and pitch patterns</td>
+</tr>
+<tr>
+<td>Noise</td>
+<td>Tiny jitter, about 4 cents at DCO LFO 4 and 18 cents at 10</td>
+<td>Slight instability only</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Noise isn't a slow random.</strong> Its movement didn't change with the Rate control, and on the filter it swung under 1 dB where a triangle at the same depth swung 10 to 20 dB. Use S&amp;H for audible randomness.</p>
+<p><strong>Delay</strong> applies to both pitch and filter. The vibrato reaches full depth at about the time the panel shows: readings of 0.40, 0.98 and 2.37 s reached 90% by about 0.5, 1.1 and 2.5 s, measured with a 0.4 s window. The panel reads 0 to 34 s.</p>
+<p><strong>Trig.</strong> With it off, the LFO runs free, so each note starts at a different point in the cycle: repeated notes began at pitch offsets from -75 to +74 cents. With it on, each began within 3 cents of the same point. Use Trig for anything that must repeat identically, such as a pluck's wobble.</p>
+<h2>Aftertouch and pitch bend</h2>
+<p>Aftertouch responds to both channel and polyphonic pressure. All three amounts scale with pressure, so half pressure gives about half the movement.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Amount, at full pressure</th>
+<th>2.5</th>
+<th>5</th>
+<th>10</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DCO AT: vibrato swing added, cents</td>
+<td>105</td>
+<td>209</td>
+<td>419</td>
+</tr>
+<tr>
+<td>VCA AT: level added, from VCA Level 5, dB</td>
+<td>+1.9</td>
+<td>+3.5</td>
+<td>+6</td>
+</tr>
+</tbody>
+</table></div>
+<p>DCO AT works with DCO LFO at 0, and it uses the LFO's rate and wave. For the filter, see VCF AT above.</p>
+<p><strong>Bend range</strong> is exact, from 0 to 12 semitones in both directions.</p>
+<h2>Portamento</h2>
+<p>Time to cover 90% of the interval, in seconds:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Time</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Octave</td>
+<td>0.03</td>
+<td>0.05</td>
+<td>0.09</td>
+<td>0.19</td>
+<td>0.44</td>
+<td>0.97</td>
+<td>1.75</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Two octaves</td>
+<td>0.05</td>
+<td>0.09</td>
+<td>0.18</td>
+<td>0.39</td>
+<td>0.86</td>
+<td>1.9</td>
+<td>3.5</td>
+<td>4.8</td>
+</tr>
+<tr>
+<td>Octave, time mode on</td>
+<td>0.04</td>
+<td>0.08</td>
+<td>0.15</td>
+<td>0.32</td>
+<td>0.73</td>
+<td>1.6</td>
+<td>3</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Two octaves, time mode on</td>
+<td>0.04</td>
+<td>0.08</td>
+<td>0.15</td>
+<td>0.32</td>
+<td>0.72</td>
+<td>1.6</td>
+<td>2.9</td>
+<td>3.9</td>
+</tr>
+</tbody>
+</table></div>
+<p>By default the slide has a constant speed, so a wider leap takes longer. With the <code>portamento_time_mode</code> parameter on, every slide takes the same time whatever the interval. It's listed among the plugin's automation parameters. Its panel label hasn't been confirmed.</p>
+<h2>Chord memory</h2>
+<p>Notes are stored relative to C4, then transposed by whichever key you play. Each key sounds the whole chord in parallel. You need at least as many voices as chord notes: in mono, only the top note plays.</p>
+<h2>Chorus</h2>
+<p>The chorus is only on or off: file values above 1 sound identical to 1. The rate control sets how fast and how far the pitch wobbles, which is why a slow setting adds gentle width and a fast one gives the obvious ensemble effect that the string patches rely on. It didn't give a single clean rate in Hz, so this table shows the wobble on one channel at A4:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Chorus Rate</th>
+<th>0-4</th>
+<th>5</th>
+<th>6</th>
+<th>7.5</th>
+<th>9</th>
+<th>10</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Swing, cents</td>
+<td>15-18</td>
+<td>34</td>
+<td>69</td>
+<td>261</td>
+<td>334</td>
+<td>474</td>
+</tr>
+</tbody>
+</table></div>
+<p>Width depends on the note: side/mid is 0.34 at C2 and 0.65 at A4. Summing to mono costs 0.4 dB at C2 and 1.6 dB at A4.</p>
+<h2>Delay</h2>
+<p>Time follows the panel reading at 120 BPM, synced (1/16 to 4/1., in straight, triplet and dotted values) or free (0.04 to 4 s).</p>
+<p><strong>Mix.</strong> Level compared with the dry note at mix 0.00 or lower, in dB:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Mix</th>
+<th>-0.80</th>
+<th>-0.40</th>
+<th>0.00</th>
+<th>+0.40</th>
+<th>+0.60</th>
+<th>+0.80</th>
+<th>+1.00</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dry note</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>-4.5</td>
+<td>-8</td>
+<td>-14</td>
+<td>Silent</td>
+</tr>
+<tr>
+<td>First echo</td>
+<td>-20</td>
+<td>-11</td>
+<td>-6.5</td>
+<td>-3.6</td>
+<td>-2.5</td>
+<td>-1.5</td>
+<td>-1</td>
+</tr>
+</tbody>
+</table></div>
+<p>The echo overtakes the note at about +0.40. At +1.00 the dry note is gone.</p>
+<p><strong>Feedback.</strong> Level change per repeat:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Feedback</th>
+<th>2</th>
+<th>4</th>
+<th>6</th>
+<th>8</th>
+<th>10</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dB per repeat</td>
+<td>-14</td>
+<td>-8</td>
+<td>-5</td>
+<td>-2.4</td>
+<td>-0.5</td>
+</tr>
+</tbody>
+</table></div>
+<p>At 10 the repeats barely fade, so they'll keep building up if you keep playing.</p>
+<p><strong>Tone</strong> is 0.00 at neutral. Darker settings also lower the echo. With a noise source, the echo's spectral centroid and level were:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Tone</th>
+<th>-5</th>
+<th>-2.5</th>
+<th>0</th>
+<th>+2.5</th>
+<th>+5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Centroid</td>
+<td>2.5 kHz</td>
+<td>5.8 kHz</td>
+<td>7.7 kHz</td>
+<td>9 kHz</td>
+<td>11 kHz</td>
+</tr>
+<tr>
+<td>Echo level, dB</td>
+<td>-6.4</td>
+<td>-1.5</td>
+<td>0</td>
+<td>-2.8</td>
+<td>-3.2</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Spread</strong> is 0.00 at the centre, with echoes exactly centred and no added width. Both directions add width, and negative values mirror positive ones. It rotates the echoes rather than alternating them, so <strong>it can't produce a clean left-right ping-pong.</strong> This table shows how much louder each of the first six echoes is on the left, in dB, at feedback 9. A minus means louder on the right:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Spread</th>
+<th>1st</th>
+<th>2nd</th>
+<th>3rd</th>
+<th>4th</th>
+<th>5th</th>
+<th>6th</th>
+<th>Side/mid</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.00</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>+0.50</td>
+<td>4</td>
+<td>9</td>
+<td>10</td>
+<td>10</td>
+<td>9</td>
+<td>9</td>
+<td>1.05</td>
+</tr>
+<tr>
+<td>+1.00</td>
+<td>7</td>
+<td>9</td>
+<td>9</td>
+<td>8</td>
+<td>8</td>
+<td>7</td>
+<td>0.98</td>
+</tr>
+<tr>
+<td>+2.00</td>
+<td>10</td>
+<td>9</td>
+<td>8</td>
+<td>-2</td>
+<td>7</td>
+<td>6</td>
+<td>0.92</td>
+</tr>
+<tr>
+<td>+2.50</td>
+<td>9</td>
+<td>10</td>
+<td>-1</td>
+<td>6</td>
+<td>7</td>
+<td>-3</td>
+<td>0.86</td>
+</tr>
+<tr>
+<td>+3.00</td>
+<td>13</td>
+<td>2</td>
+<td>9</td>
+<td>9</td>
+<td>5</td>
+<td>8</td>
+<td>0.98</td>
+</tr>
+<tr>
+<td>+4.00</td>
+<td>15</td>
+<td>13</td>
+<td>-3</td>
+<td>10</td>
+<td>10</td>
+<td>-7</td>
+<td>0.91</td>
+</tr>
+<tr>
+<td>+5.00</td>
+<td>1</td>
+<td>0</td>
+<td>-2</td>
+<td>-3</td>
+<td>-5</td>
+<td>-6</td>
+<td>0.54</td>
+</tr>
+</tbody>
+</table></div>
+<p>Small settings give the widest result, with echoes steadily to one side. The pattern changes with feedback. For a true ping-pong, use a dedicated delay plugin in Reaper.</p>
+<h2>Reverb</h2>
+<p><strong>Size</strong> sets the tail. Time to fall 40 dB from just after the note:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Size</th>
+<th>0-2</th>
+<th>4</th>
+<th>6</th>
+<th>8</th>
+<th>10</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Time</td>
+<td>0.3 s</td>
+<td>0.9 s</td>
+<td>1.7 s</td>
+<td>3.6 s</td>
+<td>Over 14 s</td>
+</tr>
+</tbody>
+</table></div>
+<p>Size 10 didn't fade by 40 dB within the 14 s test, so treat it as a freeze-like effect.</p>
+<p><strong>Pre-delay</strong> adds to a built-in gap of about 35 ms: readings of 0, 90, 250 and 489 ms gave first sound at 36, 125, 285 and 525 ms.</p>
+<p><strong>Tone</strong> has a large effect, with a default of -2.00. With a noise source, the tail's spectral centroid was:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Tone</th>
+<th>-5</th>
+<th>-2</th>
+<th>0</th>
+<th>+2</th>
+<th>+5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Centroid</td>
+<td>170 Hz</td>
+<td>2.8 kHz</td>
+<td>4.9 kHz</td>
+<td>5.2 kHz</td>
+<td>8.4 kHz</td>
+</tr>
+</tbody>
+</table></div>
+<p>At -5 the tail is also about 12 dB quieter, so it nearly disappears.</p>
+<p><strong>Mix.</strong> Held-note level barely changes, so raising the mix mostly adds tail and width:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Mix</th>
+<th>-0.40</th>
+<th>0.00</th>
+<th>+0.40</th>
+<th>+0.60</th>
+<th>+0.80</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tail level, dB</td>
+<td>-44</td>
+<td>-36</td>
+<td>-25</td>
+<td>-25</td>
+<td>-21</td>
+</tr>
+<tr>
+<td>Side/mid, held note</td>
+<td>0.09</td>
+<td>0.24</td>
+<td>0.44</td>
+<td>0.79</td>
+<td>0.90</td>
+</tr>
+</tbody>
+</table></div>
+<p>At low mixes the reverb adds little width, so chorus, unison and delay spread are the main sources.</p>
+<h2>Bell EQ</h2>
+<p><strong>Gain</strong> runs from -24 to +24 dB, and the measured boost matched the reading to within about 0.7 dB. <strong>Freq</strong> runs from 20 Hz to 20 kHz on an uneven scale. The measured peak fell within about 7% of the reading at 181 Hz, 1268 Hz and 4817 Hz. <strong>Q</strong> runs from 0.025 to 40. The width of the boost, measured at half its gain, was:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Q</th>
+<th>0.23</th>
+<th>0.48</th>
+<th>1</th>
+<th>2.1</th>
+<th>4.4</th>
+<th>9.1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Width, octaves</td>
+<td>4</td>
+<td>2.4</td>
+<td>1.2</td>
+<td>0.6</td>
+<td>0.3</td>
+<td>0.16</td>
+</tr>
+</tbody>
+</table></div>
+<h2>Voice tuning and round robin</h2>
+<p>The VT panel offsets each voice. These are the extremes of each slider, applied to every voice at once. File values run from 0 to 1, with 0.5 at the centre:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Slider</th>
+<th>Low end</th>
+<th>Quarter</th>
+<th>Centre</th>
+<th>Three quarters</th>
+<th>High end</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Detune</td>
+<td>-50 cents</td>
+<td>-6.5 cents</td>
+<td>0</td>
+<td>+6.4 cents</td>
+<td>+50 cents</td>
+</tr>
+<tr>
+<td>Cutoff, from 470 Hz</td>
+<td>20 Hz</td>
+<td>305 Hz</td>
+<td>460 Hz</td>
+<td>790 Hz</td>
+<td>18 kHz</td>
+</tr>
+<tr>
+<td>Pan</td>
+<td>Hard left</td>
+<td>6.6 dB left</td>
+<td>Centre</td>
+<td>6.6 dB right</td>
+<td>Hard right</td>
+</tr>
+<tr>
+<td>Attack, Decay, Release times</td>
+<td>About × 1.9</td>
+<td>-</td>
+<td>× 1</td>
+<td>-</td>
+<td>About × 0.66</td>
+</tr>
+</tbody>
+</table></div>
+<p>Detune and cutoff are very fine near the centre and very coarse at the ends, so small moves are all you need.</p>
+<p><strong>Round robin.</strong> With it off, repeated notes reuse the same voice, so voice tuning can't vary from note to note: eight repeats all stayed at one voice's -50 cents. With it on, they cycled through all the voices. Turn it on with voice tuning if you want repeated notes to differ.</p>
+<h2>Arpeggiator</h2>
+<p><strong>Modes,</strong> on a held C-E-G:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>Order</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Up</td>
+<td>C E G C E G</td>
+</tr>
+<tr>
+<td>Down</td>
+<td>C G E C G E</td>
+</tr>
+<tr>
+<td>U&amp;D</td>
+<td>C E G E C E G E</td>
+</tr>
+<tr>
+<td>U&amp;D II</td>
+<td>Same as U&amp;D in this test</td>
+</tr>
+<tr>
+<td>Random</td>
+<td>Varies</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Rate.</strong> With no sync, the panel reading in Hz was accurate from 1.16 to 5.79 Hz. The range is 0.5 to 25 Hz. With sync, the control steps from 1/2 to 1/64T, and 1/4, 1/8, 1/16 and 1/16T all ran at the right speed at 120 BPM.</p>
+<p><strong>SYNC and SYNC HOST</strong> behaved identically here, counting from the note. The test renders have no transport, so any difference that depends on the host's position needs checking in Reaper.</p>
+<h2>Other notes</h2>
+<ul>
+<li><strong>Arp range:</strong> file value N gives N + 1 octaves, whatever the plugin's label says.</li>
+<li><strong>VCA Gate ignores attack:</strong> the amp opens at once, so T1 only shapes the filter and pitch.</li>
+<li><strong>Volume:</strong> about 12 dB per doubling. 0.5 is 12 dB below 1.0.</li>
+<li><strong>Chorus</strong> adds stereo content at low notes too, as there's no way to limit it to higher frequencies.</li>
+<li><strong>No direct tremolo:</strong> the LFO reaches pitch and filter only.</li>
+<li><strong>DC offset:</strong> notes begin with a small DC step, which is harmless, but it can mislead measurements of very low level.</li>
+<li><strong>Testing outside a DAW:</strong> plugin renders start with a transient on the very first sample, so test notes need a short pre-roll. The render's tempo is 120 BPM. The delay also needs about 0.5 s after a preset loads. A note sooner than that, with mix below +1.00, gets early echoes.</li>
+</ul>
+<h2>Not measured</h2>
+<p>These don't affect the sound of a patch in a way these tests could check, or need things a test render doesn't have, so what the manual says is all there is here:</p>
+<ul>
+<li><strong>MPE, MTS and .tun microtuning, and sysex:</strong> see the manual.</li>
+<li><strong>FX Lock, Hold and MIDI Learn:</strong> panel and host features.</li>
+<li><strong>Clean DCO:</strong> the manual says you probably won't hear it. It removes the small DC step mentioned above.</li>
+<li><strong>The chord memory's mono mode</strong> (<code>chord_original_mono_mode</code>): not tested.</li>
+</ul></div>
+</main>
+</div>
+<script src="site.js"></script>
+</body>
+</html>

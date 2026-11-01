@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Building Eighty-Four Tines from init: Doodles TAL-Pha Presets</title>
+<link rel="stylesheet" href="style.css">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="index.html"><span>Doodles</span> TAL-Pha Presets</a>
+  <button type="button" id="theme" class="ghost" aria-label="Switch between light and dark theme">Theme</button>
+</header>
+<div class="layout">
+<nav class="sidebar" aria-label="Documentation">
+<a href="index.html">Overview</a>
+<p class="nav-label">Patches</p>
+<a href="bass.html">Bass</a>
+<a href="lead.html">Lead</a>
+<a href="pad.html">Pad</a>
+<a href="strings.html">Strings</a>
+<a href="brass.html">Brass</a>
+<a href="arp.html">Arp</a>
+<a href="pluck.html">Pluck</a>
+<a href="keys.html" aria-current=page>Keys and Bells</a>
+<div class="subnav"><a class="recipe-link" href="keys-recipe.html" aria-current=page>Build from init</a><a href="keys.html#eighty-four-tines">Eighty-Four Tines</a><a href="keys.html#warm-tines">Warm Tines</a><a href="keys.html#glass-chime">Glass Chime</a><a href="keys.html#neon-organ">Neon Organ</a><a href="keys.html#funk-clav">Funk Clav</a><a href="keys.html#pocket-music-box">Pocket Music Box</a><a href="keys.html#analog-poly-keys">Analog Poly Keys</a><a href="keys.html#lounge-vibes">Lounge Vibes</a><a href="keys.html#reed-drive">Reed Drive</a><a href="keys.html#worn-piano">Worn Piano</a></div>
+<a href="chord.html">Chord and Stab</a>
+<a href="fx.html">FX and Atmosphere</a>
+<p class="nav-label">Guides</p>
+<a href="field-guide.html">Field guide</a>
+<a href="control-reference.html">Control reference</a>
+<a href="gallery.html">Sound gallery</a>
+<a href="sound-map.html">Sound map</a>
+<a href="kits.html">Starter kits</a>
+<a href="reaper-cheat-sheet.html">Reaper cheat sheet</a>
+</nav>
+<main>
+<div class="recipe">
+<h1>Building Eighty-Four Tines from init</h1>
+<p class="lede">This synth can&#x27;t do FM, but the 80s digital electric piano is such an important sound that it&#x27;s worth getting close. This recipe builds it from two separate layers: a soft body and a metallic tine that&#x27;s only heard at the start of a note.</p>
+<section class="install">
+<h2>Setup</h2>
+<p>Choose <strong>Reset Parameters</strong> and loop some gentle chords around C4, with velocity variation. Harder notes will show the tine.</p>
+<p>Each step's preview adds to the one before. Measurements compare it with the previous step.</p>
+</section>
+<ol class="steps">
+<li class="step">
+<h2>Set the level first</h2>
+<ul class="changes"><li><span class="control">Volume</span><span class="from">5.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">3.8</span></li></ul>
+<p>Chords add up, so set a sensible level first. Then you can judge each change for what it does, rather than how loud it is.</p>
+
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/keys/step-01.mp3" aria-label="Step 1: Set the level first"></audio>
+  <p><strong>Listen for:</strong> A plain, buzzy saw chord.</p>
+  
+</div>
+</li>
+<li class="step">
+<h2>Replace the saw with a soft body</h2>
+<ul class="changes"><li><span class="control">DCO Saw</span><span class="from">Saw</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">Off</span></li><li><span class="control">Sub wave</span><span class="from">Square -1 oct (panel label: OFF)</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">Square -1 oct (panel label: OFF)</span></li><li><span class="control">Sub level</span><span class="from">0.0 / 3</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">2.2 / 3</span></li><li><span class="control">Octave</span><span class="from">+0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">+1</span></li></ul>
+<p>An electric piano&#x27;s body is rounded and simple, nothing like a saw. A square from the sub oscillator gives you that. The sub sits an octave below the DCO, so Octave +1 brings it back up to the note you&#x27;re playing.</p>
+<p class="alt"><strong>The other choice:</strong> Warm Tines uses a filtered square at the played pitch and leaves out the tine completely, for a mellower electric piano.</p>
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/keys/step-02.mp3" aria-label="Step 2: Replace the saw with a soft body"></audio>
+  <p><strong>Listen for:</strong> Hollow and low. The panel says the sub is &#x27;OFF&#x27;, but it&#x27;s really a square.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Brightness: 4,302 Hz → <strong>3,778 Hz</strong></li></ul>
+</div>
+</li>
+<li class="step">
+<h2>Make it die away</h2>
+<ul class="changes"><li><span class="control">Env T3 (decay)</span><span class="from">0.0 (about 10 ms to -20 dB)</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">6.2 (about 1.6 s to -20 dB)</span></li><li><span class="control">Env L3 (sustain)</span><span class="from">10.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">1.0</span></li><li><span class="control">Env T4 (release)</span><span class="from">0.0 (about 10 ms to -20 dB)</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">4.5 (about 419 ms to -20 dB)</span></li><li><span class="control">Voices</span><span class="from">6</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">8</span></li></ul>
+<p>Struck instruments fade even while the key is held. A decay of about 1.5 seconds with a little sustain gives you a natural fade. More voices let the ringing notes overlap.</p>
+
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/keys/step-03.mp3" aria-label="Step 3: Make it die away"></audio>
+  <p><strong>Listen for:</strong> Each chord fades away, like a struck key.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Held level: -0 dB from peak → <strong>-8 dB from peak</strong></li><li>Tail after note-off: 10 ms → <strong>600 ms</strong></li></ul>
+</div>
+</li>
+<li class="step">
+<h2>Add the tine</h2>
+<ul class="changes"><li><span class="control">DCO Pulse</span><span class="from">Off</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">Square</span></li><li><span class="control">Pulse Sync</span><span class="from">Off</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">On</span></li><li><span class="control">Pulse Tune</span><span class="from">+0 st</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">+24 st</span></li><li><span class="control">Pulse Env mod</span><span class="from">+0.00</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">+0.15</span></li><li><span class="control">Pulse Volume</span><span class="from">10.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">4.2</span></li></ul>
+<p>This is the key decision. A pulse hard-synced two octaves up makes a metallic set of overtones similar to an FM tine. A small pulse envelope makes the tone change as the note fades. You won&#x27;t hear this as a separate tine yet: it&#x27;s on all the time.</p>
+<p class="alt"><strong>The other choice:</strong> Try other Pulse Tune values such as +19 for a different metallic ratio. Real FM has more variety; this has its own charm.</p>
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/keys/step-04.mp3" aria-label="Step 4: Add the tine"></audio>
+  <p><strong>Listen for:</strong> A constant metallic buzz over the body. Too much for now.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Brightness: 3,817 Hz → <strong>5,295 Hz</strong></li></ul>
+</div>
+</li>
+<li class="step">
+<h2>Hide the tine behind a filter</h2>
+<ul class="changes"><li><span class="control">VCF Cutoff</span><span class="from">10.0 (about 21726 Hz at C4)</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">4.2 (about 252 Hz at C4)</span></li><li><span class="control">VCF Key follow</span><span class="from">0.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">6.0</span></li></ul>
+<p>With the filter closed, the high tine disappears, leaving only the body. Key follow makes higher notes brighter, as on a real keyboard.</p>
+
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/keys/step-05.mp3" aria-label="Step 5: Hide the tine behind a filter"></audio>
+  <p><strong>Listen for:</strong> A soft, rounded electric piano with almost no tine.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Brightness: 5,295 Hz → <strong>321 Hz</strong></li></ul>
+</div>
+</li>
+<li class="step">
+<h2>Reveal the tine at the attack</h2>
+<ul class="changes"><li><span class="control">VCF Env</span><span class="from">0.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">4.2</span></li></ul>
+<p>Now the filter opens for an instant, so the tine is only heard at the very start of the note. This is the same fade as in the previous steps, and it&#x27;s what makes it sound struck. The same principle works for bells and clavs.</p>
+
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/keys/step-06.mp3" aria-label="Step 6: Reveal the tine at the attack"></audio>
+  <p><strong>Listen for:</strong> A glassy &#x27;ting&#x27; at the start of each note, then the soft body.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Filter sweep: 0.0 octaves → <strong>1.7 octaves</strong></li><li>Brightness: 321 Hz → <strong>2,819 Hz</strong></li></ul>
+</div>
+</li>
+<li class="step">
+<h2>Let velocity control the tine</h2>
+<ul class="changes"><li><span class="control">VCF Env mode</span><span class="from">Normal</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">Normal-Dynamic</span></li></ul>
+<p>On a real digital EP, playing harder brings out more of the tine. Normal-Dynamic does the same, and it&#x27;s what makes it feel like an instrument.</p>
+
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/keys/step-07.mp3" aria-label="Step 7: Let velocity control the tine"></audio>
+  <p><strong>Listen for:</strong> Soft chords are mellow, and accents bring out the bell-like edge.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Hard note vs soft note brightness: 1.0x → <strong>4.2x</strong></li></ul>
+</div>
+</li>
+<li class="step">
+<h2>Add the 80s</h2>
+<ul class="changes"><li><span class="control">Chorus</span><span class="from">Off</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">On</span></li><li><span class="control">Chorus Rate</span><span class="from">5.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">4.8</span></li></ul>
+<p>Almost every 80s electric piano you can think of had chorus on it. It adds width and hides the difference between this sound and the real thing.</p>
+
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/keys/step-08.mp3" aria-label="Step 8: Add the 80s"></audio>
+  <p><strong>Listen for:</strong> Wide and glassy: that&#x27;s the sound.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Stereo width (side/mid): 0.00 → <strong>0.58</strong></li></ul>
+</div>
+</li>
+<li class="step">
+<h2>Finish it</h2>
+<ul class="changes"><li><span class="control">MW to DCO LFO</span><span class="from">1.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">0.6</span></li><li><span class="control">LFO Rate</span><span class="from">0.95 Hz</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">5.03 Hz</span></li><li><span class="control">Reverb mix</span><span class="from">OFF</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">-0.72</span></li></ul>
+<p>A little reverb, and a trim to the wheel&#x27;s vibrato. Init already sends the wheel to vibrato at 1.0, which is too wide for an electric piano, so 0.6 is plenty. That&#x27;s the finished Eighty-Four Tines.</p>
+
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/keys/step-09.mp3" aria-label="Step 9: Finish it"></audio>
+  <p><strong>Listen for:</strong> In this preview the wheel rises across the second half, adding vibrato.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Vibrato with wheel up: 59 cents → <strong>33 cents</strong></li></ul>
+</div>
+</li>
+</ol>
+<section class="install">
+<h2>What to take away</h2>
+<ul><li>Sync is a good stand-in for FM&#x27;s metallic overtones, within limits.</li><li>Filter envelope can be used to reveal a layer briefly: the tine is only audible while the filter&#x27;s open.</li><li>Layering a body and an attack is a useful way to build almost any keyboard sound.</li></ul>
+</section>
+<h2 class="next">Where to go next</h2>
+<p>Starting points for moving from <a href="keys.html#eighty-four-tines">Eighty-Four Tines</a> to another patch in the bank:</p>
+<ul class="pairs"><li><a href="keys.html#warm-tines">Warm Tines</a><span class="why">Try removing the sync layer, returning Octave to 0, and using a filtered Square at the played pitch with VCA Normal-Dynamic.</span></li><li><a href="keys.html#glass-chime">Glass Chime</a><span class="why">Use Saw 4 instead, set the HPF to HP 2, open the filter and remove sustain.</span></li><li><a href="keys.html#funk-clav">Funk Clav</a><span class="why">Use Pulse 25%, HP 2, add resonance and shorten the decay to 3.2.</span></li></ul>
+</div>
+</main>
+</div>
+<script src="site.js"></script>
+</body>
+</html>

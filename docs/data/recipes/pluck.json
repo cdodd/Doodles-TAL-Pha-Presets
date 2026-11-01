@@ -1,0 +1,154 @@
+{
+ "steps": [
+  {
+   "audio": "audio/recipes/pluck/step-01.mp3",
+   "before": {},
+   "after": {},
+   "measures": {}
+  },
+  {
+   "audio": "audio/recipes/pluck/step-02.mp3",
+   "before": {
+    "EnvDecayTime": 0.0,
+    "EnvSustainLevel": 1.0
+   },
+   "after": {
+    "EnvDecayTime": 0.4,
+    "EnvSustainLevel": 0
+   },
+   "measures": {
+    "sustain_db": [
+     -0.5886392757542236,
+     -59.59125979799461
+    ]
+   }
+  },
+  {
+   "audio": "audio/recipes/pluck/step-03.mp3",
+   "before": {
+    "EnvReleaseTime": 0.0,
+    "NumberOfVoices": 5.0
+   },
+   "after": {
+    "EnvReleaseTime": 0.34,
+    "NumberOfVoices": 5
+   },
+   "measures": {
+    "short_tail_ms": [
+     7.482993197278911,
+     406.5759637188209
+    ]
+   }
+  },
+  {
+   "audio": "audio/recipes/pluck/step-04.mp3",
+   "before": {
+    "VcfCutoff": 1.0,
+    "VcfKeyFollow": 0.0
+   },
+   "after": {
+    "VcfCutoff": 0.45,
+    "VcfKeyFollow": 0.5
+   },
+   "measures": {
+    "centroid_hz": [
+     4790.327620432756,
+     564.3006707122605
+    ]
+   }
+  },
+  {
+   "audio": "audio/recipes/pluck/step-05.mp3",
+   "before": {
+    "VcfEnvMod": 0.0,
+    "VcfResonance": 0.0
+   },
+   "after": {
+    "VcfEnvMod": 0.38,
+    "VcfResonance": 0.1
+   },
+   "measures": {
+    "centroid_hz": [
+     564.3006707122605,
+     2603.6452869544105
+    ],
+    "sweep_octaves": [
+     -0.4432805608265976,
+     1.9483581026672656
+    ]
+   }
+  },
+  {
+   "audio": "audio/recipes/pluck/step-06.mp3",
+   "before": {
+    "VcfEnvMode": 0.0
+   },
+   "after": {
+    "VcfEnvMode": 2
+   },
+   "measures": {
+    "vel_bright_ratio": [
+     1.0027759140163823,
+     2.5137849323844703
+    ]
+   }
+  },
+  {
+   "audio": "audio/recipes/pluck/step-07.mp3",
+   "before": {
+    "DcoChorusSwitch": 0.0,
+    "ChorusRate": 0.5,
+    "delayDryWet": 0.0,
+    "delayTime": 0.300000011920929,
+    "delayFeedback": 0.2000000029802322,
+    "delaySpread": 0.5
+   },
+   "after": {
+    "DcoChorusSwitch": 1,
+    "ChorusRate": 0.5,
+    "delayDryWet": 0.16,
+    "delayTime": 0.25,
+    "delayFeedback": 0.22,
+    "delaySpread": 0.8
+   },
+   "measures": {
+    "side_mid": [
+     0.0,
+     0.621210023266053
+    ]
+   }
+  },
+  {
+   "audio": "audio/recipes/pluck/step-08.mp3",
+   "before": {
+    "ModWheelVcfRange": 0.0,
+    "ModWheelDcoLfo": 0.1000000014901161
+   },
+   "after": {
+    "ModWheelVcfRange": 0.2,
+    "ModWheelDcoLfo": 0
+   },
+   "measures": {
+    "mw_bright_ratio": [
+     1.0323498983488517,
+     1.9019830980966108
+    ]
+   }
+  },
+  {
+   "audio": "audio/recipes/pluck/step-09.mp3",
+   "before": {
+    "Volume": 0.5
+   },
+   "after": {
+    "Volume": 0.6347023991678252
+   },
+   "measures": {
+    "lufs": [
+     -23.735199514148807,
+     -19.898317489483343
+    ]
+   }
+  }
+ ]
+}

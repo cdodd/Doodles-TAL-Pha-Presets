@@ -1,0 +1,524 @@
+category = "FX and Atmosphere"
+mix_defaults = [
+  "High-pass at 100-300 Hz, unless the low end is the point, as in Sub Drop and V8 Drone.",
+  "EQ to taste: automate a high cut rather than setting a fixed one.",
+  "They rarely need compression. Automate the level instead, and sidechain drones to the kick.",
+  "Keep low FX centred, and pan or widen high ones for movement.",
+  "Use reverb throws at the end of a sweep. Mute the source on the downbeat for a clean cut.",
+]
+
+[[patch]]
+name = "Riser"
+tags = ["outrun", "darksynth"]
+browser = "Slow noise riser | MW: open filter"
+profile = "A noise-and-saw build that takes about four seconds to open up, built for the run into a chorus."
+phrase = "long"
+atonal = true
+hold = 10.0
+range = "Any note; try C4"
+expect = { attack_s = [1, 12] }
+performance = "Hold one note, starting about two bars ahead. Release on the downbeat."
+use = "Lead-ins to any big section. Pairs with a snare roll."
+mix = [
+  "Automate the level as well, for a bigger rise.",
+  "Cut it dead at the downbeat, or use a reverb throw.",
+  "High-pass at 300 Hz.",
+]
+pairings = [
+  { with = "Rising Tide", why = "Noise and strings rising together." },
+  { with = "Sub Drop", why = "The rise resolves in a drop." },
+  { with = "Snare roll", external = true, why = "The classic build." },
+]
+tweaks = [
+  { control = "ENV T1 (attack) to 6.5", result = "A much shorter rise, of a little over a second." },
+  { control = "Noise to 0", result = "A tonal, less airy rise." },
+  { control = "VCF RES to 7.0", result = "A whistling peak that sweeps up with the noise." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 1
+Noise = 2
+DcoSubLevel = 0
+NumberOfVoices = 3
+VcfCutoff = 0.22
+VcfResonance = 0.35
+VcfEnvMod = 0.68
+EnvAttackTime = 0.78
+EnvDecayTime = 0.5
+EnvSustainLevel = 1
+EnvReleaseTime = 0.35
+ModWheelVcfRange = 0.2
+ModWheelDcoLfo = 0
+reverbDryWet = 0.3
+reverbSize = 0.8
+[patch.why]
+EnvAttackTime = "About 4 seconds to reach both full level and full brightness. Because one envelope moves level and filter together, the sound gets both louder and brighter."
+VcfCutoff = "Starts almost closed, at about 50 Hz, so there's a very long way to go."
+VcfEnvMod = "Very large: it takes the filter from nearly closed to fully open."
+Noise = "Noise is the classic riser sound, as it has no pitch to clash with the key."
+VcfResonance = "A slight peak, so you can hear the sweep moving through the noise."
+
+[[patch]]
+name = "Downlifter"
+tags = ["outrun", "darksynth"]
+browser = "Falling sweep | MW: open filter"
+profile = "A falling pitch and filter sweep with noise, to release energy after a hit."
+phrase = "long"
+expect = { sweep_octaves = [1, 4], attack_s = [0, 0.05] }
+atonal = true
+hold = 6.0
+range = "Try C5"
+transpose = 12
+test_note = 72
+performance = "Hit one note on the downbeat. It falls by itself over a few seconds."
+use = "After a drop or a big hit, or at the end of a chorus going into a quieter section."
+mix = [
+  "High-pass as it falls, using automation, if it's clouding the low end.",
+  "Long reverb suits it.",
+  "Keep it just below the main hit.",
+]
+pairings = [
+  { with = "Stadium Stab", why = "Hit, then fall." },
+  { with = "Riser", why = "The natural opposite." },
+  { with = "Crash cymbal", external = true, why = "They share the same tail." },
+]
+tweaks = [
+  { control = "DCO Env to 9.0", result = "A much bigger fall in pitch." },
+  { control = "ENV T3 (decay) to 6.0", result = "A much quicker fall." },
+  { control = "Noise to 0", result = "A pure tone that falls." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 1
+Noise = 1.2
+DcoSubLevel = 0
+NumberOfVoices = 3
+DcoEnvMod = 0.78
+VcfCutoff = 0.4
+VcfEnvMod = 0.4
+VcaEnvMode = 0
+EnvDecayTime = 0.74
+EnvSustainLevel = 0
+EnvReleaseTime = 0.7
+ModWheelVcfRange = 0.2
+ModWheelDcoLfo = 0
+reverbDryWet = 0.32
+reverbSize = 0.8
+[patch.why]
+DcoEnvMod = "Very high: the pitch begins a lot higher than the note and falls down to it."
+EnvDecayTime = "About 4 seconds: the whole gesture happens in the decay."
+VcfEnvMod = "The filter closes along with the pitch, which adds to the falling feeling."
+Noise = "Adds an airy sweep as the filter closes."
+VcaEnvMode = "Normal: the level falls too, so the sound disappears as it lands."
+
+[[patch]]
+name = "Laser Zap"
+tags = ["outrun", "chillwave"]
+browser = "Fast pitch zap | MW: none"
+profile = "A very fast downward pitch zap: arcade laser fire."
+phrase = "hits_high"
+atonal = true
+test_note = 72
+range = "C4 to C6"
+expect = { attack_s = [0, 0.02] }
+performance = "Short single hits, with varied notes for variety."
+use = "Fills, transitions, and game references. Keep them occasional."
+mix = [
+  "Panning each hit differently adds a lot of fun.",
+  "A short delay adds a sense of a battle.",
+  "High-pass at 300 Hz.",
+]
+pairings = [
+  { with = "Arcade Square", why = "Game music, with sound effects." },
+  { with = "Sonar Ping", why = "A small box of sci-fi sounds." },
+  { with = "Tom fill", external = true, why = "They land together." },
+]
+tweaks = [
+  { control = "ENV T3 (decay) to 4.5", result = "A slower, more dramatic zap." },
+  { control = "DCO Env mode to Inverted", result = "It goes up instead of down." },
+  { control = "Delay mix to -0.40", result = "Repeats add a stuttering feel." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 0
+DcoWavePulse = 1
+DcoSubLevel = 0
+NumberOfVoices = 5
+DcoEnvMod = 0.92
+VcfCutoff = 0.85
+EnvDecayTime = 0.36
+EnvSustainLevel = 0
+EnvReleaseTime = 0.25
+ModWheelDcoLfo = 0
+delayDryWet = 0.14
+delayTime = 0.15
+delayFeedback = 0.2
+[patch.why]
+DcoEnvMod = "Nearly maximum, so the note starts about two octaves high and falls away."
+EnvDecayTime = "About 200 ms: fast enough to read as a zap."
+DcoWavePulse = "A plain square, the classic bleep of old game hardware."
+EnvSustainLevel = "Zero, for a single, self-contained shot."
+
+[[patch]]
+name = "Ocean Static"
+tags = ["dreamwave", "chillwave"]
+browser = "Noise waves | MW: open filter"
+profile = "Pure filtered noise, rising and falling slowly like distant waves."
+phrase = "long"
+atonal = true
+hold = 8.0
+range = "Any note"
+expect = { attack_s = [0, 5] }
+performance = "Hold one note. The waves roll on their own, about every 8 seconds."
+use = "A background bed for intros and outros, or under dialogue samples."
+mix = [
+  "Keep it very low: it's meant to be felt.",
+  "Stereo widening suits it.",
+  "A low cut around 200 Hz keeps it out of the bass.",
+]
+pairings = [
+  { with = "Night Rain", why = "A very natural-sounding bed." },
+  { with = "Cold Coast", why = "A cold, empty shoreline." },
+  { with = "Spoken word", external = true, why = "A classic bed for a voiceover." },
+]
+tweaks = [
+  { control = "LFO Rate up to about 0.3 Hz", result = "Faster waves, a rougher sea." },
+  { control = "VCF LFO to 6.0", result = "A much bigger movement." },
+  { control = "VCF RES to 5.0", result = "A whistling, wind-like tone appears." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 0
+Noise = 3
+DcoSubLevel = 0
+NumberOfVoices = 0
+VcfCutoff = 0.62
+VcfLfoMod = 0.32
+LfoWaveform = 1
+LfoRate = 0.26
+EnvAttackTime = 0.6
+EnvDecayTime = 0.5
+EnvSustainLevel = 1
+EnvReleaseTime = 0.6
+ModWheelVcfRange = 0.2
+ModWheelDcoLfo = 0
+reverbDryWet = 0.3
+reverbSize = 0.8
+[patch.why]
+Noise = "Noise alone: the DCO is off entirely."
+VcfLfoMod = "The filter makes the waves, moving by about an octave in each direction."
+LfoRate = "About 0.13 Hz: a wave every eight seconds or so."
+LfoWaveform = "A sine rises and falls smoothly."
+EnvAttackTime = "A slow fade-in, as it should simply appear in the mix."
+
+[[patch]]
+name = "V8 Drone"
+tags = ["darksynth", "outrun"]
+browser = "Low idling engine | MW: open filter"
+profile = "A low, idling engine rumble: heavy and slightly unstable, with two detuned oscillators beating against each other."
+phrase = "long"
+atonal = true
+transpose = -24
+test_note = 36
+hold = 6.0
+range = "C1 to C3"
+expect = { centroid_hz = [40, 1200] }
+performance = "Hold one low note. Bending the pitch or riding the mod wheel makes it 'rev'."
+use = "Atmosphere for intros and darksynth tension, or as a car-themed sound effect."
+mix = [
+  "High-pass under the bass or use it where there's no bass.",
+  "Saturation adds grit.",
+  "Automate the level and cutoff for a revving effect.",
+]
+pairings = [
+  { with = "Steel Engine", why = "The same engine, in rhythm." },
+  { with = "Night Rain", why = "A car idling in the rain." },
+  { with = "Car door sample", external = true, why = "Adds a whole scene to the track." },
+]
+tweaks = [
+  { control = "DCO Range to 16'", result = "A higher, faster idle: the pulses come twice as fast." },
+  { control = "VCF Cutoff to 5.0", result = "A much rougher sound." },
+  { control = "Pulse Fine to +50 cents", result = "Faster beating between the oscillators: a rougher, less even idle." },
+]
+[patch.params]
+DcoRange = 3
+DcoWaveSaw = 1
+DcoWavePulse = 2
+specialPulseFineTune = 0.2
+DcoSubLevel = 0
+HpfCutoff = 0
+NumberOfVoices = 0
+VcfCutoff = 0.42
+VcfResonance = 0.15
+VcfLfoMod = 0.08
+DcoLfoMod = 0.14
+LfoWaveform = 5
+LfoRate = 0.82
+EnvAttackTime = 0.3
+EnvSustainLevel = 1
+EnvReleaseTime = 0.45
+BenderRange = 12
+ModWheelVcfRange = 0.35
+ModWheelDcoLfo = 0
+[patch.why]
+DcoRange = "32', the lowest setting: so low that you hear individual pulses rather than a pitch."
+specialPulseFineTune = "Well detuned, so the two oscillators beat against each other like uneven cylinders."
+LfoWaveform = "Noise: a very slight random jitter. Its rate setting makes no measurable difference."
+DcoLfoMod = "Small, so the jitter is barely there. The uneven idle comes mostly from the detuned pulse."
+HpfCutoff = "Bass boost adds physical weight."
+BenderRange = "A full octave, so a pitch bend can rev the engine."
+
+[[patch]]
+name = "Sonar Ping"
+tags = ["dreamwave", "darksynth"]
+browser = "Resonant echoing ping | MW: none"
+profile = "A single resonant ping with a long, dark echo: a submarine, far below."
+phrase = "hits_high"
+atonal = true
+test_note = 72
+range = "C4 to C6"
+expect = { attack_s = [0, 0.03] }
+performance = "One note every few seconds. It wants plenty of empty space."
+use = "Tension, intros, and sparse atmosphere."
+mix = [
+  "The echoes are essential, so keep the delay.",
+  "Mix it low; the ping cuts through easily.",
+  "Long reverb on a send adds depth.",
+]
+pairings = [
+  { with = "Deep Space Drift", why = "Empty and unsettling." },
+  { with = "Mainframe", why = "A control room in a film." },
+  { with = "Low drones", external = true, why = "They set up the depths." },
+]
+tweaks = [
+  { control = "Delay feedback to 8.0", result = "Very long trails of echoes." },
+  { control = "Delay Time to 1/2", result = "Slower, more spacious repeats." },
+  { control = "ENV T3 (decay) to 3.5", result = "A shorter, tighter ping." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 0
+DcoWavePulse = 1
+DcoSubLevel = 0
+NumberOfVoices = 3
+VcfCutoff = 0.6
+VcfResonance = 0.5
+VcfKeyFollow = 1
+VcfEnvMod = 0.1
+EnvDecayTime = 0.5
+EnvSustainLevel = 0
+EnvReleaseTime = 0.45
+ModWheelDcoLfo = 0
+delayDryWet = 0.42
+delayTime = 0.3
+delayFeedback = 0.6
+delayTone = 0.3
+delaySpread = 0.7
+reverbDryWet = 0.25
+reverbSize = 0.8
+[patch.why]
+VcfResonance = "A strong peak gives the ping its ringing, metallic colour."
+delayFeedback = "High: the repeats carry on for a long time, as sonar returns do."
+delayTone = "Dark: each echo seems further away."
+delayTime = "1/4: slow, evenly spaced returns."
+
+[[patch]]
+name = "Mainframe"
+tags = ["darksynth", "outrun"]
+browser = "Random computer blips | MW: open filter"
+profile = "A random stream of beeps: the sound of a film computer doing something important."
+phrase = "long"
+expect = { arp_notes_per_s = [4, 14] }
+atonal = true
+hold = 4.0
+range = "C3 to C5"
+performance = "Hold one note: the pitch jumps randomly, locked to your tempo."
+use = "Sci-fi moments, intros, and data-themed transitions. Works very low in the mix too."
+mix = [
+  "Keep it low: it's distracting at any level.",
+  "Hard-pan for a sense of equipment around the room.",
+  "High-pass at 300 Hz.",
+]
+pairings = [
+  { with = "Digital Rain", why = "Machines thinking." },
+  { with = "Sonar Ping", why = "A control room." },
+  { with = "Teletype sample", external = true, why = "Sets the film scene." },
+]
+tweaks = [
+  { control = "LFO Rate to 1/8", result = "Slower, more readable beeps." },
+  { control = "DCO LFO to 7.0", result = "Wider jumps in pitch." },
+  { control = "LFO Sync off", result = "A free-running stream, with no relation to the tempo." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 0
+DcoWavePulse = 1
+DcoSubLevel = 0
+NumberOfVoices = 0
+DcoLfoMod = 0.55
+LfoWaveform = 4
+LfoSync = 1
+LfoRate = 0.93
+VcfCutoff = 0.72
+VcfResonance = 0.2
+EnvSustainLevel = 1
+EnvReleaseTime = 0.2
+ModWheelVcfRange = 0.1
+ModWheelDcoLfo = 0
+delayDryWet = 0.15
+delayTime = 0.25
+delayFeedback = 0.3
+[patch.why]
+LfoWaveform = "S&H: a new random value at every step."
+DcoLfoMod = "Sending random steps to pitch gives a new note each step, the classic computer sound."
+LfoRate = "1/16, tempo-synced: random notes on a regular grid."
+DcoWavePulse = "A plain square, the sound of an old computer beeping."
+
+[[patch]]
+name = "Alarm Siren"
+tags = ["darksynth", "outrun"]
+browser = "Rising and falling siren | MW: none"
+profile = "A wide, slow rising and falling siren."
+phrase = "long"
+expect = { sustain_db = [-6, 0] }
+atonal = true
+hold = 5.0
+range = "C3 to C5"
+performance = "Hold one note. Choose its speed by changing the LFO rate."
+use = "Breakdowns, tension moments, and transitions."
+mix = [
+  "Mix it low, or use for only a bar or two; it's tiring.",
+  "Long reverb puts it in the distance, as a real siren would be.",
+  "High-pass at 250 Hz.",
+]
+pairings = [
+  { with = "Steel Engine", why = "A chase scene." },
+  { with = "Night Patrol", why = "A dark and threatening combination." },
+  { with = "Crowd noise", external = true, why = "Sets the scene." },
+]
+tweaks = [
+  { control = "LFO Rate up to about 5 Hz", result = "A faster warble: a different type of alarm." },
+  { control = "LFO wave to REC", result = "Two-tone, like a European siren." },
+  { control = "Reverb mix to +0.20", result = "Further away." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 1
+DcoSubLevel = 0
+NumberOfVoices = 0
+DcoLfoMod = 0.72
+LfoWaveform = 0
+LfoRate = 0.54
+VcfCutoff = 0.7
+VcfResonance = 0.1
+EnvAttackTime = 0.3
+EnvSustainLevel = 1
+EnvReleaseTime = 0.45
+ModWheelDcoLfo = 0
+reverbDryWet = 0.28
+reverbSize = 0.75
+[patch.why]
+DcoLfoMod = "Very wide: pitch moves about a whole tone up and down."
+LfoRate = "About 1.3 Hz: the pace of a real siren."
+LfoWaveform = "A triangle has a constant rise and fall, as a siren has."
+
+[[patch]]
+name = "Night Rain"
+tags = ["dreamwave", "chillwave"]
+browser = "Falling rain texture | MW: open filter"
+profile = "Thin, bright noise that flickers randomly, in a reverb: rain on a street at night."
+phrase = "long"
+atonal = true
+hold = 5.0
+range = "Any note"
+expect = { low_energy_pct = [0, 5] }
+performance = "Hold one note, and leave it running."
+use = "Scene-setting for intros and noir sections, or under a whole quiet track."
+mix = [
+  "Very low in the mix.",
+  "Stereo widening suits it.",
+  "Layer real rain if you have it: the synth adds movement.",
+]
+pairings = [
+  { with = "Rain City", why = "Sets the scene for the strings." },
+  { with = "Soft Rain", why = "A texture and a playable part with the same image." },
+  { with = "Saxophone", external = true, why = "Noir, complete." },
+]
+tweaks = [
+  { control = "LFO Rate up to about 20 Hz", result = "Heavier rainfall." },
+  { control = "HPF to HP 1", result = "A fuller, nearer downpour." },
+  { control = "Reverb mix to -0.70", result = "Closer, as if under an umbrella." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 0
+Noise = 3
+DcoSubLevel = 0
+HpfCutoff = 3
+NumberOfVoices = 0
+VcfCutoff = 0.82
+VcfResonance = 0.12
+VcfLfoMod = 0.14
+LfoWaveform = 4
+LfoRate = 0.78
+EnvAttackTime = 0.55
+EnvSustainLevel = 1
+EnvReleaseTime = 0.6
+ModWheelVcfRange = 0.08
+ModWheelDcoLfo = 0
+reverbDryWet = 0.32
+reverbSize = 0.7
+[patch.why]
+HpfCutoff = "HP 2: rain is mostly high-frequency hiss, with little body."
+LfoWaveform = "S&H: small random filter jumps give the flickering of individual drops."
+LfoRate = "About 10 Hz: quick random changes, faster than you can follow."
+reverbDryWet = "A city street, not a studio."
+
+[[patch]]
+name = "Sub Drop"
+tags = ["darksynth", "outrun"]
+lufs = -20.5
+browser = "Falling sub impact | MW: none"
+profile = "A deep sine-like impact that falls in pitch, felt as much as heard."
+phrase = "hits_low"
+atonal = true
+test_note = 48
+hold = 2.0
+range = "C2 to C4"
+expect = { centroid_hz = [40, 400], attack_s = [0, 0.03] }
+performance = "One note, exactly on a downbeat."
+use = "The first beat of a drop or chorus. Use it sparingly, as it fills all the low-end headroom."
+mix = [
+  "Duck the bass and kick out of the way for this one hit.",
+  "Check it on a full-range system: a small speaker won't reproduce it.",
+  "Keep it mono.",
+]
+pairings = [
+  { with = "Riser", why = "The build, then the drop." },
+  { with = "Stadium Stab", why = "A huge downbeat: top end from the stab, weight from this." },
+  { with = "Big kick", external = true, why = "Layered, for a massive impact." },
+]
+tweaks = [
+  { control = "DCO Env to 5.0", result = "A smaller fall." },
+  { control = "ENV T3 (decay) to 7.0", result = "A longer, more dramatic drop." },
+  { control = "VCF Cutoff to 5.0", result = "Audible on small speakers, with more growl." },
+]
+[patch.params]
+DcoRange = 2
+DcoWaveSaw = 0
+DcoWavePulse = 1
+DcoSubLevel = 0
+NumberOfVoices = 0
+DcoEnvMod = 0.7
+VcfCutoff = 0.36
+VcfKeyFollow = 0.8
+EnvDecayTime = 0.62
+EnvSustainLevel = 0
+EnvReleaseTime = 0.5
+ModWheelDcoLfo = 0
+[patch.why]
+DcoEnvMod = "About an octave: the fall in pitch is what gives the feeling of an impact."
+DcoRange = "16', to keep it in the sub range."
+EnvDecayTime = "About 1.5 seconds: long enough to feel, short enough not to obscure what follows."
+VcfCutoff = "About 160 Hz at C4: removes the harmonics, leaving something close to a sine."
+DcoWavePulse = "A square is the easiest wave to filter down to a near-sine."

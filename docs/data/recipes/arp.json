@@ -1,0 +1,149 @@
+{
+ "steps": [
+  {
+   "audio": "audio/recipes/arp/step-01.mp3",
+   "before": {},
+   "after": {},
+   "measures": {}
+  },
+  {
+   "audio": "audio/recipes/arp/step-02.mp3",
+   "before": {
+    "arpmode": 0.0,
+    "arpsyncmode": 0.0,
+    "arprate": 0.5,
+    "arprange": 1.0,
+    "NumberOfVoices": 5.0
+   },
+   "after": {
+    "arpmode": 1,
+    "arpsyncmode": 2,
+    "arprate": 0.52,
+    "arprange": 1,
+    "NumberOfVoices": 5
+   },
+   "measures": {}
+  },
+  {
+   "audio": "audio/recipes/arp/step-03.mp3",
+   "before": {
+    "EnvDecayTime": 0.0,
+    "EnvSustainLevel": 1.0
+   },
+   "after": {
+    "EnvDecayTime": 0.28,
+    "EnvSustainLevel": 0
+   },
+   "measures": {
+    "sustain_db": [
+     -1.0703723896924193,
+     -7.059814047861268
+    ],
+    "arp_notes_per_s": [
+     4.2,
+     6.3
+    ]
+   }
+  },
+  {
+   "audio": "audio/recipes/arp/step-04.mp3",
+   "before": {
+    "VcfCutoff": 1.0,
+    "VcfKeyFollow": 0.0
+   },
+   "after": {
+    "VcfCutoff": 0.42,
+    "VcfKeyFollow": 0.4
+   },
+   "measures": {
+    "centroid_hz": [
+     4343.855190487207,
+     382.59480570679324
+    ]
+   }
+  },
+  {
+   "audio": "audio/recipes/arp/step-05.mp3",
+   "before": {
+    "VcfEnvMod": 0.0,
+    "VcfResonance": 0.0
+   },
+   "after": {
+    "VcfEnvMod": 0.36,
+    "VcfResonance": 0.15
+   },
+   "measures": {
+    "centroid_hz": [
+     382.59480570679324,
+     1682.381750271196
+    ]
+   }
+  },
+  {
+   "audio": "audio/recipes/arp/step-06.mp3",
+   "before": {
+    "EnvReleaseTime": 0.0
+   },
+   "after": {
+    "EnvReleaseTime": 0.2
+   },
+   "measures": {
+    "tail_ms": [
+     4.988662131519274,
+     74.82993197278911
+    ]
+   }
+  },
+  {
+   "audio": "audio/recipes/arp/step-07.mp3",
+   "before": {
+    "delayDryWet": 0.0,
+    "delayTime": 0.300000011920929,
+    "delayFeedback": 0.2000000029802322
+   },
+   "after": {
+    "delayDryWet": 0.12,
+    "delayTime": 0.15,
+    "delayFeedback": 0.2
+   },
+   "measures": {
+    "side_mid": [
+     0.0,
+     0.0
+    ]
+   }
+  },
+  {
+   "audio": "audio/recipes/arp/step-08.mp3",
+   "before": {
+    "ModWheelVcfRange": 0.0,
+    "ModWheelDcoLfo": 0.1000000014901161
+   },
+   "after": {
+    "ModWheelVcfRange": 0.3,
+    "ModWheelDcoLfo": 0
+   },
+   "measures": {
+    "mw_bright_ratio": [
+     0.9915018751431401,
+     2.9045609604309726
+    ]
+   }
+  },
+  {
+   "audio": "audio/recipes/arp/step-09.mp3",
+   "before": {
+    "Volume": 0.5
+   },
+   "after": {
+    "Volume": 0.8489739669613685
+   },
+   "measures": {
+    "lufs": [
+     -27.050109437689976,
+     -17.97067543377084
+    ]
+   }
+  }
+ ]
+}

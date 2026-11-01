@@ -1,0 +1,73 @@
+category = "Chord and Stab"
+patch = "Minor Stab"
+phrase = "hits"
+title = "Building Minor Stab from init"
+intro = "Chord memory lets one key play a whole chord, and moving your finger moves it in parallel. That simple idea gave us a lot of early house and synth-pop. This recipe covers how to use it, and why the sound needs to be simple."
+setup = "Choose **Reset Parameters** and loop a rhythmic line of single notes around A3. Don't play chords: the synth will do it."
+takeaways = [
+  "Chord memory needs enough voices. In mono, only the top note sounds.",
+  "Notes are recorded relative to C4, so you can record any chord and play it from any key.",
+  "Parallel chords can fall outside your key, so choose your root notes by ear.",
+]
+
+[[step]]
+title = "Set the level first"
+set_volume_from_preset = true
+why = "One key is about to play several notes, so set the level first. As it's a stab, it needs to be punchy with plenty of headroom."
+listen = "A single buzzy saw line."
+
+[[step]]
+title = "Record the chord"
+chord = [60, 63, 67]
+set = { NumberOfVoices = 5 }
+expect = { lufs = "up" }
+why = "This is the key decision. On the panel, press **REC** in the CHORD section, play C4, Eb4 and G4, then press it again. Each key you play now sounds a minor triad. Six voices leave room for release tails. In mono, only the top note would sound."
+alternative = "Try a minor 7th for a house stab (Club Neon), or a suspended 4th (Sus Hit), which has no third and fits over most keys."
+listen = "Each note in the line is now a whole chord, moving in parallel."
+
+[[step]]
+title = "Make it a stab"
+set = { EnvDecayTime = 0.4, EnvSustainLevel = 0, EnvReleaseTime = 0.3 }
+expect = { sustain_db = "down" }
+why = "With about 300 ms of decay and no sustain, every hit dies away, however long the key is held. That turns a chord into a rhythmic hit. The release keeps it from cutting off if notes are very short."
+listen = "Now rhythmic, though still harsh."
+
+[[step]]
+title = "Close the filter"
+set = { VcfCutoff = 0.42, VcfKeyFollow = 0.4 }
+expect = { centroid_hz = "down" }
+why = "Three saws at once have a lot of top end. Closing the filter leaves room for the envelope to do something with it."
+listen = "Dull, for now."
+
+[[step]]
+title = "Add the bark"
+set = { VcfEnvMod = 0.36, VcfResonance = 0.12 }
+expect = { centroid_hz = "up", sweep_octaves = "up" }
+why = "The envelope that's closing the amp now also closes the filter. A big, fast sweep gives each hit its bark, and a little resonance makes that sweep stand out."
+alternative = "Club Neon goes much further with resonance, for a more squelchy house stab."
+listen = "A strong 'bark' on every hit: a real stab."
+
+[[step]]
+title = "Add width"
+set = { DcoChorusSwitch = 1, ChorusRate = 0.5 }
+expect = { side_mid = "up" }
+why = "Chorus widens the chord and adds a little movement, which helps it sound less like three identical oscillators."
+listen = "Wider and softer around the edges."
+
+[[step]]
+title = "Finish it"
+set = { ModWheelVcfRange = 0.2, ModWheelDcoLfo = 0, reverbDryWet = 0.14 }
+expect = { mw_bright_ratio = "up" }
+wheel = true
+why = "A small amount of reverb, and a wheel for opening the filter into a brighter section. That's the finished Minor Stab."
+listen = "In this preview the wheel rises across the second half, and the stabs open up."
+
+[[branch]]
+to = "Sus Hit"
+how = "Try recording C4, F4, G4 instead and adding a quiet square, plus a wide dotted delay."
+[[branch]]
+to = "Club Neon"
+how = "Add Bb4 to the chord, raise resonance to 4.2, and darken the starting cutoff to 3.8."
+[[branch]]
+to = "Gated Chord"
+how = "Raise sustain to full and add a square LFO on the filter, synced to 1/8."

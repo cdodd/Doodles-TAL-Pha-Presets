@@ -1,0 +1,128 @@
+{
+ "steps": [
+  {
+   "audio": "audio/recipes/brass/step-01.mp3",
+   "before": {
+    "Volume": 0.5
+   },
+   "after": {
+    "Volume": 0.4767553833882295
+   },
+   "measures": {}
+  },
+  {
+   "audio": "audio/recipes/brass/step-02.mp3",
+   "before": {
+    "VcfCutoff": 1.0,
+    "VcfKeyFollow": 0.0,
+    "NumberOfVoices": 5.0
+   },
+   "after": {
+    "VcfCutoff": 0.5,
+    "VcfKeyFollow": 0.4,
+    "NumberOfVoices": 7
+   },
+   "measures": {
+    "centroid_hz": [
+     4255.365425122903,
+     402.5624532601443
+    ]
+   }
+  },
+  {
+   "audio": "audio/recipes/brass/step-03.mp3",
+   "before": {
+    "VcfEnvMod": 0.0,
+    "EnvAttackTime": 0.0
+   },
+   "after": {
+    "VcfEnvMod": 0.32,
+    "EnvAttackTime": 0.25
+   },
+   "measures": {
+    "attack_s": [
+     0.0,
+     0.02494331065759637
+    ]
+   }
+  },
+  {
+   "audio": "audio/recipes/brass/step-04.mp3",
+   "before": {
+    "EnvDecayTime": 0.0,
+    "EnvSustainLevel": 1.0
+   },
+   "after": {
+    "EnvDecayTime": 0.45,
+    "EnvSustainLevel": 0.65
+   },
+   "measures": {
+    "sustain_db": [
+     -1.1354340733158823,
+     -4.348295909585883
+    ]
+   }
+  },
+  {
+   "audio": "audio/recipes/brass/step-05.mp3",
+   "before": {
+    "VcfEnvMode": 0.0
+   },
+   "after": {
+    "VcfEnvMode": 2
+   },
+   "measures": {
+    "vel_bright_ratio": [
+     0.9988048619632436,
+     2.974599690969055
+    ]
+   }
+  },
+  {
+   "audio": "audio/recipes/brass/step-06.mp3",
+   "before": {
+    "DcoChorusSwitch": 0.0,
+    "ChorusRate": 0.5,
+    "VcfResonance": 0.0
+   },
+   "after": {
+    "DcoChorusSwitch": 1,
+    "ChorusRate": 0.5,
+    "VcfResonance": 0.05
+   },
+   "measures": {
+    "side_mid": [
+     0.0,
+     0.5779347362120265
+    ]
+   }
+  },
+  {
+   "audio": "audio/recipes/brass/step-07.mp3",
+   "before": {
+    "EnvReleaseTime": 0.0,
+    "ModWheelVcfRange": 0.0,
+    "ModWheelDcoLfo": 0.1000000014901161,
+    "reverbDryWet": 0.0,
+    "reverbSize": 0.800000011920929
+   },
+   "after": {
+    "EnvReleaseTime": 0.3,
+    "ModWheelVcfRange": 0.2,
+    "ModWheelDcoLfo": 0,
+    "reverbDryWet": 0.18,
+    "reverbSize": 0.5
+   },
+   "measures": {
+    "tail_ms": [
+     32.426303854875286,
+     316.7800453514739
+    ],
+    "mw_bright_ratio": [
+     1.1188559255064754,
+     2.7440225677342953
+    ]
+   }
+  }
+ ]
+}

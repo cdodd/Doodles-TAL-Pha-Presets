@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Building Sunrise Fanfare from init: Doodles TAL-Pha Presets</title>
+<link rel="stylesheet" href="style.css">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="index.html"><span>Doodles</span> TAL-Pha Presets</a>
+  <button type="button" id="theme" class="ghost" aria-label="Switch between light and dark theme">Theme</button>
+</header>
+<div class="layout">
+<nav class="sidebar" aria-label="Documentation">
+<a href="index.html">Overview</a>
+<p class="nav-label">Patches</p>
+<a href="bass.html">Bass</a>
+<a href="lead.html">Lead</a>
+<a href="pad.html">Pad</a>
+<a href="strings.html">Strings</a>
+<a href="brass.html" aria-current=page>Brass</a>
+<div class="subnav"><a class="recipe-link" href="brass-recipe.html" aria-current=page>Build from init</a><a href="brass.html#sunrise-fanfare">Sunrise Fanfare</a><a href="brass.html#stadium-stab">Stadium Stab</a><a href="brass.html#silk-horn">Silk Horn</a><a href="brass.html#power-brass">Power Brass</a><a href="brass.html#sforzando">Sforzando</a><a href="brass.html#chrome-trumpet">Chrome Trumpet</a><a href="brass.html#low-rider">Low Rider</a><a href="brass.html#miami-section">Miami Section</a><a href="brass.html#metal-brass">Metal Brass</a><a href="brass.html#night-patrol">Night Patrol</a></div>
+<a href="arp.html">Arp</a>
+<a href="pluck.html">Pluck</a>
+<a href="keys.html">Keys and Bells</a>
+<a href="chord.html">Chord and Stab</a>
+<a href="fx.html">FX and Atmosphere</a>
+<p class="nav-label">Guides</p>
+<a href="field-guide.html">Field guide</a>
+<a href="control-reference.html">Control reference</a>
+<a href="gallery.html">Sound gallery</a>
+<a href="sound-map.html">Sound map</a>
+<a href="kits.html">Starter kits</a>
+<a href="reaper-cheat-sheet.html">Reaper cheat sheet</a>
+</nav>
+<main>
+<div class="recipe">
+<h1>Building Sunrise Fanfare from init</h1>
+<p class="lede">Synth brass is a saw with one very specific behaviour: the brightness rises just after the note starts. This recipe builds that bloom, and adds the velocity response that makes real brass sound alive.</p>
+<section class="install">
+<h2>Setup</h2>
+<p>Choose <strong>Reset Parameters</strong>, then loop short, punchy four-note chords.</p>
+<p>Each step's preview adds to the one before. Measurements compare it with the previous step.</p>
+</section>
+<ol class="steps">
+<li class="step">
+<h2>Set the level first</h2>
+<ul class="changes"><li><span class="control">Volume</span><span class="from">5.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">4.8</span></li></ul>
+<p>Stacked chords add up, so set a sensible level first. The saw stays: its full harmonic series is a good match for brass.</p>
+
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/brass/step-01.mp3" aria-label="Step 1: Set the level first"></audio>
+  <p><strong>Listen for:</strong> An open, buzzy chord: not yet brass.</p>
+  
+</div>
+</li>
+<li class="step">
+<h2>Close the filter</h2>
+<ul class="changes"><li><span class="control">VCF Cutoff</span><span class="from">10.0 (about 21726 Hz at C4)</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">5.0 (about 478 Hz at C4)</span></li><li><span class="control">VCF Key follow</span><span class="from">0.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">4.0</span></li><li><span class="control">Voices</span><span class="from">6</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">8</span></li></ul>
+<p>Start from a closed-down tone so that the envelope has something to open. Key follow means higher notes in a chord stay bright, as higher brass does. More voices let stabs ring into one another.</p>
+
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/brass/step-02.mp3" aria-label="Step 2: Close the filter"></audio>
+  <p><strong>Listen for:</strong> Dark and muffled, as a starting point.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Brightness: 4,255 Hz → <strong>403 Hz</strong></li></ul>
+</div>
+</li>
+<li class="step">
+<h2>Open the filter with a delay</h2>
+<ul class="changes"><li><span class="control">VCF Env</span><span class="from">0.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">3.2</span></li><li><span class="control">Env T1 (attack)</span><span class="from">0.0 (about 1 ms)</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">2.5 (about 55 ms)</span></li></ul>
+<p>This is the key decision. Filter and level now rise together over about 55 ms. That slight delay before the tone opens is what your ear hears as &#x27;a section taking a breath and playing&#x27;. Sustain is still full, though, so the filter stays open.</p>
+<p class="alt"><strong>The other choice:</strong> With T1 at 3.8 you get Silk Horn&#x27;s softer, slower speech. At 1.2 you get Stadium Stab&#x27;s harder hit.</p>
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/brass/step-03.mp3" aria-label="Step 3: Open the filter with a delay"></audio>
+  <p><strong>Listen for:</strong> Each hit now blooms into brightness, and it&#x27;s starting to sound like brass.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Time to half level: 0 ms → <strong>25 ms</strong></li></ul>
+</div>
+</li>
+<li class="step">
+<h2>Let it settle after the bloom</h2>
+<ul class="changes"><li><span class="control">Env T3 (decay)</span><span class="from">0.0 (about 10 ms to -20 dB)</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">4.5 (about 349 ms to -20 dB)</span></li><li><span class="control">Env L3 (sustain)</span><span class="from">10.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">6.5</span></li></ul>
+<p>Brass is brightest as it speaks, then relaxes. With sustain below full, the filter and level both come back down after the bloom. On short stabs this gives extra punch.</p>
+
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/brass/step-04.mp3" aria-label="Step 4: Let it settle after the bloom"></audio>
+  <p><strong>Listen for:</strong> Longer hits have a clear shape: they open and relax.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Held level: -1 dB from peak → <strong>-4 dB from peak</strong></li></ul>
+</div>
+</li>
+<li class="step">
+<h2>Let velocity set the brightness</h2>
+<ul class="changes"><li><span class="control">VCF Env mode</span><span class="from">Normal</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">Normal-Dynamic</span></li></ul>
+<p>Real brass gets brighter when it&#x27;s played harder. Normal-Dynamic does the same with the filter, so a programmed part stops sounding flat.</p>
+
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/brass/step-05.mp3" aria-label="Step 5: Let velocity set the brightness"></audio>
+  <p><strong>Listen for:</strong> Accented hits get noticeably brighter.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Hard note vs soft note brightness: 1.0x → <strong>3.0x</strong></li></ul>
+</div>
+</li>
+<li class="step">
+<h2>Make one synth a section</h2>
+<ul class="changes"><li><span class="control">Chorus</span><span class="from">Off</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">On</span></li><li><span class="control">Chorus Rate</span><span class="from">5.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">5.0</span></li><li><span class="control">VCF Res</span><span class="from">0.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">0.5</span></li></ul>
+<p>Chorus makes it sound like several players, slightly out of time with one another. A very small amount of resonance helps the bloom stand out.</p>
+<p class="alt"><strong>The other choice:</strong> Power Brass uses unison instead, which is much thicker but sounds more like a wall than a section.</p>
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/brass/step-06.mp3" aria-label="Step 6: Make one synth a section"></audio>
+  <p><strong>Listen for:</strong> Wider, like a whole section.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Stereo width (side/mid): 0.00 → <strong>0.58</strong></li></ul>
+</div>
+</li>
+<li class="step">
+<h2>Finish it</h2>
+<ul class="changes"><li><span class="control">Env T4 (release)</span><span class="from">0.0 (about 10 ms to -20 dB)</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">3.0 (about 105 ms to -20 dB)</span></li><li><span class="control">MW to VCF</span><span class="from">0.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">2.0</span></li><li><span class="control">MW to DCO LFO</span><span class="from">1.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">0.0</span></li><li><span class="control">Reverb mix</span><span class="from">OFF</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">-0.64</span></li><li><span class="control">Reverb size</span><span class="from">8.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">5.0</span></li></ul>
+<p>A short release and a small plate put the section in a room, without blurring the stabs. The wheel can add some brightness for the last chorus. That&#x27;s the finished Sunrise Fanfare.</p>
+
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/brass/step-07.mp3" aria-label="Step 7: Finish it"></audio>
+  <p><strong>Listen for:</strong> In this preview the wheel rises across the second half, and it brightens further.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Tail after note-off: 32 ms → <strong>317 ms</strong></li><li>Wheel up vs wheel down brightness: 1.1x → <strong>2.7x</strong></li></ul>
+</div>
+</li>
+</ol>
+<section class="install">
+<h2>What to take away</h2>
+<ul><li>Brass isn&#x27;t about the oscillator. It&#x27;s the delayed filter bloom that turns a saw into a horn.</li><li>Envelope attack time affects both level and filter, so it sets how the brass speaks.</li><li>Velocity to filter adds the human response: real brass gets brighter when you play harder.</li></ul>
+</section>
+<h2 class="next">Where to go next</h2>
+<p>Starting points for moving from <a href="brass.html#sunrise-fanfare">Sunrise Fanfare</a> to another patch in the bank:</p>
+<ul class="pairs"><li><a href="brass.html#stadium-stab">Stadium Stab</a><span class="why">Shorten T1 to 1.2, drop sustain to 1.2, and add unison and more reverb.</span></li><li><a href="brass.html#silk-horn">Silk Horn</a><span class="why">Slow T1 to 3.8, close the filter to 4.2, and reduce VCF Env to 2.0.</span></li><li><a href="brass.html#night-patrol">Night Patrol</a><span class="why">Play an octave down, close the filter to 3.4 and slow T1 to 4.2.</span></li></ul>
+</div>
+</main>
+</div>
+<script src="site.js"></script>
+</body>
+</html>

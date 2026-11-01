@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Building Neon Pluck from init: Doodles TAL-Pha Presets</title>
+<link rel="stylesheet" href="style.css">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="index.html"><span>Doodles</span> TAL-Pha Presets</a>
+  <button type="button" id="theme" class="ghost" aria-label="Switch between light and dark theme">Theme</button>
+</header>
+<div class="layout">
+<nav class="sidebar" aria-label="Documentation">
+<a href="index.html">Overview</a>
+<p class="nav-label">Patches</p>
+<a href="bass.html">Bass</a>
+<a href="lead.html">Lead</a>
+<a href="pad.html">Pad</a>
+<a href="strings.html">Strings</a>
+<a href="brass.html">Brass</a>
+<a href="arp.html">Arp</a>
+<a href="pluck.html" aria-current=page>Pluck</a>
+<div class="subnav"><a class="recipe-link" href="pluck-recipe.html" aria-current=page>Build from init</a><a href="pluck.html#neon-pluck">Neon Pluck</a><a href="pluck.html#glass-drop">Glass Drop</a><a href="pluck.html#tape-pizz">Tape Pizz</a><a href="pluck.html#pulse-tick">Pulse Tick</a><a href="pluck.html#wooden-mallet">Wooden Mallet</a><a href="pluck.html#synth-harp">Synth Harp</a><a href="pluck.html#echo-street">Echo Street</a><a href="pluck.html#resonant-blip">Resonant Blip</a><a href="pluck.html#soft-rain">Soft Rain</a><a href="pluck.html#koto-circuit">Koto Circuit</a></div>
+<a href="keys.html">Keys and Bells</a>
+<a href="chord.html">Chord and Stab</a>
+<a href="fx.html">FX and Atmosphere</a>
+<p class="nav-label">Guides</p>
+<a href="field-guide.html">Field guide</a>
+<a href="control-reference.html">Control reference</a>
+<a href="gallery.html">Sound gallery</a>
+<a href="sound-map.html">Sound map</a>
+<a href="kits.html">Starter kits</a>
+<a href="reaper-cheat-sheet.html">Reaper cheat sheet</a>
+</nav>
+<main>
+<div class="recipe">
+<h1>Building Neon Pluck from init</h1>
+<p class="lede">A pluck is one of the simplest sounds to build, and one of the most useful. It&#x27;s the mirror image of the Bass recipe: here you want the shared envelope to close the amp and filter together, so that the note dies away whether the key is held or not.</p>
+<section class="install">
+<h2>Setup</h2>
+<p>Choose <strong>Reset Parameters</strong> and loop a broken-chord pattern of 8th notes around A4, with some velocity variation.</p>
+<p>Each step's preview adds to the one before. Measurements compare it with the previous step.</p>
+</section>
+<ol class="steps">
+<li class="step">
+<h2>Start from init</h2>
+
+<p>A sustained saw through an open filter.</p>
+
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/pluck/step-01.mp3" aria-label="Step 1: Start from init"></audio>
+  <p><strong>Listen for:</strong> A buzzy organ-like line.</p>
+  
+</div>
+</li>
+<li class="step">
+<h2>Make every note die away</h2>
+<ul class="changes"><li><span class="control">Env T3 (decay)</span><span class="from">0.0 (about 10 ms to -20 dB)</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">4.0 (about 304 ms to -20 dB)</span></li><li><span class="control">Env L3 (sustain)</span><span class="from">10.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">0.0</span></li></ul>
+<p>This is the key decision. With no sustain, a note fades whether the key is held or not, which is how a plucked string behaves. Decay of about 300 ms is a useful middle ground.</p>
+<p class="alt"><strong>The other choice:</strong> A decay of 2.0 gives Pulse Tick&#x27;s tiny tick. A decay of 6.2 gives Synth Harp&#x27;s long ring.</p>
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/pluck/step-02.mp3" aria-label="Step 2: Make every note die away"></audio>
+  <p><strong>Listen for:</strong> It already sounds plucked, if a bit harsh.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Held level: -1 dB from peak → <strong>-60 dB from peak</strong></li></ul>
+</div>
+</li>
+<li class="step">
+<h2>Let notes ring past the key</h2>
+<ul class="changes"><li><span class="control">Env T4 (release)</span><span class="from">0.0 (about 10 ms to -20 dB)</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">3.4 (about 168 ms to -20 dB)</span></li><li><span class="control">Voices</span><span class="from">6</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">6</span></li></ul>
+<p>A real string doesn&#x27;t stop when your finger lifts. Without release, short notes cut off early. Six voices let those tails overlap.</p>
+
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/pluck/step-03.mp3" aria-label="Step 3: Let notes ring past the key"></audio>
+  <p><strong>Listen for:</strong> Short notes now have a natural tail.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Tail after a very short note: 7 ms → <strong>407 ms</strong></li></ul>
+</div>
+</li>
+<li class="step">
+<h2>Close the filter</h2>
+<ul class="changes"><li><span class="control">VCF Cutoff</span><span class="from">10.0 (about 21726 Hz at C4)</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">4.5 (about 320 Hz at C4)</span></li><li><span class="control">VCF Key follow</span><span class="from">0.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">5.0</span></li></ul>
+<p>A plucked string is bright at first and darkens as it dies. To hear that, the filter needs to start closed, so that the envelope can open it. Key follow keeps high notes bright enough.</p>
+
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/pluck/step-04.mp3" aria-label="Step 4: Close the filter"></audio>
+  <p><strong>Listen for:</strong> Duller, with no snap: the next step fixes it.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Brightness: 4,790 Hz → <strong>564 Hz</strong></li></ul>
+</div>
+</li>
+<li class="step">
+<h2>Add the snap</h2>
+<ul class="changes"><li><span class="control">VCF Env</span><span class="from">0.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">3.8</span></li><li><span class="control">VCF Res</span><span class="from">0.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">1.0</span></li></ul>
+<p>A big, fast filter sweep from the same envelope gives the snap of the pluck. A little resonance makes it more defined.</p>
+
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/pluck/step-05.mp3" aria-label="Step 5: Add the snap"></audio>
+  <p><strong>Listen for:</strong> A clear &#x27;pew&#x27; on every note: it&#x27;s a pluck now.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Brightness: 564 Hz → <strong>2,604 Hz</strong></li><li>Filter sweep: 0.0 octaves → <strong>1.9 octaves</strong></li></ul>
+</div>
+</li>
+<li class="step">
+<h2>Add touch sensitivity</h2>
+<ul class="changes"><li><span class="control">VCF Env mode</span><span class="from">Normal</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">Normal-Dynamic</span></li></ul>
+<p>Normal-Dynamic makes harder notes snap brighter. In a repeating pattern, this stops every note sounding the same and gives you an easy way to shape a phrase.</p>
+
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/pluck/step-06.mp3" aria-label="Step 6: Add touch sensitivity"></audio>
+  <p><strong>Listen for:</strong> Accented notes snap brighter than others.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Hard note vs soft note brightness: 1.0x → <strong>2.5x</strong></li></ul>
+</div>
+</li>
+<li class="step">
+<h2>Add width and echo</h2>
+<ul class="changes"><li><span class="control">Chorus</span><span class="from">Off</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">On</span></li><li><span class="control">Chorus Rate</span><span class="from">5.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">5.0</span></li><li><span class="control">Delay mix</span><span class="from">OFF</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">-0.68</span></li><li><span class="control">Delay Time</span><span class="from">1/4</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">1/8.</span></li><li><span class="control">Delay feedback</span><span class="from">2.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">2.2</span></li><li><span class="control">Delay spread</span><span class="from">+0.00</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">+3.00</span></li></ul>
+<p>Chorus gives width, and a short dotted 8th echo spreads each note into the gaps between others. This turns a simple line into something that sounds more complicated than it is.</p>
+<p class="alt"><strong>The other choice:</strong> Echo Street goes much further with the delay, so the echoes become part of the melody.</p>
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/pluck/step-07.mp3" aria-label="Step 7: Add width and echo"></audio>
+  <p><strong>Listen for:</strong> Much bigger, with a rhythm in the echoes.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Stereo width (side/mid): 0.00 → <strong>0.62</strong></li></ul>
+</div>
+</li>
+<li class="step">
+<h2>Set up the wheel</h2>
+<ul class="changes"><li><span class="control">MW to VCF</span><span class="from">0.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">2.0</span></li><li><span class="control">MW to DCO LFO</span><span class="from">1.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">0.0</span></li></ul>
+<p>The wheel opens the filter, for a brighter section. The default vibrato is turned off, as it would make short notes sound unstable.</p>
+
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/pluck/step-08.mp3" aria-label="Step 8: Set up the wheel"></audio>
+  <p><strong>Listen for:</strong> In this preview the wheel rises across the second half, and the pluck gets brighter.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Wheel up vs wheel down brightness: 1.0x → <strong>1.9x</strong></li></ul>
+</div>
+</li>
+<li class="step">
+<h2>Set the level</h2>
+<ul class="changes"><li><span class="control">Volume</span><span class="from">5.0</span><span class="arrow" aria-hidden="true">→</span><span class="sr">to</span><span class="to">6.3</span></li></ul>
+<p>This takes it to the same loudness as the other presets. That&#x27;s the finished Neon Pluck.</p>
+
+<div class="listen">
+  <audio controls preload="none" src="../../audio/recipes/pluck/step-09.mp3" aria-label="Step 9: Set the level"></audio>
+  <p><strong>Listen for:</strong> The finished patch.</p>
+  <ul class="measures" aria-label="Measured change from the previous step"><li>Loudness: -23.7 LUFS → <strong>-19.9 LUFS</strong></li></ul>
+</div>
+</li>
+</ol>
+<section class="install">
+<h2>What to take away</h2>
+<ul><li>With sustain at zero, a single envelope closes both amp and filter together. This is why a pluck is so easy on this synth.</li><li>Decay time decides what the sound is: tick, pluck, or key, all with the same settings otherwise.</li><li>Velocity to filter makes a hand-played part feel alive.</li></ul>
+</section>
+<h2 class="next">Where to go next</h2>
+<p>Starting points for moving from <a href="pluck.html#neon-pluck">Neon Pluck</a> to another patch in the bank:</p>
+<ul class="pairs"><li><a href="pluck.html#pulse-tick">Pulse Tick</a><span class="why">Try swapping to Pulse 25%, opening the filter to 6.8, and shortening the decay to 2.0.</span></li><li><a href="pluck.html#synth-harp">Synth Harp</a><span class="why">Lengthen decay and release to about 6.0, and add Env Key follow 4.5 so that high notes die faster.</span></li><li><a href="pluck.html#resonant-blip">Resonant Blip</a><span class="why">Raise resonance to 6.8, shorten the decay to 2.8 and remove the chorus.</span></li></ul>
+</div>
+</main>
+</div>
+<script src="site.js"></script>
+</body>
+</html>

@@ -1,0 +1,516 @@
+category = "Pluck"
+mix_defaults = [
+  "High-pass at about 200 Hz.",
+  "Lift 2-4 kHz a little for the attack, or shelve the top down for a softer part.",
+  "A little compression with a slow attack brings the transient out. It rarely needs sidechain.",
+  "Pan it off-centre as a counterpart to the lead, or use a stereo delay.",
+  "Delay suits these more than reverb, as short notes leave room for echoes.",
+]
+
+[[patch]]
+name = "Neon Pluck"
+tags = ["outrun", "dreamwave"]
+browser = "All-purpose saw pluck | Vel: brightness | MW: open filter"
+profile = "The all-purpose synthwave pluck: a saw with a fast filter snap and a wide, short echo."
+phrase = "pluck"
+range = "C3 to C6"
+expect = { attack_s = [0, 0.02], sustain_db = [-200, -20] }
+performance = "Short notes and broken chords. Velocity sets the brightness of each snap."
+use = "Hand-played arpeggios, verse hooks, and countermelodies."
+mix = [
+  "High-pass at 200 Hz.",
+  "Sidechain to the kick for extra bounce.",
+  "Keep the delay or replace it with a tempo-synced send.",
+]
+pairings = [
+  { with = "Nightdrive", why = "A rolling bass supports a pattern of plucks." },
+  { with = "Endless Highway", why = "Short notes over a long bed." },
+  { with = "Clean guitar", external = true, why = "They share the same attack and decay." },
+]
+tweaks = [
+  { control = "ENV T3 (decay) to 5.0", result = "Longer ring, closer to a key sound." },
+  { control = "VCF RES to 4.0", result = "A more vocal snap." },
+  { control = "Delay mix to -0.40", result = "A more obvious echo." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 1
+DcoSubLevel = 0
+NumberOfVoices = 5
+VcfCutoff = 0.45
+VcfResonance = 0.1
+VcfEnvMode = 2
+VcfEnvMod = 0.38
+VcfKeyFollow = 0.5
+EnvDecayTime = 0.4
+EnvSustainLevel = 0
+EnvReleaseTime = 0.34
+DcoChorusSwitch = 1
+ChorusRate = 0.5
+ModWheelVcfRange = 0.2
+ModWheelDcoLfo = 0
+delayDryWet = 0.16
+delayTime = 0.25
+delayFeedback = 0.22
+delaySpread = 0.8
+[patch.why]
+EnvDecayTime = "About 300 ms: the shared envelope closes the filter and the amp together. That's what makes a pluck."
+EnvSustainLevel = "Zero: every note dies away, whether the key is held or not."
+EnvReleaseTime = "About 170 ms, so that a note doesn't stop dead if you lift off early."
+VcfEnvMode = "Normal-Dynamic: harder notes snap brighter, so hand-played parts have life."
+VcfEnvMod = "A big, quick filter movement: the snap in the pluck."
+
+[[patch]]
+name = "Glass Drop"
+tags = ["dreamwave", "chillwave"]
+browser = "Resonant glassy drop | Vel: none | MW: none"
+profile = "A clean, high, resonant drop: like a single drip in a very large, reflective room."
+phrase = "pluck"
+transpose = 12
+test_note = 81
+range = "C4 to C6"
+expect = { attack_s = [0, 0.02], sustain_db = [-200, -20] }
+performance = "Sparse notes, with plenty of space around them. Fast lines will blur in the reverb."
+use = "Sparse melodies and sound-design moments in a breakdown."
+mix = [
+  "The reverb is doing a lot. Keep it.",
+  "No need for a high-pass; it's already light.",
+  "Keep it low in the mix: pure tones carry.",
+]
+pairings = [
+  { with = "Cold Coast", why = "Both pure and high." },
+  { with = "Soft Rain", why = "Drops within a rainfall of plucks." },
+  { with = "Field recording of water", external = true, why = "Adds a real sense of a place." },
+]
+tweaks = [
+  { control = "VCF RES to 7.0", result = "A more electronic ping." },
+  { control = "Reverb mix to -0.60", result = "Closer and less dreamy." },
+  { control = "Range to 16'", result = "An octave down: rounder and warmer." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 0
+DcoWavePulse = 1
+DcoSubLevel = 0
+NumberOfVoices = 5
+VcfCutoff = 0.58
+VcfResonance = 0.4
+VcfEnvMod = 0.22
+VcfKeyFollow = 1
+EnvDecayTime = 0.4
+EnvSustainLevel = 0
+EnvReleaseTime = 0.42
+ModWheelDcoLfo = 0
+reverbDryWet = 0.4
+reverbSize = 0.85
+reverbDelay = 0.2
+[patch.why]
+DcoWavePulse = "A square has few harmonics up here, for a clean, glassy tone."
+VcfResonance = "A resonant ping on the attack: this gives the 'drop'."
+VcfKeyFollow = "Full tracking, so the same 'ping' appears on every note."
+reverbDryWet = "A very wet, large space: it's half the sound."
+reverbDelay = "About 40 ms of pre-delay keeps the attack clean."
+
+[[patch]]
+name = "Tape Pizz"
+tags = ["chillwave", "dreamwave"]
+browser = "Worn pizzicato | Vel: none | MW: open filter"
+profile = "A plucked-string sound with a slight tape wobble, like a pizzicato sample from an old record."
+phrase = "pluck"
+range = "C3 to C5"
+expect = { attack_s = [0, 0.03], sustain_db = [-200, -15] }
+performance = "Short, gentle lines. It works well as a counterpoint to a slower melody."
+use = "Playful, nostalgic moments and chillwave hooks."
+mix = [
+  "Add tape saturation and a high cut to push the old sample feel.",
+  "High-pass at 200 Hz.",
+  "Small room reverb only.",
+]
+pairings = [
+  { with = "Worn Tape Strings", why = "Bowed and plucked: same worn tape." },
+  { with = "Velvet Bass", why = "Soft and gentle together." },
+  { with = "Dusty drum loop", external = true, why = "Reinforces the sampled feeling." },
+]
+tweaks = [
+  { control = "DCO LFO to 1.2", result = "An obvious, seasick wobble." },
+  { control = "ENV T3 (decay) to 4.5", result = "A longer ring." },
+  { control = "HPF to Off", result = "A fuller, warmer pluck." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 1
+DcoSubLevel = 0
+HpfCutoff = 2
+NumberOfVoices = 5
+VcfCutoff = 0.46
+VcfEnvMod = 0.28
+VcfKeyFollow = 0.5
+EnvAttackTime = 0.05
+EnvDecayTime = 0.36
+EnvSustainLevel = 0
+EnvReleaseTime = 0.28
+DcoLfoMod = 0.05
+LfoWaveform = 1
+LfoRate = 0.45
+ModWheelVcfRange = 0.2
+ModWheelDcoLfo = 0
+reverbDryWet = 0.16
+reverbSize = 0.35
+reverbTone = 0.25
+[patch.why]
+EnvDecayTime = "About 200 ms: the short ring of a plucked string."
+HpfCutoff = "HP 1 thins the body, as a sample from an old record would be."
+DcoLfoMod = "A slow, shallow pitch drift: old tape."
+LfoRate = "About 0.6 Hz: heard as instability, not vibrato."
+reverbTone = "A small, dark room, the opposite of a clean studio."
+
+[[patch]]
+name = "Pulse Tick"
+tags = ["outrun", "darksynth"]
+browser = "Tiny rhythmic tick | Vel: none | MW: open filter"
+profile = "A very short, percussive pulse tick: more rhythm than pitch."
+phrase = "pluck"
+range = "C3 to C6"
+expect = { attack_s = [0, 0.01], sustain_db = [-200, -25] }
+performance = "Fast, regular patterns. Think of it as a tuned hi-hat."
+use = "Adds a rhythmic 16th or 8th layer. Good for tightening up a groove without adding a melody."
+mix = [
+  "Very little needed: it's mostly transient.",
+  "High-pass at 300 Hz.",
+  "A short delay can multiply the rhythm.",
+]
+pairings = [
+  { with = "Arcade Square", why = "Same chip-era square world." },
+  { with = "Grid Runner", why = "Very tight rhythm parts lock together." },
+  { with = "Hi-hat pattern", external = true, why = "They reinforce each other." },
+]
+tweaks = [
+  { control = "ENV T3 (decay) to 3.5", result = "More of a pitched blip." },
+  { control = "PULSE to Square", result = "A hollower tick." },
+  { control = "Delay mix to -0.50", result = "A more complex rhythm." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 0
+DcoWavePulse = 2
+DcoSubLevel = 0
+NumberOfVoices = 5
+VcfCutoff = 0.68
+VcfEnvMod = 0.1
+EnvDecayTime = 0.2
+EnvSustainLevel = 0
+EnvReleaseTime = 0.1
+ModWheelVcfRange = 0.15
+ModWheelDcoLfo = 0
+delayDryWet = 0.08
+delayTime = 0.15
+delayFeedback = 0.1
+[patch.why]
+EnvDecayTime = "About 60 ms: almost all transient, so the rhythm comes first and pitch second."
+DcoWavePulse = "A 25% pulse is thin and bright, so the tick stays clear even at low level."
+EnvSustainLevel = "Zero, with no tail: the point is its shortness."
+
+[[patch]]
+name = "Wooden Mallet"
+tags = ["chillwave", "dreamwave"]
+browser = "Soft woody mallet | Vel: none | MW: open filter"
+profile = "A warm, rounded mallet with a soft knock at the start: marimba crossed with a synthesizer."
+phrase = "pluck"
+range = "C3 to C5"
+expect = { attack_s = [0, 0.02], sustain_db = [-200, -15], centroid_hz = [150, 1500] }
+performance = "Repeated patterns and gentle melodies, ideally in the mid range."
+use = "Warm, playful patterns in chillwave or dreamwave, or as an alternative to a bright arp."
+mix = [
+  "A boost at around 1 kHz emphasises the knock.",
+  "Short room reverb, no more.",
+  "High-pass at 150 Hz.",
+]
+pairings = [
+  { with = "Warm Tines", why = "Two warm, soft attacks that blend." },
+  { with = "Velvet Bass", why = "Gentle at both ends." },
+  { with = "Hand percussion", external = true, why = "They share a natural, woody character." },
+]
+tweaks = [
+  { control = "Noise to 0", result = "Removes the knock: smoother but less woody." },
+  { control = "ENV T3 (decay) to 5.0", result = "A longer ring, more like vibes." },
+  { control = "VCF Cutoff to 5.5", result = "Brighter, closer to a xylophone." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 0
+DcoWavePulse = 1
+DcoSubLevel = 0
+Noise = 0.3
+NumberOfVoices = 5
+VcfCutoff = 0.42
+VcfEnvMod = 0.22
+VcfKeyFollow = 0.7
+EnvDecayTime = 0.36
+EnvSustainLevel = 0
+EnvReleaseTime = 0.3
+ModWheelVcfRange = 0.15
+ModWheelDcoLfo = 0
+reverbDryWet = 0.12
+reverbSize = 0.3
+[patch.why]
+DcoWavePulse = "A square has strong odd harmonics, which is broadly how a wooden bar behaves."
+Noise = "A little noise through the same filter provides the 'knock' of the mallet."
+VcfCutoff = "About 250 Hz at C4: dark and wooden, with the envelope adding the strike."
+VcfKeyFollow = "High notes stay brighter, as a real instrument's would."
+
+[[patch]]
+name = "Synth Harp"
+tags = ["dreamwave", "outrun"]
+browser = "Long harp ring | Vel: none | MW: open filter"
+profile = "A long-ringing harp sound: higher notes decay faster, as real strings do."
+phrase = "pluck"
+range = "C3 to C6"
+expect = { attack_s = [0, 0.02], sustain_db = [-200, -5] }
+performance = "Sweeping arpeggios and open chords. Let notes ring into one another."
+use = "Dreamy fills, glissandos and intro textures."
+mix = [
+  "Lots of overlapping notes can build up: compress gently.",
+  "Plenty of reverb suits it.",
+  "High-pass at 150 Hz.",
+]
+pairings = [
+  { with = "Slow Bow", why = "A plucked harp over slow strings, a classic orchestral pairing." },
+  { with = "Glass Whistle", why = "Dreamy and high together." },
+  { with = "Acoustic guitar", external = true, why = "They complement each other's natural attack." },
+]
+tweaks = [
+  { control = "ENV Key follow to 8.0", result = "A much bigger difference between low and high notes." },
+  { control = "CHORUS on", result = "Dreamier and wider." },
+  { control = "VCF Env to 5.0", result = "A brighter, harder pluck." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 1
+DcoSubLevel = 0
+NumberOfVoices = 9
+VcfCutoff = 0.5
+VcfEnvMod = 0.28
+VcfKeyFollow = 0.6
+EnvDecayTime = 0.62
+EnvSustainLevel = 0
+EnvReleaseTime = 0.6
+EnvKeyFollow = 0.45
+ModWheelVcfRange = 0.15
+ModWheelDcoLfo = 0
+reverbDryWet = 0.3
+reverbSize = 0.7
+[patch.why]
+EnvDecayTime = "About 1.5 seconds: a long ring, for the sound of a real string."
+EnvKeyFollow = "High notes decay faster than low ones. Real strings behave this way, and it adds a lot of realism."
+EnvReleaseTime = "The same as the decay: strings keep ringing after your finger lifts."
+NumberOfVoices = "10 voices let long-ringing notes overlap in a glissando."
+
+[[patch]]
+name = "Echo Street"
+tags = ["outrun", "dreamwave"]
+browser = "Dotted-delay pluck | Vel: none | MW: open filter"
+profile = "A simple pluck that's half delay: a dotted echo turns a short phrase into a long, flowing line."
+phrase = "pluck"
+range = "C3 to C5"
+expect = { attack_s = [0, 0.02] }
+performance = "Play simple, sparse notes: the delay fills in the rest. Leave space for it."
+use = "Verse hooks and intros. Works well as the only melodic element."
+mix = [
+  "Keep the delay: it's the point of the sound.",
+  "High-pass at 200 Hz.",
+  "Sidechain the delay if it's clouding the kick.",
+]
+pairings = [
+  { with = "Neon Pulse", why = "A plain bass leaves the rhythm to the delay." },
+  { with = "Pulse Bloom", why = "A straight pulse under a dotted pattern." },
+  { with = "Reverbed snare", external = true, why = "Together they sound like a big, empty street." },
+]
+tweaks = [
+  { control = "Delay feedback to 7.0", result = "Far longer trails." },
+  { control = "Delay Time to 1/4.", result = "Slower, more spacious echoes." },
+  { control = "Delay tone to -3.00", result = "Darker, further-away echoes." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 0
+DcoWavePulse = 3
+DcoPwmDepth = 0.5
+DcoPwmRate = 0.5
+DcoSubLevel = 0
+NumberOfVoices = 5
+VcfCutoff = 0.5
+VcfEnvMod = 0.26
+VcfKeyFollow = 0.5
+EnvDecayTime = 0.38
+EnvSustainLevel = 0
+EnvReleaseTime = 0.3
+ModWheelVcfRange = 0.2
+ModWheelDcoLfo = 0
+delayDryWet = 0.42
+delayTime = 0.25
+delayFeedback = 0.5
+delaySpread = 0.85
+delayTone = 0.35
+[patch.why]
+delayTime = "A dotted 8th: echoes land between notes, turning sparse playing into a flowing pattern."
+delayDryWet = "Loud echoes, so they're part of the melody."
+delayFeedback = "Enough repeats to carry through a bar."
+delayTone = "Slightly dark, so that the echoes sit behind the notes."
+delaySpread = "Wide: the dry note stays centred, the echoes move around it."
+
+[[patch]]
+name = "Resonant Blip"
+tags = ["darksynth", "outrun"]
+browser = "Squelchy resonant blip | Vel: brightness | MW: open filter"
+profile = "A short, squelchy blip: the filter's resonance does all the talking."
+phrase = "pluck"
+range = "C3 to C5"
+expect = { attack_s = [0, 0.02], sustain_db = [-200, -10] }
+performance = "Staccato phrases. Velocity changes how far each squelch sweeps."
+use = "Sequenced hooks and acid-tinged riffs."
+mix = [
+  "The peak moves around, so a static EQ cut won't catch it.",
+  "Delay on a send adds excitement.",
+  "High-pass at 250 Hz.",
+]
+pairings = [
+  { with = "Grid Runner", why = "Both are resonant and sequenced, in different registers." },
+  { with = "Digital Rain", why = "Two kinds of busy, machine-like blips." },
+  { with = "808 cowbell", external = true, why = "The same playful electronic world." },
+]
+tweaks = [
+  { control = "VCF RES to 9.0", result = "An extreme whistle on every note." },
+  { control = "ENV T3 (decay) to 4.5", result = "A longer 'wow'." },
+  { control = "VCF Cutoff to 2.5", result = "A much deeper start to the sweep." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 1
+DcoSubLevel = 0
+NumberOfVoices = 5
+VcfCutoff = 0.38
+VcfResonance = 0.68
+VcfEnvMode = 2
+VcfEnvMod = 0.4
+VcfKeyFollow = 0.6
+EnvDecayTime = 0.28
+EnvSustainLevel = 0
+EnvReleaseTime = 0.15
+ModWheelVcfRange = 0.2
+ModWheelDcoLfo = 0
+[patch.why]
+VcfResonance = "High, so the filter's sweep becomes a clear, whistling squelch."
+VcfEnvMode = "Normal-Dynamic: velocity changes how far the squelch sweeps."
+VcfEnvMod = "A wide, fast sweep for the resonant peak to travel."
+EnvDecayTime = "About 100 ms: fast, so it's a blip rather than a sweep."
+
+[[patch]]
+name = "Soft Rain"
+tags = ["chillwave", "dreamwave"]
+browser = "Soft chorused pluck | Vel: level | MW: open filter"
+profile = "A very soft pluck with a rounded attack, chorus and reverb, like gentle rain on a window."
+phrase = "pluck"
+range = "C3 to C6"
+expect = { attack_s = [0.002, 0.05], centroid_hz = [200, 1500] }
+performance = "Gentle broken chords, with velocity variation: soft notes get very quiet."
+use = "Soft textures under a vocal, or as the lead element in a slow, sparse section."
+mix = [
+  "Dynamic by design: compress lightly if at all.",
+  "Keep the reverb; a soft sound needs a soft space.",
+  "High-pass at 200 Hz.",
+]
+pairings = [
+  { with = "Night Rain", why = "A rain texture literally sets the scene." },
+  { with = "Glass Drop", why = "Drops among a soft rainfall." },
+  { with = "Soft lead vocal", external = true, why = "It won't compete with the voice." },
+]
+tweaks = [
+  { control = "VCF Cutoff to 5.0", result = "Clearer and more present." },
+  { control = "VCA mode to Normal", result = "All notes at equal level, for a steadier texture." },
+  { control = "ENV T1 (attack) to 0", result = "A sharper, clearer start." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 0
+DcoWavePulse = 3
+DcoPwmDepth = 0.35
+DcoPwmRate = 0.45
+DcoSubLevel = 0
+NumberOfVoices = 7
+VcfCutoff = 0.42
+VcfEnvMod = 0.18
+VcfKeyFollow = 0.5
+VcaEnvMode = 2
+EnvAttackTime = 0.15
+EnvDecayTime = 0.46
+EnvSustainLevel = 0
+EnvReleaseTime = 0.42
+DcoChorusSwitch = 1
+ChorusRate = 0.4
+ModWheelVcfRange = 0.2
+ModWheelDcoLfo = 0
+reverbDryWet = 0.32
+reverbSize = 0.75
+[patch.why]
+EnvAttackTime = "About 15 ms: long enough to round off the click of the attack."
+VcaEnvMode = "Normal-Dynamic: velocity sets level, so soft notes fall away like light rain."
+VcfCutoff = "Low: the softness comes from what's taken away."
+reverbDryWet = "A wet room softens what remains of the attack."
+
+[[patch]]
+name = "Koto Circuit"
+tags = ["outrun", "darksynth"]
+browser = "Sync-plucked metal string | Vel: none | MW: open filter"
+profile = "A wiry, metallic plucked string with a hint of the East: a koto or shamisen made from circuits."
+phrase = "pluck"
+range = "C3 to C5"
+expect = { attack_s = [0, 0.02], sustain_db = [-200, -10], cents_off = [-15, 15] }
+performance = "Short melodic phrases. Each note starts with a wiry twang that settles quickly, and it stays in tune throughout."
+use = "Cyberpunk moods, neon-city themes, and melodic hooks with an exotic colour."
+mix = [
+  "High-pass at 200 Hz.",
+  "Short delay and a plate, for an old-film feel.",
+  "If it's too metallic, dip around 3 kHz.",
+]
+pairings = [
+  { with = "Rain City", why = "Dark strings and a metallic pluck: a neon-noir world." },
+  { with = "Digital Rain", why = "Together they suggest a futuristic city." },
+  { with = "Taiko drums", external = true, why = "Reinforces the Eastern reference." },
+]
+tweaks = [
+  { control = "Pulse Env mod to +0.30", result = "A harder, more clangorous twang, at the cost of a less clear pitch." },
+  { control = "Pulse Tune to +24", result = "A thinner, more metallic ring." },
+  { control = "ENV T3 (decay) to 5.5", result = "A longer ring, more like a sitar." },
+  { control = "DCO Env to 0.5", result = "A real pitch fall: each note starts up to 45 cents sharp. Any higher and it sounds out of tune." },
+]
+[patch.params]
+DcoRange = 1
+DcoWaveSaw = 1
+DcoWavePulse = 1
+specialPulseSync = 1
+specialPulseTune = 19
+specialPulseVolume = 0.5
+DcoSubLevel = 0
+NumberOfVoices = 5
+specialPulseDcoEnv = 0.15
+VcfCutoff = 0.52
+VcfEnvMod = 0.3
+VcfKeyFollow = 0.5
+EnvBreakTime = 0.25
+EnvBreakLevel = 0.45
+EnvDecayTime = 0.47
+EnvSustainLevel = 0
+EnvReleaseTime = 0.34
+ModWheelVcfRange = 0.15
+ModWheelDcoLfo = 0
+delayDryWet = 0.14
+delayTime = 0.15
+delayFeedback = 0.2
+reverbDryWet = 0.14
+[patch.why]
+specialPulseSync = "Sync adds a metallic, wiry layer on top of the saw."
+specialPulseTune = "An octave and a fifth up: a clangy colour that still sits on the note's harmonics."
+specialPulseDcoEnv = "Sweeps only the synced pulse, so the twang is in the tone while the note's pitch stays put. Pitch from DCO Env would follow this slow envelope and leave the note sharp for most of its length."
+EnvBreakTime = "T2 falls fast: the pick attack."
+EnvBreakLevel = "L2 at 4.5: the drop from the pick into the ringing string."
+EnvSustainLevel = "Zero: the note dies away whether the key is held or not."
